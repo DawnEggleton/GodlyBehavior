@@ -1,3 +1,62 @@
 /*******************************
     Header
 ********************************/
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    color: var(--text-body);
+
+    body:not(#idx) & {
+        display: none;
+    }
+
+    h1 {
+        display: flex;
+        flex-direction: column;
+
+        span {
+            width: max-content;
+
+            &:first-child {
+                font-family: var(--font-script);
+                font-size: 5vw;
+                margin-bottom: -7vw;
+                opacity: 0.4;
+                letter-spacing: 0.1em;
+            }
+            &:last-child {
+                font-family: var(--font-serif);
+                font-size: 8vw;
+                padding-left: 4vw;
+            }
+        }
+    }
+
+    .header {
+        max-width: max-content;
+        max-height: max-content;
+
+        p {
+            position: absolute;
+            font-size: var(--xsBody);
+            letter-spacing: 0.5em;
+            font-weight: 300;
+            text-transform: uppercase;
+
+            &.header--tagline {
+                bottom: 12.5vw;
+                right: 2vw;
+                max-width: 44vw;
+            }
+
+            &.header--lyric {
+                letter-spacing: 1.5vw;
+                left: 4vw;
+                bottom: 2vw;
+            }
+        }
+    }
+}

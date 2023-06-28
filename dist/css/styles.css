@@ -1,0 +1,311 @@
+@font-face {
+  font-family: "Saturdate Script";
+  src: url("../fonts/SaturdateScript.otf") format("opentype"), url("../fonts/SaturdateScript.ttf") format("truetrype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "Saturdate Serif";
+  src: url("../fonts/SaturdateSerif.otf") format("opentype"), url("../fonts/SaturdateSerif.ttf") format("truetrype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "Pier Sans";
+  src: url("../fonts/PierSans-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "Pier Sans";
+  src: url("../fonts/PierSans-LightItalic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap; }
+
+@font-face {
+  font-family: "Pier Sans";
+  src: url("../fonts/PierSans-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "Pier Sans";
+  src: url("../fonts/PierSans-Italic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap; }
+
+@font-face {
+  font-family: "Pier Sans";
+  src: url("../fonts/PierSans-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "Pier Sans";
+  src: url("../fonts/PierSans-MediumItalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap; }
+
+@font-face {
+  font-family: "Pier Sans";
+  src: url("../fonts/PierSans-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "Pier Sans";
+  src: url("../fonts/PierSans-BoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap; }
+
+@font-face {
+  font-family: "Pier Sans";
+  src: url("../fonts/PierSans-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "Pier Sans";
+  src: url("../fonts/PierSans-BlackItalic.otf") format("opentype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap; }
+
+/*******************************
+    Variables
+********************************/
+:root {
+  --bg-image: url('../images/water.jpg');
+  --font-script: 'Saturdate Script';
+  --font-serif: 'Saturdate Serif', serif;
+  --font-body: 'Pier Sans', sans-serif;
+  --style-small-text: normal normal 300 var(--xsBody)/160% var(--font-body);
+  --style-transition: 0s 0.3s all ease-in-out;
+  --size-menu-height: 44px;
+  --size-popout-width: 300px;
+  --spacing-xs: 5px;
+  --spacing-sm: 10px;
+  --spacing-md: 15px;
+  --spacing-lg: 30px;
+  --spacing-xl: 60px;
+  --xsBody: 9px;
+  --sBody: 11px;
+  --mBody: 13px;
+  --lBody: 15px;
+  --xlBody: 17px;
+  --black: rgb(23, 23, 23);
+  --offblack: rgb(43, 43, 43);
+  --white: rgb(248, 248, 248);
+  --white-50: rgba(248, 248, 248, 0.5);
+  --bg-body: var(--black);
+  --bg-content: var(--offblack);
+  --text-body: var(--white);
+  --text-content: var(--white);
+  --border-main: var(--white-50); }
+
+/*******************************
+    Global
+********************************/
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative; }
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-body);
+  font-family: var(--font-body);
+  font-size: var(--mBody);
+  color: var(--text-body); }
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-position: 50% 50%;
+    -webkit-filter: grayscale(1) contrast(120%) brightness(70%);
+            filter: grayscale(1) contrast(120%) brightness(70%);
+    opacity: 0.15; }
+
+a {
+  text-decoration: none;
+  color: var(--text-body); }
+
+/*******************************
+    Navigation
+********************************/
+nav {
+  position: fixed;
+  z-index: 10; }
+  nav.nav--main {
+    top: 0;
+    left: 0;
+    padding: var(--spacing-sm);
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    gap: var(--spacing-sm);
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    height: var(--size-menu-height);
+    background: transparent;
+    -webkit-transition-duration: 0.3s;
+         -o-transition-duration: 0.3s;
+            transition-duration: 0.3s; }
+    nav.nav--main.is-sticky, nav.nav--main.is-open, nav.nav--main.no-header {
+      background: var(--bg-body); }
+    nav.nav--main > a,
+    nav.nav--main > button {
+      background: none;
+      border: none;
+      padding: 0 var(--spacing-md) 0 0;
+      margin: 0;
+      color: var(--text-body); }
+      nav.nav--main > a i,
+      nav.nav--main > button i {
+        font-size: 14px; }
+        nav.nav--main > a i.fa-bars,
+        nav.nav--main > button i.fa-bars {
+          font-size: 18px; }
+    nav.nav--main #navstrip {
+      text-transform: uppercase;
+      letter-spacing: 0.4em;
+      font: var(--style-small-text);
+      border-left: 1px solid var(--border-main);
+      padding-left: var(--spacing-md);
+      height: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center; }
+  nav.nav--menu, nav.nav--user {
+    top: var(--size-menu-height);
+    left: calc(-1 * var(--size-popout-width));
+    width: var(--size-popout-width);
+    height: calc(100vh - var(--size-menu-height));
+    background: var(--bg-content);
+    padding: var(--spacing-lg);
+    -webkit-transition-duration: 0.3s;
+         -o-transition-duration: 0.3s;
+            transition-duration: 0.3s; }
+    nav.nav--menu.is-open, nav.nav--user.is-open {
+      left: 0; }
+
+/*******************************
+    Header
+********************************/
+header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100vh;
+  color: var(--text-body); }
+  body:not(#idx) header {
+    display: none; }
+  header h1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    header h1 span {
+      width: -webkit-max-content;
+      width: -moz-max-content;
+      width: max-content; }
+      header h1 span:first-child {
+        font-family: var(--font-script);
+        font-size: 5vw;
+        margin-bottom: -7vw;
+        opacity: 0.4;
+        letter-spacing: 0.1em; }
+      header h1 span:last-child {
+        font-family: var(--font-serif);
+        font-size: 8vw;
+        padding-left: 4vw; }
+  header .header {
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
+    max-width: max-content;
+    max-height: -webkit-max-content;
+    max-height: -moz-max-content;
+    max-height: max-content; }
+    header .header p {
+      position: absolute;
+      font-size: var(--xsBody);
+      letter-spacing: 0.5em;
+      font-weight: 300;
+      text-transform: uppercase; }
+      header .header p.header--tagline {
+        bottom: 12.5vw;
+        right: 2vw;
+        max-width: 44vw; }
+      header .header p.header--lyric {
+        letter-spacing: 1.5vw;
+        left: 4vw;
+        bottom: 2vw; }
+
+/*******************************
+   Categories and Forums
+********************************/
+/*******************************
+    Board Stats
+********************************/
+/*******************************
+    Topic List
+********************************/
+/*******************************
+    Post Row
+********************************/
+/*******************************
+    Profile
+********************************/
+/*******************************
+    Member List
+********************************/
+/*******************************
+    Webpages
+********************************/
+/*******************************
+    Templates
+********************************/
+/*******************************
+    Jcink Defaults
+********************************/

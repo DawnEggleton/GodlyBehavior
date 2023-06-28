@@ -1,0 +1,31 @@
+/*******************************
+    Variables
+********************************/
+:root {
+  --bg-image: url('../images/water.jpg');
+  --font-script: 'Saturdate Script';
+  --font-serif: 'Saturdate Serif', serif;
+  --font-body: 'Pier Sans', sans-serif;
+  --style-small-text: normal normal 300 var(--xsBody)/160% var(--font-body);
+  --style-transition: 0s 0.3s all ease-in-out;
+  --size-menu-height: 44px;
+  --size-popout-width: 300px;
+  --spacing-xs: 5px;
+  --spacing-sm: 10px;
+  --spacing-md: 15px;
+  --spacing-lg: 30px;
+  --spacing-xl: 60px;
+  --xsBody: 9px;
+  --sBody: 11px;
+  --mBody: 13px;
+  --lBody: 15px;
+  --xlBody: 17px;
+  --black: rgb(23, 23, 23);
+  --offblack: rgb(43, 43, 43);
+  --white: rgb(248, 248, 248);
+  --white-50: rgba(248, 248, 248, 0.5);
+  --bg-body: var(--black);
+  --bg-content: var(--offblack);
+  --text-body: var(--white);
+  --text-content: var(--white);
+  --border-main: var(--white-50); }

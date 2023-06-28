@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Site Name</title>
+        <title>Godly Behaviour</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!--Styles-->
@@ -27,12 +27,39 @@
         <link rel="stylesheet" href="../dist/css/settings.css" />
     </head>
     <body id="idx" class="g-4">
-        <div id="navstrip" align="left">&nbsp;<a href="">Site Name</a></div>
-<!--Header-->
-        <header></header>
+        <!--Header-->
+        <header>
+            <div class="header">
+                <a href="./index.html">
+                    <h1>
+                        <span>Godly</span>
+                        <span>Behaviour</span>
+                    </h1>
+                </a>
+                <p class="header--tagline">supernatural. small town. coastal cape breton. open lore. 18<span class="size-boost">+</span>.</p>
+                <p class="header--lyric">all the secrets drowning underwater</p>
+            </div>
+        </header>
 
         <!--Navigation-->
-        <nav class="nav"></nav>
+        <nav class="nav nav--main" data-open="none">
+            <button onclick="toggleNav(this)" class="btn--menu">
+                <i class="fa-light fa-bars"></i>
+            </button>
+            <a href="./webpage.html"><i class="fa-light fa-books"></i></a>
+            <button onclick="toggleUser(this)" class="btn--user">
+                <i class="fa-light fa-user"></i>
+            </button>
+            <a href="DISCORDURL"><i class="fa-light fa-message-lines"></i></a>
+            <a href="/admin.php" class="staffOnly" target="_blank"><i class="fa-light fa-screwdriver-wrench"></i></a>
+            <div id="navstrip" align="left">&nbsp;<a href="./index.html">Godly Behaviour</a></div>
+        </nav>
+        <nav class="nav nav--menu">
+            Main menu
+        </nav>
+        <nav class="nav nav--user">
+            User nav
+        </nav>
         
         <!--Main Body-->
         <main>
