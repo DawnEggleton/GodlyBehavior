@@ -133,6 +133,8 @@ function presetForms() {
         document.querySelectorAll('#form-edit .ifRemoveJobs').forEach(item => item.classList.add('hide'));
         document.querySelector(`#form-edit #remove-jobs-clip`).innerHTML = '';
     }
+
+    loadCredits();
 }
 
 function loadJobs(form) {
@@ -402,4 +404,160 @@ function editClaims(data) {
     });
     
     return false;
+}
+
+//Face Reserve form
+function submitReserves(data, discord) {
+	let form = document.querySelector(`#form-reserve`);
+	storedHTML = form.innerHTML;
+    form.querySelector('[type="submit"]').innerText = 'Submitting...';
+    if(form.querySelector('.warning')) {
+        form.querySelector('.warning').remove();
+    }
+
+    fetch(`https://opensheet.elk.sh/1mrdIG_MZ-f0jBHb-8_5aRGCczs5f3sl5WglDF0D1XwU/Claims`)
+    .then((response) => response.json())
+    .then((claimData) => {
+        let created = claimData.filter(item => item.Face === data.face);
+        if(created.length > 0) {
+            if(form.querySelector('.warning')) {
+                form.querySelector('.warning').remove();
+            }
+            form.insertAdjacentHTML('afterbegin', `<blockquote class="fullWidth warning">Uh-oh! This face is already in play! Maybe we can help you find another option - check the #face-help channel in Discord!</blockquote>`);
+        } else {
+
+            fetch(`https://opensheet.elk.sh/1mrdIG_MZ-f0jBHb-8_5aRGCczs5f3sl5WglDF0D1XwU/Reserves`)
+            .then((response) => response.json())
+            .then((reserveData) => {
+                let existing = reserveData.filter(item => item.Face === data.face);
+        
+                if(existing.length > 0) {
+                    existing.forEach((reserve, i) => {
+                        let current = new Date();
+                        let time = new Date(reserve.Timestamp);
+                        let difference = Math.floor(((current - time) / (1000*60*60*24)));
+                        console.log(current);
+                        console.log(time);
+                        console.log(difference);
+                        if(difference < 8) {
+                            if(form.querySelector('.warning')) {
+                                form.querySelector('.warning').remove();
+                            }
+                            form.insertAdjacentHTML('afterbegin', `<blockquote class="fullWidth warning">Uh-oh! Someone else has an active reservation on that face already. Maybe we can help you find another option - check the #face-help channel in Discord!</blockquote>`);
+                        
+                            $('#form-sort button[type="submit"]').text('Submit');
+                        } else {
+                            existing.splice(i, 1);
+                        }
+                    });
+                    if(existing.length > 0) {
+                        if(form.querySelector('.warning')) {
+                            form.querySelector('.warning').remove();
+                        }
+                        form.insertAdjacentHTML('afterbegin', `<blockquote class="fullWidth warning">Uh-oh! Someone else has an active reservation on that face already. Maybe we can help you find another option - check the #face-help channel in Discord!</blockquote>`);
+                    
+                        $('#form-sort button[type="submit"]').text('Submit');
+                    } else {
+                        addReserve(form, data, discord);
+                    }
+                } else {
+                    addReserve(form, data, discord);
+                }
+            });
+        }
+    });
+    
+    return false;
+}
+function addReserve(form, data, discord) {
+    $(form).trigger('reset');
+    
+    $.ajax({
+        url: `https://script.google.com/macros/s/AKfycbx-PjF_7gGgm9QOilpWR6x_QGuKRys5Cjd3wbexK-P2hyxquvLreQW7meY567tPomB2/exec`,   
+        data: {
+            "SubmissionType": "reserve-submit",
+            "Member": data.member,
+            "Face": data.face,
+        },
+        method: "POST",
+        type: "POST",
+        dataType: "json", 
+        success: function () {
+            sendDiscordMessage(`https://discord.com/api/webhooks/1124335641191260251/x_KFeOHJ32QKIcmCuVa4qwzEJLrlc0BP61kTaT3YANJSnhZ77GqiDt0d17M7TinPT1h2`, discord.staffMessage, discord.staffTitle);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.log('error');
+            document.querySelector('.form--sort-warning').innerHTML = `Whoops! The sheet connection didn't quite work. Please refresh the page and try again! If this persists, please open the console (ctrl + shift + J) and send Lux a screenshot of what's there.`;
+        },
+        complete: function () {
+            $('#form-reserve button[type="submit"]').text('Submit');
+            
+            form.innerHTML = `<blockquote class="fullWidth">Submission successful! Reminder that face reserves will automatically expire in exactly 7 days from submission.</blockquote>
+            <button onclick="reloadForm(this)" type="button" class="fullWidth">Back to form</button>`;
+
+            window.scrollTo(0, 0);
+        }
+    });
+}
+
+//Species form
+function submitSpecies(data, discord) {
+	let form = document.querySelector(`#form-species-add`);
+	storedHTML = form.innerHTML;
+    form.querySelector('[type="submit"]').innerText = 'Submitting...';
+    if(form.querySelector('.warning')) {
+        form.querySelector('.warning').remove();
+    }
+    $(form).trigger('reset');
+
+    $.ajax({
+        url: `https://script.google.com/macros/s/AKfycbx-PjF_7gGgm9QOilpWR6x_QGuKRys5Cjd3wbexK-P2hyxquvLreQW7meY567tPomB2/exec`,   
+        data: {
+            "SubmissionType": "species-submit",
+            "Species": data.species,
+            "Aging": data.aging,
+            "Lifespan": data.lifespan,
+            "Physiology": data.physiology,
+            "CommunityStructure": data.community,
+            "Strengths": data.abilities,
+            "Weaknesses": data.weaknesses,
+            "Traits": data.traits,
+            "Credit": data.credits,
+        },
+        method: "POST",
+        type: "POST",
+        dataType: "json", 
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.log('error');
+            document.querySelector('.form--sort-warning').innerHTML = `Whoops! The sheet connection didn't quite work. Please refresh the page and try again! If this persists, please open the console (ctrl + shift + J) and send Lux a screenshot of what's there.`;
+        },
+        complete: function () {
+            $('#form-sort button[type="submit"]').text('Submit');
+            
+            form.innerHTML = `<blockquote class="fullWidth">Submission successful!</blockquote>
+            <button onclick="reloadForm(this)" type="button" class="fullWidth">Back to form</button>`;
+
+            window.scrollTo(0, 0);
+        }
+    });
+    
+    return false;
+}
+function addCreditFields(i) {
+    let html = `<label class="user-name">
+        <b class="h7" data-align="left">Member</b>
+        <input type="text" id="user-${i}" placeholder="Member" required />
+    </label>
+    <label class="user-id">
+        <b class="h7" data-align="left">Member ID</b>
+        <input type="text" id="id-${i}" placeholder="Member ID" required />
+    </label>`;
+    return html;
+}
+function loadCredits() {
+    let active = document.querySelector(`#form-species-add #credit-clip`);
+    let count = document.querySelector(`#form-species-add #credit-count`).value;
+    for(let i = 0; i < count; i++) {
+        active.insertAdjacentHTML('beforeend', addCreditFields(i));
+    }
 }

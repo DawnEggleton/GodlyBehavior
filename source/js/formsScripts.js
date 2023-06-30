@@ -185,6 +185,111 @@ document.querySelector('#form-edit').addEventListener('submit', e => {
     editClaims(data);
 });
 
+//species request
+document.querySelector('#form-species').addEventListener('submit', e => {
+    e.preventDefault();
+    let member = e.currentTarget.querySelector('#member').value.toLowerCase().trim();
+    let species = e.currentTarget.querySelector('#species').value.toLowerCase().trim();
+    let physiology = e.currentTarget.querySelector('#physiology').value.trim();
+    let abilities = e.currentTarget.querySelector('#abilities').value.trim();
+    let weaknesses = e.currentTarget.querySelector('#weaknesses').value.trim();
+    let ideas = e.currentTarget.querySelector('#ideas').value.trim();
+    let resources = e.currentTarget.querySelector('#resources').value.trim();
+    let publicMessage = `Someone has suggested **${capitalize(species)}** as a new species! If you would like to see this species added, please react to this message! If you would like to discuss your own ideas for this species, please #create-a-ticket with staff!`;
+    let privateMessage = `**Species:** ${species}
+    \n\n**Phsyiology:**\n${physiology}
+    \n\n**Abilities:**\n${abilities}
+    \n\n**Weaknesses:**\n${weaknesses}
+    \n\n**Ideas:**\n${ideas}
+    \n\n**Resources:**\n${resources}
+    \n\nReview collectively as staff and then, when ready, start a ticket in the public server with all staff and the member in order to discuss approval / edits / refusal. All staff should react to this request when it has been seen and read.`;
+
+
+    //Send Public
+    sendModRequest('species', publicMessage, `New Species Suggested!`, `https://discord.com/api/webhooks/1124303807858344007/AW_ejzMEqfK0BbjLvNcA6n2RfCz8JLHo-f4sgeI0DayK4YYi_u1NLFXwCSIr8ETzryR_`, `Thanks for your submission! Staff will open a ticket with you to discuss shortly and your submission will be posted to the public server for the consideration of other members.`); 
+
+    //Send Private
+    sendDiscordMessage(`https://discord.com/api/webhooks/1124303973248151572/7CTHEhHhMwossK1bf8J7JDu3XW0gdPOp6gI5zM0s16FmahlM3sUJytNXE4rMksHbCr6h`, privateMessage, `New Species Request by ${capitalize(member)}`); 
+});
+
+//reserve face
+document.querySelector('#form-reserve').addEventListener('submit', e => {
+    e.preventDefault();
+
+    let member = e.currentTarget.querySelector('#member').value.toLowerCase().trim();
+    let face = e.currentTarget.querySelector('#face').value.toLowerCase().trim();
+
+    let embedTitle = `New Face Reservation`;
+    let message = `${capitalize(member)} has reserved ${capitalize(face)}`;
+
+    let data = {
+        member: member,
+        face: face,
+    }
+    let discord = {
+        staffTitle: embedTitle,
+        staffMessage: message,
+    }
+
+    submitReserves(data, discord);
+});
+
+//species add
+document.querySelector('#form-species-add').addEventListener('submit', e => {
+    e.preventDefault();
+
+    let form = e.currentTarget;
+    let species = e.currentTarget.querySelector('#species').value.toLowerCase().trim();
+    let aging = e.currentTarget.querySelector('#aging').value.toLowerCase().trim();
+    let lifespan = e.currentTarget.querySelector('#lifespan').value.toLowerCase().trim();
+    let physiology = e.currentTarget.querySelector('#physiology').value.trim();
+    let community = e.currentTarget.querySelector('#community').value.trim();
+    let abilities = e.currentTarget.querySelector('#abilities').value.trim();
+    let weaknesses = e.currentTarget.querySelector('#weaknesses').value.trim();
+    let strength = e.currentTarget.querySelector('#strength').value;
+    let longevity = e.currentTarget.querySelector('#longevity').value;
+    let vulnerability = e.currentTarget.querySelector('#vulnerability').value;
+    let customPercent = e.currentTarget.querySelector('#custom-percent').value;
+    let customTrait = e.currentTarget.querySelector('#custom-trait').value.toLowerCase().trim();
+    let traits = `{"trait": "physical strength", "percent": "${strength}"}+{"trait": "longevity", "percent": "${longevity}"}+{"trait": "vulnerability", "percent": "${vulnerability}"}+{"trait": "${customTrait}", "percent": "${customPercent}"}`;
+    let credits = ``;
+    let users = form.querySelectorAll('.user-name input');
+    let ids = form.querySelectorAll('.user-id input');
+    for(let i = 0; i < users.length; i++) {
+        credits += `{"username": "${users[i].value.toLowerCase().trim()}", "userid": "${ids[i].value.toLowerCase().trim()}"}`;
+        if(i !== users.length - 1) {
+            credits += `+`;
+        }
+    }
+
+    let data = {
+        species: species,
+        aging: aging,
+        lifespan: lifespan,
+        physiology: physiology,
+        community: community,
+        abilities: abilities,
+        weaknesses: weaknesses,
+        traits: traits,
+        credits: credits,
+    }
+
+    submitSpecies(data);
+});
+
+//join subplot
+document.querySelector('#form-add-plot').addEventListener('submit', e => {
+    e.preventDefault();
+    let member = e.currentTarget.querySelector('#member').value.toLowerCase().trim();
+    let character = e.currentTarget.querySelector('#character').value.toLowerCase().trim();
+    let id = e.currentTarget.querySelector('#characterid').value;
+    let plot = e.currentTarget.querySelector('#plot').options[e.currentTarget.querySelector('#plot').selectedIndex].innerText;
+    let role = e.currentTarget.querySelector('#role').options[e.currentTarget.querySelector('#role').selectedIndex].innerText;
+    let embedTitle = `Subplot Addition`;
+    let message = `**${capitalize(member)}** would like to add **${capitalize(character)}** to the **${plot}** plot as **${role}**\n\`\`\`<a href="?showuser=${id}">${capitalize(character)}</a>\`\`\``;
+    sendModRequest('add-plot', message, embedTitle, `DISCORDHOOK`); 
+});
+
 /********** Toggle Fields **********/
 //Thread Status
 document.querySelector('#form-thread #status').addEventListener('change', e => {
@@ -333,5 +438,41 @@ document.querySelector('#form-edit #characterid').addEventListener('change', e =
         loadExistingJobs('edit', id);
     } else if(id && id !== '' && removeJobBox.checked) {
         loadExistingJobs('remove', id);
+    }
+});
+
+//Credit Count Change
+document.querySelector('#form-species-add #credit-count').addEventListener('change', e => {
+    let active = document.querySelector('#form-species-add #credit-clip');
+    let currentCount = active.querySelectorAll('.user-name').length;
+    let newCount = parseInt(e.currentTarget.value);
+    if (newCount > currentCount) {
+        for(let i = currentCount; i < newCount; i++) {
+            active.insertAdjacentHTML('beforeend', addCreditFields(i));
+        }
+    } else if (currentCount > newCount) {
+        let difference = currentCount - newCount;
+        for(let i = 0; i < difference; i++) {
+            active.querySelectorAll('.user-name')[currentCount - i - 1].remove();
+            active.querySelectorAll('.user-id')[currentCount - i - 1].remove();
+        }
+    }
+});
+
+//Adding Subplot Change
+document.querySelector('#form-add-plot #plot').addEventListener('change', e => {
+    let selected = e.currentTarget.options[e.currentTarget.selectedIndex].value;
+    let form = document.querySelector('#form-add-plot');
+    if(selected === 'hunter') {
+        form.querySelectorAll('.ifPlot').forEach(item => item.classList.add('hide'));
+        form.querySelectorAll('.ifHunter').forEach(item => item.classList.remove('hide'));
+    } else if (selected === 'conspiracy') {
+        form.querySelectorAll('.ifPlot').forEach(item => item.classList.add('hide'));
+        form.querySelectorAll('.ifConspiracy').forEach(item => item.classList.remove('hide'));
+    } else if (selected === 'cult') {
+        form.querySelectorAll('.ifPlot').forEach(item => item.classList.add('hide'));
+        form.querySelectorAll('.ifCult').forEach(item => item.classList.remove('hide'));
+    } else {
+        form.querySelectorAll('.ifPlot').forEach(item => item.classList.add('hide'));
     }
 });

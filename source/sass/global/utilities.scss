@@ -13,6 +13,7 @@
 [data-type="GRID"] {
     display: grid;
     gap: var(--spacing-lg);
+    grid-template-rows: repeat(auto-fit, minmax(0, max-content));
 
     .fullWidth {
         grid-column: 1 / -1;

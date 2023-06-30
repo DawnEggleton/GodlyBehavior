@@ -236,3 +236,48 @@ form {
         }
     }
 }
+
+.claims {
+    .webpage--border + & {
+        margin-top: var(--spacing-lg);
+    }
+
+    &--item {
+        border: 1px solid var(--border-secondary);
+        padding: var(--spacing-md);
+        background: var(--bg-transparent);
+        display: flex;
+        flex-direction: column;
+        font: var(--style-small-text);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        gap: 5px;
+
+        b,
+        a {
+            display: block;
+            line-height: 160%;
+            letter-spacing: 0;
+            color: var(--text-content);
+            font-family: var(--font-body-bold);
+            font-size: var(--xlBody);
+            font-weight: 600;
+            padding: 0 0 var(--spacing-sm) 0;
+
+            &:not(:only-child) {
+                margin-bottom: var(--spacing-sm);
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 35px;
+                height: 2px;
+                background: var(--bg-color);
+                border-radius: 1px;
+            }
+        }
+    }
+}

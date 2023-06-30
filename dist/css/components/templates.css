@@ -36,7 +36,8 @@ tag-labels {
       text-transform: uppercase;
       font: var(--style-small-text);
       letter-spacing: 0.1em;
-      white-space: nowrap; }
+      white-space: nowrap;
+      cursor: pointer; }
       tag-labels tag-labelset a.is-active,
       tag-labels tag-labelset tag-label.is-active {
         padding: 0 var(--spacing-xs); }

@@ -51,6 +51,7 @@
                                 <tag-label data-category="registration">registration</tag-label>
                                 <tag-label data-category="claims">claims</tag-label>
                                 <tag-label data-category="moderation">moderation</tag-label>
+                                <tag-label data-category="staff" class="staffOnly">staff tools</tag-label>
                             </tag-labelset>
                             <button onclick="moveRight(this)" type="button"><i class="fa-solid fa-angles-right"></i></button>
                         </tag-labels>
@@ -71,7 +72,8 @@
                                 <tag-labels>
                                     <button onclick="moveLeft(this)" type="button"><i class="fa-solid fa-angles-left"></i></button>
                                     <tag-labelset>
-                                        <a href="#subplot1" class="is-active">subplot #1 name</a>
+                                        <a href="#join-subplot" class="is-active">join a subplot</a>
+                                        <a href="#subplot1">subplot #1 name</a>
                                         <a href="#subplot2">subplot #2</a>
                                         <a href="#subplot3">subplot #3</a>
                                     </tag-labelset>
@@ -95,7 +97,6 @@
                                         <a href="#application">application format</a>
                                         <a href="#sort">get sorted</a>
                                         <a href="#editclaims">edit a character</a>
-                                        <a href="#announce" class="staffOnly">send character announcement</a>
                                     </tag-labelset>
                                     <button onclick="moveRight(this)" type="button"><i class="fa-solid fa-angles-right"></i></button>
                                 </tag-labels>
@@ -121,6 +122,16 @@
                                         <a href="#accountmoderation">account moderation</a>
                                         <a href="#otherrequests">other requests</a>
                                         <a href="#lovenotes">send some love</a>
+                                    </tag-labelset>
+                                    <button onclick="moveRight(this)" type="button"><i class="fa-solid fa-angles-right"></i></button>
+                                </tag-labels>
+                            </tag-tab>
+                            <tag-tab data-category="staff" class="staffOnly">
+                                <tag-labels>
+                                    <button onclick="moveLeft(this)" type="button"><i class="fa-solid fa-angles-left"></i></button>
+                                    <tag-labelset>
+                                        <a href="#announce" class="is-active">send character announcement</a>
+                                        <a href="#species-add">add a species</a>
                                     </tag-labelset>
                                     <button onclick="moveRight(this)" type="button"><i class="fa-solid fa-angles-right"></i></button>
                                 </tag-labels>
@@ -222,6 +233,55 @@
                         <tag-tab data-category="plots">
                             <div class="webpage--section">
                                 <tag-tabset>
+                                    <tag-tab data-key="#join-subplot">
+                                        <div class="webpage--border">
+                                            <form id="form-add-plot" data-type="grid" data-columns="2">
+                                                <blockquote class="fullWidth">If you are interested in having your character join a subplot and they have <u>already been sorted</u>, please let us know by filling out this form so we can have them added to the appropriate plot!</blockquote>
+                                                <label class="fullWidth">
+                                                    <b class="h7" data-align="left">Alias</b>
+                                                    <input type="text" id="member" placeholder="Member" required />
+                                                </label>
+                                                <label>
+                                                    <b class="h7" data-align="left">Character</b>
+                                                    <input type="text" id="character" placeholder="Character" required />
+                                                </label>
+                                                <label>
+                                                    <b class="h7" data-align="left">Character Account ID</b>
+                                                    <input type="text" id="characterid" placeholder="Character Account ID" required />
+                                                </label>
+                                                <label>
+                                                    <b class="h7" data-align="left">Subplot</b>
+                                                    <select id="plot" required>
+                                                        <option value="">(select)</option>
+                                                        <option value="hunter">The Most Dangerous Game</option>
+                                                        <option value="conspiracy">Tin Foil Hats, Man!</option>
+                                                        <option value="cult">The Order of the White Wolf</option>
+                                                    </select>
+                                                </label>
+                                                <label>
+                                                    <b class="h7" data-align="left">Role</b>
+                                                    <select id="role" required>
+                                                        <option value="">(select)</option>
+                                                        <option value="leader" class="hide ifHunter ifPlot">The Guardians - Leader</option>
+                                                        <option value="deputy" class="hide ifHunter ifPlot">The Guardians - Deputy</option>
+                                                        <option value="hunter" class="hide ifHunter ifPlot">The Guardians - Hunter</option>
+                                                        <option value="active" class="hide ifHunter ifPlot">Rogue Hunter - Active</option>
+                                                        <option value="retired" class="hide ifHunter ifPlot">Rogue Hunter - Retired</option>
+                                                        <option value="ceo" class="hide ifConspiracy ifPlot">Vyper - CEO</option>
+                                                        <option value="secretary" class="hide ifConspiracy ifPlot">Vyper - Secretary</option>
+                                                        <option value="scientist" class="hide ifConspiracy ifPlot">Vyper - Scientist on Faculty</option>
+                                                        <option value="researcher" class="hide ifConspiracy ifPlot">Vyper - Researcher</option>
+                                                        <option value="theorist" class="hide ifConspiracy ifPlot">Rogue Theorist</option>
+                                                        <option value="founder" class="hide ifCult ifPlot">Holy Founder</option>
+                                                        <option value="priest" class="hide ifCult ifPlot">High Priest</option>
+                                                        <option value="practitioner" class="hide ifCult ifPlot">Practitioner</option>
+                                                        <option value="excommunicated" class="hide ifCult ifPlot">Excommunicated</option>
+                                                    </select>
+                                                </label>
+                                                <button type="submit" id="submit">Submit</button>
+                                            </form>
+                                        </div>
+                                    </tag-tab>
                                     <tag-tab data-key="#subplot1">
                                         <div class="webpage--border">
                                             <% plot1 %>
@@ -245,7 +305,38 @@
                                 <tag-tabset>
                                     <tag-tab data-key="#species-request">
                                         <div class="webpage--border">
-                                            Species Request Form
+                                            <form id="form-species" data-type="grid" data-columns="2">
+                                                <blockquote class="fullWidth">Please be aware that this form submits all details to a staff-only area for our discussion, but also submits species name (and no other information) to the public server for member consideration and awareness. This is poll for community feedback as well as prevent duplications during the discussion process.</blockquote>
+                                                <label>
+                                                    <b class="h7" data-align="left">Alias</b>
+                                                    <input type="text" id="member" placeholder="Alias" />
+                                                </label>
+                                                <label>
+                                                    <b class="h7" data-align="left">Species</b>
+                                                    <input type="text" id="species" placeholder="Species Name" />
+                                                </label>
+                                                <label class="fullWidth">
+                                                    <b class="h7" data-align="left">Proposed Physiology</b>
+                                                    <textarea id="physiology" placeholder="Physiology traits you'd like to see" required></textarea>
+                                                </label>
+                                                <label>
+                                                    <b class="h7" data-align="left">Proposed Abilities</b>
+                                                    <textarea id="abilities" placeholder="Abilities you'd like to see" required></textarea>
+                                                </label>
+                                                <label>
+                                                    <b class="h7" data-align="left">Proposed Weaknesses</b>
+                                                    <textarea id="weaknesses" placeholder="Weaknesses you'd like to see" required></textarea>
+                                                </label>
+                                                <label class="fullWidth">
+                                                    <b class="h7" data-align="left">Other Ideas</b>
+                                                    <textarea id="ideas" placeholder="If you have any other ideas, please share them!"></textarea>
+                                                </label>
+                                                <label class="fullWidth">
+                                                    <b class="h7" data-align="left">Resources</b>
+                                                    <textarea id="resources" placeholder="If you have links to resources, please link us!"></textarea>
+                                                </label>
+                                                <button type="submit" id="submit" class="fullWidth">Submit</button>
+                                            </form>
                                         </div>
                                     </tag-tab>
                                 </tag-tabset>
@@ -447,55 +538,30 @@
                                             </form>
                                         </div>
                                     </tag-tab>
-                                    <tag-tab data-key="#announce">
-                                        <div class="webpage--border">
-                                            <form id="form-announce" data-type="grid" data-columns="2">
-                                                <label>
-                                                    <b class="h7" data-align="left">Member</b>
-                                                    <input type="text" id="member" placeholder="Member" />
-                                                </label>
-                                                <label>
-                                                    <b class="h7" data-align="left">Character</b>
-                                                    <input type="text" id="character" placeholder="Character" />
-                                                </label>
-                                                <label>
-                                                    <b class="h7" data-align="left">Account ID</b>
-                                                    <input type="text" id="account" placeholder="Account ID" />
-                                                </label>
-                                                <label>
-                                                    <b class="h7" data-align="left">Group</b>
-                                                    <select id="group" required>
-                                                        <option value="">(select)</option>
-                                                        <option value="15">Amaranth</option>
-                                                        <option value="7">Birch</option>
-                                                        <option value="11">Blueberry</option>
-                                                        <option value="10">Dandelion</option>
-                                                        <option value="13">Hemlock</option>
-                                                        <option value="12">Juniper</option>
-                                                        <option value="8">Lupin</option>
-                                                        <option value="14">Nettle</option>
-                                                        <option value="9">Spruce</option>
-                                                        <option value="16">Sundew</option>
-                                                    </select>
-                                                </label>
-                                                <label class="fullWidth">
-                                                    <b class="h7" data-align="left">About</b>
-                                                    <textarea id="about" placeholder="Short, sweet, and to-the-point" required></textarea>
-                                                </label>
-                                                <button type="submit" id="submit" class="fullWidth">Submit</button>
-                                            </form>
-                                        </div>
-                                    </tag-tab>
                                 </tag-tabset>
                             </div>
                         </tag-tab>
                         <tag-tab data-category="claims">
                             <div class="webpage--section">
                                 <tag-tabset>
-                                    <tag-tab class="claims" data-key="#reserves"><% c-reserve %></tag-tab>
-                                    <tag-tab class="claims" data-key="#members"></tag-tab>
-                                    <tag-tab class="claims" data-key="#faces"></tag-tab>
-                                    <tag-tab class="claims" data-key="#jobs"></tag-tab>
+                                    <tag-tab data-key="#reserves">
+                                        <div class="webpage--border">
+                                            <form id="form-reserve" data-type="grid" data-columns="2">
+                                                <label>
+                                                    <b class="h7" data-align="left">Alias</b>
+                                                    <input type="text" id="member" placeholder="Alias" />
+                                                </label>
+                                                <label>
+                                                    <b class="h7" data-align="left">Face</b>
+                                                    <input type="text" id="face" placeholder="Face" />
+                                                </label>
+                                                <button type="submit" id="submit" class="fullWidth">Submit</button>
+                                            </form>
+                                        </div>
+                                    </tag-tab>
+                                    <tag-tab class="claims" data-key="#members" data-type="grid" data-columns="4"></tag-tab>
+                                    <tag-tab class="claims" data-key="#faces" data-type="grid" data-columns="4"></tag-tab>
+                                    <tag-tab class="claims" data-key="#jobs" data-type="grid" data-columns="4"></tag-tab>
                                 </tag-tabset>
                             </div>
                         </tag-tab>
@@ -597,6 +663,113 @@
                                 </tag-tabset>
                             </div>
                         </tag-tab>
+                        <tag-tab data-category="staff" class="staffOnly">
+                            <div class="webpage--section">
+                                <tag-tabset>
+                                    <tag-tab data-key="#announce">
+                                        <div class="webpage--border">
+                                            <form id="form-announce" data-type="grid" data-columns="2">
+                                                <label>
+                                                    <b class="h7" data-align="left">Member</b>
+                                                    <input type="text" id="member" placeholder="Member" />
+                                                </label>
+                                                <label>
+                                                    <b class="h7" data-align="left">Character</b>
+                                                    <input type="text" id="character" placeholder="Character" />
+                                                </label>
+                                                <label>
+                                                    <b class="h7" data-align="left">Account ID</b>
+                                                    <input type="text" id="account" placeholder="Account ID" />
+                                                </label>
+                                                <label>
+                                                    <b class="h7" data-align="left">Group</b>
+                                                    <select id="group" required>
+                                                        <option value="">(select)</option>
+                                                        <option value="15">Amaranth</option>
+                                                        <option value="7">Birch</option>
+                                                        <option value="11">Blueberry</option>
+                                                        <option value="10">Dandelion</option>
+                                                        <option value="13">Hemlock</option>
+                                                        <option value="12">Juniper</option>
+                                                        <option value="8">Lupin</option>
+                                                        <option value="14">Nettle</option>
+                                                        <option value="9">Spruce</option>
+                                                        <option value="16">Sundew</option>
+                                                    </select>
+                                                </label>
+                                                <label class="fullWidth">
+                                                    <b class="h7" data-align="left">About</b>
+                                                    <textarea id="about" placeholder="Short, sweet, and to-the-point" required></textarea>
+                                                </label>
+                                                <button type="submit" id="submit" class="fullWidth">Submit</button>
+                                            </form>
+                                        </div>
+                                    </tag-tab>
+                                    <tag-tab data-key="#species-add">
+                                        <div class="webpage--border">
+                                            <form id="form-species-add" data-type="grid" data-columns="2">
+                                                <blockquote class="fullWidth">Abilities and Weaknesses should be separated by a + sign for correct parsing from the sheet. E.g., "strength one is this+strength two is this+strength three is this".</blockquote>
+                                                <label>
+                                                    <b class="h7" data-align="left">Species</b>
+                                                    <input type="text" id="species" placeholder="Species Name" required />
+                                                </label>
+                                                <label>
+                                                    <b class="h7" data-align="left">Aging</b>
+                                                    <input type="text" id="aging" placeholder="Aging" required />
+                                                </label>
+                                                <label>
+                                                    <b class="h7" data-align="left">Lifespan</b>
+                                                    <input type="text" id="lifespan" placeholder="Lifespan" required />
+                                                </label>
+                                                <label>
+                                                    <b class="h7" data-align="left">Custom Trait - Title</b>
+                                                    <input type="text" id="custom-trait" placeholder="Custom Trait" required />
+                                                </label>
+                                                <label>
+                                                    <b class="h7" data-align="left">Physical Strength</b>
+                                                    <input type="range" id="strength" value="0" min="0" max="100" required />
+                                                </label>
+                                                <label>
+                                                    <b class="h7" data-align="left">Longevity</b>
+                                                    <input type="range" id="longevity" value="0" min="0" max="100" required />
+                                                </label>
+                                                <label>
+                                                    <b class="h7" data-align="left">Vulnerability</b>
+                                                    <input type="range" id="vulnerability" value="0" min="0" max="100" required />
+                                                </label>
+                                                <label>
+                                                    <b class="h7" data-align="left">Custom Trait</b>
+                                                    <input type="range" id="custom-percent" value="0" min="0" max="100" required />
+                                                </label>
+                                                <label class="fullWidth">
+                                                    <b class="h7" data-align="left">Physiology</b>
+                                                    <textarea id="physiology" placeholder="Physiology - full sentences" required></textarea>
+                                                </label>
+                                                <label class="fullWidth">
+                                                    <b class="h7" data-align="left">Community Structure</b>
+                                                    <textarea id="community" placeholder="Community - full sentences" required></textarea>
+                                                </label>
+                                                <label>
+                                                    <b class="h7" data-align="left">Abilities</b>
+                                                    <textarea id="abilities" placeholder="Abilities - plus sign separated list" required></textarea>
+                                                </label>
+                                                <label>
+                                                    <b class="h7" data-align="left">Weaknesses</b>
+                                                    <textarea id="weaknesses" placeholder="Weaknesses - plus sign separated list" required></textarea>
+                                                </label>
+                                                <div class="h4 fullWidth">Credit</div>
+                                                <label class="fullWidth">
+                                                    <b class="h7" data-align="left">Number of Users</b>
+                                                    <input type="number" id="credit-count" value="1" min="1" required />
+                                                </label>
+                                                <div id="credit-clip" class="fullWidth" data-type="grid" data-columns="2"></div>
+                                                <button type="submit" id="submit" class="fullWidth">Submit</button>
+                                            </form>
+                                        </div>
+                                    </tag-tab>
+                                </tag-tabset>
+                            </div>
+                        </tag-tab>
                     </tag-tabset>
                 </div>
             </div>
@@ -612,12 +785,14 @@
                 fetch(claims)
                 .then((response) => response.json())
                 .then((claimsData) => {
-                    console.log(claimsData);
+                    formatMembers(claimsData);
+                    formatFaces(claimsData);
+                    formatJobs(claimsData);
                     
                     fetch(reserves)
                     .then((response) => response.json())
                     .then((reservesData) => {
-                        console.log(reservesData);
+                        formatReserves(reservesData);
                     
                         fetch(species)
                         .then((response) => response.json())

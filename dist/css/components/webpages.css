@@ -165,3 +165,40 @@ form {
       display: block;
       border-radius: 2px;
       width: 0; }
+
+.webpage--border + .claims {
+  margin-top: var(--spacing-lg); }
+
+.claims--item {
+  border: 1px solid var(--border-secondary);
+  padding: var(--spacing-md);
+  background: var(--bg-transparent);
+  display: flex;
+  flex-direction: column;
+  font: var(--style-small-text);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  gap: 5px; }
+  .claims--item b,
+  .claims--item a {
+    display: block;
+    line-height: 160%;
+    letter-spacing: 0;
+    color: var(--text-content);
+    font-family: var(--font-body-bold);
+    font-size: var(--xlBody);
+    font-weight: 600;
+    padding: 0 0 var(--spacing-sm) 0; }
+    .claims--item b:not(:only-child),
+    .claims--item a:not(:only-child) {
+      margin-bottom: var(--spacing-sm); }
+    .claims--item b::after,
+    .claims--item a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 35px;
+      height: 2px;
+      background: var(--bg-color);
+      border-radius: 1px; }
