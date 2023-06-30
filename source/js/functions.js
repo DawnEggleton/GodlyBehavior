@@ -1,9 +1,55 @@
+/********** Settings **********/
+function setTheme() {
+    if(localStorage.getItem('theme') !== null) {
+        switch(localStorage.getItem('theme')) {
+            case 'light':
+                document.querySelector('body').classList.remove('dark');
+                document.querySelector('body').classList.add('light');
+                break;
+            case 'dark':
+            default:
+                document.querySelector('body').classList.add('dark');
+                document.querySelector('body').classList.remove('light');
+                break;
+        }
+    } else {
+        document.querySelector('body').classList.add('dark');
+        document.querySelector('body').classList.remove('light');
+        localStorage.setItem('theme', 'dark');
+    }
+}
+function setSize() {
+    if(localStorage.getItem('size') !== null) {
+        switch(localStorage.getItem('size')) {
+            case 'large':
+                document.querySelector('body').classList.remove('smFont');
+                document.querySelector('body').classList.add('lgFont');
+                break;
+            case 'small':
+            default:
+                document.querySelector('body').classList.remove('lgFont');
+                document.querySelector('body').classList.add('smFont');
+                break;
+        }
+    } else {
+        document.querySelector('body').classList.remove('lgFont');
+        document.querySelector('body').classList.add('smFont');
+        localStorage.setItem('size', 'small');
+    }
+}
+
 /********** Initializations **********/
 function initStickyMenu() {
     const sticky = document.querySelector('.nav--main');
+    const breadcrumb = document.querySelector('.nav--breadcrumb');
+    const webMenu = document.querySelector('.webpage--menu');
     const initScroll = document.documentElement.scrollTop;
     if (initScroll > 0) {
         sticky.classList.add("is-sticky");
+        breadcrumb.classList.add("is-sticky");
+        if(webMenu) {
+            webMenu.classList.add('is-sticky');
+        }
     }
 
     const headers = document.querySelectorAll('header');
@@ -15,19 +61,256 @@ function initStickyMenu() {
     });
     if(visibleHeaders.length === 0) {
         sticky.classList.add('no-header');
+        breadcrumb.classList.add("no-header");
     }
 
     window.addEventListener('scroll', e => {
         const scroll = document.documentElement.scrollTop;
         if (scroll > 0) {
             sticky.classList.add("is-sticky");
+            breadcrumb.classList.add("is-sticky");
+            if(webMenu) {
+                webMenu.classList.add('is-sticky');
+            }
         } else {
             sticky.classList.remove("is-sticky")
+            breadcrumb.classList.remove("is-sticky");
+            if(webMenu) {
+                webMenu.classList.remove('is-sticky');
+            }
         }
     });
 }
+function initSwitcher() {
+	let characters = switcher.querySelectorAll('option');
+	let newSwitch = `<div class="switch">`;
+	characters.forEach((character, i) => {
+		if(i !== 0) {
+			let characterName = character.innerText.trim();
+			let characterId = character.value;
+			newSwitch += `<label class="switch-block">
+				<input type="checkbox" value="${characterId}" onchange="this.form.submit()" name="sub_id" />
+				<div style="background-image: url(https://files.jcink.net/uploads2/playedgod/av-${characterId}.png), url(https://files.jcink.net/uploads2/playedgod/av-${characterId}.gif), url(https://files.jcink.net/uploads2/playedgod/av-${characterId}.jpg), url(https://files.jcink.net/uploads2/playedgod/av-${characterId}.jpeg), url(https://picsum.photos/250);"></div>
+				<b>${characterName}</b>
+			</label>`;
+		}
+	});
+	newSwitch += `</div>`;
+	switcher.insertAdjacentHTML('afterend', newSwitch);
+	switcher.remove();
+}
+function initQuickLogin() {
+    if($('#quick-login').length) {
+        $('#quick-login').appendTo('#quick-login-clip');
+        document.querySelector('#quick-login-clip input[name="UserName"]').setAttribute('placeholder', 'Username');
+        document.querySelector('#quick-login-clip input[name="PassWord"]').setAttribute('placeholder', 'Password');
+    } else {
+        var main_url = location.href.split('?')[0];
+        $.get(main_url, function (data) {
+            $('#quick-login', data).appendTo('#quick-login-clip');
+            document.querySelector('#quick-login-clip input[name="UserName"]').setAttribute('placeholder', 'Username');
+            document.querySelector('#quick-login-clip input[name="PassWord"]').setAttribute('placeholder', 'Password');
+        });
+    }
+}
+function initModals() {
+    document.querySelectorAll('.popup').forEach(popup => {
+        popup.addEventListener('click', () => {
+            let modalTag = popup.dataset.modal,
+                modals = document.querySelectorAll('.modal'),
+                modal;
+            for(let i = 0; i < modals.length; i++) {
+                if(modals[i].dataset.modalBox === modalTag) {
+                    modal = modals[i];
+                    modal.classList.add('is-open');
+                }
+            }
+        });
+    });
+    document.querySelectorAll('.modal').forEach(modal => {
+        window.addEventListener('click', e => {
+            if(e.target.classList.contains('modal') || e.target.classList.contains('modal--close') || (e.target.parentNode && e.target.parentNode.classList.contains('modal--close')) || (e.target.parentNode && e.target.parentNode.parentNode && e.target.parentNode.parentNode.classList.contains('modal--close'))) {
+                modal.classList.remove('is-open');
+            }
+        });
+    });
+}
+function initWebpages() {
+    window.addEventListener('hashchange', function(e){
+        //get hash
+        let hash = $.trim( window.location.hash );
+        let selected = document.querySelector(`.webpage--menu a[href="${hash}"]`);
+        let selectedCategory = selected.parentNode.parentNode.parentNode.getAttribute('data-category');
+        let hashMain = document.querySelector(`.webpage--menu tag-label[data-category="${selectedCategory}"]`);
+        let hashCategory = document.querySelector(`.webpage--menu tag-tab[data-category="${selectedCategory}"]`);
+        let hashTab = document.querySelector(`.webpage--content tag-tab[data-category="${selectedCategory}"]`);
+        let hashContent = document.querySelector(`tag-tab[data-key="${hash}"]`);
+        let unsetDefault = Array.from(selected.parentNode.children);
+        let submenuSiblings = Array.from(hashTab.parentNode.children);
+        let categorySiblings = Array.from(hashCategory.parentNode.children);
+        let tabSiblings = Array.from(hashContent.parentNode.children);
+        let submenuIndex = submenuSiblings.indexOf.call(submenuSiblings, hashTab);
+        let categoryIndex = categorySiblings.indexOf.call(categorySiblings, hashCategory);
+        let tabIndex = tabSiblings.indexOf.call(tabSiblings, hashContent);
+        //find the sub menu/inner menu link with the matching hash
+        if (hash) {
+            $(selected).trigger('click');
+        }
+        //select based on this
+
+        //Tabs
+        //Remove active from everything
+        document.querySelectorAll('.webpage--menu tag-label').forEach(label => label.classList.remove('is-active'));
+        unsetDefault.forEach(label => label.classList.remove('is-active'));
+        document.querySelectorAll('.webpage tag-tab').forEach(label => label.classList.remove('is-active'));
+
+        //Add active
+        hashMain.classList.add('is-active');
+        selected.classList.add('is-active');
+        hashTab.classList.add('is-active');
+        hashContent.classList.add('is-active');
+        selected.parentNode.parentNode.parentNode.classList.add('is-active');
+        submenuSiblings.forEach(sibling => sibling.style.left = `${-100 * submenuIndex}%`);
+        categorySiblings.forEach(sibling => sibling.style.left = `${-100 * categoryIndex}%`);
+        tabSiblings.forEach(sibling => sibling.style.left = `${-100 * tabIndex}%`);
+    });
+
+    //hash linking
+    if (window.location.hash){
+        //get hash
+        let hash = $.trim( window.location.hash );
+        let selected = document.querySelector(`.webpage--menu a[href="${hash}"]`);
+        let selectedCategory = selected.parentNode.parentNode.parentNode.getAttribute('data-category');
+        let hashMain = document.querySelector(`.webpage--menu tag-label[data-category="${selectedCategory}"]`);
+        let hashCategory = document.querySelector(`.webpage--menu tag-tab[data-category="${selectedCategory}"]`);
+        let hashTab = document.querySelector(`.webpage--content tag-tab[data-category="${selectedCategory}"]`);
+        let hashContent = document.querySelector(`tag-tab[data-key="${hash}"]`);
+        let unsetDefault = Array.from(selected.parentNode.children);
+        let submenuSiblings = Array.from(hashTab.parentNode.children);
+        let categorySiblings = Array.from(hashCategory.parentNode.children);
+        let tabSiblings = Array.from(hashContent.parentNode.children);
+        let submenuIndex = submenuSiblings.indexOf.call(submenuSiblings, hashTab);
+        let categoryIndex = categorySiblings.indexOf.call(categorySiblings, hashCategory);
+        let tabIndex = tabSiblings.indexOf.call(tabSiblings, hashContent);
+        //find the sub menu/inner menu link with the matching hash
+        if (hash) {
+            $(selected).trigger('click');
+        }
+        //select based on this
+
+        //Tabs
+        //Remove active from everything
+        document.querySelectorAll('.webpage--menu tag-label').forEach(label => label.classList.remove('is-active'));
+        unsetDefault.forEach(label => label.classList.remove('is-active'));
+        document.querySelectorAll('.webpage tag-tab').forEach(label => label.classList.remove('is-active'));
+
+        //Add active
+        hashMain.classList.add('is-active');
+        selected.classList.add('is-active');
+        hashTab.classList.add('is-active');
+        hashContent.classList.add('is-active');
+        selected.parentNode.parentNode.parentNode.classList.add('is-active');
+        submenuSiblings.forEach(sibling => sibling.style.left = `${-100 * submenuIndex}%`);
+        categorySiblings.forEach(sibling => sibling.style.left = `${-100 * categoryIndex}%`);
+        tabSiblings.forEach(sibling => sibling.style.left = `${-100 * tabIndex}%`);
+    } else {
+        //Auto-select  tab without hashtag present
+        let firstTab = ``;
+        let firstCat = ``;
+        if(window.location.href.indexOf('showdatabase') > -1) { 
+            firstTab = 'schedule';
+            firstCat = 'info';
+        } else {
+            firstTab = 'etiquette';
+            firstCat = 'required';
+        }
+        document.querySelector(`.webpage--menu a[href="#${firstTab}"]`).classList.add('is-active');
+        document.querySelector(`.webpage--menu a[href="#${firstTab}"]`).parentNode.parentNode.parentNode.classList.add('is-active');
+        document.querySelector(`.webpage--menu tag-label[data-category="${firstCat}"]`).classList.add('is-active');
+        document.querySelector(`tag-tab[data-category="${firstCat}"] .webpage--section tag-tabset tag-tab:first-child`).classList.add('is-active');
+    }
+}
+function initTabs() {
+    if(document.querySelectorAll('tag-tabs').length > 0) {
+        document.querySelectorAll('tag-tabs').forEach(tabset => {
+            let labels = tabset.querySelectorAll('tag-label');
+            let tabs = tabset.querySelectorAll('tag-tab');
+            let secondary = tabset.dataset.secondary;
+            let secondaryTabs;
+            if(secondary) {
+                secondaryTabs = document.querySelectorAll(`${secondary} > tag-tabset > tag-tab`);
+                //functional tabs within tabs
+                let innerSets = tabset.querySelectorAll('tag-tabset tag-labelset');
+                innerSets.forEach((innerset, i) => {
+                    let innerLabels = innerset.querySelectorAll('tag-labelset > a');
+                    let innerTabs = secondaryTabs[i].querySelectorAll('tag-tab');
+                    innerLabels.forEach((label, i) => {
+                        label.addEventListener('click', () => {
+                let siblingLabels = label.parentNode.querySelectorAll('a');
+                let siblingTabs = innerTabs[i].parentNode.querySelectorAll('tag-tab');
+                            siblingLabels.forEach(label => label.classList.remove('is-active'));
+                            siblingTabs.forEach(tab => {
+                                tab.classList.remove('is-active');
+                                tab.style.left = `${-100 * i}%`;
+                            });
+                            innerLabels[i].classList.add('is-active');
+                            innerTabs[i].classList.add('is-active');
+                        });
+                    });
+                });
+            }
+            //regular tabs and moving the tab groups for secondary sets
+            labels.forEach((label, i) => {
+                label.addEventListener('click', () => {
+                    labels.forEach(label => label.classList.remove('is-active'));
+                    tabs.forEach(tab => {
+                        tab.classList.remove('is-active');
+                        tab.style.left = `${-100 * i}%`;
+                    });
+                    if(secondary) {
+                        secondaryTabs.forEach(tab => {
+                            tab.classList.remove('is-active');
+                            tab.style.left = `${-100 * i}%`;
+                        });
+                    }
+                    labels[i].classList.add('is-active');
+            if(window.location.href.indexOf('showdatabase') > -1 || window.location.href.indexOf('guidebook') > -1) {
+                        let autoLabel = document.querySelector(`tag-tab[data-category="${labels[i].dataset.category}"]`).querySelector('.is-active').getAttribute('href');
+                        window.location.hash = autoLabel;
+            }
+                    tabs[i].classList.add('is-active');
+                    if(secondary) {
+                        secondaryTabs[i].classList.add('is-active');
+                    }
+                })
+            });
+        });
+    }
+}
 
 /********** Utilities **********/
+function fixMc(str) {
+    return (""+str).replace(/Mc(.)/g, function(m, m1) {
+        return 'Mc' + m1.toUpperCase();
+    });
+}
+function fixMac(str) {
+    return (""+str).replace(/Mac(.)/g, function(m, m1) {
+        return 'Mac' + m1.toUpperCase();
+    });
+}
+function capitalize(str, separators = [` `, `'`, `-`]) {
+    separators = separators || [ ' ' ];
+    var regex = new RegExp('(^|[' + separators.join('') + '])(\\w)', 'g');
+    let first = str.split(' ')[0].replace(regex, function(x) { return x.toUpperCase(); });
+    let last = fixMac(fixMc(str.split(' ').slice(1).join(' ').replace(regex, function(x) { return x.toUpperCase(); })));
+    return `${first} ${last}`;
+}
+function capitalizeMultiple(selector) {
+    document.querySelectorAll(selector).forEach(character => {
+        character.innerText = capitalize(character.innerText);
+    });
+}
 
 /********** Toggles **********/
 function toggleNav(e) {
@@ -70,5 +353,23 @@ function toggleUser(e) {
         user.classList.add('is-open');
         menu.classList.remove('is-open');
         menuButton.classList.remove('is-open');
+    }
+}
+function toggleTheme() {
+    if(localStorage.getItem('theme') === 'dark') {
+        localStorage.setItem('theme', 'light');
+        setTheme();
+    } else {
+        localStorage.setItem('theme', 'dark');
+        setTheme();
+    }
+}
+function toggleSize() {
+    if(localStorage.getItem('size') === 'small') {
+        localStorage.setItem('size', 'large');
+        setSize();
+    } else {
+        localStorage.setItem('size', 'small');
+        setSize();
     }
 }

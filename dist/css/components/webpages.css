@@ -1,3 +1,167 @@
 /*******************************
     Webpages
 ********************************/
+.webpage--menu {
+  position: sticky;
+  top: calc(var(--size-menu-height) + var(--size-submenu-height));
+  background: var(--bg-transparent);
+  padding: var(--spacing-md);
+  border: 1px solid var(--border-secondary);
+  z-index: 2; }
+  .webpage--menu.is-sticky {
+    background: var(--bg-alt); }
+  .webpage--menu tag-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm); }
+    .webpage--menu tag-tabs > tag-labels {
+      padding: 0 var(--spacing-sm); }
+    .webpage--menu tag-tabs > tag-tabset {
+      padding: var(--spacing-sm) 0 0;
+      margin: 0 var(--spacing-sm);
+      border-top: 1px solid var(--border-main); }
+
+.webpage--content {
+  margin-top: var(--spacing-lg); }
+  .webpage--content .webpage--border {
+    background: var(--bg-transparent);
+    padding: var(--spacing-lg);
+    border: 1px solid var(--border-secondary); }
+
+form {
+  max-width: 600px;
+  margin: 0 auto; }
+  form[data-columns] {
+    max-width: 800px;
+    margin: 0 auto; }
+  form label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+    gap: var(--spacing-sm); }
+  form input[type="submit"] {
+    margin: 0 auto; }
+  form textarea {
+    line-height: 200%;
+    min-height: 200px; }
+  form select {
+    font-size: var(--lBody);
+    font-family: var(--font-body);
+    font-weight: 400;
+    text-transform: none; }
+  form button {
+    max-width: max-content;
+    margin: 0 auto;
+    border: 1px solid var(--border-color);
+    background: var(--bg-color-transparent);
+    font: var(--style-small-text);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-content);
+    padding: var(--spacing-sm);
+    transition-duration: var(--style-duration);
+    cursor: pointer;
+    z-index: 1; }
+    form button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: var(--bg-color);
+      transition-duration: var(--style-duration);
+      z-index: -1; }
+    form button:hover {
+      color: var(--text-on-color); }
+      form button:hover::before {
+        width: 100%; }
+  form .multiSelect {
+    gap: var(--spacing-lg); }
+    form .multiSelect label {
+      display: block;
+      max-width: max-content;
+      margin: 0;
+      cursor: pointer; }
+      form .multiSelect label input {
+        display: none; }
+        form .multiSelect label input:checked + strong::before {
+          background: var(--bg-color); }
+      form .multiSelect label strong {
+        display: flex;
+        gap: var(--spacing-sm);
+        align-items: center;
+        font: var(--style-small-text);
+        text-transform: uppercase;
+        letter-spacing: 0.1em; }
+        form .multiSelect label strong::before {
+          content: '';
+          width: 18px;
+          height: 18px;
+          border: 1px solid var(--border-color);
+          background: var(--bg-color-transparent);
+          border-radius: 3px; }
+
+.species {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: max-content max-content max-content;
+  gap: var(--spacing-sm); }
+  .species > * {
+    background: var(--bg-transparent);
+    padding: var(--spacing-lg);
+    border: 1px solid var(--border-secondary); }
+  .species--overview {
+    grid-row: span 2; }
+    .species--overview .scroll {
+      height: calc(339px - var(--spacing-lg) - 61px); }
+      .lgFont .species--overview .scroll {
+        height: calc(339px - var(--spacing-lg) - 69px); }
+  .species--facts {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-body-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: var(--sBody);
+    font-weight: 400;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-lg); }
+  .species--fact {
+    display: flex;
+    gap: var(--spacing-sm); }
+    .species--fact b {
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.2em; }
+  .species--abilities .scroll, .species--weaknesses .scroll {
+    height: 120px; }
+  .species--traits {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md); }
+
+.trait {
+  display: flex;
+  flex-direction: column; }
+  .trait b {
+    text-transform: uppercase;
+    font-size: var(--sBody);
+    font-family: var(--font-body-bold);
+    letter-spacing: 0.1em;
+    font-weight: 600; }
+  .trait--bar {
+    width: 100%;
+    height: 6px;
+    background: var(--bg-body);
+    border-radius: 3px;
+    overflow: hidden;
+    padding: 1.5px; }
+    .trait--bar span {
+      height: 100%;
+      background: var(--accent);
+      display: block;
+      border-radius: 2px;
+      width: 0; }

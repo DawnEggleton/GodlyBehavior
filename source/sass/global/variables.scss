@@ -2,17 +2,18 @@
     Variables
 ********************************/
 :root {
-    --bg-image: url('../images/water.jpg');
+    --bg-image: url('https://files.jcink.net/uploads2/godlybehaviour/GB23/water_min.jpg');
 
     --font-script: 'Saturdate Script';
     --font-serif: 'Saturdate Serif', serif;
-    --font-body: 'Pier Sans', sans-serif;
+    --font-body: 'Palanquin', sans-serif;
+    --font-body-bold: 'Palanquin Dark', sans-serif;
 
-    --style-small-text: normal normal 300 var(--xsBody)/160% var(--font-body);
-
-    --style-transition: 0s 0.3s all ease-in-out;
+    --style-small-text: normal normal 400 var(--xsBody)/160% var(--font-body-bold);
+    --style-duration: 0.3s;
 
     --size-menu-height: 44px;
+    --size-submenu-height: 34px;
     --size-popout-width: 300px;
 
     --spacing-xs: 5px;
@@ -21,21 +22,317 @@
     --spacing-lg: 30px;
     --spacing-xl: 60px;
 
-    --xsBody: 9px;
-    --sBody: 11px;
-    --mBody: 13px;
-    --lBody: 15px;
-    --xlBody: 17px;
+    --xsBody: 8px;
+    --sBody: 10px;
+    --mBody: 12px;
+    --lBody: 14px;
+    --xlBody: 16px;
 
-    --black: rgb(23, 23, 23);
+    --trueBlack: rgb(23, 23, 23);
+    --black: rgb(33, 33, 33);
     --offblack: rgb(43, 43, 43);
+    --dkGrey: rgb(63, 63, 63);
+    --mdkGrey: rgb(83, 83, 83);
+    --mdGrey: rgb(113, 113, 113);
+    --mlGrey: rgb(153, 153, 153);
+    --mltGrey: rgb(183, 183, 183);
+    --ltGrey: rgb(215, 215, 215);
+    --offwhite: rgb(230, 230, 230);
     --white: rgb(248, 248, 248);
     --white-50: rgba(248, 248, 248, 0.5);
+    --white-10: rgba(248, 248, 248, 0.1);
 
+    --accent: rgb(248, 248, 248);
+    --accent-20: rgb(248, 248, 248, 0.2);
+}
 
-    --bg-body: var(--black);
+body {
+    --bg-body: var(--trueBlack);
+    --bg-body-alt: var(--offblack);
     --bg-content: var(--offblack);
+    --bg-alt: var(--dkGrey);
+    --bg-highlight: var(--mlGrey);
+    --bg-transparent: var(--white-10);
+
     --text-body: var(--white);
-    --text-content: var(--white);
-    --border-main: var(--white-50);
+    --text-content: var(--offwhite);
+    --text-on-color: var(--black);
+
+    --border-main: var(--mdGrey);
+    --border-secondary: var(--mdkGrey);
+
+    //Staff
+    &.g-4,
+    .g-4,
+    [data-group="staff"],
+    [data-group="Staff"],
+    [data-group="STAFF"] {
+        --accent: rgb(140, 168, 161);
+        --accent-20: rgba(140, 168, 161, 0.2);
+        --bg-color: var(--accent);
+        --bg-color-transparent: var(--accent-20);
+        --text-color: var(--accent);
+        --border-color: var(--accent);
+    }
+
+    //Sorted
+    &.g-6,
+    .g-6,
+    [data-group="writer"],
+    [data-group="Writer"],
+    [data-group="WRITER"] {
+        --accent: rgb(130, 147, 109);
+        --accent-20: rgba(130, 147, 109, 0.2);
+        --bg-color: var(--accent);
+        --bg-color-transparent: var(--accent-20);
+        --text-color: var(--accent);
+        --border-color: var(--accent);
+    }
+    
+    //Birch
+    &.g-7,
+    .g-7,
+    [data-group="birch"],
+    [data-group="Birch"],
+    [data-group="BIRCH"] {
+        --accent: rgb(205, 177, 156);
+        --accent-20: rgba(205, 177, 156, 0.2);
+        --bg-color: var(--accent);
+        --bg-color-transparent: var(--accent-20);
+        --text-color: var(--accent);
+        --border-color: var(--accent);
+    }
+    
+    //Lupin
+    &.g-8,
+    .g-8,
+    [data-group="lupin"],
+    [data-group="Lupin"],
+    [data-group="LUPIN"] {
+        --accent: rgb(172, 143, 176);
+        --accent-20: rgba(172, 143, 176, 0.2);
+        --bg-color: var(--accent);
+        --bg-color-transparent: var(--accent-20);
+        --text-color: var(--accent);
+        --border-color: var(--accent);
+    }
+    
+    //Spruce
+    &.g-9,
+    .g-9,
+    [data-group="spruce"],
+    [data-group="Spruce"],
+    [data-group="SPRUCE"] {
+        --accent: rgb(119, 153, 141);
+        --accent-20: rgba(119, 153, 141, 0.2);
+        --bg-color: var(--accent);
+        --bg-color-transparent: var(--accent-20);
+        --text-color: var(--accent);
+        --border-color: var(--accent);
+    }
+    
+    //Dandelion
+    &.g-10,
+    .g-10,
+    [data-group="dandelion"],
+    [data-group="Dandelion"],
+    [data-group="DANDELION"] {
+        --accent: rgb(174, 148, 99);
+        --accent-20: rgba(174, 148, 99, 0.2);
+        --bg-color: var(--accent);
+        --bg-color-transparent: var(--accent-20);
+        --text-color: var(--accent);
+        --border-color: var(--accent);
+    }
+    
+    //Blueberry
+    &.g-11,
+    .g-11,
+    [data-group="blueberry"],
+    [data-group="Blueberry"],
+    [data-group="BLUEBERRY"] {
+        --accent: rgb(88, 132, 151);
+        --accent-20: rgba(88, 132, 151, 0.2);
+        --bg-color: var(--accent);
+        --bg-color-transparent: var(--accent-20);
+        --text-color: var(--accent);
+        --border-color: var(--accent);
+    }
+    
+    //Juniper
+    &.g-12,
+    .g-12,
+    [data-group="juniper"],
+    [data-group="Juniper"],
+    [data-group="JUNIPER"] {
+        --accent: rgb(112, 118, 159);
+        --accent-20: rgba(112, 118, 159, 0.2);
+        --bg-color: var(--accent);
+        --bg-color-transparent: var(--accent-20);
+        --text-color: var(--accent);
+        --border-color: var(--accent);
+    }
+    
+    //Hemlock
+    &.g-13,
+    .g-13,
+    [data-group="hemlock"],
+    [data-group="Hemlock"],
+    [data-group="HEMLOCK"] {
+        --accent: rgb(88, 146, 156);
+        --accent-20: rgba(88, 146, 156, 0.2);
+        --bg-color: var(--accent);
+        --bg-color-transparent: var(--accent-20);
+        --text-color: var(--accent);
+        --border-color: var(--accent);
+    }
+    
+    //Nettle
+    &.g-14,
+    .g-14,
+    [data-group="nettle"],
+    [data-group="Nettle"],
+    [data-group="NETTLE"] {
+        --accent: rgb(145, 179, 139);
+        --accent-20: rgba(145, 179, 139, 0.2);
+        --bg-color: var(--accent);
+        --bg-color-transparent: var(--accent-20);
+        --text-color: var(--accent);
+        --border-color: var(--accent);
+    }
+
+    //Amaranth
+    &.g-15,
+    .g-15,
+    [data-group="amaranth"],
+    [data-group="Amaranth"],
+    [data-group="AMARANTH"] {
+        --accent: rgb(181, 111, 111);
+        --accent-20: rgba(181, 111, 111, 0.2);
+        --bg-color: var(--accent);
+        --bg-color-transparent: var(--accent-20);
+        --text-color: var(--accent);
+        --border-color: var(--accent);
+    }
+
+    //Sundew
+    &.g-16,
+    .g-16,
+    [data-group="sundew"],
+    [data-group="Sundew"],
+    [data-group="SUNDEW"] {
+        --accent: rgb(189, 134, 101);
+        --accent-20: rgba(189, 134, 101, 0.2);
+        --bg-color: var(--accent);
+        --bg-color-transparent: var(--accent-20);
+        --text-color: var(--accent);
+        --border-color: var(--accent);
+    }
+}
+
+.light {
+    --accent: rgb(94, 94, 94);
+    --accent-20: rgb(94, 94, 94, 0.2);
+
+
+    --bg-body: var(--ltGrey);
+    --bg-body-alt: var(--mlGrey);
+    --bg-content: var(--offwhite);
+    --bg-alt: var(--white);
+    --bg-highlight: var(--ltGrey);
+    --bg-transparent: var(--white-50);
+
+    --text-body: var(--dkGrey);
+    --text-content: var(--offblack);
+    --text-on-color: var(--offwhite);
+
+    --border-main: var(--mlGrey);
+    --border-secondary: var(--mltGrey);
+
+    //Staff
+    &.g-4,
+    .g-4,
+    [data-group="staff"],
+    [data-group="Staff"],
+    [data-group="STAFF"] {
+        --accent: rgb(121, 147, 140);
+        --accent-20: rgba(140, 168, 161, 0.2);
+        --bg-color: var(--accent);
+    }
+
+    //Sorted
+    &.g-6,
+    .g-6,
+    [data-group="writer"],
+    [data-group="Writer"],
+    [data-group="WRITER"] {
+        --accent: rgb(130, 147, 109);
+        --accent-20: rgba(130, 147, 109, 0.2);
+        --bg-color: var(--accent);
+    }
+    
+    //Birch
+    &.g-7,
+    .g-7,
+    [data-group="birch"],
+    [data-group="Birch"],
+    [data-group="BIRCH"] {
+        --accent: rgb(159, 143, 131);
+        --accent-20: rgba(159, 143, 131, 0.2);
+        --bg-color: var(--accent);
+    }
+    
+    //Hemlock
+    &.g-13,
+    .g-13,
+    [data-group="hemlock"],
+    [data-group="Hemlock"],
+    [data-group="HEMLOCK"] {
+        --accent: rgb(105, 153, 162);
+        --accent-20: rgba(105, 153, 162, 0.2);
+        --bg-color: var(--accent);
+    }
+    
+    //Nettle
+    &.g-14,
+    .g-14,
+    [data-group="nettle"],
+    [data-group="Nettle"],
+    [data-group="NETTLE"] {
+        --accent: rgb(120, 145, 116);
+        --accent-20: rgba(120, 145, 116, 0.2);
+        --bg-color: var(--accent);
+    }
+
+    //Sundew
+    &.g-16,
+    .g-16,
+    [data-group="sundew"],
+    [data-group="Sundew"],
+    [data-group="SUNDEW"] {
+        --accent: rgb(181, 139, 114);
+        --accent-20: rgba(181, 139, 114, 0.2);
+        --bg-color: var(--accent);
+        --bg-color-transparent: var(--accent-20);
+        --text-color: var(--accent);
+        --border-color: var(--accent);
+    }
+}
+
+.smFont {
+
+    --xsBody: 8px;
+    --sBody: 10px;
+    --mBody: 12px;
+    --lBody: 14px;
+    --xlBody: 16px;
+}
+.lgFont {
+    --xsBody: 10px;
+    --sBody: 12px;
+    --mBody: 14px;
+    --lBody: 16px;
+    --xlBody: 18px;
+
+    --style-small-text: normal normal 400 var(--xsBody)/160% var(--font-body-bold);
 }

@@ -10,7 +10,7 @@
         <!--Fonts-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        
+        <link href="https://fonts.googleapis.com/css2?family=Palanquin+Dark:wght@400;500;600;700&family=Palanquin:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet"> 
        
 
         <!--Icons-->
@@ -28,38 +28,10 @@
     </head>
     <body id="idx" class="g-4">
         <!--Header-->
-        <header>
-            <div class="header">
-                <a href="./index.html">
-                    <h1>
-                        <span>Godly</span>
-                        <span>Behaviour</span>
-                    </h1>
-                </a>
-                <p class="header--tagline">supernatural. small town. coastal cape breton. open lore. 18<span class="size-boost">+</span>.</p>
-                <p class="header--lyric">all the secrets drowning underwater</p>
-            </div>
-        </header>
+        <header></header>
 
         <!--Navigation-->
-        <nav class="nav nav--main" data-open="none">
-            <button onclick="toggleNav(this)" class="btn--menu">
-                <i class="fa-light fa-bars"></i>
-            </button>
-            <a href="./webpage.html"><i class="fa-light fa-books"></i></a>
-            <button onclick="toggleUser(this)" class="btn--user">
-                <i class="fa-light fa-user"></i>
-            </button>
-            <a href="DISCORDURL"><i class="fa-light fa-message-lines"></i></a>
-            <a href="/admin.php" class="staffOnly" target="_blank"><i class="fa-light fa-screwdriver-wrench"></i></a>
-            <div id="navstrip" align="left">&nbsp;<a href="./index.html">Godly Behaviour</a></div>
-        </nav>
-        <nav class="nav nav--menu">
-            Main menu
-        </nav>
-        <nav class="nav nav--user">
-            User nav
-        </nav>
+        <div id="nav-clip"></div>
         
         <!--Main Body-->
         <main>
@@ -211,7 +183,16 @@
                         </tr>
                     </tbody>
                 </table>
-            </div>
+            </div><div id="quick-login">
+
+
+                <form style='display:inline' action="https://legends.jcink.net/index.php?act=Login&amp;CODE=01&amp;CookieDate=1" method="post">
+                <div align='right'><strong>Quick Log In</strong>
+                <input type="text" class="forminput" size="10" name="UserName" onfocus="this.value=''" value="User Name" />
+                <input type='password' class='forminput' size='10' name='PassWord' onfocus="this.value=''" value='ibfrules' />
+                <input type='submit' class='forminput' value='Go' />
+                </div>
+                </form></div>
 
             <!--Stats-->
 

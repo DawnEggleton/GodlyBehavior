@@ -6,8 +6,13 @@ header {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100vh;
-  color: var(--text-body); }
+  color: var(--text-body);
+  padding: var(--spacing-xl) 0;
+  letter-spacing: 0; }
+  @media only screen and (min-width: 768px) {
+    header {
+      height: 100vh;
+      padding: 0; } }
   body:not(#idx) header {
     display: none; }
   header h1 {
@@ -24,21 +29,33 @@ header {
       header h1 span:last-child {
         font-family: var(--font-serif);
         font-size: 8vw;
-        padding-left: 4vw; }
+        padding-left: 4vw;
+        color: var(--text-color); }
   header .header {
     max-width: max-content;
     max-height: max-content; }
     header .header p {
+      display: none;
       position: absolute;
       font-size: var(--xsBody);
       letter-spacing: 0.5em;
-      font-weight: 300;
+      font-weight: 500;
       text-transform: uppercase; }
       header .header p.header--tagline {
         bottom: 12.5vw;
         right: 2vw;
-        max-width: 44vw; }
+        max-width: 43vw; }
       header .header p.header--lyric {
-        letter-spacing: 1.5vw;
+        letter-spacing: 1.25vw;
         left: 4vw;
-        bottom: 2vw; }
+        bottom: 1vw;
+        font-family: var(--font-body-bold);
+        font-weight: 600; }
+        .lgFont header .header p.header--lyric {
+          bottom: 0.5vw; }
+        @media only screen and (min-width: 1024px) {
+          header .header p.header--lyric {
+            bottom: 2vw; } }
+      @media only screen and (min-width: 768px) {
+        header .header p {
+          display: initial; } }

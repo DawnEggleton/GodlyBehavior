@@ -1,3 +1,109 @@
-.size-boost {
-    font-size: 1.4em;
+@import '../global/sizes.scss';
+
+[data-type="flex"],
+[data-type="Flex"],
+[data-type="FLEX"] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+[data-type="grid"],
+[data-type="Grid"],
+[data-type="GRID"] {
+    display: grid;
+    gap: var(--spacing-lg);
+
+    .fullWidth {
+        grid-column: 1 / -1;
+    }
+
+    &[data-columns="1"] {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    &[data-columns="2"] {
+        grid-template-columns: repeat(1, 1fr);
+
+        @media only screen and (min-width: $md) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &[data-columns="3"] {
+        grid-template-columns: repeat(1, 1fr);
+
+        @media only screen and (min-width: $md) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media only screen and (min-width: $lg) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &[data-columns="4"] {
+        grid-template-columns: repeat(1, 1fr);
+
+        @media only screen and (min-width: $md) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media only screen and (min-width: $lg) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media only screen and (min-width: $xl) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    [data-box-align="left"],
+    [data-box-align="Left"],
+    [data-box-align="LEFT"],
+    [data-box-align="center"],
+    [data-box-align="Center"],
+    [data-box-align="CENTER"],
+    [data-box-align="right"],
+    [data-box-align="Right"],
+    [data-box-align="RIGHT"] {
+        max-width: max-content;
+    }
+}
+
+[data-box-align="left"],
+[data-box-align="Left"],
+[data-box-align="LEFT"] {
+    margin: 0 auto 0 0;
+}
+[data-box-align="center"],
+[data-box-align="Center"],
+[data-box-align="CENTER"] {
+    margin: 0 auto;
+}
+[data-box-align="right"],
+[data-box-align="Right"],
+[data-box-align="RIGHT"] {
+    margin: 0 0 0 auto;
+}
+
+[data-box-align="left"],
+[data-box-align="Left"],
+[data-box-align="LEFT"] {
+    text-align: left;
+}
+[data-box-align="center"],
+[data-box-align="Center"],
+[data-box-align="CENTER"] {
+    text-align: center;
+}
+[data-box-align="right"],
+[data-box-align="Right"],
+[data-box-align="RIGHT"] {
+    text-align: right;
+}
+[data-text-align="justify"],
+[data-text-align="Justify"],
+[data-text-align="JUSTIFY"] {
+    text-align: justify;
 }

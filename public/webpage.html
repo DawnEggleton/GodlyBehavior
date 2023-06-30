@@ -10,7 +10,7 @@
         <!--Fonts-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        
+        <link href="https://fonts.googleapis.com/css2?family=Palanquin+Dark:wght@400;500;600;700&family=Palanquin:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet"> 
        
 
         <!--Icons-->
@@ -27,12 +27,11 @@
         <link rel="stylesheet" href="../dist/css/settings.css" />
     </head>
     <body id="Pages" class="g-4">
-        <div id="navstrip" align="left">&nbsp;<a href="">Godly Behaviour</a></div>
 <!--Header-->
         <header></header>
 
         <!--Navigation-->
-        <nav></nav>
+        <div id="nav-clip"></div>
 
         <!--Main Body-->
         <main>
@@ -41,119 +40,593 @@
             
             <!--Webpage-->
             <div class="webpage">
-                <div class="webpage--border">
-                    <div class="webpage--menu">
+                <div class="webpage--menu">
+                    <tag-tabs class="webpage--border" data-secondary=".webpage--content">
                         <tag-labels>
                             <button onclick="moveLeft(this)" type="button"><i class="fa-solid fa-angles-left"></i></button>
                             <tag-labelset>
-                                <a href="#register">register</a>
+                                <tag-label data-category="required" class="is-active">required reading</tag-label>
+                                <tag-label data-category="plots">subplots</tag-label>
+                                <tag-label data-category="guides">species guide</tag-label>
+                                <tag-label data-category="registration">registration</tag-label>
+                                <tag-label data-category="claims">claims</tag-label>
+                                <tag-label data-category="moderation">moderation</tag-label>
                             </tag-labelset>
                             <button onclick="moveRight(this)" type="button"><i class="fa-solid fa-angles-right"></i></button>
                         </tag-labels>
-                    </div>
-                    <div class="webpage--content">
-                        <tag-tab data-tab="#register">
-                            <h2>Register</h2>
-                            <form id="register">
-                                <label>
-                                    <strong>Character</strong>
-                                    <input name="reg-character"
-                                            id="reg-character"
-                                            placeholder="Character Name"
-                                            required>
-                                </label>
-                                <label>
-                                    <strong>Universe</strong>
-                                    <select name="reg-universe"
-                                            id="reg-universe"
-                                            required>
-                                        <option value="">(select)</option>
-                                    </select>
-                                </label>
-                                <label>
-                                    <strong>Face</strong>
-                                    <input name="reg-face"
-                                            id="reg-face"
-                                            placeholder="Face Claim"
-                                            required>
-                                </label>
-                                <label>
-                                    <strong>Age</strong>
-                                    <input name="reg-age"
-                                            id="reg-age"
-                                            placeholder="Age"
-                                            type="number"
-                                            required>
-                                </label>
-                                <label>
-                                    <strong>Gender</strong>
-                                    <input name="reg-gender"
-                                            id="reg-gender"
-                                            placeholder="Gender"
-                                            required>
-                                </label>
-                                <label>
-                                    <strong>Pronouns</strong>
-                                    <input name="reg-pronouns"
-                                            id="reg-pronouns"
-                                            placeholder="Pronouns"
-                                            required>
-                                </label>
-                                <label class="fullWidth">
-                                    <strong>Image</strong>
-                                    <input name="reg-image"
-                                            id="reg-image"
-                                            placeholder="Image URL">
-                                </label>
-                                <label class="fullWidth">
-                                    <strong>Extras</strong>
-                                    <i>Separated by the | character (e.g., Occupation|Species|Faction). Spaces are fine within each extra, do not place spaces on either side of the separator.</i>
-                                    <input name="reg-extras"
-                                            id="reg-extras"
-                                            placeholder="Extras">
-                                </label>
-                                <label class="fullWidth">
-                                    <strong>Summary</strong>
-                                    <i>A couple lines at most. Need not be full sentences. An overview of the character.</i>
-                                    <textarea name="reg-summary"
-                                            id="reg-summary"
-                                            placeholder="Summary"
-                                            required></textarea>
-                                </label>
-                                <input type="hidden"
-                                        value="lux"
-                                        name="reg-member"
-                                        id="reg-member" />
-                                <input type="hidden"
-                                        value="1"
-                                        name="reg-memberid"
-                                        id="reg-memberid" />
+                        <tag-tabset>
+                            <tag-tab data-category="required">
+                                <tag-labels>
+                                    <button onclick="moveLeft(this)" type="button"><i class="fa-solid fa-angles-left"></i></button>
+                                    <tag-labelset>
+                                        <a href="#etiquette" class="is-active">etiquette</a>
+                                        <a href="#setting">setting</a>
+                                        <a href="#groups">member groups</a>
+                                        <a href="#credits">credits</a>
+                                    </tag-labelset>
+                                    <button onclick="moveRight(this)" type="button"><i class="fa-solid fa-angles-right"></i></button>
+                                </tag-labels>
+                            </tag-tab>
+                            <tag-tab data-category="plots">
+                                <tag-labels>
+                                    <button onclick="moveLeft(this)" type="button"><i class="fa-solid fa-angles-left"></i></button>
+                                    <tag-labelset>
+                                        <a href="#subplot1" class="is-active">subplot #1 name</a>
+                                        <a href="#subplot2">subplot #2</a>
+                                        <a href="#subplot3">subplot #3</a>
+                                    </tag-labelset>
+                                    <button onclick="moveRight(this)" type="button"><i class="fa-solid fa-angles-right"></i></button>
+                                </tag-labels>
+                            </tag-tab>
+                            <tag-tab data-category="guides">
+                                <tag-labels>
+                                    <button onclick="moveLeft(this)" type="button"><i class="fa-solid fa-angles-left"></i></button>
+                                    <tag-labelset>
+                                        <a href="#species-request" class="is-active">request a species</a>
+                                    </tag-labelset>
+                                    <button onclick="moveRight(this)" type="button"><i class="fa-solid fa-angles-right"></i></button>
+                                </tag-labels>
+                            </tag-tab>
+                            <tag-tab data-category="registration">
+                                <tag-labels>
+                                    <button onclick="moveLeft(this)" type="button"><i class="fa-solid fa-angles-left"></i></button>
+                                    <tag-labelset>
+                                        <a href="#start" class="is-active">getting started</a>
+                                        <a href="#application">application format</a>
+                                        <a href="#sort">get sorted</a>
+                                        <a href="#editclaims">edit a character</a>
+                                        <a href="#announce" class="staffOnly">send character announcement</a>
+                                    </tag-labelset>
+                                    <button onclick="moveRight(this)" type="button"><i class="fa-solid fa-angles-right"></i></button>
+                                </tag-labels>
+                            </tag-tab>
+                            <tag-tab data-category="claims">
+                                <tag-labels>
+                                    <button onclick="moveLeft(this)" type="button"><i class="fa-solid fa-angles-left"></i></button>
+                                    <tag-labelset>
+                                        <a href="#reserves" class="is-active">reserves</a>
+                                        <a href="#members">members</a>
+                                        <a href="#faces">faces</a>
+                                        <a href="#jobs">jobs</a>
+                                    </tag-labelset>
+                                    <button onclick="moveRight(this)" type="button"><i class="fa-solid fa-angles-right"></i></button>
+                                </tag-labels>
+                            </tag-tab>
+                            <tag-tab data-category="moderation">
+                                <tag-labels>
+                                    <button onclick="moveLeft(this)" type="button"><i class="fa-solid fa-angles-left"></i></button>
+                                    <tag-labelset>
+                                        <a href="#requestboard" class="is-active">request a board</a>
+                                        <a href="#threadmoderation">thread moderation</a>
+                                        <a href="#accountmoderation">account moderation</a>
+                                        <a href="#otherrequests">other requests</a>
+                                        <a href="#lovenotes">send some love</a>
+                                    </tag-labelset>
+                                    <button onclick="moveRight(this)" type="button"><i class="fa-solid fa-angles-right"></i></button>
+                                </tag-labels>
+                            </tag-tab>
+                        </tag-tabset>
+                    </tag-tabs>
+                </div>
+                <div class="webpage--content">
+                    <tag-tabset>
+                        <tag-tab data-category="required">
+                            <div class="webpage--section">
+                                <tag-tabset>
+                                    <tag-tab data-key="#etiquette">
+                                        <div class="webpage--border">
+                                            <h2>XL Header</h2>
+                                            <h3>L Header</h3>
+                                            <h4>M Header</h4>
+                                            <h5>S Header</h5>
+                                            <h6>XS Header</h6>
+                                            <h7>XXS Header</h7>
+                                            <h8>Block Header Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</h8>
+                                            <blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</blockquote>
+                                            <p>Lorem ipsum dolor <b>sit amet</b>, consectetur adipiscing elit, sed do <i>eiusmod tempor incididunt</i> ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <u>Duis aute irure</u> dolor in reprehenderit in voluptate velit esse <s>cillum dolore</s> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit <a>anim id est laborum</a>.</p>
+                                        </div>
+                                    </tag-tab>
+                                    <tag-tab data-key="#setting">
+                                        <div class="webpage--border">
+                                            <% setting %>
+                                        </div>
+                                    </tag-tab>
+                                    <tag-tab data-key="#groups">
+                                        <div class="webpage--border">
+                                            <h2>Member Groups</h2>
 
-                                <div class="fullWidth form--end">
-                                    <button type="submit">Register</button>
-                                    <div class="form--run-warning form--warning"></div>
-                                </div>
-                            </form>
+                                            <p>Rather than sort our members into dull categories based on species or faction, we decided to go the fun route with <b>aesthetic-based groups</b>! These are purely subjective, and based on some of the key plants native to Cape Breton Island. Pick whichever group you feel suits your character the best - it doesn't have to be perfect!</p>
+
+                                            <tag-wrap data-type="grid" data-columns="2" data-box-align="center">
+                                                <tag-griditem data-group="amaranth">   
+                                                    <h4>Amaranth</h4>
+                                                    <blockquote data-box-align="left">combat boots with a bit of a heel / knowing when to blend in and when to stand out / heavy on the eyeliner / getting back up when you’re knocked down / stuck between two worlds / dark humor to cover up the pain</blockquote>
+                                                </tag-griditem>
+                                                
+                                                <tag-griditem data-group="birch">
+                                                    <h4>Birch</h4>
+                                                    <blockquote data-box-align="left">fluid and resilient / backpacking across europe / the “mom friend” / getting up at a reasonable hour / finding the silver linings / a forest in wintertime / bringing coffee for everybody / the first to arrive and the last to leave</blockquote>
+                                                </tag-griditem>
+                                                
+                                                <tag-griditem data-group="blueberry">
+                                                    <h4>Blueberry</h4>
+                                                    <blockquote data-box-align="left">sweet as punch / seeing the best in everyone / knowing everybody’s love languages / making flower crowns out of whatever you can reach / laughing until you can’t breathe / eating dessert before dinner</blockquote>
+                                                </tag-griditem>
+                                                
+                                                <tag-griditem data-group="dandelion">
+                                                    <h4>Dandelion</h4>
+                                                    <blockquote data-box-align="left">carefree and creative / the loudest laugh in the room / clothes that don’t quite match / showing up fifteen minutes late with starbucks / all-nighters fueled by redbull / knows how to roll with the punches</blockquote>
+                                                </tag-griditem>
+                                                
+                                                <tag-griditem data-group="hemlock">
+                                                    <h4>Hemlock</h4>
+                                                    <blockquote data-box-align="left">melancholy / the patter of rain against a window / soft piano music / bruises you don’t remember getting / being talked over in a room full of people / feeling the wind on your face / giving your last piece of food to someone that needs it more</blockquote>
+                                                </tag-griditem>
+                                                
+                                                <tag-griditem data-group="juniper">
+                                                    <h4>Juniper</h4>
+                                                    <blockquote data-box-align="left">volatile and unpredictable / matching tattoos with people you don’t talk to anymore / hurting others before they can hurt you / feeling the bass reverberate through your chest / “what are you looking at?” / mosh pits / staying high so you don't crash</blockquote>
+                                                </tag-griditem>
+                                                
+                                                <tag-griditem data-group="lupin">
+                                                    <h4>Lupin</h4>
+                                                    <blockquote data-box-align="left">stronger than you look / often underestimated / keeping the peace / crying out of frustration / prefers libraries to bookstores / asking the hard questions / embracing the past instead of moving on / fear of disappointing others</blockquote>
+                                                </tag-griditem>
+                                                
+                                                <tag-griditem data-group="nettle">
+                                                    <h4>Nettle</h4>
+                                                    <blockquote data-box-align="left">picking fights just to feel alive / the smell of alcohol fresh on your breath / assuming the worst and pretending you accept it / wicked smiles that don’t reach your eyes / a glare that could cut through glass / lights reflected in a rain puddle</blockquote>
+                                                </tag-griditem>
+                                                
+                                                <tag-griditem data-group="spruce">
+                                                    <h4>Spruce</h4>
+                                                    <blockquote data-box-align="left">stoic and solid / more left-brained than right / resting bitch face / wise beyond your years / wearing flannel year-round / the “hard sciences” / change is the worst constant / dramatic eye-rolls and dry laughter</blockquote>
+                                                </tag-griditem>
+                                                
+                                                <tag-griditem data-group="sundew">
+                                                    <h4>Sundew</h4>
+                                                    <blockquote data-box-align="left">as sweet as they are deadly / femme fatales / sneaking out before sunrise / the taste of bitterness on your lips / breaking hearts like they broke yours / keeping to the shadows / lipstick on the rim of a glass</blockquote>
+                                                </tag-griditem>
+
+                                            </tag-wrap>
+                                        </div>
+                                    </tag-tab>
+                                    <tag-tab data-key="#credits">
+                                        <div class="webpage--border">
+                                            <% credits %>
+                                        </div>
+                                    </tag-tab>
+                                </tag-tabset>
+                            </div>
                         </tag-tab>
-                    </div>
+                        <tag-tab data-category="plots">
+                            <div class="webpage--section">
+                                <tag-tabset>
+                                    <tag-tab data-key="#subplot1">
+                                        <div class="webpage--border">
+                                            <% plot1 %>
+                                        </div>
+                                    </tag-tab>
+                                    <tag-tab data-key="#subplot2">
+                                        <div class="webpage--border">
+                                            <% plot2 %>
+                                        </div>
+                                    </tag-tab>
+                                    <tag-tab data-key="#subplot3">
+                                        <div class="webpage--border">
+                                            <% plot3 %>
+                                        </div>
+                                    </tag-tab>
+                                </tag-tabset>
+                            </div>
+                        </tag-tab>
+                        <tag-tab data-category="guides">
+                            <div class="webpage--section">
+                                <tag-tabset>
+                                    <tag-tab data-key="#species-request">
+                                        <div class="webpage--border">
+                                            Species Request Form
+                                        </div>
+                                    </tag-tab>
+                                </tag-tabset>
+                            </div>
+                        </tag-tab>
+                        <tag-tab data-category="registration">
+                            <div class="webpage--section">
+                                <tag-tabset>
+                                    <tag-tab data-key="#start">
+                                        <div class="webpage--border">
+                                            <% g-start %>
+                                        </div>
+                                    </tag-tab>
+                                    <tag-tab data-key="#application">
+                                        <div class="webpage--border">
+                                            <% g-app %>
+                                        </div>
+                                    </tag-tab>
+                                    <tag-tab data-key="#sort">
+                                        <div class="webpage--border">
+                                            <form id="form-sort" data-type="grid" data-columns="2">
+                                                <div class="fullWidth h4">Basic Info</div>
+                                                <label>
+                                                    <b class="h7" data-align="left">Member</b>
+                                                    <input type="text" id="member" placeholder="Member" required />
+                                                </label>
+                                                <label>
+                                                    <b class="h7" data-align="left">Member Account ID</b>
+                                                    <input type="text" id="memberid" placeholder="Member Account ID" required />
+                                                </label>
+                                                <label>
+                                                    <b class="h7" data-align="left">Character</b>
+                                                    <input type="text" id="character" placeholder="Character" required />
+                                                </label>
+                                                <label>
+                                                    <b class="h7" data-align="left">Character Account ID</b>
+                                                    <input type="text" id="characterid" placeholder="Character Account ID" required />
+                                                </label>
+                                                <label>
+                                                    <b class="h7" data-align="left">Group</b>
+                                                    <select id="group" required>
+                                                        <option value="">(select)</option>
+                                                        <option value="15">Amaranth</option>
+                                                        <option value="7">Birch</option>
+                                                        <option value="11">Blueberry</option>
+                                                        <option value="10">Dandelion</option>
+                                                        <option value="13">Hemlock</option>
+                                                        <option value="12">Juniper</option>
+                                                        <option value="8">Lupin</option>
+                                                        <option value="14">Nettle</option>
+                                                        <option value="9">Spruce</option>
+                                                        <option value="16">Sundew</option>
+                                                    </select>
+                                                </label>
+                                                <label>
+                                                    <b class="h7" data-align="left">Face Claim</b>
+                                                    <input type="text" id="face" placeholder="Face Claim" required />
+                                                </label>
+                                                <label>
+                                                    <b class="h7" data-align="left">First Character?</b>
+                                                    <select id="first" required>
+                                                        <option value="">(select)</option>
+                                                        <option value="y">Yes</option>
+                                                        <option value="n">No</option>
+                                                    </select>
+                                                </label>
+                                                <label>
+                                                    <b class="h7" data-align="left">For a Request?</b>
+                                                    <select id="request" required>
+                                                        <option value="">(select)</option>
+                                                        <option value="y">Yes</option>
+                                                        <option value="n">No</option>
+                                                    </select>
+                                                </label>
+                                                <label class="hide ifRequest fullWidth">
+                                                    <b class="h7" data-align="left">Request URL / Creator</b>
+                                                    <input type="text" id="request-data" placeholder="Request URL / Creator" />
+                                                </label>
+                                                <div class="h4 fullWidth">Employment</div>
+                                                <label>
+                                                    <b class="h7" data-align="left">Employed?</b>
+                                                    <select id="employed" required>
+                                                        <option value="">(select)</option>
+                                                        <option value="y">Yes</option>
+                                                        <option value="n">No</option>
+                                                    </select>
+                                                </label>
+                                                <label class="hide ifEmployed">
+                                                    <b class="h7" data-align="left">Number of Jobs</b>
+                                                    <input type="number" id="job-count" value="1" min="1" required />
+                                                </label>
+                                                <div id="jobs-clip" class="hide ifEmployed fullWidth" data-type="grid" data-columns="2"></div>
+                                                <div class="fullWidth h4">Subplot Involvement</div>
+                                                <label>
+                                                    <b class="h7" data-align="left">Subplot</b>
+                                                    <select id="plot">
+                                                        <option value="">-- None --</option>
+                                                        <option value="hunter">The Most Dangerous Game</option>
+                                                        <option value="conspiracy">Tin Foil Hats, Man!</option>
+                                                        <option value="cult">The Order of the White Wolf</option>
+                                                    </select>
+                                                </label>
+                                                <label class="hide ifPlot">
+                                                    <b class="h7" data-align="left">Role</b>
+                                                    <select id="role">
+                                                        <option value="">(select)</option>
+                                                        <option value="leader" class="hide ifHunter">The Guardians - Leader</option>
+                                                        <option value="deputy" class="hide ifHunter">The Guardians - Deputy</option>
+                                                        <option value="hunter" class="hide ifHunter">The Guardians - Hunter</option>
+                                                        <option value="active" class="hide ifHunter">Rogue Hunter - Active</option>
+                                                        <option value="retired" class="hide ifHunter">Rogue Hunter - Retired</option>
+                                                        <option value="ceo" class="hide ifConspiracy">Vyper - CEO</option>
+                                                        <option value="secretary" class="hide ifConspiracy">Vyper - Secretary</option>
+                                                        <option value="scientist" class="hide ifConspiracy">Vyper - Scientist on Faculty</option>
+                                                        <option value="researcher" class="hide ifConspiracy">Vyper - Researcher</option>
+                                                        <option value="theorist" class="hide ifConspiracy">Rogue Theorist</option>
+                                                        <option value="founder" class="hide ifCult">Holy Founder</option>
+                                                        <option value="priest" class="hide ifCult">High Priest</option>
+                                                        <option value="practitioner" class="hide ifCult">Practitioner</option>
+                                                        <option value="excommunicated" class="hide ifCult">Excommunicated</option>
+                                                    </select>
+                                                </label>
+                                                <button type="submit" id="submit" class="fullWidth">Submit</button>
+                                            </form>
+                                        </div>
+                                    </tag-tab>
+                                    <tag-tab data-key="#editclaims">
+                                        <div class="webpage--border">
+                                            <form id="form-edit" data-type="grid" data-columns="2">
+                                                <div class="fullWidth h4">Basic Info</div>
+                                                <blockquote class="fullWidth">The claims edits will happen based on Account ID, so ensure it is accurate.</blockquote>
+                                                <label>
+                                                    <b class="h7" data-align="left">Alias</b>
+                                                    <input type="text" id="member" placeholder="Alias" required />
+                                                </label>
+                                                <label>
+                                                    <b class="h7" data-align="left">Character</b>
+                                                    <input type="text" id="character" placeholder="Character" required />
+                                                </label>
+                                                <label>
+                                                    <b class="h7" data-align="left">Character Account ID</b>
+                                                    <input type="text" id="characterid" placeholder="Character Account ID" required />
+                                                </label>
+                                                <label>
+                                                    <b class="h7" data-align="left">Group</b>
+                                                    <select id="group" required>
+                                                        <option value="">(select)</option>
+                                                        <option value="15">Amaranth</option>
+                                                        <option value="7">Birch</option>
+                                                        <option value="11">Blueberry</option>
+                                                        <option value="10">Dandelion</option>
+                                                        <option value="13">Hemlock</option>
+                                                        <option value="12">Juniper</option>
+                                                        <option value="8">Lupin</option>
+                                                        <option value="14">Nettle</option>
+                                                        <option value="9">Spruce</option>
+                                                        <option value="16">Sundew</option>
+                                                    </select>
+                                                </label>
+                                                <div class="h4 fullWidth">Please Update</div>
+                                                <blockquote class="fullWidth">Please note that name and group changes will not produce new fields; they will use the above fields so make sure those are accurate to what you want moving forward.</blockquote>
+                                                <div class="fullWidth multiSelect" data-type="flex">
+                                                    <label>
+                                                        <input type="checkbox" name="update" id="choice-alias" value="alias">
+                                                        <strong class="checkbox">Update Alias</strong>
+                                                    </label>
+                                                    <label>
+                                                        <input type="checkbox" name="update" id="choice-name" value="name">
+                                                        <strong class="checkbox">Update Character Name</strong>
+                                                    </label>
+                                                    <label>
+                                                        <input type="checkbox" name="update" id="choice-group" value="group">
+                                                        <strong class="checkbox">Update Group</strong>
+                                                    </label>
+                                                    <label>
+                                                        <input type="checkbox" name="update" id="choice-job-add" value="job-add">
+                                                        <strong class="checkbox">Add Job(s)</strong>
+                                                    </label>
+                                                    <label>
+                                                        <input type="checkbox" name="update" id="choice-job-edit" value="job-edit">
+                                                        <strong class="checkbox">Update Current Job(s)</strong>
+                                                    </label>
+                                                    <label>
+                                                        <input type="checkbox" name="update" id="choice-job-remove" value="job-remove">
+                                                        <strong class="checkbox">Remove Current Job(s)</strong>
+                                                    </label>
+                                                </div>
+                                                <div class="h4 hide ifAddJobs fullWidth">Add Jobs</div>
+                                                <label class="hide ifAddJobs">
+                                                    <b class="h7" data-align="left">Number of Jobs</b>
+                                                    <input type="number" id="job-count" value="1" min="1" required />
+                                                </label>
+                                                <div id="jobs-clip" class="hide ifAddJobs fullWidth" data-type="grid" data-columns="2"></div>
+                                                <div class="h4 hide ifEditJobs fullWidth">Edit Jobs</div>
+                                                <div id="edit-jobs-clip" class="hide ifEditJobs fullWidth" data-type="grid" data-columns="2"></div>
+                                                <div class="h4 hide ifRemoveJobs fullWidth">Remove Jobs</div>
+                                                <div id="remove-jobs-clip" class="hide ifRemoveJobs fullWidth multiSelect" data-type="flex"></div>
+                                                <button type="submit" id="submit" class="fullWidth">Submit</button>
+                                            </form>
+                                        </div>
+                                    </tag-tab>
+                                    <tag-tab data-key="#announce">
+                                        <div class="webpage--border">
+                                            <form id="form-announce" data-type="grid" data-columns="2">
+                                                <label>
+                                                    <b class="h7" data-align="left">Member</b>
+                                                    <input type="text" id="member" placeholder="Member" />
+                                                </label>
+                                                <label>
+                                                    <b class="h7" data-align="left">Character</b>
+                                                    <input type="text" id="character" placeholder="Character" />
+                                                </label>
+                                                <label>
+                                                    <b class="h7" data-align="left">Account ID</b>
+                                                    <input type="text" id="account" placeholder="Account ID" />
+                                                </label>
+                                                <label>
+                                                    <b class="h7" data-align="left">Group</b>
+                                                    <select id="group" required>
+                                                        <option value="">(select)</option>
+                                                        <option value="15">Amaranth</option>
+                                                        <option value="7">Birch</option>
+                                                        <option value="11">Blueberry</option>
+                                                        <option value="10">Dandelion</option>
+                                                        <option value="13">Hemlock</option>
+                                                        <option value="12">Juniper</option>
+                                                        <option value="8">Lupin</option>
+                                                        <option value="14">Nettle</option>
+                                                        <option value="9">Spruce</option>
+                                                        <option value="16">Sundew</option>
+                                                    </select>
+                                                </label>
+                                                <label class="fullWidth">
+                                                    <b class="h7" data-align="left">About</b>
+                                                    <textarea id="about" placeholder="Short, sweet, and to-the-point" required></textarea>
+                                                </label>
+                                                <button type="submit" id="submit" class="fullWidth">Submit</button>
+                                            </form>
+                                        </div>
+                                    </tag-tab>
+                                </tag-tabset>
+                            </div>
+                        </tag-tab>
+                        <tag-tab data-category="claims">
+                            <div class="webpage--section">
+                                <tag-tabset>
+                                    <tag-tab class="claims" data-key="#reserves"><% c-reserve %></tag-tab>
+                                    <tag-tab class="claims" data-key="#members"></tag-tab>
+                                    <tag-tab class="claims" data-key="#faces"></tag-tab>
+                                    <tag-tab class="claims" data-key="#jobs"></tag-tab>
+                                </tag-tabset>
+                            </div>
+                        </tag-tab>
+                        <tag-tab data-category="moderation">
+                            <div class="webpage--section">
+                                <tag-tabset>
+                                    <tag-tab data-key="#requestboard">
+                                        <div class="webpage--border">
+                                            <form id="form-board" data-type="grid">
+                                                <input type="hidden" id="name" value="<!-- |name| -->" />
+                                                <input type="hidden" id="id" value="<!-- |id| -->" />
+                                                <label>
+                                                    <b class="h7" data-align="left">Board Title</b>
+                                                    <input type="text" id="board-title" placeholder="Board Title" />
+                                                </label>
+                                                <label>
+                                                    <b class="h7" data-align="left">Parent Category / Board</b>
+                                                    <input type="text" id="location" placeholder="Parent Category/Board" />
+                                                </label>
+                                                <label>
+                                                    <b class="h7" data-align="left">Notes</b>
+                                                    <textarea id="notes" placeholder="If you require extra subboards, anything specific with board set up, etc, please let us know here!" required></textarea>
+                                                </label>
+                                                <button type="submit" id="submit">Submit</button>
+                                            </form>
+                                        </div>
+                                    </tag-tab>
+                                    <tag-tab data-key="#threadmoderation">
+                                        <div class="webpage--border">
+                                            <form id="form-thread" data-type="grid">
+                                                <input type="hidden" id="name" value="<!-- |name| -->" />
+                                                <input type="hidden" id="id" value="<!-- |id| -->" />
+                                                <label>
+                                                    <b class="h7" data-align="left">Thread URL</b>
+                                                    <input type="text" id="url" placeholder="Thread URL" />
+                                                </label>
+                                                <label>
+                                                    <b class="h7" data-align="left">Status</b>
+                                                    <select id="status" required>
+                                                        <option value="">(select)</option>
+                                                        <option value="icfin">Archive IC - Finished</option>
+                                                        <option value="icunfin">Archive IC - Unfinished</option>
+                                                        <option value="ooc">Archive OOC</option>
+                                                        <option value="unarchive">Unarchive</option>
+                                                    </select>
+                                                </label>
+                                                <label class="hide ifUnarchive">
+                                                    <b class="h7" data-align="left">Destination</b>
+                                                    <input type="text" id="destination" placeholder="Destination" />
+                                                </label>
+                                                <button type="submit" id="submit">Submit</button>
+                                            </form>
+                                        </div>
+                                    </tag-tab>
+                                    <tag-tab data-key="#accountmoderation">
+                                        <div class="webpage--border">
+                                            <form id="form-account" data-type="grid">
+                                                <input type="hidden" id="name" value="<!-- |name| -->" />
+                                                <input type="hidden" id="id" value="<!-- |id| -->" />
+                                                <label>
+                                                    <b class="h7" data-align="left">Account Name</b>
+                                                    <input type="text" id="character" placeholder="Account Name" />
+                                                </label>
+                                                <label>
+                                                    <b class="h7" data-align="left">Request</b>
+                                                    <textarea id="request" placeholder="Put your request in here. Please be as detailed as possible." required></textarea>
+                                                </label>
+                                                <button type="submit" id="submit">Submit</button>
+                                            </form>
+                                        </div>
+                                    </tag-tab>
+                                    <tag-tab data-key="#otherrequests">
+                                        <div class="webpage--border">
+                                            <form id="form-other" data-type="grid">
+                                                <input type="hidden" id="name" value="<!-- |name| -->" />
+                                                <input type="hidden" id="id" value="<!-- |id| -->" />
+                                                <label>
+                                                    <b class="h7" data-align="left">Request</b>
+                                                    <textarea id="request" placeholder="Put your request in here. Please be as detailed as possible." required></textarea>
+                                                </label>
+                                                <button type="submit" id="submit">Submit</button>
+                                            </form>
+                                        </div>
+                                    </tag-tab>
+                                    <tag-tab data-key="#lovenotes">
+                                        <div class="webpage--border">
+                                            <form id="form-love" data-type="grid">
+                                                <input type="hidden" id="name" value="<!-- |name| -->" />
+                                                <input type="hidden" id="id" value="<!-- |id| -->" />
+                                                <input type="hidden" id="ip" value="<!-- |input_IP_ADDRESS| -->" />
+                                                <label>
+                                                    <b class="h7" data-align="left">Submission</b>
+                                                    <textarea name="message" id="message" placeholder="Put your appreciation notes in here!" required></textarea>
+                                                </label>
+                                                <button type="submit" id="submit">Submit</button>
+                                            </form>
+                                        </div>
+                                    </tag-tab>
+                                </tag-tabset>
+                            </div>
+                        </tag-tab>
+                    </tag-tabset>
                 </div>
             </div>
-            <script src="../dist/js/formatCharacters.js"></script>
+            <script src="../dist/js/claimsFormat.js"></script>
+            <script src="../dist/js/claimsFunctions.js"></script>
+            <script src="../dist/js/claimsScripts.js"></script>
+            <script src="../dist/js/formsFunctions.js"></script>
+            <script src="../dist/js/formsScripts.js"></script>
             <script>
-                //fetch reserves
-                fetch("https://opensheet.elk.sh/184AzHQJ_wVgzc1FBbtZHQB6C6h5EHfIA9_4ocE-9uS0/Universes")
+                const claims = `https://opensheet.elk.sh/1mrdIG_MZ-f0jBHb-8_5aRGCczs5f3sl5WglDF0D1XwU/Claims`;
+                const reserves = `https://opensheet.elk.sh/1mrdIG_MZ-f0jBHb-8_5aRGCczs5f3sl5WglDF0D1XwU/Reserves`;
+                const species = `https://opensheet.elk.sh/1mrdIG_MZ-f0jBHb-8_5aRGCczs5f3sl5WglDF0D1XwU/Species`;
+                fetch(claims)
                 .then((response) => response.json())
-                .then((data) => {
-                    formatUniverses(data);
-
-                    //fetch horse claims
-                    fetch("https://opensheet.elk.sh/184AzHQJ_wVgzc1FBbtZHQB6C6h5EHfIA9_4ocE-9uS0/Characters")
+                .then((claimsData) => {
+                    console.log(claimsData);
+                    
+                    fetch(reserves)
                     .then((response) => response.json())
-                    .then((data) => {
-                        formatCharacters(data);
-                    })
-                    .then(() => {
-                        webpageFunctions();
+                    .then((reservesData) => {
+                        console.log(reservesData);
+                    
+                        fetch(species)
+                        .then((response) => response.json())
+                        .then((speciesData) => {
+                            formatSpecies(speciesData);
+                            
+                        }).then(() => {
+                            initWebpages();
+                        });
                     });
                 });
             </script>

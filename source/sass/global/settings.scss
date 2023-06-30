@@ -1,0 +1,6 @@
+.profile--wrap ul li::marker,
+.post ul li::marker,
+.webpage ul li::marker,
+.postcolor ul li::marker {
+    content: '\f178';
+}

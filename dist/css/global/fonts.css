@@ -1,83 +1,13 @@
 @font-face {
   font-family: "Saturdate Script";
-  src: url("../fonts/SaturdateScript.otf") format("opentype"), url("../fonts/SaturdateScript.ttf") format("truetrype");
+  src: url("https://files.jcink.net/uploads2/godlybehaviour/GB23/SaturdateScript.otf") format("opentype"), url("https://files.jcink.net/uploads2/godlybehaviour/GB23/SaturdateScript.ttf") format("truetrype");
   font-weight: normal;
   font-style: normal;
   font-display: swap; }
 
 @font-face {
   font-family: "Saturdate Serif";
-  src: url("../fonts/SaturdateSerif.otf") format("opentype"), url("../fonts/SaturdateSerif.ttf") format("truetrype");
+  src: url("https://files.jcink.net/uploads2/godlybehaviour/GB23/SaturdateSerif.otf") format("opentype"), url("https://files.jcink.net/uploads2/godlybehaviour/GB23/SaturdateSerif.ttf") format("truetrype");
   font-weight: normal;
   font-style: normal;
-  font-display: swap; }
-
-@font-face {
-  font-family: "Pier Sans";
-  src: url("../fonts/PierSans-Light.otf") format("opentype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap; }
-
-@font-face {
-  font-family: "Pier Sans";
-  src: url("../fonts/PierSans-LightItalic.otf") format("opentype");
-  font-weight: 300;
-  font-style: italic;
-  font-display: swap; }
-
-@font-face {
-  font-family: "Pier Sans";
-  src: url("../fonts/PierSans-Regular.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap; }
-
-@font-face {
-  font-family: "Pier Sans";
-  src: url("../fonts/PierSans-Italic.otf") format("opentype");
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap; }
-
-@font-face {
-  font-family: "Pier Sans";
-  src: url("../fonts/PierSans-Medium.otf") format("opentype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap; }
-
-@font-face {
-  font-family: "Pier Sans";
-  src: url("../fonts/PierSans-MediumItalic.otf") format("opentype");
-  font-weight: 500;
-  font-style: italic;
-  font-display: swap; }
-
-@font-face {
-  font-family: "Pier Sans";
-  src: url("../fonts/PierSans-Bold.otf") format("opentype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap; }
-
-@font-face {
-  font-family: "Pier Sans";
-  src: url("../fonts/PierSans-BoldItalic.otf") format("opentype");
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap; }
-
-@font-face {
-  font-family: "Pier Sans";
-  src: url("../fonts/PierSans-Black.otf") format("opentype");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap; }
-
-@font-face {
-  font-family: "Pier Sans";
-  src: url("../fonts/PierSans-BlackItalic.otf") format("opentype");
-  font-weight: 900;
-  font-style: italic;
   font-display: swap; }
