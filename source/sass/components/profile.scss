@@ -1,3 +1,307 @@
+@import '../global/sizes.scss';
+
 /*******************************
     Profile
 ********************************/
+#Profile {
+    header {
+        min-height: calc(100vh - (var(--size-menu-height) + var(--size-submenu-height) + var(--spacing-lg)));
+        padding-bottom: calc(var(--size-menu-height) + var(--size-submenu-height) + var(--spacing-lg));
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-lg);
+
+        h1 {
+            margin: 0;
+
+            span {
+                text-transform: uppercase;
+
+                &:first-child {
+                    font-family: var(--font-body-bold);
+                    font-size: 8vw;
+                    font-weight: 700;
+                    color: var(--text-color);
+                    opacity: 1;
+                    margin: 0;
+                    line-height: 120%;
+                }
+                &:last-child {
+                    font-size: 4vw;
+                    padding-left: 0;
+                    color: var(--text-body);
+                    line-height: 120%;
+                }
+
+                &:only-child {
+                    font-family: var(--font-body-bold);
+                    font-size: 8vw;
+                    font-weight: 700;
+                    color: var(--text-color);
+                    opacity: 1;
+                    margin: 0;
+                    line-height: 120%;
+                    text-align: center;
+                    opacity: 0.65;
+                }
+            }
+        }
+    }
+}
+
+.profile {
+    &--links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing-sm) var(--spacing-md);
+        font-size: var(--xsBody);
+        font-family: var(--font-body-bold);
+        letter-spacing: 0.3em;
+        font-weight: 700;
+        text-transform: uppercase;
+        line-height: 160%;
+        justify-content: center;
+
+        @media only screen and (min-width: $md) {
+            gap: var(--spacing-md) var(--spacing-lg);
+        }
+    }
+
+    &--warning {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-lg);
+        font-size: var(--xlBody);
+        font-weight: 300;
+        letter-spacing: 0.05em;
+        background: var(--bg-color-transparent);
+        padding: var(--spacing-lg);
+        border-left: 3px solid var(--accent);
+        border-right: 3px solid var(--accent);
+        border-radius: 3px;
+        text-align: center;
+        max-width: 600px;;
+
+        & > i {
+            font-size: 30px;
+            color: var(--text-body);
+        }
+
+        &:empty {
+            display: none;
+        }
+    }
+
+    &--menu {
+        position: sticky;
+        top: calc(var(--size-menu-height) + var(--size-submenu-height));
+        background: var(--bg-transparent);
+        padding: var(--spacing-md);
+        border: 1px solid var(--border-secondary);
+        z-index: 2;
+
+        &.is-sticky {
+            background: var(--bg-alt);
+        }
+
+        tag-tabs {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+
+            & > tag-labels {
+                padding: 0 var(--spacing-sm);
+            }
+
+            & > tag-tabset {
+                padding: var(--spacing-sm) 0 0;
+                margin: 0 var(--spacing-sm);
+                border-top: 1px solid var(--border-main);
+            }
+        }
+    }
+    &--content {
+        margin-top: var(--spacing-lg);
+
+        .profile--border {
+            background: var(--bg-transparent);
+            padding: var(--spacing-lg);
+            border: 1px solid var(--border-secondary);
+        }
+
+        tag-tab[data-key="#basics"] {
+            display: grid;
+            grid-template-rows: 315px 315px 115px auto;
+            gap: var(--spacing-md);
+
+            @media only screen and (min-width: $xs) {
+                grid-template-columns: auto 115px;
+                grid-template-rows: 315px 315px 115px;
+            }
+
+            @media only screen and (min-width: $md) {
+                grid-template-columns: 115px 1fr 1fr 115px;
+                grid-template-rows: 445px 115px;
+            }
+
+            @media only screen and (min-width: $lg) {
+                grid-template-columns: 1fr 1fr 115px;
+                grid-template-rows: 315px 115px;
+            }
+        }
+    }
+
+    &--aesthetic {
+        background: var(--bg-transparent);
+        border: 1px solid var(--border-secondary);
+        padding: var(--spacing-sm);
+
+        @media only screen and (min-width: $xs) {
+            grid-column: span 2;
+        }
+
+        @media only screen and (min-width: $lg) {
+            grid-column: span 1;
+            grid-row: span 2;
+        }
+
+        span {
+            width: 100%;
+            height: 100%;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+
+        &.Grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: var(--spacing-sm);
+        }
+
+        &.Mosaic {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: var(--spacing-sm);
+        }
+
+        .twoWide {
+            grid-column: span 2;
+        }
+
+        .twoHigh {
+            grid-row: span 2;
+        }
+    }
+
+    &--basics {
+        background: var(--bg-transparent);
+        border: 1px solid var(--border-secondary);
+        padding: var(--spacing-md);
+
+        @media only screen and (min-width: $xs) {
+            grid-column: span 2;
+        }
+
+        .scroll {
+            height: calc(315px - (var(--spacing-md) * 2));
+            grid-template-rows: auto;
+
+            @media only screen and (min-width: $xs) {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            @media only screen and (min-width: $md) {
+                grid-template-columns: 1fr;
+                height: calc(445px - (var(--spacing-md) * 2));
+            }
+
+            @media only screen and (min-width: $lg) {
+                grid-template-columns: 1fr 1fr;
+                height: calc(315px - (var(--spacing-md) * 2));
+            }
+        }
+    }
+
+    &--item {
+        display: flex;
+        flex-direction: column;
+        font-size: var(--lBody);
+        font-weight: 300;
+        letter-spacing: 0.05em;
+        gap: var(--spacing-xs);
+
+        strong {
+            line-height: 160%;
+            max-width: max-content;
+            display: block;
+            max-width: max-content;
+            font-size: calc(var(--xsBody) + 1px);
+            font-family: var(--font-body-bold);
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            background: var(--bg-color-transparent);
+        
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 2px;
+                height: 100%;
+                background: var(--bg-color);
+                border-radius: 1px;
+            }
+        }
+
+        span {
+            line-height: 200%;
+        }
+    }
+
+    &--traits {
+        background: var(--bg-transparent);
+        border: 1px solid var(--border-secondary);
+        padding: var(--spacing-sm) var(--spacing-md) var(--spacing-md);
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing-md);
+
+        @media only screen and (min-width: $md) {
+            grid-column: span 3;
+        }
+
+        @media only screen and (min-width: $lg) {
+            grid-column: span 1;
+        }
+
+        .trait {
+            flex: 0 0 calc(50% - (var(--spacing-md) / 2));
+        }
+    }
+
+    &--image {
+        background: var(--bg-transparent);
+        border: 1px solid var(--border-secondary);
+        padding: var(--spacing-sm);
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+}

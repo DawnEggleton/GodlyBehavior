@@ -28,29 +28,29 @@
     padding: var(--spacing-lg);
     border: 1px solid var(--border-secondary); }
 
-form {
+.webpage form {
   max-width: 600px;
   margin: 0 auto; }
-  form[data-columns] {
+  .webpage form[data-columns] {
     max-width: 800px;
     margin: 0 auto; }
-  form label {
+  .webpage form label {
     display: flex;
     flex-direction: column;
     width: 100%;
     margin: 0 auto;
     gap: var(--spacing-sm); }
-  form input[type="submit"] {
+  .webpage form input[type="submit"] {
     margin: 0 auto; }
-  form textarea {
+  .webpage form textarea {
     line-height: 200%;
     min-height: 200px; }
-  form select {
+  .webpage form select {
     font-size: var(--lBody);
     font-family: var(--font-body);
     font-weight: 400;
     text-transform: none; }
-  form button {
+  .webpage form button {
     max-width: max-content;
     margin: 0 auto;
     border: 1px solid var(--border-color);
@@ -63,7 +63,7 @@ form {
     transition-duration: var(--style-duration);
     cursor: pointer;
     z-index: 1; }
-    form button::before {
+    .webpage form button::before {
       content: '';
       position: absolute;
       top: 0;
@@ -73,29 +73,29 @@ form {
       background: var(--bg-color);
       transition-duration: var(--style-duration);
       z-index: -1; }
-    form button:hover {
+    .webpage form button:hover {
       color: var(--text-on-color); }
-      form button:hover::before {
+      .webpage form button:hover::before {
         width: 100%; }
-  form .multiSelect {
+  .webpage form .multiSelect {
     gap: var(--spacing-lg); }
-    form .multiSelect label {
+    .webpage form .multiSelect label {
       display: block;
       max-width: max-content;
       margin: 0;
       cursor: pointer; }
-      form .multiSelect label input {
+      .webpage form .multiSelect label input {
         display: none; }
-        form .multiSelect label input:checked + strong::before {
+        .webpage form .multiSelect label input:checked + strong::before {
           background: var(--bg-color); }
-      form .multiSelect label strong {
+      .webpage form .multiSelect label strong {
         display: flex;
         gap: var(--spacing-sm);
         align-items: center;
         font: var(--style-small-text);
         text-transform: uppercase;
         letter-spacing: 0.1em; }
-        form .multiSelect label strong::before {
+        .webpage form .multiSelect label strong::before {
           content: '';
           width: 18px;
           height: 18px;

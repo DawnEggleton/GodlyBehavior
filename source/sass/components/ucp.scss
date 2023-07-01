@@ -1,0 +1,1290 @@
+@import '../global/sizes.scss';
+
+//General
+#UserCP,
+#Msg,
+#store {
+    main {
+        & > table:first-of-type {
+            display: block;
+
+            & ~ * {
+                display: none;
+            }
+
+            & > tbody {
+                display: block;
+
+                & > tr {
+                    display: flex;
+                    gap: var(--spacing-lg);
+                    
+                    & > td {
+                        &#ucpmenu {
+                            flex: 0 0 150px;
+
+                            .sticky {
+                                display: flex;
+                                flex-direction: column;
+                                gap: var(--spacing-sm);
+                                top: calc(var(--size-menu-height) + var(--size-submenu-height) + var(--spacing-md));
+                            }
+                            .menu-section {
+                                display: flex;
+                                flex-direction: column;
+                                gap: var(--spacing-sm);
+                            }
+
+                            b {
+                                line-height: 160%;
+                                max-width: max-content;
+                                display: block;
+                                max-width: max-content;
+                                font-size: calc(var(--xsBody) + 1px);
+                                font-family: var(--font-body-bold);
+                                font-weight: 600;
+                                letter-spacing: 0.2em;
+                                text-transform: uppercase;
+                                padding: var(--spacing-xs) var(--spacing-sm);
+                                background: var(--bg-color-transparent);
+                                cursor: pointer;
+
+                                &.is-closed {
+                                    filter: grayscale(1);
+                                    opacity: 0.8;
+                                    transition-duration: var(--style-duration);
+
+                                    &:hover {
+                                        opacity: 1;
+                                        filter: grayscale(0);
+                                    }
+
+                                    & + .menu-section {
+                                        display: none;
+                                    }
+                                }
+                            
+                                &::before {
+                                    content: '';
+                                    position: absolute;
+                                    left: 0;
+                                    top: 0;
+                                    width: 2px;
+                                    height: 100%;
+                                    background: var(--bg-color);
+                                    border-radius: 1px;
+                                }
+
+                                &:not(:first-child) {
+                                    margin-top: var(--spacing-md);
+                                }
+                            }
+
+                            a {
+                                font: var(--style-small-text);
+                                font-size: calc(var(--xsBody) + 1px);
+                                letter-spacing: 0.1em;
+                                text-transform: uppercase;
+                            }
+                        }
+                        &:nth-child(2) {
+                            display: none;
+                        }
+                        &#ucpcontent {
+                            flex-grow: 1;
+                            background: var(--bg-transparent);
+                            border: 1px solid var(--border-secondary);
+                            color: var(--text-content);
+                            padding: var(--spacing-md);
+
+                            @media only screen and (min-width: $sm) {
+                                padding: var(--spacing-lg);
+                            }
+
+                            input[type="text"],
+                            textarea,
+                            select {
+                                width: 100%;
+                                font-size: var(--lBody);
+                                font-family: var(--font-body);
+                                font-weight: 400;
+                                text-transform: none;
+                            }
+
+                            .maintitle {
+                                display: none;
+                            }
+                            .pformstrip {
+                                text-align: center;
+                            }
+                    
+                            form {
+                                & > table {
+                                    display: block;
+                        
+                                    & > tbody {
+                                        display: block;
+                        
+                                        & > tr {
+                                            display: flex;
+                                            flex-direction: column;
+                                            gap: var(--spacing-sm);
+                                            margin-bottom: var(--spacing-md);
+                    
+                                            @media only screen and (min-width: $xs) {
+                                                margin-bottom: var(--spacing-lg);
+                                            }
+                    
+                                            @media only screen and (min-width: $md) {
+                                                gap: var(--spacing-md);
+                                            }
+                        
+                                            .pformleft {
+                                                b,
+                                                strong,
+                                                label {
+                                                    line-height: 160%;
+                                                    display: block;
+                                                    max-width: max-content;
+                                                    font-size: calc(var(--xsBody) + 1px);
+                                                    font-family: var(--font-body-bold);
+                                                    font-weight: 600;
+                                                    letter-spacing: 0.2em;
+                                                    text-transform: uppercase;
+                                                    padding: var(--spacing-xs) var(--spacing-sm);
+                                                    background: var(--bg-color-transparent);
+                                                
+                                                    &::before {
+                                                        content: '';
+                                                        position: absolute;
+                                                        left: 0;
+                                                        top: 0;
+                                                        width: 2px;
+                                                        height: 100%;
+                                                        background: var(--bg-color);
+                                                        border-radius: 1px;
+                                                    }
+                    
+                                                    & ~ br {
+                                                        display: none;
+                                                    }
+                                                }
+                                            }
+                                            .pformright {
+                                                display: flex;
+                                                gap: var(--spacing-xs);
+                                                height: max-content;
+                                            }
+                    
+                                            & > :only-child {
+                                                grid-column: 1 / -1;
+                                            }
+                        
+                                            &:last-child {
+                                                .pformstrip:only-child {
+                                                    margin-bottom: 0;
+                                                    padding: 0;
+                                                    text-align: center;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Specific Pages
+//Edit Profile
+#UserCP.code-01 {
+    #ucpcontent {
+        form {
+            & > .pformstrip {
+                display: none;
+            }
+            #field-birthday,
+            #field-website,
+            #field-location,
+            #field-interests {
+                display: none;
+            }
+            tbody {
+                display: grid !important;
+                gap: var(--spacing-lg);
+
+                @media only screen and (min-width: $md) {
+                    grid-template-columns: repeat(6, 1fr);
+                }
+
+                tr {
+                    margin-bottom: 0 !important;
+                    grid-column: span 3;
+
+                    .pformleft {
+                        font: var(--style-small-text);
+                        text-transform: uppercase;
+                        letter-spacing: 0.1em;
+                        display: flex;
+                        flex-direction: column;
+                        gap: var(--spacing-sm);
+                    }
+                }
+            }
+            .ucp--header {
+                grid-column: 1 / -1;
+                background: none;
+                font-size: 22px;
+                font-family: var(--font-body-bold);
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.3em;
+                padding: var(--spacing-sm) 0 var(--spacing-sm) var(--spacing-lg);
+            
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 3px;
+                    height: 100%;
+                    background: var(--bg-color);
+                    border-radius: 2px;
+                }
+            }
+            #field_16,
+            #field_17,
+            #field_18 {
+                grid-column: span 2;
+            }
+            #field_1,
+            #field_12,
+            #field_13,
+            #field_23,
+            #field_24,
+            #field_27,
+            #field_28,
+            #field_29,
+            #field_30,
+            #field_31,
+            #field_32,
+            #field_33,
+            #field_34,
+            #field_35,
+            #field_40,
+            #field_41,
+            tr:last-child,
+            .fullWidth {
+                grid-column: 1 / -1;
+            }
+            tr:last-child {
+                align-items: center;
+            }
+
+            #field_49 .pformright,
+            #field_51 .pformright,
+            #field_53 .pformright,
+            #field_55 .pformright {
+                padding: 6.5px 0;
+            }
+        }
+    }
+}
+//Edit Avatar
+#UserCP.code-24 {
+    p {
+        text-align: center;
+        margin-bottom: 15px;
+
+        @media only screen and (min-width: $xs) {
+            margin-bottom: 30px;
+        }
+    }
+    #gallery_form {
+        display: none;
+    }
+    .tablepad {
+        font-size: 0;
+    }
+    .tablebasic + .tablebasic {
+        .pformleft {
+            display: none;
+        }
+        .pformright {
+            grid-column: 1 / -1;
+            display: block;
+            padding: 0;
+    
+            b,
+            strong,
+            label {
+                display: block;
+
+                & ~ br {
+                    display: none;
+                }
+            }
+        }
+        & + .pformstrip:last-child {
+            margin-bottom: 0;
+            padding: 0;
+        }
+    }
+}
+//Subaccounts
+#UserCP.code-54 {
+    .tableborder {
+        &:first-child {
+            tbody {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 15px;
+
+                & > tr {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0;
+                    margin: 0;
+
+                    &:first-child {
+                        display: none;
+                    }
+                    &:last-child {
+                        flex: 0 0 100%;
+                    }
+
+                    &:not(:first-child):not(:last-child) {
+                        flex: 0 0 100%;
+                        padding: 5px;
+
+                        @media only screen and (min-width: $xs) {
+                            padding: 10px;
+                        }
+        
+                        @media only screen and (min-width: $md) {
+                            flex: 0 0 calc(50% - 7.5px);
+                        }
+
+                        @media only screen and (min-width: $lg) {
+                            flex: 0 0 calc((100% / 3) - 10px);
+                        }
+
+                        & > td {
+                            margin: 0;
+                            padding: 0 0 0 21px;
+
+                            @media only screen and (min-width: $xs) {
+                                padding: 0 0 0 26px;
+                            }
+                            &:last-child {
+                                position: absolute;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+//Edit Username
+#UserCP.code-52 {
+    .row2 + table {
+        .pformleft {
+            font: initial;
+        }
+    }
+}
+//Edit Password & Email
+#UserCP.code-28,
+#UserCP.code-08 {
+    form[name="form1"] {
+        & > table {
+            & > tbody {
+                & > tr {
+                    & > td {
+                        &:first-child {
+                            width: 100%;
+                            
+                            @media only screen and (min-width: $md) {
+                                padding: 15px 15px 15px 0;
+                            }
+
+                            b {
+                                display: block;
+
+                                & ~ br {
+                                    display: none;
+                                }
+                            }
+                        }
+                        &:last-child {
+                            display: flex;
+                            gap: 5px;
+                            height: max-content;
+
+                            @media only screen and (min-width: $md) {
+                                padding: 15px 0 15px 15px;
+                            }
+
+                            input {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            & + .pformstrip {
+                margin-bottom: 0;
+                padding: 0;
+            }
+        }
+    }
+}
+//Alerts
+#UserCP.code-alerts {
+    .ucp--wrapper {
+        & > table {
+            img {
+                display: none;
+            }
+        }
+        & > form {
+            & > .tableborder {
+                & > table {
+                    display: block;
+
+                    & > tbody {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 15px;
+        
+                        & > tr {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 0;
+                            margin: 0;
+        
+                            &:first-child {
+                                display: none;
+                            }
+                            &:last-child {
+                                flex: 0 0 100%;
+                            }
+        
+                            &:not(:first-child):not(:last-child) {
+                                flex: 0 0 100%;
+                                padding: 5px;
+        
+                                @media only screen and (min-width: $xs) {
+                                    padding: 10px;
+                                }
+        
+                                @media only screen and (min-width: $md) {
+                                    flex: 0 0 calc(50% - 7.5px);
+                                }
+
+                                @media only screen and (min-width: $lg) {
+                                    flex: 0 0 calc((100% / 3) - 10px);
+                                }
+        
+                                & > td {
+                                    margin: 0;
+                                    padding: 0 0 0 21px;
+                                    text-align: left;
+        
+                                    @media only screen and (min-width: $xs) {
+                                        padding: 0 0 0 26px;
+                                    }
+            
+                                    &:first-child {
+                                        display: none;
+                                    }
+                                    &.alert-text {
+                                        img {
+                                            display: none;
+                                        }
+                                    }
+                                    &:last-child {
+                                        position: absolute;
+                                        padding: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+//Forum & Topic Subscriptions
+#UserCP.code-50,
+#UserCP.code-26 {
+    .tableborder {
+        & > table {
+            display: block;
+
+            & > tbody {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 15px;
+
+                & > tr {
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    &:not(.pformstrip) {
+                        padding: 5px;
+                        flex: 0 0 100%;
+
+                        @media only screen and (min-width: $xs) {
+                            padding: 10px;
+                        }
+
+                        @media only screen and (min-width: $md) {
+                            flex: 0 0 calc(50% - 7.5px);
+                        }
+
+                        @media only screen and (min-width: $lg) {
+                            flex: 0 0 calc((100% / 3) - 10px);
+                        }
+
+                        & > td {
+                            &:first-child {
+                                display: none;
+                            }
+                            &:nth-child(2),
+                            &:last-child {
+                                flex: 0 0 100%;
+                            }
+                            &:nth-child(2) {
+                                display: flex;
+                                flex-direction: column;
+                                line-height: 200%;
+    
+                                br {
+                                    display: none;
+                                }
+                            }
+                            &:nth-child(3),
+                            &:nth-child(4) {
+                                font-weight: 600;
+                            }
+                            &:nth-child(3) {
+                                &::after {
+                                    content: ' topics'
+                                }
+                            }
+                            &:nth-child(4) {
+                                &::after {
+                                    content: ' replies'
+                                }
+                            }
+                        }
+                    }
+
+                    &:first-child {
+                        display: none;
+                    }
+                    &.pformstrip {
+                        flex: 0 0 100%;
+
+                        &:nth-child(2) {
+                            border-top: none;
+                            margin-top: 0;
+                            padding-top: 0 !important;
+                        }
+
+                        td {
+                            display: block;
+                            width: 100%;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+#UserCP.code-26 {
+    .ucp--wrapper {
+        & > .pformstrip {
+            span {
+                display: none;
+            }
+        }
+    }
+    .tableborder {
+        & > table {
+            & > tbody {
+                & > tr {
+                    &:not(.pformstrip) {
+                        & > td {
+                            &:nth-child(2) {
+                                display: block;
+
+                                br {
+                                    display: initial;
+                                }
+                                a:first-child {
+                                    display: block;
+                                }
+                            }
+                            &:nth-child(5) {
+                                flex: 0 0 100%;
+                            }
+                            &:not(:last-child) {
+                                padding-left: 21px;
+
+                                @media only screen and (min-width: $xs) {
+                                    padding-left: 26px;
+                                }
+                            }
+                            &:last-child {
+                                position: absolute;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+//Board Settings
+#UserCP.code-04 {
+    .ucp--wrapper {
+        & > form {
+            & > table {
+                & > tbody {
+                    & > tr {
+                        & > td {
+                            &:first-child {
+                                width: 100%;
+                                
+                                @media only screen and (min-width: $md) {
+                                    padding: 15px 15px 15px 0;
+                                }
+
+                                b {
+                                    & ~ br {
+                                        display: none;
+                                    }
+                                }
+                            }
+                            &:last-child {
+                                display: flex;
+                                height: max-content;
+
+                                input {
+                                    margin: 0;
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .input-wrap {
+            & + br {
+                display: none;
+            }
+        }
+        .pformstrip:last-child {
+            margin-bottom: 0;
+            padding: 0;
+        }
+    }
+}
+//Alert Settings
+#UserCP.code-alerts_settings {
+    .pformstrip {
+        text-align: left;
+        padding: 0;
+
+        &::after {
+            display: none;
+        }
+    }
+    table {
+        & + .pformstrip {
+            text-align: center;
+            margin-bottom: 0;
+            padding: 0;
+        }
+    }
+    tr {
+        &:not(:nth-last-child(4)):not(:first-child) {
+            td {
+                padding: 0 0 15px;
+            }
+        }
+        &:nth-last-child(4) {
+            .pformstrip {
+                padding-top: 15px;
+            }
+        }
+    }
+}
+//Email Settings
+#UserCP.code-02 {
+    .ucp--wrapper {
+        form {
+            & > table {
+                & > tbody {
+                    & > tr {
+                        grid-template-columns: max-content auto;
+                    }
+                }
+            }
+        }
+        .pformstrip:last-child {
+            margin-bottom: 0;
+            padding: 0;
+        }
+    }
+}
+//Inbox
+#Msg.code-01 {
+    .ucp--wrapper {
+        & > table {
+            & > tbody {
+                & > tr {
+                    & > td {
+                        &:first-child {
+                            display: none;
+                        }
+    
+                        & > br,
+                        & > form {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+//Send Message
+#Msg.code-04 {
+    form {
+        & > table {
+            & > tbody {
+                & > tr {
+                    margin-bottom: 15px;
+
+                    .pformstrip {
+                        text-align: left;
+                    }
+                    &:first-child {
+                        margin-bottom: 0;
+
+                        .pformstrip {
+                            margin-bottom: 0;
+                            padding-bottom: 0;
+                        }
+                    }
+                    &:nth-child(2),
+                    &:nth-child(4),
+                    &:nth-child(5),
+                    &:nth-child(6),
+                    &:nth-last-child(3),
+                    &#code-buttons-header,
+                    &#enter-your-post-header {
+                        display: none;
+                    }
+                
+                    &:nth-child(3) {
+                        .pformleft {
+                            display: none;
+                        }
+                        .pformright {
+                            grid-column: 1 / -1;
+                            padding: 0;
+                        }
+                    }
+                    &:nth-child(7) {
+                        grid-template-columns: 100%;
+                        gap: 0;
+
+                        .pformleft {
+                            border: none;
+                            padding: 0;
+                        }
+                        .pformright {
+                            padding: 0;
+                        }
+                    }
+                    &:nth-last-child(2) {
+                        .pformleft {
+                            display: none;
+                        }
+                        .pformright {
+                            grid-column: 1 / -1;
+                            padding: 0;
+                            justify-content: center;
+
+                            br {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    &#code-buttons {
+                        display: block;
+
+                        .pformleft {
+                            display: none;
+                        }
+
+                        .pformright {
+                            font-size: 0;
+                            line-height: 0;
+                            padding: 0;
+
+                            & > input,
+                            & > br {
+                                display: none;
+                            }
+
+                            #bbcode-buttons {
+                                display: flex;
+                                flex-wrap: wrap;
+                                gap: 5px;
+
+                                input,
+                                select {
+                                    margin: 0;
+                                    width: auto;
+                                    text-transform: uppercase;
+                                    font-size: var(--xsBody);
+                                    line-height: 100%;
+                                    letter-spacing: 0.1em;
+                                    cursor: pointer;
+                                }
+
+                                & > a,
+                                & > br {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+
+                    &#enter-your-post-header + tr {
+                        display: block;
+
+                        & > td {
+                            display: block;
+
+                            &.pformleft {
+                                display: none;
+                            }
+                            &.pformright {
+                                padding: 0;
+                            }
+
+                            textarea {
+                                width: 100%;
+                                height: 400px;
+                                box-sizing: border-box;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+//Store Home
+#store.store-home {
+    .ucp--wrapper {
+        & > table {
+            & > tbody {
+                & > tr {
+                    display: flex;
+                    flex-direction: column;
+                    text-align: left;
+
+                    td {
+                        text-align: left;
+                        padding: 0;
+                    }
+
+                    &:nth-child(1),
+                    &:nth-child(2),
+                    &:nth-child(3) {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+//Store Shop
+#store.store-shop {
+    .ucp--wrapper {
+        & > table {
+            display: block;
+
+            & > tbody {
+                display: flex;
+                flex-wrap: wrap;
+
+                & > tr {
+                    display: flex;
+                    flex-wrap: wrap;
+                    height: max-content;
+                    flex: 0 0 100%;
+
+                    @media only screen and (min-width: $md) {
+                        flex: 0 0 calc(50% - 7.5px);
+                    }
+
+                    @media only screen and (min-width: $lg) {
+                        flex: 0 0 calc((100% / 3) - 10px);
+                    }
+
+                    img {
+                        width: 16px;
+                        height: 16px;
+                        object-fit: contain;
+                        object-position: center;
+                    }
+
+                    & > td {
+                        padding: 0;
+                        height: max-content;
+                        text-align: left;
+
+                        &:first-child {
+                            flex: 0 0 46px;
+                        }
+
+                        &:nth-child(2) {
+                            flex: 0 0 calc(100% - 56px);
+                        }
+
+                        &:nth-child(3) {
+                            flex: 0 0 calc(100% - 10px);
+
+                            @media only screen and (min-width: $xs) {
+                                flex: 0 0 calc(100% - 15px);
+                            }
+                        }
+
+                        &:nth-child(4),
+                        &:nth-child(5) {
+                            flex: 0 0 calc(50% - 5px);
+
+                            &::after {
+                                display: block;
+                                font-weight: normal;
+                                line-height: 100%;
+                            }
+                        }
+
+                        &:nth-child(4) {
+                            &::after {
+                                content: 'Owned';
+                            }
+                        }
+
+                        &:nth-child(5) {
+                            &::after {
+                                content: 'In Stock';
+                            }
+                        }
+
+                        &:nth-child(6) {
+                            flex: 0 0 100%;
+
+                            a {
+                                display: block;
+                            }
+                        }
+
+                        &:last-child {
+                            display: none;
+                        }
+                    }
+                    &:first-child {
+                        display: none;
+                    }
+                    &:last-child {
+                        flex: 0 0 calc(100% + 30px);
+                        display: flex;
+                        justify-content: center;
+
+                        @media only screen and (min-width: $xs) {
+                            flex: 0 0 calc(100% + 60px);
+                        }
+
+
+                        & > td {
+                            display: block;
+                            flex: auto;
+
+                            &:nth-child(2) {
+                                text-align: center;
+                            }
+
+                            &:last-child {
+                                text-align: right;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+//Store Inventory
+#store.store-inventory {
+    .ucp--wrapper {
+        & > table {
+            display: block;
+
+            & > tbody {
+                display: flex;
+                flex-wrap: wrap;
+
+                & > tr {
+                    display: flex;
+                    flex-wrap: wrap;
+                    height: max-content;
+                    flex: 0 0 100%;
+
+                    @media only screen and (min-width: $md) {
+                        flex: 0 0 calc(50% - 7.5px);
+                    }
+
+                    @media only screen and (min-width: $lg) {
+                        flex: 0 0 calc((100% / 3) - 10px);
+                    }
+
+                    img {
+                        width: 16px;
+                        height: 16px;
+                        object-fit: contain;
+                        object-position: center;
+                    }
+
+                    & > td {
+                        padding: 0;
+                        height: max-content;
+
+                        &:first-child {
+                            flex: 0 0 46px;
+                        }
+
+                        &:nth-child(2) {
+                            flex: 0 0 calc(100% - 56px);
+                        }
+
+                        &:nth-child(3) {
+                            flex: 0 0 calc(100% - 10px);
+
+                            @media only screen and (min-width: $xs) {
+                                flex: 0 0 calc(100% - 15px);
+                            }
+
+                            &:empty {
+                                display: none;
+                            }
+                        }
+
+                        &:nth-child(4) {
+                            flex: 0 0 100%;
+
+                            &::after {
+                                font-weight: normal;
+                                line-height: 100%;
+                            }
+                        }
+
+                        &:nth-child(4) {
+                            &::after {
+                                content: ' Owned';
+                            }
+                        }
+
+                        &:nth-child(5) {
+                            flex: 0 0 100%;
+
+                            a {
+                                display: block;
+                            }
+
+                            br {
+                                display: none;
+                            }
+                        }
+                    }
+                    &:first-child,
+                    &:nth-child(2) {
+                        display: grid;
+                        grid-template-columns: max-content auto;
+                        flex: 0 0 100%;
+
+                        & > td {
+                            width: 100%;
+                            padding: 0;
+                        }
+                    }
+                    &:nth-child(3) {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+//Store Forms
+#store.store-donate_money,
+#store.store-donate_item,
+#store.store-fine,
+#store.store-edit_points,
+#store.store-do_edit_points,
+#store.store-edit_inventory {
+    .ucp--wrapper {
+        & > table {
+            & > tbody {
+                & > tr {
+                    &:not(:last-child) {
+                        display: grid;
+    
+                        @media only screen and (min-width: $md) {
+                            grid-template-columns: 250px calc(100% - 265px);
+                        }
+    
+                        & > td {
+                            width: 100%;
+                        }
+                        .pformleft:first-child {
+                            b,
+                            strong,
+                            label {
+                                display: block;
+    
+                                & ~ br {
+                                    display: none;
+                                }
+                            }
+                        }
+                        .pformleft + .pformleft {
+                            display: flex;
+                            height: max-content;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+//Store Edit Inventory Item List
+#store.store-do_staff_inventory {
+    .ucp--wrapper {
+        & > table {
+            display: block;
+
+            & > tbody {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 5px;
+
+                @media only screen and (min-width: $xs) {
+                    gap: 15px;
+                }
+
+                & > tr {
+                    display: flex;
+                    flex-wrap: wrap;
+                    height: max-content;
+                    flex: 0 0 100%;
+
+                    @media only screen and (min-width: $md) {
+                        flex: 0 0 calc(50% - 7.5px);
+                    }
+
+                    @media only screen and (min-width: $lg) {
+                        flex: 0 0 calc((100% / 3) - 10px);
+                    }
+
+                    img {
+                        width: 16px;
+                        height: 16px;
+                        object-fit: contain;
+                        object-position: center;
+                    }
+
+                    & > td {
+                        padding: 0;
+                        height: max-content;
+                        text-align: left;
+
+                        &:first-child {
+                            flex: 0 0 46px;
+                            padding: 10px 0 0 10px;
+
+                            @media only screen and (min-width: $xs) {
+                                padding: 15px 0 0 15px;
+                            }
+                        }
+
+                        &:nth-child(2) {
+                            flex: 0 0 calc(100% - 56px);
+                            font-family: var(--font-body-bold);
+                            font-size: var(--xlBody);
+                            font-weight: 600;
+                        }
+
+                        &:nth-child(3) {
+                            flex: 0 0 calc(100% - 10px);
+                            text-align: justify;
+
+                            @media only screen and (min-width: $xs) {
+                                flex: 0 0 calc(100% - 15px);
+                            }
+
+                            &:empty {
+                                display: none;
+                            }
+                        }
+
+                        &:nth-child(4) {
+                            display: none;
+                        }
+
+                        &:nth-child(5) {
+                            flex: 0 0 100%;
+
+                            .input-wrap {
+                                &::after {
+                                    content: 'Delete';
+                                }
+                            }
+                        }
+                    }
+                    &:first-child,
+                    &:nth-last-child(2) {
+                        display: none;
+                    }
+                    &:last-child {
+                        flex: 0 0 100%;
+                        border: none;
+                        
+                        td {
+                            flex: 0 0 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

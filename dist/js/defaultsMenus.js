@@ -1,20 +1,25 @@
 //UCP Only
 if($('body#UserCP').length > 0) {
-    document.querySelector('#ucpmenu').innerHTML = `<b>Account</b>
+    document.querySelector('#ucpmenu').innerHTML = `<div class="sticky"><b>Account</b>
+    <div class="menu-section">
     <a href="user-edit.html">Edit Profile</a>
     <a href="user-avatar.html">Update Avatar</a>
     <a href="user-accounts.html">Sub-accounts</a>
     <a href="user-name.html">Edit Username</a>
     <a href="user-pass.html">Change Password</a>
     <a href="user-email.html">Update Email</a>
-    <b>Tracking</b>
+    </div>
+    <b class="is-closed">Tracking</b>
+    <div class="menu-section">
     <a href="user-alerts.html">Alerts</a>
     <a href="user-forums.html">Forums</a>
     <a href="user-topics.html">Topics</a>
-    <b>Settings</b>
+    </div>
+    <b class="is-closed">Settings</b>
+    <div class="menu-section">
     <a href="user-boardset.html">Board</a>
     <a href="user-alertset.html">Alerts</a>
-    <a href="user-emailset.html">Emails</a>`;
+    <a href="user-emailset.html">Emails</a></div></div>`;
 
     // If using menu replacement in live skin, remove the above and uncomment the below:
     /*

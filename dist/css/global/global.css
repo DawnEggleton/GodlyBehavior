@@ -27,22 +27,31 @@ body {
 
 main {
   color: var(--text-content);
-  margin: 0 var(--spacing-md);
+  margin: 0 var(--spacing-md) var(--spacing-md);
   font-size: var(--lBody);
   line-height: 200%; }
   @media only screen and (min-width: 600px) {
     main {
-      margin: 0 var(--spacing-lg); } }
+      margin: 0 var(--spacing-lg) var(--spacing-lg); } }
   @media only screen and (min-width: 1440px) {
     main {
       margin: 0 auto;
       max-width: 1300px; } }
   body:not(#idx) main {
     margin-top: calc(var(--size-menu-height) + var(--size-submenu-height) + var(--spacing-lg)); }
+  main > div.tableborder {
+    margin-top: var(--spacing-xl); }
 
 a {
   text-decoration: none;
   color: var(--text-body); }
+  a[href=""], a[href="<i>No Information</i>"] {
+    display: none; }
+
+img {
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center; }
 
 ul {
   margin: 0;
@@ -413,12 +422,20 @@ input, select, textarea {
     outline: 1px solid var(--accent); }
 
 input[type="submit"] {
-  background: var(--bg-color);
-  font-weight: 900;
-  font-size: var(--mBody);
-  border: 0;
-  color: var(--text-body);
+  max-width: max-content;
+  margin: 0 auto;
+  border: 1px solid var(--border-color);
+  background: var(--bg-color-transparent);
+  font: var(--style-small-text);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-content);
+  padding: var(--spacing-sm);
+  transition-duration: var(--style-duration);
   cursor: pointer; }
+  input[type="submit"]:hover {
+    background: var(--bg-color);
+    color: var(--text-on-color); }
 
 input[type="text"],
 input[type="number"] {
@@ -498,6 +515,14 @@ tag-code {
     font-family: var(--font-body);
     font-size: var(--mBody);
     padding: var(--spacing-sm); }
+
+#account-switch {
+  width: calc(100% - (2 * var(--spacing-lg)));
+  height: max-content;
+  max-height: calc(100vh - (2 * var(--spacing-lg)));
+  margin: var(--spacing-lg);
+  padding-right: var(--spacing-sm);
+  overflow: auto; }
 
 .modal {
   display: none;
@@ -596,6 +621,10 @@ tag-code {
   max-width: 800px;
   margin: 0 auto;
   text-align: justify; }
+
+.sticky {
+  position: sticky;
+  top: calc(var(--size-menu-height) + var(--size-submenu-height)); }
 
 #newstext,
 #logostrip,

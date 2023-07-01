@@ -17,7 +17,7 @@ header {
         padding: 0;
     }
 
-    body:not(#idx) & {
+    body:not(#idx) > & {
         display: none;
     }
 

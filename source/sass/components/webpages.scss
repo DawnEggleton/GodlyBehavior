@@ -41,105 +41,105 @@
             border: 1px solid var(--border-secondary);
         }
     }
-}
 
-form {
-    max-width: 600px;
-    margin: 0 auto;
+    form {
+        max-width: 600px;
+        margin: 0 auto;
 
-    &[data-columns] {
-        max-width: 800px;
-        margin: 0 auto;
-    }
-
-    label {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        margin: 0 auto;
-        gap: var(--spacing-sm);
-    }
-    input[type="submit"] {
-        margin: 0 auto;
-    }
-    textarea {
-        line-height: 200%;
-        min-height: 200px;
-    }
-    select {
-        font-size: var(--lBody);
-        font-family: var(--font-body);
-        font-weight: 400;
-        text-transform: none;
-    }
-    button {
-        max-width: max-content;
-        margin: 0 auto;
-        border: 1px solid var(--border-color);
-        background: var(--bg-color-transparent);
-        font: var(--style-small-text);
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        color: var(--text-content);
-        padding: var(--spacing-sm);
-        transition-duration: var(--style-duration);
-        cursor: pointer;
-        z-index: 1;
-
-        &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0;
-            height: 100%;
-            background: var(--bg-color);
-            transition-duration: var(--style-duration);
-            z-index: -1;
+        &[data-columns] {
+            max-width: 800px;
+            margin: 0 auto;
         }
-
-        &:hover {
-            color: var(--text-on-color);
-
-            &::before {
-                width: 100%;
-            }
-        }
-    }
-    .multiSelect {
-        gap: var(--spacing-lg);
 
         label {
-            display: block;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin: 0 auto;
+            gap: var(--spacing-sm);
+        }
+        input[type="submit"] {
+            margin: 0 auto;
+        }
+        textarea {
+            line-height: 200%;
+            min-height: 200px;
+        }
+        select {
+            font-size: var(--lBody);
+            font-family: var(--font-body);
+            font-weight: 400;
+            text-transform: none;
+        }
+        button {
             max-width: max-content;
-            margin: 0;
+            margin: 0 auto;
+            border: 1px solid var(--border-color);
+            background: var(--bg-color-transparent);
+            font: var(--style-small-text);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-content);
+            padding: var(--spacing-sm);
+            transition-duration: var(--style-duration);
             cursor: pointer;
+            z-index: 1;
 
-            input {
-                display: none;
-
-                &:checked + strong {
-                    &::before {
-                        background: var(--bg-color);
-                    }
-                }
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 0;
+                height: 100%;
+                background: var(--bg-color);
+                transition-duration: var(--style-duration);
+                z-index: -1;
             }
 
-            strong {
-                display: flex;
-                gap: var(--spacing-sm);
-                align-items: center;
-                font: var(--style-small-text);
-                text-transform: uppercase;
-                letter-spacing: 0.1em;
+            &:hover {
+                color: var(--text-on-color);
 
                 &::before {
-                    content: '';
-                    width: 18px;
-                    height: 18px;
-                    border: 1px solid var(--border-color);
-                    background: var(--bg-color-transparent);
-                    border-radius: 3px;
+                    width: 100%;
+                }
+            }
+        }
+        .multiSelect {
+            gap: var(--spacing-lg);
+
+            label {
+                display: block;
+                max-width: max-content;
+                margin: 0;
+                cursor: pointer;
+
+                input {
+                    display: none;
+
+                    &:checked + strong {
+                        &::before {
+                            background: var(--bg-color);
+                        }
+                    }
+                }
+
+                strong {
+                    display: flex;
+                    gap: var(--spacing-sm);
+                    align-items: center;
+                    font: var(--style-small-text);
+                    text-transform: uppercase;
+                    letter-spacing: 0.1em;
+
+                    &::before {
+                        content: '';
+                        width: 18px;
+                        height: 18px;
+                        border: 1px solid var(--border-color);
+                        background: var(--bg-color-transparent);
+                        border-radius: 3px;
+                    }
                 }
             }
         }

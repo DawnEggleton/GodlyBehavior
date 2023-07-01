@@ -43,12 +43,16 @@ function initStickyMenu() {
     const sticky = document.querySelector('.nav--main');
     const breadcrumb = document.querySelector('.nav--breadcrumb');
     const webMenu = document.querySelector('.webpage--menu');
+    const profileMenu = document.querySelector('.profile--menu');
     const initScroll = document.documentElement.scrollTop;
     if (initScroll > 0) {
         sticky.classList.add("is-sticky");
         breadcrumb.classList.add("is-sticky");
         if(webMenu) {
             webMenu.classList.add('is-sticky');
+        }
+        if(profileMenu) {
+            profileMenu.classList.add('is-sticky');
         }
     }
 
@@ -72,11 +76,17 @@ function initStickyMenu() {
             if(webMenu) {
                 webMenu.classList.add('is-sticky');
             }
+            if(profileMenu) {
+                profileMenu.classList.add('is-sticky');
+            }
         } else {
             sticky.classList.remove("is-sticky")
             breadcrumb.classList.remove("is-sticky");
             if(webMenu) {
                 webMenu.classList.remove('is-sticky');
+            }
+            if(profileMenu) {
+                profileMenu.classList.remove('is-sticky');
             }
         }
     });
@@ -88,10 +98,11 @@ function initSwitcher() {
 		if(i !== 0) {
 			let characterName = character.innerText.trim();
 			let characterId = character.value;
+            let siteString = `uploads2/godlybehaviour`;
 			newSwitch += `<label class="switch-block">
 				<input type="checkbox" value="${characterId}" onchange="this.form.submit()" name="sub_id" />
-				<div style="background-image: url(https://files.jcink.net/uploads2/playedgod/av-${characterId}.png), url(https://files.jcink.net/uploads2/playedgod/av-${characterId}.gif), url(https://files.jcink.net/uploads2/playedgod/av-${characterId}.jpg), url(https://files.jcink.net/uploads2/playedgod/av-${characterId}.jpeg), url(https://picsum.photos/250);"></div>
-				<b>${characterName}</b>
+				<div style="background-image: url(https://files.jcink.net/${siteString}/av-${characterId}.png), url(https://files.jcink.net/${siteString}/av-${characterId}.gif), url(https://files.jcink.net/${siteString}/av-${characterId}.jpg), url(https://files.jcink.net/${siteString}/av-${characterId}.jpeg), url(https://picsum.photos/250);"></div>
+				<b>${capitalize(characterName)}</b>
 			</label>`;
 		}
 	});
@@ -287,6 +298,73 @@ function initTabs() {
         });
     }
 }
+function initMenuToggles() {
+    document.querySelectorAll('#ucpmenu b').forEach(header => {
+        header.addEventListener('click', e => {
+            e.currentTarget.classList.toggle('is-closed');
+        });
+    });
+}
+function initProfile() {
+    window.addEventListener('hashchange', function(e){
+        //get hash
+        let hash = window.location.hash;
+        console.log(hash);
+        let selected = document.querySelector(`.profile--menu a[href="${hash}"]`);
+        let hashContent = document.querySelector(`tag-tab[data-key="${hash}"]`);
+        let unsetDefault = Array.from(selected.parentNode.children);
+        let tabSiblings = Array.from(hashContent.parentNode.children);
+        let tabIndex = tabSiblings.indexOf.call(tabSiblings, hashContent);
+        //find the sub menu/inner menu link with the matching hash
+        if (hash) {
+            $(selected).trigger('click');
+        }
+        //select based on this
+
+        //Tabs
+        //Remove active from everything
+        document.querySelectorAll('.profile--menu a').forEach(label => label.classList.remove('is-active'));
+        unsetDefault.forEach(label => label.classList.remove('is-active'));
+        document.querySelectorAll('.profile tag-tab').forEach(label => label.classList.remove('is-active'));
+
+        //Add active
+        selected.classList.add('is-active');
+        hashContent.classList.add('is-active');
+        tabSiblings.forEach(sibling => sibling.style.left = `${-100 * tabIndex}%`);
+    });
+
+    //hash linking
+    if (window.location.hash){
+        //get hash
+        let hash = window.location.hash;
+        console.log(hash);
+        let selected = document.querySelector(`.profile--menu a[href="${hash}"]`);
+        let hashContent = document.querySelector(`tag-tab[data-key="${hash}"]`);
+        let unsetDefault = Array.from(selected.parentNode.children);
+        let tabSiblings = Array.from(hashContent.parentNode.children);
+        let tabIndex = tabSiblings.indexOf.call(tabSiblings, hashContent);
+        //find the sub menu/inner menu link with the matching hash
+        if (hash) {
+            $(selected).trigger('click');
+        }
+        //select based on this
+
+        //Tabs
+        //Remove active from everything
+        document.querySelectorAll('.profile--menu a').forEach(label => label.classList.remove('is-active'));
+        unsetDefault.forEach(label => label.classList.remove('is-active'));
+        document.querySelectorAll('.profile tag-tab').forEach(label => label.classList.remove('is-active'));
+
+        //Add active
+        selected.classList.add('is-active');
+        hashContent.classList.add('is-active');
+        tabSiblings.forEach(sibling => sibling.style.left = `${-100 * tabIndex}%`);
+    } else {
+        //Auto-select  tab without hashtag present
+        document.querySelector(`.profile--menu a`).classList.add('is-active');
+        document.querySelector(`.profile tag-tabset tag-tab:first-child`).classList.add('is-active');
+    }
+}
 
 /********** Utilities **********/
 function fixMc(str) {
@@ -310,6 +388,132 @@ function capitalizeMultiple(selector) {
     document.querySelectorAll(selector).forEach(character => {
         character.innerText = capitalize(character.innerText);
     });
+}
+function cpShift() {
+	let imageType = document.querySelector(toggleFields[1]).value,
+	    account = document.querySelector(toggleFields[0]).value,
+        species = document.querySelector(toggleFields[2]).value,
+	    showFields = [],
+	    hideFields = characterFields.concat(hybridFields).concat(defaultImages).concat(gridImages).concat(mosaicImages),
+	    showHeaders = allHeaders;
+
+	if(account == 'character') {
+        if(species === 'hybrid') {
+            if(imageType === 'grid') {
+                showFields = characterFields.concat(hybridFields).concat(defaultImages).concat(gridImages);
+                hideFields = mosaicImages;
+                showHeaders = allHeaders.concat(charHeaders);
+                document.querySelector(defaultImages[0]).classList.remove('fullWidth');
+            } else if (imageType === 'mosaic') {
+                showFields = characterFields.concat(hybridFields).concat(defaultImages).concat(gridImages).concat(mosaicImages);
+                hideFields = [];
+                showHeaders = allHeaders.concat(charHeaders);
+                document.querySelector(defaultImages[0]).classList.remove('fullWidth');
+            } else {
+                showFields = characterFields.concat(hybridFields).concat(defaultImages);
+                hideFields = gridImages.concat(mosaicImages);
+                showHeaders = allHeaders.concat(charHeaders);
+                document.querySelector(defaultImages[0]).classList.add('fullWidth');
+            }
+        } else {
+            if(imageType === 'grid') {
+                showFields = characterFields.concat(defaultImages).concat(gridImages);
+                hideFields = mosaicImages.concat(hybridFields);
+                showHeaders = allHeaders.concat(charHeaders);
+                document.querySelector(defaultImages[0]).classList.remove('fullWidth');
+            } else if (imageType === 'mosaic') {
+                showFields = characterFields.concat(defaultImages).concat(gridImages).concat(mosaicImages);
+                hideFields = hybridFields;
+                showHeaders = allHeaders.concat(charHeaders);
+                document.querySelector(defaultImages[0]).classList.remove('fullWidth');
+            } else {
+                showFields = characterFields.concat(defaultImages);
+                hideFields = gridImages.concat(mosaicImages).concat(hybridFields);
+                showHeaders = allHeaders.concat(charHeaders);
+                document.querySelector(defaultImages[0]).classList.add('fullWidth');
+            }
+        }
+	}
+    
+    adjustCP(showFields, hideFields, showHeaders);
+}
+function adjustCP(show, hide, headers) {
+	show.forEach(field => {
+		showAccField(field);
+	});
+	hide.forEach(field => {
+		hideAccField(field);
+	});
+	document.querySelectorAll('.ucp--header').forEach(header => {
+		header.remove();
+	});
+	headers.forEach(header => {
+		insertCPHeader(header['title'], header['insertBefore']);
+	});
+}
+function hideAccField(field) {
+	if(document.querySelector(field)) {
+		document.querySelector(field).classList.add('hide');
+	}
+}
+function showAccField(field) {
+	if(document.querySelector(field)) {
+		document.querySelector(field).classList.remove('hide');
+	}
+}
+function insertCPHeader (title, field) {
+	$(field).before(`<tr class="pformstrip ucp--header"><td>${title}</td></tr>`);
+}
+function moveLeft(e) {
+    e.parentNode.querySelector('tag-labels').scrollLeft -= 150;
+}
+function moveRight(e) {
+    e.parentNode.querySelector('tag-labels').scrollLeft += 150;
+}
+function setMonth(month) {
+    switch(month) {
+        case 'January':
+            month = 1;
+            break;
+        case 'February':
+            month = 2;
+            break;
+        case 'March':
+            month = 3;
+            break;
+        case 'April':
+            month = 4;
+            break;
+        case 'May':
+            month = 5;
+            break;
+        case 'June':
+            month = 6;
+            break;
+        case 'July':
+            month = 7;
+            break;
+        case 'August':
+            month = 8;
+            break;
+        case 'September':
+            month = 9;
+            break;
+        case 'October':
+            month = 10;
+            break;
+        case 'November':
+            month = 11;
+            break;
+        case 'December':
+            month = 12;
+            break;
+        default:
+            month = -1;
+            break;
+    }
+
+    return month;
 }
 
 /********** Toggles **********/

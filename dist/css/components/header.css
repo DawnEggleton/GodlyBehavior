@@ -13,7 +13,7 @@ header {
     header {
       height: 100vh;
       padding: 0; } }
-  body:not(#idx) header {
+  body:not(#idx) > header {
     display: none; }
   header h1 {
     display: flex;

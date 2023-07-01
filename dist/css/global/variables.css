@@ -45,11 +45,15 @@ body {
   --bg-alt: var(--dkGrey);
   --bg-highlight: var(--mlGrey);
   --bg-transparent: var(--white-10);
+  --bg-color: var(--accent);
+  --bg-color-transparent: var(--accent-20);
   --text-body: var(--white);
   --text-content: var(--offwhite);
   --text-on-color: var(--black);
+  --text-color: var(--accent);
   --border-main: var(--mdGrey);
-  --border-secondary: var(--mdkGrey); }
+  --border-secondary: var(--mdkGrey);
+  --border-color: var(--accent); }
   body.g-4,
   body .g-4,
   body [data-group="staff"],
@@ -192,11 +196,15 @@ body {
   --bg-alt: var(--white);
   --bg-highlight: var(--ltGrey);
   --bg-transparent: var(--white-50);
+  --bg-color: var(--accent);
+  --bg-color-transparent: var(--accent-20);
   --text-body: var(--dkGrey);
   --text-content: var(--offblack);
   --text-on-color: var(--offwhite);
+  --text-color: var(--accent);
   --border-main: var(--mlGrey);
-  --border-secondary: var(--mltGrey); }
+  --border-secondary: var(--mltGrey);
+  --border-color: var(--accent); }
   .light.g-4,
   .light .g-4,
   .light [data-group="staff"],
