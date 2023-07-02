@@ -59,11 +59,12 @@
                             <tag-labels>
                                 <button onclick="moveLeft(this)" type="button"><i class="fa-solid fa-angles-left"></i></button>
                                 <tag-labelset>
-                                    <a href="#basics" class="is-active">basics</a>
-                                    <a href="#details">details</a>
-                                    <a href="#plotting">plotting</a>
-                                    <a href="#tracker">tracker</a>
+                                    <a href="#basics" class="is-active charOnly">basics</a>
+                                    <a href="#details" class="charOnly">details</a>
+                                    <a href="#plotting" class="charOnly">plotting</a>
+                                    <a href="#tracker" class="charOnly">tracker</a>
                                     <a href="#player">player</a>
+                                    <a href="#roster" class="memAccOnly">roster</a>
                                 </tag-labelset>
                                 <button onclick="moveRight(this)" type="button"><i class="fa-solid fa-angles-right"></i></button>
                             </tag-labels>
@@ -71,7 +72,7 @@
                     </div>
                     <div class="profile--content">
                         <tag-tabset>
-                            <tag-tab data-key="#basics" class="is-active">
+                            <tag-tab data-key="#basics" class="is-active charOnly">
                                 <div class="profile--aesthetic Mosaic"></div>
                                 <div class="profile--basics">
                                     <div class="scroll" data-type="grid" data-columns="2">
@@ -147,27 +148,205 @@
                                     <img src="https://picsum.photos/500" />
                                 </div>
                             </tag-tab>
-                            <tag-tab data-key="#details">
-                                cheatsheet and freeform
+                            <tag-tab data-key="#details" class="charOnly">
+                                <div class="profile--cheatsheet">
+                                    <strong class="h7">Cheatsheet</strong><br>
+                                    <div class="scroll">
+                                        <ul>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="profile--freeform">
+                                    <strong class="h7">Freeform</strong><br>
+                                    <div class="scroll">
+                                        <h2>H2</h2>
+                                        <h3>h3</h3>
+                                        <h4>h4</h4>
+                                        <h5>h5</h5>
+                                        <h6>h6</h6>
+                                        <h7>h7</h7>
+                                        <h8>h8</h8>
+                                        <blockquote>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus metus eget lectus tincidunt, in posuere nisl volutpat. Mauris a ligula eu urna laoreet volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras consectetur lacus nulla, eget vehicula mi placerat et. Proin bibendum nibh ut mattis rutrum. Vivamus fringilla leo ipsum, quis ultricies purus cursus vitae. Maecenas suscipit porttitor dignissim.</blockquote><br><br>
+
+                                        <b>Nunc dictum massa fringilla</b> porttitor elementum. Nulla convallis malesuada ex eu convallis. Nunc vitae est leo. Maecenas hendrerit, leo ut pellentesque dictum, felis lacus finibus elit, eu vulputate diam diam vitae libero. Quisque laoreet est at sem tempor, at rhoncus dolor rutrum. Nulla facilisi. Donec lobortis leo vehicula eros cursus finibus. Donec id mauris in tellus ullamcorper scelerisque.<br><br>
+
+                                        <i>Donec volutpat pellentesque</i> sem ac sodales. Donec iaculis diam nibh, ut maximus metus eleifend at. Pellentesque aliquet est vitae lorem vulputate laoreet. Nulla sit amet eros pulvinar, fermentum metus sed, porttitor elit. Sed tristique iaculis lorem sed varius. Morbi ac lacus nibh. Mauris velit odio, faucibus in quam ac, maximus pellentesque risus. Etiam mollis lorem et facilisis placerat. Integer turpis enim, finibus quis nibh interdum, rhoncus sodales mi. Vestibulum ut viverra ante, nec ultricies dui. Etiam turpis leo, accumsan vel odio a, rhoncus egestas libero. Integer id porttitor augue. Ut arcu erat, dictum a ligula vel, sollicitudin maximus enim. Pellentesque nec enim elit. Etiam quis dolor consectetur, venenatis ante nec, pellentesque metus. Donec fermentum laoreet condimentum.<br><br>
+
+                                        <u>Sed varius mi nec dui</u> sagittis, vel commodo neque tincidunt. Duis imperdiet augue sapien. Sed ante diam, vehicula faucibus ipsum gravida, cursus sagittis tellus. Donec mollis nisl sit amet lorem fermentum, sed mollis orci gravida. Etiam venenatis diam eget magna faucibus, sit amet condimentum metus euismod. Vestibulum ultricies ante dui, ut viverra felis bibendum at. Donec id condimentum lectus. Pellentesque mattis laoreet purus, eu tincidunt justo mattis a. In sodales eu urna eu laoreet. Integer ultrices justo ac metus varius suscipit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent scelerisque lorem nec quam feugiat ultricies.<br><br>
+
+                                        <a>Suspendisse rutrum</a> leo nec imperdiet maximus. Suspendisse ac tortor rutrum, facilisis risus at, elementum diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc pharetra, risus in egestas sagittis, purus risus tempus magna, non accumsan justo sem sed leo. Sed id eros sit amet quam tempus auctor. Sed consectetur massa felis, nec egestas ligula molestie sit amet. <s>Mauris pulvinar at lectus eu fermentum.</s> <br><br>
+                                    </div>
+                                </div>
                             </tag-tab>
-                            <tag-tab data-key="#plotting">
-                                plotting info
+                            <tag-tab data-key="#plotting" class="charOnly">
+                                <div class="profile--overview">
+                                    <strong class="h7">About</strong><br>
+                                    <div class="scroll">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus metus eget lectus tincidunt, in posuere nisl volutpat. Mauris a ligula eu urna laoreet volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras consectetur lacus nulla, eget vehicula mi placerat et. Proin bibendum nibh ut mattis rutrum. Vivamus fringilla leo ipsum, quis ultricies purus cursus vitae. Maecenas suscipit porttitor dignissim.<br><br>
+
+                                        Nunc dictum massa fringilla porttitor elementum. Nulla convallis malesuada ex eu convallis. Nunc vitae est leo. Maecenas hendrerit, leo ut pellentesque dictum, felis lacus finibus elit, eu vulputate diam diam vitae libero. Quisque laoreet est at sem tempor, at rhoncus dolor rutrum. Nulla facilisi. Donec lobortis leo vehicula eros cursus finibus. Donec id mauris in tellus ullamcorper scelerisque.<br><br>
+                                        
+                                        Donec volutpat pellentesque sem ac sodales. Donec iaculis diam nibh, ut maximus metus eleifend at. Pellentesque aliquet est vitae lorem vulputate laoreet. Nulla sit amet eros pulvinar, fermentum metus sed, porttitor elit. Sed tristique iaculis lorem sed varius. Morbi ac lacus nibh. Mauris velit odio, faucibus in quam ac, maximus pellentesque risus. Etiam mollis lorem et facilisis placerat. Integer turpis enim, finibus quis nibh interdum, rhoncus sodales mi. Vestibulum ut viverra ante, nec ultricies dui. Etiam turpis leo, accumsan vel odio a, rhoncus egestas libero. Integer id porttitor augue. Ut arcu erat, dictum a ligula vel, sollicitudin maximus enim. Pellentesque nec enim elit. Etiam quis dolor consectetur, venenatis ante nec, pellentesque metus. Donec fermentum laoreet condimentum. 
+                                    </div>
+                                </div>
+                                <div class="profile--interested">
+                                    <strong class="h7">Interested</strong><br>
+                                    <div class="scroll">
+                                        <ul>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus metus eget lectus tincidunt, in posuere nisl volutpat.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus metus eget lectus tincidunt, in posuere nisl volutpat.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus metus eget lectus tincidunt, in posuere nisl volutpat.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus metus eget lectus tincidunt, in posuere nisl volutpat.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus metus eget lectus tincidunt, in posuere nisl volutpat.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus metus eget lectus tincidunt, in posuere nisl volutpat.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus metus eget lectus tincidunt, in posuere nisl volutpat.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="profile--avoiding">
+                                    <strong class="h7">Not Interested</strong><br>
+                                    <div class="scroll">
+                                        <ul>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus metus eget lectus tincidunt, in posuere nisl volutpat.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus metus eget lectus tincidunt, in posuere nisl volutpat.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus metus eget lectus tincidunt, in posuere nisl volutpat.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus metus eget lectus tincidunt, in posuere nisl volutpat.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus metus eget lectus tincidunt, in posuere nisl volutpat.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus metus eget lectus tincidunt, in posuere nisl volutpat.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus metus eget lectus tincidunt, in posuere nisl volutpat.</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </tag-tab>
-                            <tag-tab data-key="#tracker">
-                                tracker coming
+                            <tag-tab data-key="#tracker" class="charOnly">
+                                <div class="profile--tracker">
+                                    <div class="profile--tracker-menu">
+                                        <tag-labels>
+                                            <button onclick="moveLeft(this)" type="button"><i class="fa-solid fa-angles-left"></i></button>
+                                            <tag-labelset>
+                                                <a href="#active" data-category="tracker" class="is-active">active</a>
+                                                <a href="#archived" data-category="tracker">archived</a>
+                                                <a href="#comms" data-category="tracker">texts & calls</a>
+                                                <a href="#socials" data-category="tracker">social media</a>
+                                                <a href="#requests" data-category="tracker">requests</a>
+                                                <a href="#dev" data-category="tracker">development</a>
+                                            </tag-labelset>
+                                            <button onclick="moveRight(this)" type="button"><i class="fa-solid fa-angles-right"></i></button>
+                                        </tag-labels>
+                                    </div>
+                                    <div class="profile--tracker-content">
+                                        <tag-tabset data-category="tracker">
+                                            <tag-tab data-key="#active" data-type="grid" data-columns="3">
+                                                <div class="profile--tracker-item" data-owing="myturn">
+                                                    <a href="./post.html">Thread Title which is extra long to check wrapping</a>
+                                                    <span>Description <tag-highlight>month dd/yy</tag-highlight></span>
+                                                    <span>Posted in <a href="./topiclist.html">Forum Name</a></span>
+                                                    <span>Last post by <a href="./profile.html">First Last</a></span>
+                                                    <span>Month DD, YYYY, HH:MM am/pm</span>
+                                                    <i class="fa-light fa-anchor"></i>
+                                                </div>
+                                            </tag-tab>
+                                            <tag-tab data-key="#archived" data-type="grid" data-columns="3">archived</tag-tab>
+                                            <tag-tab data-key="#comms" data-type="grid" data-columns="3">comms</tag-tab>
+                                            <tag-tab data-key="#socials" data-type="grid" data-columns="3">socials</tag-tab>
+                                            <tag-tab data-key="#requests" data-type="grid" data-columns="3">requests</tag-tab>
+                                            <tag-tab data-key="#dev" data-type="grid" data-columns="3">dev</tag-tab>
+                                        </tag-tabset>
+                                    </div>
+                                </div>
                             </tag-tab>
                             <tag-tab data-key="#player">
-                                player info
+                                <div class="profile--member-avatar">
+                                    <span style="background-image: url(https://files.jcink.net/uploads2/godlybehaviour/av-1.png), url(https://files.jcink.net/uploads2/godlybehaviour/av-1.gif), url(https://files.jcink.net/uploads2/godlybehaviour/av-1.jpg), url(https://files.jcink.net/uploads2/godlybehaviour/av-1.jpeg), url(https://picsum.photos/250);"></span>
+                                </div>
+                                <div class="profile--alias">
+                                    <span class="charOnly">Played by Lux</span>
+                                    <span class="memAccOnly">Joined September 28 2023</span>
+                                </div>
+                                <div class="profile--player" data-type="grid" data-columns="3">
+                                    <div class="profile--item">
+                                        <strong>Pronouns</strong>
+                                        <span>She/Her</span>
+                                    </div>
+                                    <div class="profile--item">
+                                        <strong>Age</strong>
+                                        <span>31 years old</span>
+                                    </div>
+                                    <div class="profile--item">
+                                        <strong>Timezone</strong>
+                                        <span>GMT-4:00</span>
+                                    </div>
+                                    <div class="profile--item">
+                                        <strong>Rating</strong>
+                                        <span><lang-clip></lang-clip> - <sex-clip></sex-clip> - <vio-clip></vio-clip></span>
+                                    </div>
+                                    <div class="profile--item">
+                                        <strong>Style</strong>
+                                        <span>Third Person, Past Tense</span>
+                                    </div>
+                                    <div class="profile--item">
+                                        <strong>Preferred Frequency</strong>
+                                        <span>Weekly</span>
+                                    </div>
+                                    <div class="profile--item">
+                                        <strong>Bank Account</strong>
+                                        <span>$10000</span>
+                                    </div>
+                                    <div class="profile--item charOnly">
+                                        <strong>Joined</strong>
+                                        <span>September 23, 2023</span>
+                                    </div>
+                                    <div class="profile--item">
+                                        <strong>Last Seen</strong>
+                                        <span>July 1, 2023, 4:11 PM</span>
+                                    </div>
+                                    <div class="profile--item memAccOnly">
+                                        <strong>Account Type</strong>
+                                        <span>Admin</span>
+                                    </div>
+                                </div>
+                                <div class="profile--awards">
+                                    <strong class="h7">Badges</strong><br>
+                                    <div class="scroll">
+                                        <img src="http://picsum.photos/100" />
+                                    </div>
+                                </div>
+                                <div class="profile--triggers">
+                                    <strong class="h7">Please Avoid</strong><br>
+                                    <div class="scroll">
+                                    triggers
+                                    </div>
+                                </div>
                             </tag-tab>
+                            <tag-tab data-key="#roster" class="memAccOnly" data-type="grid" data-columns="4"></tag-tab>
                         </tag-tabset>
                     </div>
                 </section>
             </div>
 
-            <script>
-                initProfile();
+<span class="hide"><form action='index.php' name='subprofilemenu' method='GET'>
+    <select class='forminput' name='showuser' style="width: 180px;" onchange="this.form.submit()">
+    <option value='-------------------' selected='selected'>------------------------------</option>
+    <option value='2'>&nbsp;&nbsp;&raquo; lottie fox </option><option value='3'>&nbsp;&nbsp;&raquo; sterling de mitri </option><option value='6'>&nbsp;&nbsp;&raquo; nikolas kovac </option><option value='17'>&nbsp;&nbsp;&raquo; connor langford-king </option><option value='18'>&nbsp;&nbsp;&raquo; noah langford-clark </option><option value='29'>&nbsp;&nbsp;&raquo; kit carraway </option><option value='35'>&nbsp;&nbsp;&raquo; persephone payne </option><option value='41'>&nbsp;&nbsp;&raquo; remy rivard </option><option value='44'>&nbsp;&nbsp;&raquo; simon flynn </option><option value='47'>&nbsp;&nbsp;&raquo; marlowe blake </option><option value='53'>&nbsp;&nbsp;&raquo; raphael amesbury </option>
+    </select>
+    </form></span>
 
-                let name = `aiden mitchell`;
+            <script>
+                let name = `nikolas kovac`;
                 if(name.split(' ').length > 1) {
                     let nameArray = name.split(' ');
                     let formattedName = ``;
@@ -186,7 +365,26 @@
                 }
                 document.querySelector('main header h1').innerHTML = name;
 
-                //put in character only wrap
+                let ratings = [
+                    {'type': 'lang', 'value': 'All'},
+                    {'type': 'sex', 'value': 'Mild'},
+                    {'type': 'vio', 'value': 'With Limits'}
+                ];
+                ratings.forEach(rating => {
+                    if(rating.value === 'All') {
+                        document.querySelector(`${rating.type}-clip`).innerText = 3;
+                    } else if(rating.value === 'With Limits') {
+                        document.querySelector(`${rating.type}-clip`).innerText = 2;
+                    } else if(rating.value === 'Mild') {
+                        document.querySelector(`${rating.type}-clip`).innerText = 1;
+                    } else {
+                        document.querySelector(`${rating.type}-clip`).innerText = 0;
+                    }
+                });
+
+
+                //characters only
+                document.querySelectorAll('.memAccOnly').forEach(item => item.remove());
                 let warnings = `parental homophobia, near-death experience, spousal death`;
                 if(warnings !== `` && warnings !== `<i>No Information</i>`) {
                     document.querySelector('#clip-warnings').innerHTML = `<i class="fa-light fa-triangle-exclamation"></i>
@@ -237,7 +435,14 @@
                     species = `Hybrid Text`;
                 }
                 document.querySelector('#species-clip').innerHTML = species;
+
+                let overflow = ``;
+                if(overflow !== `` && overflow !== `<i>No Information</i>`) {
+                    document.querySelector('.profile--freeform').insertAdjacentHTML('beforeend', overflow);
+                }
                 
+                initProfile();
+
             </script>
         </main>
 

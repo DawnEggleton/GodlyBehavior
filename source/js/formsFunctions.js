@@ -430,6 +430,7 @@ function submitReserves(data, discord) {
             .then((response) => response.json())
             .then((reserveData) => {
                 let existing = reserveData.filter(item => item.Face === data.face);
+                let oldReserves = [];
         
                 if(existing.length > 0) {
                     existing.forEach((reserve, i) => {
@@ -439,7 +440,7 @@ function submitReserves(data, discord) {
                         console.log(current);
                         console.log(time);
                         console.log(difference);
-                        if(difference < 8) {
+                        if(difference < 15) {
                             if(form.querySelector('.warning')) {
                                 form.querySelector('.warning').remove();
                             }
@@ -447,6 +448,7 @@ function submitReserves(data, discord) {
                         
                             $('#form-sort button[type="submit"]').text('Submit');
                         } else {
+                            oldReserves.push(reserve);
                             existing.splice(i, 1);
                         }
                     });
@@ -458,7 +460,17 @@ function submitReserves(data, discord) {
                     
                         $('#form-sort button[type="submit"]').text('Submit');
                     } else {
-                        addReserve(form, data, discord);
+                        let hasReserved = false;
+                        oldReserves.forEach(reserve => {
+                            if(reserve.Member === data.member) {
+                                if(form.querySelector('.warning')) {
+                                    form.querySelector('.warning').remove();
+                                }
+                                form.insertAdjacentHTML('afterbegin', `<blockquote class="fullWidth warning">Uh-oh! You've reserved that face before! Reserves at Godly Behaviour are non-renewable. If you don't remember doing this, please reach out to staff via Discord and we can review our records and discuss options with you!</blockquote>`);
+                            } else {
+                                addReserve(form, data, discord);
+                            }
+                        });
                     }
                 } else {
                     addReserve(form, data, discord);

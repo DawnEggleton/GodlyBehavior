@@ -124,3 +124,8 @@
 [data-text-align="Justify"],
 [data-text-align="JUSTIFY"] {
   text-align: justify; }
+
+.blur {
+  filter: blur(5px);
+  transform: scale(120%);
+  transform-origin: center; }

@@ -60,3 +60,10 @@ tag-tabset {
     flex: 0 0 100%;
     left: 0;
     transition-duration: var(--style-duration); }
+
+tag-highlight {
+  background: var(--bg-color-transparent);
+  padding: 0 var(--spacing-sm);
+  border-left: 2px solid var(--border-color);
+  margin: 0 var(--spacing-sm) 0 0;
+  display: inline-block; }

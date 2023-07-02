@@ -238,6 +238,16 @@ nav {
             a {
                 color: var(--text-content);
             }
+
+            & ~ br {
+                display: none;
+            }
+
+            .fa-ellipsis {
+                padding: 0 var(--spacing-sm);
+                font-size: 1.2em;
+                top: 1px;
+            }
         }
     }
 }

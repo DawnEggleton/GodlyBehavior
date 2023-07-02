@@ -167,3 +167,9 @@ nav {
     color: var(--text-content); }
     .nav--breadcrumb #navstrip a {
       color: var(--text-content); }
+    .nav--breadcrumb #navstrip ~ br {
+      display: none; }
+    .nav--breadcrumb #navstrip .fa-ellipsis {
+      padding: 0 var(--spacing-sm);
+      font-size: 1.2em;
+      top: 1px; }

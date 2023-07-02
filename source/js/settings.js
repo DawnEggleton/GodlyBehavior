@@ -28,3 +28,9 @@ const charHeaders = [
     {'title': `Links`, 'insertBefore': '#field_36'},
 ];
 
+const specialSpecies = [
+    {'species': 'hybrid', 'fields': hybridFields},
+    {'species': 'were', 'fields': wereFields},
+    {'species': 'dragon', 'fields': dragonFields},
+];
+

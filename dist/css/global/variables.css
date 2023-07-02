@@ -11,7 +11,9 @@
   --style-duration: 0.3s;
   --size-menu-height: 44px;
   --size-submenu-height: 34px;
+  --size-profile-menu-height: 56px;
   --size-popout-width: 300px;
+  --size-pagination-height: 50px;
   --spacing-xs: 5px;
   --spacing-sm: 10px;
   --spacing-md: 15px;
@@ -26,6 +28,7 @@
   --black: rgb(33, 33, 33);
   --offblack: rgb(43, 43, 43);
   --dkGrey: rgb(63, 63, 63);
+  --dkGrey-70: rgba(63, 63, 63, 0.7);
   --mdkGrey: rgb(83, 83, 83);
   --mdGrey: rgb(113, 113, 113);
   --mlGrey: rgb(153, 153, 153);
@@ -34,9 +37,8 @@
   --offwhite: rgb(230, 230, 230);
   --white: rgb(248, 248, 248);
   --white-50: rgba(248, 248, 248, 0.5);
-  --white-10: rgba(248, 248, 248, 0.1);
-  --accent: rgb(248, 248, 248);
-  --accent-20: rgb(248, 248, 248, 0.2); }
+  --accent: rgb(178, 220, 223);
+  --accent-20: rgb(178, 220, 223, 0.2); }
 
 body {
   --bg-body: var(--trueBlack);
@@ -44,7 +46,7 @@ body {
   --bg-content: var(--offblack);
   --bg-alt: var(--dkGrey);
   --bg-highlight: var(--mlGrey);
-  --bg-transparent: var(--white-10);
+  --bg-transparent: var(--dkGrey-70);
   --bg-color: var(--accent);
   --bg-color-transparent: var(--accent-20);
   --text-body: var(--white);
@@ -54,6 +56,17 @@ body {
   --border-main: var(--mdGrey);
   --border-secondary: var(--mdkGrey);
   --border-color: var(--accent); }
+  body.g-1,
+  body .g-1, body.g-2,
+  body .g-2, body.g-3,
+  body .g-3, body.g-5,
+  body .g-5 {
+    --accent: rgb(178, 220, 223);
+    --accent-20: rgb(178, 220, 223, 0.2);
+    --bg-color: var(--accent);
+    --bg-color-transparent: var(--accent-20);
+    --text-color: var(--accent);
+    --border-color: var(--accent); }
   body.g-4,
   body .g-4,
   body [data-group="staff"],
@@ -188,8 +201,8 @@ body {
     --border-color: var(--accent); }
 
 .light {
-  --accent: rgb(94, 94, 94);
-  --accent-20: rgb(94, 94, 94, 0.2);
+  --accent: rgb(126, 137, 138);
+  --accent-20: rgb(126, 137, 138, 0.2);
   --bg-body: var(--ltGrey);
   --bg-body-alt: var(--mlGrey);
   --bg-content: var(--offwhite);
@@ -199,12 +212,23 @@ body {
   --bg-color: var(--accent);
   --bg-color-transparent: var(--accent-20);
   --text-body: var(--dkGrey);
-  --text-content: var(--offblack);
+  --text-content: var(--mdkGrey);
   --text-on-color: var(--offwhite);
   --text-color: var(--accent);
   --border-main: var(--mlGrey);
   --border-secondary: var(--mltGrey);
   --border-color: var(--accent); }
+  .light.g-1,
+  .light .g-1, .light.g-2,
+  .light .g-2, .light.g-3,
+  .light .g-3, .light.g-5,
+  .light .g-5 {
+    --accent: rgb(126, 137, 138);
+    --accent-20: rgb(126, 137, 138, 0.2);
+    --bg-color: var(--accent);
+    --bg-color-transparent: var(--accent-20);
+    --text-color: var(--accent);
+    --border-color: var(--accent); }
   .light.g-4,
   .light .g-4,
   .light [data-group="staff"],
@@ -265,6 +289,7 @@ body {
   --xlBody: 16px; }
 
 .lgFont {
+  --size-pagination-height: 54px;
   --xsBody: 10px;
   --sBody: 12px;
   --mBody: 14px;

@@ -3,7 +3,9 @@
 #delcookiesrow ~ .tableborder .row4,
 main > div[align="center"] ~ .tableborder .row4,
 main > .tableborder > .row4 {
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  font: var(--style-small-text) !important;
+  letter-spacing: 0.1em; }
 
 #delcookiesrow ~ .tableborder,
 main > div[align="center"] ~ .tableborder,
@@ -16,7 +18,7 @@ main > .tableborder > .row4 {
 #userlinks,
 #logostrip,
 .newstext {
-  display: none; }
+  display: none !important; }
 
 fieldset {
   text-transform: uppercase; }
@@ -121,6 +123,110 @@ body:not(#ST) .tableborder > .titlemedium {
     line-height: 200%;
     letter-spacing: 0.1em;
     z-index: 3; }
+
+/**********************************
+    Topic List/Topics Shared
+***********************************/
+#SF main > table,
+#ST main > table {
+  background: var(--bg-transparent);
+  border: 1px solid var(--border-secondary);
+  padding: var(--spacing-sm);
+  display: block; }
+  #SF main > table:first-of-type,
+  #ST main > table:first-of-type {
+    position: sticky;
+    top: calc(var(--size-menu-height) + var(--size-submenu-height));
+    z-index: 2;
+    background: var(--bg-alt); }
+    #SF main > table:first-of-type + br,
+    #ST main > table:first-of-type + br {
+      display: none; }
+  #SF main > table tbody,
+  #ST main > table tbody {
+    display: block; }
+    #SF main > table tbody tr,
+    #ST main > table tbody tr {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-sm) var(--spacing-lg);
+      justify-content: space-between; }
+      #SF main > table tbody tr td,
+      #ST main > table tbody tr td {
+        width: max-content;
+        display: flex;
+        gap: var(--spacing-lg);
+        align-items: center; }
+        #SF main > table tbody tr td .goto-firstunread,
+        #ST main > table tbody tr td .goto-firstunread {
+          display: none; }
+
+.macro--button {
+  font-size: 16px;
+  text-transform: uppercase;
+  font-family: var(--font-body-bold);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1.2em; }
+
+.macro--header {
+  grid-column: 1 / -1;
+  line-height: 160%;
+  max-width: max-content;
+  font-size: 22px;
+  font-family: var(--font-body-bold);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  padding: var(--spacing-sm) 0 var(--spacing-sm) var(--spacing-lg); }
+  .macro--header::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--bg-color);
+    border-radius: 2px; }
+
+.pagination .pagination_current,
+.pagination a {
+  font-size: 13px;
+  text-transform: uppercase;
+  font-family: var(--font-body-bold);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  transition-duration: var(--style-duration);
+  line-height: 1.2em; }
+  .pagination .pagination_current:hover,
+  .pagination a:hover {
+    color: var(--text-color); }
+
+.pagination .pagination_current {
+  color: var(--text-color);
+  font-weight: 700; }
+
+.wrapmini + div[align="right"] {
+  font-size: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  gap: var(--spacing-sm); }
+  .wrapmini + div[align="right"] form {
+    flex: 0 0 100%; }
+    .wrapmini + div[align="right"] form input[type="text"] {
+      top: 1.5px;
+      font-size: var(--mBody);
+      margin-right: var(--spacing-sm); }
+    .wrapmini + div[align="right"] form select {
+      margin-right: var(--spacing-sm); }
+  .wrapmini + div[align="right"] br {
+    display: none; }
+  .wrapmini + div[align="right"] select {
+    padding: var(--spacing-sm); }
+  .wrapmini + div[align="right"] #mod_topics_submit,
+  .wrapmini + div[align="right"] #mod_topics_submit + input {
+    margin: 0; }
 
 /**********************************
     Topic/Post Searchs

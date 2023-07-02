@@ -67,7 +67,7 @@
                             )</span>
                         </td>
                         <td width="80%" align="right">
-                            <a href="?act=Post&amp;CODE=00&amp;f=1"><span class="macro--button"><i class="fa-solid fa-plus"></i></span></a>
+                            <a href="?act=Post&amp;CODE=00&amp;f=1"><span class="macro--button">New Topic</span></a>
                         </td>
                     </tr>
                 </tbody>
@@ -79,24 +79,67 @@
                 <input type="hidden" id="tact" name="tact" value="close">	
                 
                 <!--Topic List-->
-                <h2 class="category--title">Topics</h2>
-                <section class="category">
+                <section class="topiclist category" data-type="grid" data-columns="2">
+                    <h2>Topics</h2>
                     <div class="topic">
-                        <div class="topic--border">
+                        <div class="topic--title">
+                            <i class="fa-light fa-anchor"></i>
                             <h3><a href="post.html">Topic Title Goes In Here Like This</a></h3>
-                            <div class="topic--stats">
-                                <div class="topic--stat"><a href="#">00</a> Replies</div>
-                            </div>
-                            <div class="topic--info">
-                                <div class="topic--poster">
-                                    <a href="profile.html">Lux</a>
-                                    <span>Month DD YYYY, HH:MM am/pm</span>
-                                </div>
-                                <div class="topic--poster">
-                                    <a href="profile.html">Lux</a>
-                                    <span>Month DD YYYY, HH:MM am/pm</span>
-                                </div>
-                            </div>
+                        </div>
+                        <div class="topic--description">
+                            <label for="TID_<!-- |tid| -->" class="staffOnly input-wrap">
+                                <input type="checkbox">
+                                <div class="fancy-input checkbox"><i class="fa-regular fa-xmark"></i></div>
+                            </label>
+                            [ month dd/yy ] description
+                        </div>
+                        <div class="topic--info">
+                            <div class="topic--item"><b>000</b> views</div>
+                            <div class="topic--item"><a>000</a> replies</div>
+                        </div>
+                        <div class="topic--latest">
+                            <span>Last post by <a href="./profile.html">First Last</a></span>
+                            <span>Month DD, YYYY, HH:MM am/pm</span>
+                        </div>
+                        <div class="topic--started">
+                            <span>Started by <a href="./profile.html">First Last</a></span>
+                            <span>Month DD, YYYY, HH:MM am/pm</span>
+                        </div>
+                    </div>
+                    <div class="topic">
+                        <div class="topic--title">
+                            <i class="fa-light fa-anchor"></i>
+                            <h3><a href="post.html">Topic Title Goes In Here Like This</a></h3>
+                        </div>
+                        <div class="topic--info">
+                            <div class="topic--item"><b>000</b> views</div>
+                            <div class="topic--item"><a>000</a> replies</div>
+                        </div>
+                        <div class="topic--latest">
+                            <span>Last post by <a href="./profile.html">First Last</a></span>
+                            <span>Month DD, YYYY, HH:MM am/pm</span>
+                        </div>
+                        <div class="topic--started">
+                            <span>Started by <a href="./profile.html">First Last</a></span>
+                            <span>Month DD, YYYY, HH:MM am/pm</span>
+                        </div>
+                    </div>
+                    <div class="topic">
+                        <div class="topic--title">
+                            <i class="fa-light fa-anchor"></i>
+                            <h3><a href="post.html">Topic Title Goes In Here Like This</a></h3>
+                        </div>
+                        <div class="topic--info">
+                            <div class="topic--item"><b>000</b> views</div>
+                            <div class="topic--item"><a>000</a> replies</div>
+                        </div>
+                        <div class="topic--latest">
+                            <span>Last post by <a href="./profile.html">First Last</a></span>
+                            <span>Month DD, YYYY, HH:MM am/pm</span>
+                        </div>
+                        <div class="topic--started">
+                            <span>Started by <a href="./profile.html">First Last</a></span>
+                            <span>Month DD, YYYY, HH:MM am/pm</span>
                         </div>
                     </div>
                 </section>

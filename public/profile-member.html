@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Godly Behaviour</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--Styles-->
+        <link rel="stylesheet" href="../dist/css/styles.css" />
+
+        <!--Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Palanquin+Dark:wght@400;500;600;700&family=Palanquin:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet"> 
+
+        <!--Icons-->
+		<link href="https://dawneggleton.github.io/css/all.css" rel="stylesheet" />
+		
+        <!--Script Libraries-->
+		<script type='text/javascript' src='https://files.jcink.net/html/jquery-1.7.2.min.js'></script>
+		<script type='text/javascript' src='https://files.jcink.net/html/jquery.cookie-1.3.1.js'></script> 
+		<script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js"></script>
+        <script src="../dist/js/clipboard.js"></script>
+        <script src="../dist/js/functions.js"></script>
+
+        <!--Settings-->
+        <script type='text/javascript' src='../dist/js/settings.js'></script>
+        <link rel="stylesheet" href="../dist/css/settings.css" />
+    </head>
+    <body id="Profile" class="g-4">
+<!--Header-->
+        <header></header>
+
+        <!--Navigation-->
+        <div id="nav-clip"></div>
+
+        <!--Main Body-->
+        <main>
+            <a name="top"></a>
+		
+
+            <!--Profile-->
+            <div class="profile g-4">
+                <header>
+                    <h1></h1>
+                    <div class="profile--links">
+                        <a href="./profile-member.html#roster" class="charOnly">directory</a>
+                        <a href="./topiclist.html">development</a>
+                        <a href="./post.html">wanted</a>
+                        <a href="">custom</a>
+                        <a href="./defaults/usertopics.html">topics</a>
+                        <a href="./defaults/userposts.html">posts</a>
+                        <a href="./usercp/user-sendmessage.html">message</a>
+                    </div>
+                    <div id="clip-warnings" class="profile--warning"></div>
+                </header>
+                <section class="profile--body">
+                    <div class="profile--menu">
+                        <tag-tabs class="profile--border">
+                            <tag-labels>
+                                <button onclick="moveLeft(this)" type="button"><i class="fa-solid fa-angles-left"></i></button>
+                                <tag-labelset>
+                                    <a href="#basics" class="is-active charOnly">basics</a>
+                                    <a href="#details" class="charOnly">details</a>
+                                    <a href="#plotting" class="charOnly">plotting</a>
+                                    <a href="#tracker" class="charOnly">tracker</a>
+                                    <a href="#player">player</a>
+                                    <a href="#roster" class="memAccOnly">roster</a>
+                                </tag-labelset>
+                                <button onclick="moveRight(this)" type="button"><i class="fa-solid fa-angles-right"></i></button>
+                            </tag-labels>
+                        </tag-tabs>
+                    </div>
+                    <div class="profile--content">
+                        <tag-tabset>
+                            <tag-tab data-key="#basics" class="is-active charOnly">
+                                <div class="profile--aesthetic Mosaic"></div>
+                                <div class="profile--basics">
+                                    <div class="scroll" data-type="grid" data-columns="2">
+                                        <div class="profile--item">
+                                            <strong>Full Name</strong>
+                                            <span>Nikolas Kovac</span>
+                                        </div>
+                                        <div class="profile--item">
+                                            <strong>Nickname(s)</strong>
+                                            <span>Nik, Niko</span>
+                                        </div>
+                                        <div class="profile--item">
+                                            <strong>Age</strong>
+                                            <span><age-clip></age-clip> years old</span>
+                                        </div>
+                                        <div class="profile--item">
+                                            <strong>Species</strong>
+                                            <span id="species-clip"></span>
+                                        </div>
+                                        <div class="profile--item">
+                                            <strong>Gender</strong>
+                                            <span>Male</span>
+                                        </div>
+                                        <div class="profile--item">
+                                            <strong>Pronouns</strong>
+                                            <span>He/Him</span>
+                                        </div>
+                                        <div class="profile--item">
+                                            <strong>Sexual Orientation</strong>
+                                            <span>Demisexual</span>
+                                        </div>
+                                        <div class="profile--item">
+                                            <strong>Romantic Orientation</strong>
+                                            <span>Demiromantic</span>
+                                        </div>
+                                        <div class="profile--item">
+                                            <strong>Relationship Status</strong>
+                                            <span>Single</span>
+                                        </div>
+                                        <div class="profile--item">
+                                            <strong>Partner(s)</strong>
+                                            <span>None</span>
+                                        </div>
+                                        <div class="profile--item">
+                                            <strong>Occupation</strong>
+                                            <span>Emergency Room Doctor</span>
+                                        </div>
+                                        <div class="profile--item">
+                                            <strong>Face Claim</strong>
+                                            <span>Jack Savoretti</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="profile--traits">
+                                    <div class="trait">
+                                        <b>Trait Name</b>
+                                        <div class="trait--bar"><span style="width: 50%;"></span></div>
+                                    </div>
+                                    <div class="trait">
+                                        <b>Trait Name</b>
+                                        <div class="trait--bar"><span style="width: 50%;"></span></div>
+                                    </div>
+                                    <div class="trait">
+                                        <b>Trait Name</b>
+                                        <div class="trait--bar"><span style="width: 50%;"></span></div>
+                                    </div>
+                                    <div class="trait">
+                                        <b>Trait Name</b>
+                                        <div class="trait--bar"><span style="width: 50%;"></span></div>
+                                    </div>
+                                </div>
+                                <div class="profile--image">
+                                    <img src="https://picsum.photos/500" />
+                                </div>
+                            </tag-tab>
+                            <tag-tab data-key="#details" class="charOnly">
+                                <div class="profile--cheatsheet">
+                                    <strong class="h7">Cheatsheet</strong><br>
+                                    <div class="scroll">
+                                        <ul>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="profile--freeform">
+                                    <strong class="h7">Freeform</strong><br>
+                                    <div class="scroll">
+                                        <h2>H2</h2>
+                                        <h3>h3</h3>
+                                        <h4>h4</h4>
+                                        <h5>h5</h5>
+                                        <h6>h6</h6>
+                                        <h7>h7</h7>
+                                        <h8>h8</h8>
+                                        <blockquote>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus metus eget lectus tincidunt, in posuere nisl volutpat. Mauris a ligula eu urna laoreet volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras consectetur lacus nulla, eget vehicula mi placerat et. Proin bibendum nibh ut mattis rutrum. Vivamus fringilla leo ipsum, quis ultricies purus cursus vitae. Maecenas suscipit porttitor dignissim.</blockquote><br><br>
+
+                                        <b>Nunc dictum massa fringilla</b> porttitor elementum. Nulla convallis malesuada ex eu convallis. Nunc vitae est leo. Maecenas hendrerit, leo ut pellentesque dictum, felis lacus finibus elit, eu vulputate diam diam vitae libero. Quisque laoreet est at sem tempor, at rhoncus dolor rutrum. Nulla facilisi. Donec lobortis leo vehicula eros cursus finibus. Donec id mauris in tellus ullamcorper scelerisque.<br><br>
+
+                                        <i>Donec volutpat pellentesque</i> sem ac sodales. Donec iaculis diam nibh, ut maximus metus eleifend at. Pellentesque aliquet est vitae lorem vulputate laoreet. Nulla sit amet eros pulvinar, fermentum metus sed, porttitor elit. Sed tristique iaculis lorem sed varius. Morbi ac lacus nibh. Mauris velit odio, faucibus in quam ac, maximus pellentesque risus. Etiam mollis lorem et facilisis placerat. Integer turpis enim, finibus quis nibh interdum, rhoncus sodales mi. Vestibulum ut viverra ante, nec ultricies dui. Etiam turpis leo, accumsan vel odio a, rhoncus egestas libero. Integer id porttitor augue. Ut arcu erat, dictum a ligula vel, sollicitudin maximus enim. Pellentesque nec enim elit. Etiam quis dolor consectetur, venenatis ante nec, pellentesque metus. Donec fermentum laoreet condimentum.<br><br>
+
+                                        <u>Sed varius mi nec dui</u> sagittis, vel commodo neque tincidunt. Duis imperdiet augue sapien. Sed ante diam, vehicula faucibus ipsum gravida, cursus sagittis tellus. Donec mollis nisl sit amet lorem fermentum, sed mollis orci gravida. Etiam venenatis diam eget magna faucibus, sit amet condimentum metus euismod. Vestibulum ultricies ante dui, ut viverra felis bibendum at. Donec id condimentum lectus. Pellentesque mattis laoreet purus, eu tincidunt justo mattis a. In sodales eu urna eu laoreet. Integer ultrices justo ac metus varius suscipit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent scelerisque lorem nec quam feugiat ultricies.<br><br>
+
+                                        <a>Suspendisse rutrum</a> leo nec imperdiet maximus. Suspendisse ac tortor rutrum, facilisis risus at, elementum diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc pharetra, risus in egestas sagittis, purus risus tempus magna, non accumsan justo sem sed leo. Sed id eros sit amet quam tempus auctor. Sed consectetur massa felis, nec egestas ligula molestie sit amet. <s>Mauris pulvinar at lectus eu fermentum.</s> <br><br>
+                                    </div>
+                                </div>
+                            </tag-tab>
+                            <tag-tab data-key="#plotting" class="charOnly">
+                                <div class="profile--overview">
+                                    <strong class="h7">About</strong><br>
+                                    <div class="scroll">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus metus eget lectus tincidunt, in posuere nisl volutpat. Mauris a ligula eu urna laoreet volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras consectetur lacus nulla, eget vehicula mi placerat et. Proin bibendum nibh ut mattis rutrum. Vivamus fringilla leo ipsum, quis ultricies purus cursus vitae. Maecenas suscipit porttitor dignissim.<br><br>
+
+                                        Nunc dictum massa fringilla porttitor elementum. Nulla convallis malesuada ex eu convallis. Nunc vitae est leo. Maecenas hendrerit, leo ut pellentesque dictum, felis lacus finibus elit, eu vulputate diam diam vitae libero. Quisque laoreet est at sem tempor, at rhoncus dolor rutrum. Nulla facilisi. Donec lobortis leo vehicula eros cursus finibus. Donec id mauris in tellus ullamcorper scelerisque.<br><br>
+                                        
+                                        Donec volutpat pellentesque sem ac sodales. Donec iaculis diam nibh, ut maximus metus eleifend at. Pellentesque aliquet est vitae lorem vulputate laoreet. Nulla sit amet eros pulvinar, fermentum metus sed, porttitor elit. Sed tristique iaculis lorem sed varius. Morbi ac lacus nibh. Mauris velit odio, faucibus in quam ac, maximus pellentesque risus. Etiam mollis lorem et facilisis placerat. Integer turpis enim, finibus quis nibh interdum, rhoncus sodales mi. Vestibulum ut viverra ante, nec ultricies dui. Etiam turpis leo, accumsan vel odio a, rhoncus egestas libero. Integer id porttitor augue. Ut arcu erat, dictum a ligula vel, sollicitudin maximus enim. Pellentesque nec enim elit. Etiam quis dolor consectetur, venenatis ante nec, pellentesque metus. Donec fermentum laoreet condimentum. 
+                                    </div>
+                                </div>
+                                <div class="profile--interested">
+                                    <strong class="h7">Interested</strong><br>
+                                    <div class="scroll">
+                                        <ul>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus metus eget lectus tincidunt, in posuere nisl volutpat.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus metus eget lectus tincidunt, in posuere nisl volutpat.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus metus eget lectus tincidunt, in posuere nisl volutpat.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus metus eget lectus tincidunt, in posuere nisl volutpat.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus metus eget lectus tincidunt, in posuere nisl volutpat.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus metus eget lectus tincidunt, in posuere nisl volutpat.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus metus eget lectus tincidunt, in posuere nisl volutpat.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="profile--avoiding">
+                                    <strong class="h7">Not Interested</strong><br>
+                                    <div class="scroll">
+                                        <ul>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus metus eget lectus tincidunt, in posuere nisl volutpat.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus metus eget lectus tincidunt, in posuere nisl volutpat.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus metus eget lectus tincidunt, in posuere nisl volutpat.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus metus eget lectus tincidunt, in posuere nisl volutpat.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus metus eget lectus tincidunt, in posuere nisl volutpat.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus metus eget lectus tincidunt, in posuere nisl volutpat.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rhoncus metus eget lectus tincidunt, in posuere nisl volutpat.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </tag-tab>
+                            <tag-tab data-key="#tracker" class="charOnly">
+                                <div class="profile--tracker">
+                                    <div class="profile--tracker-menu">
+                                        <tag-labels>
+                                            <button onclick="moveLeft(this)" type="button"><i class="fa-solid fa-angles-left"></i></button>
+                                            <tag-labelset>
+                                                <a href="#active" data-category="tracker" class="is-active">active</a>
+                                                <a href="#archived" data-category="tracker">archived</a>
+                                                <a href="#comms" data-category="tracker">texts & calls</a>
+                                                <a href="#socials" data-category="tracker">social media</a>
+                                                <a href="#requests" data-category="tracker">requests</a>
+                                                <a href="#dev" data-category="tracker">development</a>
+                                            </tag-labelset>
+                                            <button onclick="moveRight(this)" type="button"><i class="fa-solid fa-angles-right"></i></button>
+                                        </tag-labels>
+                                    </div>
+                                    <div class="profile--tracker-content">
+                                        <tag-tabset data-category="tracker">
+                                            <tag-tab data-key="#active" data-type="grid" data-columns="3">
+                                                <div class="profile--tracker-item" data-owing="caughtup">
+                                                    <a href="./post.html">
+                                                        <i class="fa-light fa-star-exclamation"></i>
+                                                        <span>Thread Title which is extra long to check wrapping</span>
+                                                    </a>
+                                                    <span>Description here</span>
+                                                    <span>Posted in <a href="./topiclist.html">Forum Name</a></span>
+                                                    <span>Last post by <a href="./profile.html">First Last</a></span>
+                                                    <span>Month DD, YYYY, HH:MM am/pm</span>
+                                                </div>
+                                            </tag-tab>
+                                            <tag-tab data-key="#archived" data-type="grid" data-columns="3">archived</tag-tab>
+                                            <tag-tab data-key="#comms" data-type="grid" data-columns="3">comms</tag-tab>
+                                            <tag-tab data-key="#socials" data-type="grid" data-columns="3">socials</tag-tab>
+                                            <tag-tab data-key="#requests" data-type="grid" data-columns="3">requests</tag-tab>
+                                            <tag-tab data-key="#dev" data-type="grid" data-columns="3">dev</tag-tab>
+                                        </tag-tabset>
+                                    </div>
+                                </div>
+                            </tag-tab>
+                            <tag-tab data-key="#player">
+                                <div class="profile--member-avatar">
+                                    <span style="background-image: url(https://files.jcink.net/uploads2/godlybehaviour/av-1.png), url(https://files.jcink.net/uploads2/godlybehaviour/av-1.gif), url(https://files.jcink.net/uploads2/godlybehaviour/av-1.jpg), url(https://files.jcink.net/uploads2/godlybehaviour/av-1.jpeg), url(https://picsum.photos/250);"></span>
+                                </div>
+                                <div class="profile--alias">
+                                    <span class="charOnly">Played by Lux</span>
+                                    <span class="memAccOnly">Joined September 28 2023</span>
+                                </div>
+                                <div class="profile--player" data-type="grid" data-columns="3">
+                                    <div class="profile--item">
+                                        <strong>Pronouns</strong>
+                                        <span>She/Her</span>
+                                    </div>
+                                    <div class="profile--item">
+                                        <strong>Age</strong>
+                                        <span>31 years old</span>
+                                    </div>
+                                    <div class="profile--item">
+                                        <strong>Timezone</strong>
+                                        <span>GMT-4:00</span>
+                                    </div>
+                                    <div class="profile--item">
+                                        <strong>Rating</strong>
+                                        <span><lang-clip></lang-clip> - <sex-clip></sex-clip> - <vio-clip></vio-clip></span>
+                                    </div>
+                                    <div class="profile--item">
+                                        <strong>Style</strong>
+                                        <span>Third Person, Past Tense</span>
+                                    </div>
+                                    <div class="profile--item">
+                                        <strong>Preferred Frequency</strong>
+                                        <span>Weekly</span>
+                                    </div>
+                                    <div class="profile--item">
+                                        <strong>Bank Account</strong>
+                                        <span>$10000</span>
+                                    </div>
+                                    <div class="profile--item charOnly">
+                                        <strong>Joined</strong>
+                                        <span>September 23, 2023</span>
+                                    </div>
+                                    <div class="profile--item">
+                                        <strong>Last Seen</strong>
+                                        <span>July 1, 2023, 4:11 PM</span>
+                                    </div>
+                                    <div class="profile--item memAccOnly">
+                                        <strong>Account Type</strong>
+                                        <span>Admin</span>
+                                    </div>
+                                </div>
+                                <div class="profile--awards">
+                                    <strong class="h7">Badges</strong><br>
+                                    <div class="scroll">
+                                        <img src="http://picsum.photos/100" />
+                                    </div>
+                                </div>
+                                <div class="profile--triggers">
+                                    <strong class="h7">Please Avoid</strong><br>
+                                    <div class="scroll">
+                                    triggers
+                                    </div>
+                                </div>
+                            </tag-tab>
+                            <tag-tab data-key="#roster" class="memAccOnly" data-type="grid" data-columns="4"></tag-tab>
+                        </tag-tabset>
+                    </div>
+                </section>
+            </div>
+
+<span class="hide"><form action='index.php' name='subprofilemenu' method='GET'>
+    <select class='forminput' name='showuser' style="width: 180px;" onchange="this.form.submit()">
+    <option value='-------------------' selected='selected'>------------------------------</option>
+    <option value='2'>&nbsp;&nbsp;&raquo; lottie fox </option><option value='3'>&nbsp;&nbsp;&raquo; sterling de mitri </option><option value='6'>&nbsp;&nbsp;&raquo; nikolas kovac </option><option value='17'>&nbsp;&nbsp;&raquo; connor langford-king </option><option value='18'>&nbsp;&nbsp;&raquo; noah langford-clark </option><option value='29'>&nbsp;&nbsp;&raquo; kit carraway </option><option value='35'>&nbsp;&nbsp;&raquo; persephone payne </option><option value='41'>&nbsp;&nbsp;&raquo; remy rivard </option><option value='44'>&nbsp;&nbsp;&raquo; simon flynn </option><option value='47'>&nbsp;&nbsp;&raquo; marlowe blake </option><option value='53'>&nbsp;&nbsp;&raquo; raphael amesbury </option>
+    </select>
+    </form></span>
+
+            <script>
+                let name = `lux`;
+                if(name.split(' ').length > 1) {
+                    let nameArray = name.split(' ');
+                    let formattedName = ``;
+                    nameArray.forEach((part, i) => {
+                        if(i === 0) {
+                            formattedName += `<span>${nameArray[0]}</span><span>`;
+                        } else if(i === nameArray.length - 1) {
+                            formattedName += `${nameArray[i]}</span>`;
+                        } else {
+                            formattedName += nameArray[i];
+                        }
+                    });
+                    name = formattedName;
+                } else {
+                    name = `<span>${name}</span>`;
+                }
+                document.querySelector('main header h1').innerHTML = name;
+
+                let ratings = [
+                    {'type': 'lang', 'value': 'All'},
+                    {'type': 'sex', 'value': 'Mild'},
+                    {'type': 'vio', 'value': 'With Limits'}
+                ];
+                ratings.forEach(rating => {
+                    if(rating.value === 'All') {
+                        document.querySelector(`${rating.type}-clip`).innerText = 3;
+                    } else if(rating.value === 'With Limits') {
+                        document.querySelector(`${rating.type}-clip`).innerText = 2;
+                    } else if(rating.value === 'Mild') {
+                        document.querySelector(`${rating.type}-clip`).innerText = 1;
+                    } else {
+                        document.querySelector(`${rating.type}-clip`).innerText = 0;
+                    }
+                });
+
+
+                //members only
+                document.querySelectorAll('.charOnly').forEach(item => item.remove());
+
+                // SUBACCOUNTS PROFILE DISPLAY SCRIPT (ABC ORDER) by tonya aka wildflower
+                function Alpha(arr) {
+                    let newArr = Array.prototype.slice.call(arr).map(item => {
+                        if (item.value === '-------------------') {
+                            return null
+                        }
+                        return {
+                            character: item.innerText.trim().toLowerCase().replace(`» `, ``),
+                            account: item.value
+                        }
+                    }).filter(item => item !== null)
+                    .sort((a, b) => {
+                        if(a.character > b.character) {
+                            return 1;
+                        } else if (a.character < b.character) {
+                            return -1;
+                        } else {
+                            return 0;
+                        }
+                    });
+                    return newArr;
+                }
+
+                let alphaChars = Alpha(document.querySelectorAll('select[name=showuser] option'));
+                let siteString = `uploads2/legends`;
+                alphaChars.forEach(character => {
+                        let imageDiv = `<div class="profile--account-image" style="background-image:url(https://files.jcink.net/${siteString}/av-${character.account}.png), url(https://files.jcink.net/${siteString}/av-${character.account}.gif), url(https://files.jcink.net/${siteString}/av-${character.account}.jpg), url(https://files.jcink.net/${siteString}/av-${character.account}.jpeg);"></div>`;
+
+                        let html = `<a class="profile--account" href="?showuser=${character.account}">
+                            ${imageDiv}
+                            <div class="profile--account-info">
+                                <b>${character.character}</b>
+                                <span>view profile</span>
+                            </div>
+                        </a>`;
+
+                        $('tag-tab[data-key="#roster"]').append(html);
+                });
+                
+                initProfile();
+
+            </script>
+        </main>
+
+        </div>
+<!-- Copyright Information -->
+        <div class="tableborder" align="center">
+            <div class="row4" style="font-size: 7.5pt; padding-top: 1px; padding-bottom: 1px; line-height: 8pt;">
+                <div class="copyright" align="center">
+                    Powered by 
+                    <a href="https://www.invisionboard.com" target="_blank">Invision Power Board</a>
+                    (<a href="http://jcink.com" target="_blank">Jcink.com </a>
+                    <a href="https://jcink.com" target="_blank">Forum Hosting</a>
+                    ) © 2020 &nbsp;
+                    <a href="https://www.invisionpower.com" target="_blank">IPS, Inc.</a>
+                    <br>
+                    Page creation time: 0.0054 <!-- http://luxtradition.b1.jcink.com -->  · 
+                    <a href="index.php?act=Mobile">Mobile Version</a> · 
+                    <a href="index.php?act=privacy">Privacy Policy</a>
+                </div>
+            </div>
+        </div> 
+
+        <!--Templates-->
+        <script src="templates/header.js"></script>
+        <script src="templates/nav.js"></script>
+
+        <!--Scripts-->
+        <script src="../dist/js/scripts.js"></script>
+    </body>
+</html>

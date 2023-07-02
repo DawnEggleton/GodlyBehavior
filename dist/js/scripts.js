@@ -28,6 +28,31 @@ if(document.querySelector('body').classList.contains('g-2')) {
     $('#quick-login-clip').remove();
 }
 
+/********** Index & Category **********/
+if(pageType === 'idx' || pageType === 'SC') {
+    initForumLinks();
+    initIndex();
+}
+
+/********** Topic List **********/
+if(pageType === 'SF') {
+    if(document.querySelectorAll('.subforums').length > 0) {
+        initForumLinks();
+    }
+    initTopicsWrap();
+    initTopicDescription('.topic--description');
+}
+
+/********** Topic View **********/
+if(pageType === 'ST') {
+    let descript = $('.topic-desc').html();
+    if (descript != undefined) {
+        var newDescript = descript.replace(", ", "");
+        $('.topic-desc').html(newDescript);
+    }
+    initTopicDescription('.topic-desc');
+}
+
 /********** UCP & Messages **********/
 if(pageType === 'UserCP' || pageType === 'Msg') {
     document.querySelector('#ucpmenu').innerHTML = `<div class="sticky"><b>Account</b>

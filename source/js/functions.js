@@ -309,12 +309,23 @@ function initProfile() {
     window.addEventListener('hashchange', function(e){
         //get hash
         let hash = window.location.hash;
-        console.log(hash);
-        let selected = document.querySelector(`.profile--menu a[href="${hash}"]`);
+        let selected = document.querySelector(`.profile a[href="${hash}"]`);
         let hashContent = document.querySelector(`tag-tab[data-key="${hash}"]`);
         let unsetDefault = Array.from(selected.parentNode.children);
         let tabSiblings = Array.from(hashContent.parentNode.children);
         let tabIndex = tabSiblings.indexOf.call(tabSiblings, hashContent);
+
+        //check for tracker category and adjust
+        let innerTab = null, tabParent, parentSiblings, parentIndex;
+        if(selected.dataset.category) {
+            innerTab = selected;
+            selected = document.querySelector(`.profile--menu a[href="#${selected.dataset.category}"]`);
+            hashContent = document.querySelector(`tag-tab[data-key="${hash}"]`);
+            tabParent = document.querySelector(`tag-tab[data-key="#${innerTab.dataset.category}"]`);
+            parentSiblings = Array.from(tabParent.parentNode.children);
+            parentIndex = parentSiblings.indexOf.call(parentSiblings, tabParent);
+        }
+
         //find the sub menu/inner menu link with the matching hash
         if (hash) {
             $(selected).trigger('click');
@@ -326,23 +337,42 @@ function initProfile() {
         document.querySelectorAll('.profile--menu a').forEach(label => label.classList.remove('is-active'));
         unsetDefault.forEach(label => label.classList.remove('is-active'));
         document.querySelectorAll('.profile tag-tab').forEach(label => label.classList.remove('is-active'));
+        if(innerTab) {
+            Array.from(innerTab.parentNode.children).forEach(label => label.classList.remove('is-active'));
+        }
 
         //Add active
         selected.classList.add('is-active');
         hashContent.classList.add('is-active');
         tabSiblings.forEach(sibling => sibling.style.left = `${-100 * tabIndex}%`);
+        if(innerTab) {
+            innerTab.classList.add('is-active');
+            tabParent.classList.add('is-active');
+            parentSiblings.forEach(sibling => sibling.style.left = `${-100 * parentIndex}%`);
+        }
     });
 
     //hash linking
     if (window.location.hash){
         //get hash
         let hash = window.location.hash;
-        console.log(hash);
-        let selected = document.querySelector(`.profile--menu a[href="${hash}"]`);
+        let selected = document.querySelector(`.profile a[href="${hash}"]`);
         let hashContent = document.querySelector(`tag-tab[data-key="${hash}"]`);
         let unsetDefault = Array.from(selected.parentNode.children);
         let tabSiblings = Array.from(hashContent.parentNode.children);
         let tabIndex = tabSiblings.indexOf.call(tabSiblings, hashContent);
+
+        //check for tracker category and adjust
+        let innerTab = null, tabParent, parentSiblings, parentIndex;
+        if(selected.dataset.category) {
+            innerTab = selected;
+            selected = document.querySelector(`.profile--menu a[href="#${selected.dataset.category}"]`);
+            hashContent = document.querySelector(`tag-tab[data-key="${hash}"]`);
+            tabParent = document.querySelector(`tag-tab[data-key="#${innerTab.dataset.category}"]`);
+            parentSiblings = Array.from(tabParent.parentNode.children);
+            parentIndex = parentSiblings.indexOf.call(parentSiblings, tabParent);
+        }
+
         //find the sub menu/inner menu link with the matching hash
         if (hash) {
             $(selected).trigger('click');
@@ -354,16 +384,60 @@ function initProfile() {
         document.querySelectorAll('.profile--menu a').forEach(label => label.classList.remove('is-active'));
         unsetDefault.forEach(label => label.classList.remove('is-active'));
         document.querySelectorAll('.profile tag-tab').forEach(label => label.classList.remove('is-active'));
+        if(innerTab) {
+            Array.from(innerTab.parentNode.children).forEach(label => label.classList.remove('is-active'));
+        }
 
         //Add active
         selected.classList.add('is-active');
         hashContent.classList.add('is-active');
         tabSiblings.forEach(sibling => sibling.style.left = `${-100 * tabIndex}%`);
+        if(innerTab) {
+            innerTab.classList.add('is-active');
+            tabParent.classList.add('is-active');
+            parentSiblings.forEach(sibling => sibling.style.left = `${-100 * parentIndex}%`);
+        }
     } else {
         //Auto-select  tab without hashtag present
         document.querySelector(`.profile--menu a`).classList.add('is-active');
-        document.querySelector(`.profile tag-tabset tag-tab:first-child`).classList.add('is-active');
+        document.querySelector(`.profile--content tag-tabset tag-tab:first-child`).classList.add('is-active');
+        document.querySelector(`.profile--tracker-menu a`).classList.add('is-active');
+        document.querySelector(`.profile--tracker-content tag-tabset tag-tab:first-child`).classList.add('is-active');
     }
+}
+function initForumLinks() {
+    document.querySelectorAll('.forum--manual-links').forEach(linkset => {
+        if(linkset.innerHTML !== '') {
+            let subforums = linkset.parentNode.querySelector('.forum--links');
+            if (subforums.innerHTML === '') {
+                subforums.innerHTML = linkset.innerHTML;
+            } else {
+                subforums.querySelector('.subforums').insertAdjacentHTML('beforeend', linkset.innerHTML);
+            }
+        }
+        linkset.remove();
+    });
+    document.querySelectorAll('.forum--links').forEach(linkset => {
+	if(linkset.innerText === '') {
+		linkset.remove();
+	}
+    });
+}
+function initIndex() {
+    let topics = document.querySelector('#recent-topics table').outerHTML;
+    document.querySelector('#recent-topics').remove();
+    document.querySelector('.stats--right .scroll').innerHTML = topics;
+}
+function initTopicsWrap() {
+    $(`.macro--header`).each(function (index) {
+        $(this).nextUntil(`.macro--header`).wrapAll(`<div class="topiclist--section" data-type="grid" data-columns="2"></div>`);
+    });
+    
+}
+function initTopicDescription(selector) {
+    document.querySelectorAll(selector).forEach(desc => {
+        desc.innerHTML = desc.innerHTML.replaceAll('[', '<tag-highlight>').replaceAll(']', '</tag-highlight>');
+    });
 }
 
 /********** Utilities **********/
@@ -394,46 +468,52 @@ function cpShift() {
 	    account = document.querySelector(toggleFields[0]).value,
         species = document.querySelector(toggleFields[2]).value,
 	    showFields = [],
-	    hideFields = characterFields.concat(hybridFields).concat(defaultImages).concat(gridImages).concat(mosaicImages),
+	    hideFields = characterFields
+                    .concat(defaultImages)
+                    .concat(gridImages)
+                    .concat(mosaicImages),
 	    showHeaders = allHeaders;
 
 	if(account == 'character') {
-        if(species === 'hybrid') {
-            if(imageType === 'grid') {
-                showFields = characterFields.concat(hybridFields).concat(defaultImages).concat(gridImages);
-                hideFields = mosaicImages;
-                showHeaders = allHeaders.concat(charHeaders);
-                document.querySelector(defaultImages[0]).classList.remove('fullWidth');
-            } else if (imageType === 'mosaic') {
-                showFields = characterFields.concat(hybridFields).concat(defaultImages).concat(gridImages).concat(mosaicImages);
-                hideFields = [];
-                showHeaders = allHeaders.concat(charHeaders);
-                document.querySelector(defaultImages[0]).classList.remove('fullWidth');
-            } else {
-                showFields = characterFields.concat(hybridFields).concat(defaultImages);
-                hideFields = gridImages.concat(mosaicImages);
-                showHeaders = allHeaders.concat(charHeaders);
-                document.querySelector(defaultImages[0]).classList.add('fullWidth');
-            }
+        if(imageType === 'grid') {
+            showFields = characterFields
+                        .concat(defaultImages)
+                        .concat(gridImages);
+            hideFields = mosaicImages;
+            showHeaders = allHeaders
+                        .concat(charHeaders);
+            document.querySelector(defaultImages[0]).classList.remove('fullWidth');
+        } else if (imageType === 'mosaic') {
+            showFields = characterFields
+                        .concat(defaultImages)
+                        .concat(gridImages)
+                        .concat(mosaicImages);
+            hideFields = [];
+            showHeaders = allHeaders
+                        .concat(charHeaders);
+            document.querySelector(defaultImages[0]).classList.remove('fullWidth');
         } else {
-            if(imageType === 'grid') {
-                showFields = characterFields.concat(defaultImages).concat(gridImages);
-                hideFields = mosaicImages.concat(hybridFields);
-                showHeaders = allHeaders.concat(charHeaders);
-                document.querySelector(defaultImages[0]).classList.remove('fullWidth');
-            } else if (imageType === 'mosaic') {
-                showFields = characterFields.concat(defaultImages).concat(gridImages).concat(mosaicImages);
-                hideFields = hybridFields;
-                showHeaders = allHeaders.concat(charHeaders);
-                document.querySelector(defaultImages[0]).classList.remove('fullWidth');
-            } else {
-                showFields = characterFields.concat(defaultImages);
-                hideFields = gridImages.concat(mosaicImages).concat(hybridFields);
-                showHeaders = allHeaders.concat(charHeaders);
-                document.querySelector(defaultImages[0]).classList.add('fullWidth');
-            }
+            showFields = characterFields
+                        .concat(defaultImages);
+            hideFields = gridImages
+                        .concat(mosaicImages);
+            showHeaders = allHeaders
+                        .concat(charHeaders);
+            document.querySelector(defaultImages[0]).classList.add('fullWidth');
         }
-	}
+
+        specialSpecies.forEach(special => {
+            if (special.species === species) {
+                showFields = showFields.concat(special.fields);
+            } else {
+                hideFields = hideFields.concat(special.fields);
+            }
+        });
+    } else {
+        specialSpecies.forEach(special => {
+            hideFields = hideFields.concat(special.fields);
+        });
+    }
     
     adjustCP(showFields, hideFields, showHeaders);
 }
@@ -465,10 +545,10 @@ function insertCPHeader (title, field) {
 	$(field).before(`<tr class="pformstrip ucp--header"><td>${title}</td></tr>`);
 }
 function moveLeft(e) {
-    e.parentNode.querySelector('tag-labels').scrollLeft -= 150;
+    e.parentNode.querySelector('tag-labelset').scrollLeft -= 150;
 }
 function moveRight(e) {
-    e.parentNode.querySelector('tag-labels').scrollLeft += 150;
+    e.parentNode.querySelector('tag-labelset').scrollLeft += 150;
 }
 function setMonth(month) {
     switch(month) {
@@ -514,6 +594,120 @@ function setMonth(month) {
     }
 
     return month;
+}
+function sliderLeft(e) {
+    let bullets = e.parentNode.parentNode.querySelectorAll('.post--slider-bullets button');
+    let slides = e.parentNode.parentNode.querySelectorAll('.post--slider-slide');
+    let image = e.parentNode.parentNode.querySelector('.post--slider > img');
+    let index;
+    bullets.forEach((bullet, i) => {
+        if(bullet.classList.contains('is-active')) {
+            index = i;
+        }
+    });
+    
+    //remove all active
+    bullets.forEach(bullet => bullet.classList.remove('is-active'));
+    slides.forEach(slide => slide.classList.remove('is-active'));
+
+    //determine new index
+    if(index === 0) {
+        index = bullets.length - 1;
+    } else {
+        index--;
+    }
+
+    //add active as needed
+    bullets[index].classList.add('is-active');
+    slides[index].classList.add('is-active');
+
+    //move slides
+    slides.forEach(slide => {
+        slide.style.left = `${index * -100}%`;
+    });
+
+    //handle image
+    if(index !== 0) {
+        image.classList.add('blur');
+    } else {
+        image.classList.remove('blur');
+    }
+}
+function sliderRight(e) {
+    let bullets = e.parentNode.parentNode.querySelectorAll('.post--slider-bullets button');
+    let slides = e.parentNode.parentNode.querySelectorAll('.post--slider-slide');
+    let image = e.parentNode.parentNode.querySelector('.post--slider > img');
+    let index;
+    bullets.forEach((bullet, i) => {
+        if(bullet.classList.contains('is-active')) {
+            index = i;
+        }
+    });
+    
+    //remove all active
+    bullets.forEach(bullet => bullet.classList.remove('is-active'));
+    slides.forEach(slide => slide.classList.remove('is-active'));
+
+    //determine new index
+    if(index === bullets.length - 1) {
+        index = 0;
+    } else {
+        index++;
+    }
+
+    //add active as needed
+    bullets[index].classList.add('is-active');
+    slides[index].classList.add('is-active');
+
+    //move slides
+    slides.forEach(slide => {
+        slide.style.left = `${index * -100}%`;
+    });
+
+    //handle image
+    if(index !== 0) {
+        image.classList.add('blur');
+    } else {
+        image.classList.remove('blur');
+    }
+}
+function sliderBullet(e) {
+    let bullets = e.parentNode.parentNode.parentNode.querySelectorAll('.post--slider-bullets button');
+    let slides = e.parentNode.parentNode.parentNode.querySelectorAll('.post--slider-slide');
+    let image = e.parentNode.parentNode.parentNode.querySelector('.post--slider > img');
+    let bulletsArray = Array.from(bullets);
+    let index = bulletsArray.indexOf.call(bulletsArray, e);
+    
+    //remove all active
+    bullets.forEach(bullet => bullet.classList.remove('is-active'));
+    slides.forEach(slide => slide.classList.remove('is-active'));
+
+    //add active as needed
+    bullets[index].classList.add('is-active');
+    slides[index].classList.add('is-active');
+
+    //move slides
+    slides.forEach(slide => {
+        slide.style.left = `${index * -100}%`;
+    });
+
+    //handle image
+    if(index !== 0) {
+        image.classList.add('blur');
+    } else {
+        image.classList.remove('blur');
+    }
+}
+function initCopyLink() {
+    let clippedURL = new Clipboard('.post--permalink');
+    document.querySelectorAll('.post--permalink').forEach(link => {
+        link.addEventListener('click', e => {
+            e.currentTarget.querySelector('.note').style.opacity = 1;
+            setTimeout(() => {
+                document.querySelectorAll('.note').forEach(note => note.style.opacity = 0);
+            }, 3000);
+        });
+    });
 }
 
 /********** Toggles **********/
@@ -576,4 +770,7 @@ function toggleSize() {
         localStorage.setItem('size', 'small');
         setSize();
     }
+}
+function toggleAvatar(e) {
+    e.parentNode.classList.toggle('is-active');
 }

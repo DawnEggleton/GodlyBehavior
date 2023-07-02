@@ -1,6 +1,88 @@
-.profile--wrap ul li::marker,
-.post ul li::marker,
-.webpage ul li::marker,
-.postcolor ul li::marker {
+@import '../global/sizes.scss';
+
+li::marker {
     content: '\f178';
+}
+a[target="_blank"]:not(.staffOnly)::after {
+    content: '\f08e';
+}
+
+//highlight forums
+.f-3,
+.f-35 {
+    padding: var(--spacing-md);
+
+    @media only screen and (min-width: $md) {
+        padding: var(--spacing-lg);
+    }
+
+    @media only screen and (min-width: $md) {
+        grid-row: span 2;
+        grid-column: span 2;
+    }
+
+    .forum--title {
+        a {
+            font-family: var(--font-serif);
+            font-size: 30px;
+            word-spacing: 100vw;
+
+            @media only screen and (min-width: $md) {
+                font-size: 40px;
+            }
+        }
+    }
+    .forum--info {
+        padding: var(--spacing-xs) 0;
+    }
+    .forum--links {
+        order: 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        a {
+            font-size: 12px;
+            padding: var(--spacing-sm) var(--spacing-md);
+            background: var(--bg-color-transparent);
+            z-index: 1;
+            transition-duration: var(--style-duration);
+    
+            @media only screen and (min-width: $md) {
+                font-size: 16px;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 3px;
+                height: 100%;
+                background: var(--border-color);
+                border-radius: 3px;
+                z-index: -1;
+                transition-duration: var(--style-duration);
+            }
+
+            &::after {
+                display: none;
+            }
+
+            &:hover {
+                color: var(--text-on-color);
+
+                &::before {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.c-1 {
+    .forum:last-child {
+        @media only screen and (min-width: $lg) {
+            grid-column: span 2;
+        }
+    }
 }

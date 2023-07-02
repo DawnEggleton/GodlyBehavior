@@ -1,5 +1,83 @@
-.profile--wrap ul li::marker,
-.post ul li::marker,
-.webpage ul li::marker,
-.postcolor ul li::marker {
+li::marker {
   content: '\f178'; }
+
+a[target="_blank"]:not(.staffOnly)::after {
+  content: '\f08e'; }
+
+.f-3,
+.f-35 {
+  padding: var(--spacing-md); }
+  @media only screen and (min-width: 768px) {
+    .f-3,
+    .f-35 {
+      padding: var(--spacing-lg); } }
+  @media only screen and (min-width: 768px) {
+    .f-3,
+    .f-35 {
+      -ms-grid-row-span: 2;
+      grid-row: span 2;
+      -ms-grid-column-span: 2;
+      grid-column: span 2; } }
+  .f-3 .forum--title a,
+  .f-35 .forum--title a {
+    font-family: var(--font-serif);
+    font-size: 30px;
+    word-spacing: 100vw; }
+    @media only screen and (min-width: 768px) {
+      .f-3 .forum--title a,
+      .f-35 .forum--title a {
+        font-size: 40px; } }
+  .f-3 .forum--info,
+  .f-35 .forum--info {
+    padding: var(--spacing-xs) 0; }
+  .f-3 .forum--links,
+  .f-35 .forum--links {
+    -webkit-box-ordinal-group: 3;
+    -webkit-order: 2;
+        -ms-flex-order: 2;
+            order: 2;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; }
+    .f-3 .forum--links a,
+    .f-35 .forum--links a {
+      font-size: 12px;
+      padding: var(--spacing-sm) var(--spacing-md);
+      background: var(--bg-color-transparent);
+      z-index: 1;
+      -webkit-transition-duration: var(--style-duration);
+           -o-transition-duration: var(--style-duration);
+              transition-duration: var(--style-duration); }
+      @media only screen and (min-width: 768px) {
+        .f-3 .forum--links a,
+        .f-35 .forum--links a {
+          font-size: 16px; } }
+      .f-3 .forum--links a::before,
+      .f-35 .forum--links a::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 3px;
+        height: 100%;
+        background: var(--border-color);
+        border-radius: 3px;
+        z-index: -1;
+        -webkit-transition-duration: var(--style-duration);
+             -o-transition-duration: var(--style-duration);
+                transition-duration: var(--style-duration); }
+      .f-3 .forum--links a::after,
+      .f-35 .forum--links a::after {
+        display: none; }
+      .f-3 .forum--links a:hover,
+      .f-35 .forum--links a:hover {
+        color: var(--text-on-color); }
+        .f-3 .forum--links a:hover::before,
+        .f-35 .forum--links a:hover::before {
+          width: 100%; }
+
+@media only screen and (min-width: 1024px) {
+  .c-1 .forum:last-child {
+    -ms-grid-column-span: 2;
+    grid-column: span 2; } }
