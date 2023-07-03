@@ -107,11 +107,10 @@
         grid-template-rows: 315px 315px 115px; } }
     @media only screen and (min-width: 768px) {
       .profile--content tag-tab[data-key="#basics"] {
-        grid-template-columns: 115px 1fr 1fr 115px;
-        grid-template-rows: 445px 115px; } }
+        grid-template-rows: 445px 315px 115px; } }
     @media only screen and (min-width: 1024px) {
       .profile--content tag-tab[data-key="#basics"] {
-        grid-template-columns: 1fr 1fr 115px;
+        grid-template-columns: 450px 1fr 115px;
         grid-template-rows: 315px 115px; } }
   .profile--content tag-tab[data-key="#details"] {
     display: grid;
@@ -124,10 +123,14 @@
   .profile--content tag-tab[data-key="#plotting"] {
     display: grid;
     gap: var(--spacing-md);
-    grid-template-rows: max-content max-content max-content; }
+    grid-template-rows: max-content max-content max-content max-content; }
     @media only screen and (min-width: 768px) {
       .profile--content tag-tab[data-key="#plotting"] {
-        grid-template-columns: 1.5fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: max-content max-content; } }
+    @media only screen and (min-width: 1024px) {
+      .profile--content tag-tab[data-key="#plotting"] {
+        grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: max-content max-content; } }
   .profile--content tag-tab[data-key="#player"] {
     display: grid;
@@ -228,8 +231,7 @@
         grid-template-columns: 1fr 1fr; } }
     @media only screen and (min-width: 768px) {
       .profile--basics .scroll {
-        grid-template-columns: 1fr;
-        height: calc(445px - (var(--spacing-md) * 2)); } }
+        grid-template-columns: 1fr; } }
     @media only screen and (min-width: 1024px) {
       .profile--basics .scroll {
         grid-template-columns: 1fr 1fr;
@@ -273,12 +275,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--spacing-md); }
-  @media only screen and (min-width: 768px) {
-    .profile--traits {
-      grid-column: span 3; } }
-  @media only screen and (min-width: 1024px) {
-    .profile--traits {
-      grid-column: span 1; } }
   .profile--traits .trait {
     flex: 0 0 calc(50% - (var(--spacing-md) / 2)); }
 
@@ -321,19 +317,24 @@
     .lgFont .profile--freeform .scroll {
       max-height: 353px; }
 
-.profile--overview {
+.profile--overview, .profile--relationships {
   background: var(--bg-transparent);
   border: 1px solid var(--border-secondary);
   padding: var(--spacing-md);
   text-align: justify; }
-  @media only screen and (min-width: 768px) {
-    .profile--overview {
+  @media only screen and (min-width: 1024px) {
+    .profile--overview, .profile--relationships {
       grid-row: span 2; } }
-  .profile--overview .scroll {
-    max-height: 360px;
-    padding-right: var(--spacing-md); }
-    .lgFont .profile--overview .scroll {
-      max-height: 353px; }
+  .profile--overview .scroll, .profile--relationships .scroll {
+    padding-right: var(--spacing-md);
+    max-height: 260px; }
+    .lgFont .profile--overview .scroll, .lgFont .profile--relationships .scroll {
+      max-height: 253px; }
+    @media only screen and (min-width: 768px) {
+      .profile--overview .scroll, .profile--relationships .scroll {
+        max-height: 360px; }
+        .lgFont .profile--overview .scroll, .lgFont .profile--relationships .scroll {
+          max-height: 353px; } }
 
 .profile--interested, .profile--avoiding {
   background: var(--bg-transparent);
@@ -526,3 +527,20 @@
     height: 24px;
     object-fit: contain;
     object-position: center; }
+
+.profile .scroll h2 + br,
+.profile .scroll .h2 + br,
+.profile .scroll h3 + br,
+.profile .scroll .h3 + br,
+.profile .scroll h4 + br,
+.profile .scroll .h4 + br,
+.profile .scroll h5 + br,
+.profile .scroll .h5 + br,
+.profile .scroll h6 + br,
+.profile .scroll .h6 + br,
+.profile .scroll h7 + br,
+.profile .scroll .h7 + br,
+.profile .scroll h8 + br,
+.profile .scroll .h8 + br,
+.profile .scroll ul + br {
+  display: none; }

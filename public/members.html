@@ -36,9 +36,534 @@
         <main>
             <a name="top"></a>
 		
-            <form action='index.php' method='get'>
-                <input type='hidden' name='act' value='Members' />
-            </form>
+            <section class="ml">
+                <div class="ml--header" data-type="flex">
+                    <input id="quicksearch" class="forminput memberlist-namesearch" type="text" size="25" name="name" value="" placeholder="Filter by name...">
+                    <div class="ml--sort-buttons" data-type="flex">
+                        <button type="button" class="ml--sort is-checked" data-sort="name">Name<br>(A -> Z)</button>
+                        <button type="button" class="ml--sort" data-sort="nameDesc">Name<br>(Z -> A)</button>
+                        <button type="button" class="ml--sort" data-sort="age">Age<br>(Asc)</button>
+                        <button type="button" class="ml--sort" data-sort="ageDesc">Age<br>(Desc)</button>
+                        <span class="pagination"><span class="pagination_pagetxt"><a title="Jump to page..." href="javascript:multi_page_jump('https://totl.jcink.net/index.php?&amp;act=Members&amp;photoonly=&amp;name=&amp;name_box=all&amp;max_results=1000&amp;filter=ALL&amp;sort_order=asc&amp;sort_key=name',2020,1000);">Pages:</a> (3)</span>&nbsp;<span class="pagination_current"><b>1</b></span>&nbsp;<a href="https://totl.jcink.net/index.php?&amp;act=Members&amp;photoonly=&amp;name=&amp;name_box=all&amp;max_results=1000&amp;filter=ALL&amp;sort_order=asc&amp;sort_key=name&amp;st=1000" class="pagination_page">2</a>&nbsp;<a href="https://totl.jcink.net/index.php?&amp;act=Members&amp;photoonly=&amp;name=&amp;name_box=all&amp;max_results=1000&amp;filter=ALL&amp;sort_order=asc&amp;sort_key=name&amp;st=2000" class="pagination_page">3</a>&nbsp;</span>
+                    </div>
+                </div>
+                <div class="ml--wrapper">
+                    <div class="ml--filters">
+                        <button>
+                            <i class="fa-light fa-filter-list"></i>
+                            <i class="fa-light fa-xmark"></i>
+                        </button>
+                        <div class="scroll">
+                            <div class="ml--filter">
+                                <a href="javascript:;" class="is-open">
+                                    <i class="fa-solid fa-plus"></i>
+                                    <i class="fa-solid fa-minus"></i>
+                                    <span>Member</span>
+                                </a>
+                                <div class="ml--filter-group claim--labels ml-memberlist" data-filter-group="member">
+                                    <label class="all is-checked"><input type="checkbox" class="all" value="" checked="">all members</label>
+                                </div>
+                            </div>
+                            <div class="ml--filter">
+                                <a href="javascript:;">
+                                    <i class="fa-light fa-plus"></i>
+                                    <i class="fa-light fa-minus"></i>
+                                    <span>Account Type</span>
+                                </a>
+                                <div class="ml--filter-group claim--labels" data-filter-group="account">
+                                    <label class="all is-checked"><input type="checkbox" class="all" value="" checked="">all types</label>
+                                    <label><input type="checkbox" value=".g-4">staff</label>
+                                    <label><input type="checkbox" value=".g-6">writers</label>
+                                    <label><input type="checkbox" value=".active">active</label>
+                                    <label><input type="checkbox" value=".g-3">unsorted</label>
+                                </div>
+                            </div>
+                            <div class="ml--filter">
+                                <a href="javascript:;">
+                                    <i class="fa-light fa-plus"></i>
+                                    <i class="fa-light fa-minus"></i>
+                                    <span>Member Group</span>
+                                </a>
+                                <div class="ml--filter-group claim--labels" data-filter-group="group">
+                                    <label class="all is-checked"><input type="checkbox" class="all" value="" checked="">all groups</label>
+                                    <label><input type="checkbox" value=".g-15">amaranth</label>
+                                    <label><input type="checkbox" value=".g-7">birch</label>
+                                    <label><input type="checkbox" value=".g-11">blueberry</label>
+                                    <label><input type="checkbox" value=".g-10">dandelion</label>
+                                    <label><input type="checkbox" value=".g-13">hemlock</label>
+                                    <label><input type="checkbox" value=".g-12">juniper</label>
+                                    <label><input type="checkbox" value=".g-8">lupin</label>
+                                    <label><input type="checkbox" value=".g-14">nettle</label>
+                                    <label><input type="checkbox" value=".g-9">spruce</label>
+                                    <label><input type="checkbox" value=".g-16">sundew</label>
+                                </div>
+                            </div>
+                            <div class="ml--filter">
+                                <a href="javascript:;">
+                                    <i class="fa-light fa-plus"></i>
+                                    <i class="fa-light fa-minus"></i>
+                                    <span>Species</span>
+                                </a>
+                                <div class="ml--filter-group claim--labels" data-filter-group="group">
+                                    <label class="all is-checked"><input type="checkbox" class="all" value="" checked="">all groups</label>
+                                    <label><input type="checkbox" value=".dragon">dragon</label>
+                                    <label><input type="checkbox" value=".human">human</label>
+                                    <label><input type="checkbox" value=".hybrid">hybrid</label>
+                                    <label><input type="checkbox" value=".kelpie">kelpie</label>
+                                    <label><input type="checkbox" value=".mermaid">mermaid</label>
+                                    <label><input type="checkbox" value=".phoenix">phoenix</label>
+                                    <label><input type="checkbox" value=".vampire">vampire</label>
+                                    <label><input type="checkbox" value=".werecreature">werecreature</label>
+                                    <label><input type="checkbox" value=".witch">witch</label>
+                                </div>
+                            </div>
+                            <div class="ml--filter">
+                                <a href="javascript:;">
+                                    <i class="fa-light fa-plus"></i>
+                                    <i class="fa-light fa-minus"></i>
+                                    <span>Age</span>
+                                </a>
+                                <div class="ml--filter-group claim--labels" data-filter-group="age">
+                                    <label class="all is-checked"><input type="checkbox" class="all" value="" checked="">all ages</label>
+                                    <label><input type="checkbox" value=".1825">18 - 25</label>
+                                    <label><input type="checkbox" value=".2635">26 - 35</label>
+                                    <label><input type="checkbox" value=".3645">36 - 45</label>
+                                    <label><input type="checkbox" value=".4655">46 - 55</label>
+                                    <label><input type="checkbox" value=".55">55+</label>
+                                    <label><input type="checkbox" value=".immortal">Immortal</label>
+                                </div>
+                            </div>
+                            <div class="ml--filter">
+                                <a href="javascript:;">
+                                    <i class="fa-solid fa-plus"></i>
+                                    <i class="fa-solid fa-minus"></i>
+                                    <span>Pronouns</span>
+                                </a>
+                                <div class="ml--filter-group claim--labels ml-pronouns" data-filter-group="pronouns">
+                                    <label class="all is-checked"><input type="checkbox" class="all" value="" checked="">all pronouns</label>
+                                </div>
+                            </div>
+                            <div class="ml--filter">
+                                <a href="javascript:;">
+                                    <i class="fa-light fa-plus"></i>
+                                    <i class="fa-light fa-minus"></i>
+                                    <span>Relationship Status</span>
+                                </a>
+                                <div class="ml--filter-group claim--labels" data-filter-group="relationship">
+                                    <label class="all is-checked"><input type="checkbox" class="all" value="" checked="">all statuses</label>
+                                    <label><input type="checkbox" value=".single">single</label>
+                                    <label><input type="checkbox" value=".dating">dating</label>
+                                    <label><input type="checkbox" value=".engaged">engaged</label>
+                                    <label><input type="checkbox" value=".married">married</label>
+                                    <label><input type="checkbox" value=".itscomplicated">it's complicated</label>
+                                    <label><input type="checkbox" value=".separated">separated</label>
+                                    <label><input type="checkbox" value=".divorced">divorced</label>
+                                    <label><input type="checkbox" value=".widowed">widowed</label>
+                                </div>
+                            </div>
+                            <div class="ml--filter">
+                                <a href="javascript:;">
+                                    <i class="fa-solid fa-plus"></i>
+                                    <i class="fa-solid fa-minus"></i>
+                                    <span>Sexual Orientation</span>
+                                </a>
+                                <div class="ml--filter-group claim--labels ml-sexual" data-filter-group="sexual">
+                                    <label class="all is-checked"><input type="checkbox" class="all" value="" checked="">all orientations</label>
+                                </div>
+                            </div>
+                            <div class="ml--filter">
+                                <a href="javascript:;">
+                                    <i class="fa-solid fa-plus"></i>
+                                    <i class="fa-solid fa-minus"></i>
+                                    <span>Romantic Orientation</span>
+                                </a>
+                                <div class="ml--filter-group claim--labels ml-romantic" data-filter-group="romantic">
+                                    <label class="all is-checked"><input type="checkbox" class="all" value="" checked="">all orientations</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ml--content">
+                        <div class="ml--members scroll">
+                            <form action='index.php' method='get'>
+                                <input type='hidden' name='act' value='Members' />
+                                <div id="ml--rows"><div class="grid-sizer"></div></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    let accounts = [], members = [];
+                    var filters = {};
+                    let charAge = `0`, ageClass = ``;
+
+                    //set class variables
+                    let $container = $('#ml--rows');
+                    let typeSearch = `#quicksearch`;
+                    let memName = `.mem--title a`;
+                    let visible = `is-visible`;
+                    let filterGroup = `.ml--filter-group`;
+                    let filterOptions = `.ml--filter-group input`;
+                    let sorts = `.ml--header button`;
+                    let gridItem = `.grid-item`;
+                    let defaultShow = `.character:not(.g-3)`;
+
+                    function formatMemberRow(accountType, classArray, imageTall, imageWide, id, accountName, links, lines, long) {
+                        let classList = classArray.join(' ');
+                        let linksFormatted = links.join('');
+                        let linesFormatted = lines.map(item => `<span>${item}</span>`).join('');
+                        let html = `<div class="ml--member ${accountType} grid-item ${classList}">
+                            <div class="mem">
+                                <div class="mem--image">
+                                    <span>
+                                        <img src="${imageTall}" class="tall" />
+                                        <img src="${imageWide}" class="wide" />
+                                    </span>
+                                </div>
+                                <div class="mem--body">
+                                    <div class="mem--title"><a href="?showuser=${id}">${accountName}</a></div>
+                                    <div class="mem--links">${linksFormatted}</div>
+                                    <div class="mem--info">${linesFormatted}</div>
+                                    <div class="mem--long"><div class="scroll">${long}</div></div>
+                                </div>
+                            </div>
+                        </div>`;
+
+                        return html;
+                    }
+
+                    function populatePage(array) {
+                        let html = ``;
+                        let members = [], membersClean = [];
+                        let romantic = [], romanticClean = [];
+                        let sexual = [], sexualClean = [];
+                        let pronouns = [], pronounsClean = [];
+
+                        for (let i = 0; i < array.length; i++) {
+                            //Make Member Array
+                            let member = {raw: array[i].alias, clean: array[i].cliasClass};
+                            let romanticOrientation = {raw: array[i].romantic, clean: array[i].romanticClass};
+                            let sexualOrientation = {raw: array[i].sexual, clean: array[i].sexualClass};
+                            let pronoun = {raw: array[i].pronouns, clean: array[i].pronounsClass};
+
+                            if(jQuery.inArray(member.clean, membersClean) == -1 && member.clean != '') {
+                                membersClean.push(member.clean);
+                                members.push(member);
+                            }
+                            if(jQuery.inArray(romanticOrientation.clean, romanticClean) == -1 && romanticOrientation.clean != '') {
+                                romanticClean.push(romanticOrientation.clean);
+                                romantic.push(romanticOrientation);
+                            }
+                            if(jQuery.inArray(sexualOrientation.clean, sexualClean) == -1 && sexualOrientation.clean != '') {
+                                sexualClean.push(sexualOrientation.clean);
+                                sexual.push(sexualOrientation);
+                            }
+                            if(jQuery.inArray(pronoun.clean, pronounsClean) == -1 && pronoun.clean != '') {
+                                pronounsClean.push(pronoun.clean);
+                                pronouns.push(pronoun);
+                            }
+
+                            switch(array[i].groupID) {
+                                //member only
+                                case 4:
+                                case 6:
+                                    html += formatMemberRow('member',
+                                        [`g-${array[i].groupID}`,
+                                        array[i].aliasClass],
+                                        array[i].imageTall,
+                                        array[i].imageWide,
+                                        array[i].id,
+                                        array[i].name,
+                                        [`<a href="?showuser=${array[i].id}#roster">directory</a>`,
+                                        `<a href="?act=Search&CODE=getalluser&mid=${array[i].id}&type=topics">topics</a>`,
+                                        `<a href="?act=Search&CODE=getalluser&mid=${array[i].id}">posts</a>`],
+                                        [array[i].groupName,
+                                        array[i].memberPronouns,
+                                        array[i].timezone],
+                                        array[i].triggers
+                                    );
+                                    break;
+                                //depends on type
+                                case 1:
+                                case 3:
+                                case 5:
+                                    if(array[i].type == `member`) {
+                                        html += formatMemberRow('member',
+                                            [`g-${array[i].groupID}`,
+                                            array[i].aliasClass],
+                                            array[i].imageTall,
+                                            array[i].imageWide,
+                                            array[i].id,
+                                            array[i].name,
+                                            [`<a href="?showuser=${array[i].id}#roster">directory</a>`,
+                                            `<a href="?act=Search&CODE=getalluser&mid=${array[i].id}&type=topics">topics</a>`,
+                                            `<a href="?act=Search&CODE=getalluser&mid=${array[i].id}">posts</a>`],
+                                            [array[i].groupName,
+                                            array[i].memberPronouns,
+                                            array[i].timezone],
+                                            array[i].triggers
+                                        );
+                                    } else {
+                                        //character
+                                        html += formatMemberRow('character',
+                                            [`g-${array[i].groupID}`,
+                                            array[i].aliasClass],
+                                            array[i].imageTall,
+                                            array[i].imageWide,
+                                            array[i].id,
+                                            array[i].name,
+                                            [`<a href="?act=Search&CODE=getalluser&mid=${array[i].id}&type=topics">topics</a>`,
+                                            `<a href="?act=Search&CODE=getalluser&mid=${array[i].id}">posts</a>`],
+                                            [array[i].pronouns,
+                                            array[i].species,
+                                            `${array[i].age} years old`,
+                                            `played by ${array[i].alias}`],
+                                            array[i].overview
+                                        );
+                                    }
+                                    break;
+                                //character only
+                                default: 
+                                    html += formatMemberRow('character',
+                                        ['active',
+                                        `g-${array[i].groupID}`,
+                                        array[i].aliasClass,
+                                        array[i].speciesClass,
+                                        array[i].ageClass,
+                                        array[i].pronounsClass,
+                                        array[i].relationshipClass,
+                                        array[i].sexualClass,
+                                        array[i].romanticClass],
+                                        array[i].imageTall,
+                                        array[i].imageWide,
+                                        array[i].id,
+                                        array[i].name,
+                                        [`<a href="?act=Search&CODE=getalluser&mid=${array[i].id}&type=topics">topics</a>`,
+                                        `<a href="?act=Search&CODE=getalluser&mid=${array[i].id}">posts</a>`],
+                                        [array[i].pronouns,
+                                        array[i].species,
+                                        `<span class="age">${array[i].age}</span> years old`,
+                                        `played by ${array[i].alias}`],
+                                        array[i].overview
+                                    );
+                                    break;
+                            }
+                        }
+                        document.querySelector('#ml--rows').insertAdjacentHTML('beforeend', html);
+
+                        //sort member array
+                        members.sort();
+
+                        //Append Array
+                        members.forEach(member => {
+                            document.querySelector('.ml-memberlist').insertAdjacentHTML('beforeend', `<label><input type="checkbox" value=".${member.clean}"/>${member.raw}</label>`);
+                        });
+                        romantic.forEach(orientation => {
+                            document.querySelector('.ml-romantic').insertAdjacentHTML('beforeend', `<label><input type="checkbox" value=".${orientation.clean}"/>${orientation.raw}</label>`);
+                        });
+                        sexual.forEach(orientation => {
+                            document.querySelector('.ml-sexual').insertAdjacentHTML('beforeend', `<label><input type="checkbox" value=".${orientation.clean}"/>${orientation.raw}</label>`);
+                        });
+                    }
+
+                    function setCustomFilter() {
+                        //get search value
+                        qsRegex = document.querySelector(typeSearch).value;
+                        
+                        //add show class to all items to reset
+                        elements.forEach(el => el.classList.add(visible));
+                        
+                        //filter by nothing
+                        let searchFilter = '';
+                        
+                        //check each item
+                        elements.forEach(el => {
+                            let name = el.querySelector(memName).textContent;
+                            if(!name.toLowerCase().includes(qsRegex)) {
+                                el.classList.remove(visible);
+                                searchFilter = `.${visible}`;
+                            }
+                        });
+                    
+                        let filterGroups = document.querySelectorAll(filterGroup);
+                        let groups = [];
+                        let checkFilters;
+                        filterGroups.forEach(group => {
+                            let filters = [];
+                            group.querySelectorAll('label.is-checked input').forEach(filter => {
+                                if(filter.value) {
+                                    filters.push(filter.value);
+                                }
+                            });
+                            groups.push({group: group.dataset.filterGroup, selected: filters});
+                        });
+                    
+                        let filterCount = 0;
+                        let comboFilters = [];
+                        groups.forEach(group => {
+                            // skip to next filter group if it doesn't have any values
+                            if ( group.selected.length > 0 ) {
+                                if ( filterCount === 0 ) {
+                                    // copy groups to comboFilters
+                                    comboFilters = group.selected;
+                                } else {
+                                    var filterSelectors = [];
+                                    var groupCombo = comboFilters;
+                                    // merge filter Groups
+                                    for (var k = 0; k < group.selected.length; k++) {
+                                        for (var j = 0; j < groupCombo.length; j++) {
+                                            //accommodate weirdness with object vs not
+                                            if(groupCombo[j].selected) {
+                                                if(groupCombo[j].selected != group.selected[k]) {
+                                                    filterSelectors.push( groupCombo[j].selected + group.selected[k] );
+                                                }
+                                            } else if (!groupCombo[j].selected && group.selected[k]) {
+                                                if(groupCombo[j] != group.selected[k]) {
+                                                    filterSelectors.push( groupCombo[j] + group.selected[k] );
+                                                }
+                                            }
+                                        }
+                                    }
+                                    // apply filter selectors to combo filters for next group
+                                    comboFilters = filterSelectors;
+                                }
+                                filterCount++;
+                            }
+                        });
+                        
+                        //set filter to blank
+                        let filter = [];
+                        //check if it's only search
+                        if(qsRegex.length > 0 && comboFilters.length === 0) {
+                            filter = [`.${visible}`];
+                        }
+                        //check if it's only checkboxes
+                        else if(qsRegex.length === 0 && comboFilters.length > 0) {
+                            let combos = comboFilters.join(',').split(',');
+                            filter = [...combos];
+                        }
+                        //check if it's both
+                        else if (qsRegex.length > 0 && comboFilters.length > 0) {
+                            let dualFilters = comboFilters.map(filter => filter + `.${visible}`);
+                            filter = [...dualFilters];
+                        }
+                    
+                        //join array into string
+                        filter = filter.join(', ');
+                        
+                        //render isotope
+                        $container.isotope({
+                            filter: filter
+                        });
+                    }
+                
+                    // debounce so filtering doesn't happen every millisecond
+                    function debounce(fn, threshold) {
+                        var timeout;
+                        return function debounced() {
+                            if (timeout) {
+                            clearTimeout(timeout);
+                            }
+                    
+                            function delayed() {
+                            fn();
+                            timeout = null;
+                            }
+                            setTimeout(delayed, threshold || 100);
+                        };
+                    }
+                </script>
+                <script src="./templates/accounts.js"></script>
+                <script>
+                    populatePage(accounts);
+
+                    //initialize isotope
+                    // quick search regex
+                    let qsRegex;
+                    let elements = document.querySelectorAll(gridItem);
+                    
+                    // init Isotope
+                    $(window).on('load', function() {
+                        $container.isotope({
+                            itemSelector: gridItem,
+                            percentPosition: true,
+                            masonry: {
+                                columnWidth: '.grid-sizer',
+                                gutter: 15
+                            },
+                            filter: defaultShow,
+                            getSortData: {
+                                name: '.mem--title a',
+                                nameDesc: '.mem--title a',
+                                age: '.age parseInt',
+                                ageDesc: '.age parseInt',
+                            },
+                            sortAscending: {
+                                name: true,
+                                nameDesc: false,
+                                age: true,
+                                ageDesc: false,
+                            }
+                        });
+                    });
+                
+                    //use value of input select to filter
+                    let checkboxes = document.querySelectorAll(filterOptions);
+                    checkboxes.forEach(checkbox => {
+                        checkbox.addEventListener('change', e => {
+                            if(e.currentTarget.classList.contains('all')) {
+                                e.currentTarget.checked = true;
+                                e.currentTarget.parentElement.classList.add('is-checked');
+                                e.currentTarget.parentElement.parentElement.querySelectorAll('input:not(.all)').forEach(input => {
+                                    input.checked = false;
+                                    input.parentElement.classList.remove('is-checked');
+                                });
+                            } else {
+                                if(e.currentTarget.parentElement.classList.contains('is-checked')) {
+                                    e.currentTarget.checked = false;
+                                    e.currentTarget.parentElement.classList.remove('is-checked');
+                                } else {
+                                    e.currentTarget.checked = true;
+                                    e.currentTarget.parentElement.classList.add('is-checked');
+                                    e.currentTarget.parentElement.parentElement.querySelector('input.all').checked = false;
+                                    e.currentTarget.parentElement.parentElement.querySelector('input.all').parentElement.classList.remove('is-checked');
+                                }
+                            }
+                            let labels = e.currentTarget.parentElement.parentElement.querySelectorAll('label');
+                            let checked = 0;
+                            labels.forEach(label => {
+                                if(label.classList.contains('is-checked')) {
+                                    checked++;
+                                }
+                            });
+                            if(checked === 0) {
+                                e.currentTarget.parentElement.parentElement.querySelector('input.all').checked = true;
+                                e.currentTarget.parentElement.parentElement.querySelector('input.all').parentElement.classList.add('is-checked');
+                            }
+                            //set filters
+                            setCustomFilter();
+                        });
+                    });
+                    
+                    // use value of search field to filter
+                    document.querySelector(typeSearch).addEventListener('keyup', e => {
+                        setCustomFilter();
+                    });
+
+                    // bind sort button click
+                    let sortButtons = document.querySelectorAll(sorts);
+                    sortButtons.forEach(button => {
+                        button.addEventListener('click', e => {
+                            let sortValue = e.currentTarget.dataset.sort;
+                            $container.isotope({ sortBy: sortValue });
+                            sortButtons.forEach(button => {
+                                button.classList.remove('is-checked');
+                            });
+                            e.currentTarget.classList.add('is-checked');
+                        });
+                    });
+                </script>
+            </section>
         </main>
 
         </div>

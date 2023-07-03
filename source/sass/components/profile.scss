@@ -141,12 +141,11 @@
             }
 
             @media only screen and (min-width: $md) {
-                grid-template-columns: 115px 1fr 1fr 115px;
-                grid-template-rows: 445px 115px;
+                grid-template-rows: 445px 315px 115px;
             }
 
             @media only screen and (min-width: $lg) {
-                grid-template-columns: 1fr 1fr 115px;
+                grid-template-columns: 450px 1fr 115px;
                 grid-template-rows: 315px 115px;
             }
         }
@@ -165,10 +164,15 @@
         tag-tab[data-key="#plotting"] {
             display: grid;
             gap: var(--spacing-md);
-            grid-template-rows: max-content max-content max-content;
+            grid-template-rows: max-content max-content max-content max-content;
 
             @media only screen and (min-width: $md) {
-                grid-template-columns: 1.5fr 1fr;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: max-content max-content;
+            }
+
+            @media only screen and (min-width: $lg) {
+                grid-template-columns: 1fr 1fr 1fr;
                 grid-template-rows: max-content max-content;
             }
         }
@@ -308,7 +312,6 @@
 
             @media only screen and (min-width: $md) {
                 grid-template-columns: 1fr;
-                height: calc(445px - (var(--spacing-md) * 2));
             }
 
             @media only screen and (min-width: $lg) {
@@ -363,14 +366,6 @@
         display: flex;
         flex-wrap: wrap;
         gap: var(--spacing-md);
-
-        @media only screen and (min-width: $md) {
-            grid-column: span 3;
-        }
-
-        @media only screen and (min-width: $lg) {
-            grid-column: span 1;
-        }
 
         .trait {
             flex: 0 0 calc(50% - (var(--spacing-md) / 2));
@@ -436,22 +431,31 @@
         }
     }
 
-    &--overview {
+    &--overview,
+    &--relationships {
         background: var(--bg-transparent);
         border: 1px solid var(--border-secondary);
         padding: var(--spacing-md);
         text-align: justify;
 
-        @media only screen and (min-width: $md) {
+        @media only screen and (min-width: $lg) {
             grid-row: span 2;
         }
 
         .scroll {
-            max-height: 360px;
             padding-right: var(--spacing-md);
+            max-height: 260px;
             
             .lgFont & {
-                max-height: 353px;
+                max-height: 253px;
+            }
+
+            @media only screen and (min-width: $md) {
+                max-height: 360px;
+                
+                .lgFont & {
+                    max-height: 353px;
+                }
             }
         }
     }
@@ -727,6 +731,28 @@
                 height: 24px;
                 object-fit: contain;
                 object-position: center;
+            }
+        }
+    }
+
+    .scroll {
+        h2,
+        .h2,
+        h3,
+        .h3,
+        h4,
+        .h4,
+        h5,
+        .h5,
+        h6,
+        .h6,
+        h7,
+        .h7,
+        h8,
+        .h8,
+        ul {
+            & + br {
+                display: none;
             }
         }
     }

@@ -1,5 +1,22 @@
 /********** Global **********/
 let pageType = document.querySelector('body').id;
+let pageClasses = document.querySelector('body').classList;
+
+//remove empty tooltips
+$('*[title=""]').removeAttr('title');
+$('*[tooltip=""]').removeAttr('tooltip');
+if (typeof tippy === 'function') {
+    tippy(document.querySelectorAll('[title]'), {
+    content: (reference) => {
+        const title = reference.getAttribute('title');
+        reference.removeAttribute('title');
+        return title;
+    },
+    theme: 'godlybehaviour',
+    arrow: false
+    });
+}
+
 initStickyMenu();
 setTheme();
 setSize();
@@ -28,6 +45,16 @@ if(document.querySelector('body').classList.contains('g-2')) {
     $('#quick-login-clip').remove();
 }
 
+//init clipboards
+let clipboards = document.querySelectorAll('tag-code');
+let codes = document.querySelectorAll(`table[id='CODE-WRAP']`);
+if (clipboards.length > 0) {
+    initClipboard();
+}
+if (codes.length > 0) {
+    initCodebox();
+}
+
 /********** Index & Category **********/
 if(pageType === 'idx' || pageType === 'SC') {
     initForumLinks();
@@ -51,6 +78,27 @@ if(pageType === 'ST') {
         $('.topic-desc').html(newDescript);
     }
     initTopicDescription('.topic-desc');
+    
+    //input clean up
+    document.querySelector('#qr_open .tablepad').innerHTML = document.querySelector('#qr_open .tablepad').innerHTML.replace('|', '');
+    let textNodes = getAllTextNodes(document.querySelector('#qr_open .tablepad'));
+    textNodes.forEach(node => {
+        const paragraph = document.createElement('p');
+        node.after(paragraph);
+        paragraph.appendChild(node);
+        paragraph.innerText = paragraph.innerText.replace(`|`, ``).trim();
+    });
+    document.querySelectorAll(`#qr_open input[type="checkbox"]`).forEach(input => inputWrap(input));
+    document.querySelectorAll('#qr_open .input-wrap').forEach(label => {
+        label.querySelector('input').insertAdjacentHTML('afterend', `<div class="fancy-input checkbox"><i class="fa-regular fa-check"></i></div>`);
+    });
+    $('#qr_open .tablepad > input').wrapAll('<div class="qr_buttons"></div>');
+}
+
+/********** Members **********/
+if(pageType === 'Members') {
+    initFilterPopout();
+    initFilterDropdowns();
 }
 
 /********** UCP & Messages **********/
@@ -117,4 +165,53 @@ if(pageType === 'UserCP' || pageType === 'Msg') {
             });
         });
     }
+}
+
+//Login
+if(pageType === 'Login') {
+    let textNodes = getAllTextNodes(document.querySelector('main'));
+    textNodes.forEach(node => {
+        const paragraph = document.createElement('p');
+        node.after(paragraph);
+        paragraph.appendChild(node);
+    });
+    $("main > p").nextUntil("div.tableborder").andSelf().wrapAll("<div class='container'></div>");
+    $(`input[name="UserName"]`).attr('placeholder','Username');
+    $(`input[name="PassWord"]`).attr('placeholder','Password');
+}
+
+//registration
+if(pageType === 'Reg') {
+    let textNodes = getAllTextNodes(document.querySelector('.tablepad > table > tbody > tr:first-child > td:last-child fieldset:first-child'));
+    if(textNodes) {
+        textNodes.forEach(node => {
+            const paragraph = document.createElement('p');
+            node.after(paragraph);
+            paragraph.appendChild(node);
+        });
+    }
+    inputWrap(`label[for="agree_cbox"] input[name="read_tos"]`);
+    inputWrap(`fieldset input[name="allow_admin_mail"]`);
+    inputWrap(`fieldset input[name="allow_member_mail"]`);
+    fancyBoxes();
+    if(document.querySelector('input[name="agree"][type="checkbox"]')) {
+        $('input[name="agree"][type="checkbox"]').wrap('<label class="input-wrap tos"></label>');
+        $('.input-wrap.tos').append('<div class="fancy-input checkbox"><i class="fa-solid fa-check"></i></div> <p>I agree to the terms of this registration, <b>I am at least 18 years of age,</b> and wish to proceed.</p>');
+    }
+}
+
+//posting
+if(pageType === 'Post') {
+    let textNodes = getAllTextNodes(document.querySelector('#post-options .pformright'));
+    if(textNodes) {
+        textNodes.forEach(node => {
+            const paragraph = document.createElement('p');
+            node.after(paragraph);
+            paragraph.appendChild(node);
+        });
+    }
+    inputWrap(`input[name="enableemo"]`, 'br');
+    inputWrap(`input[name="enablesig"]`, 'br');
+    inputWrap(`input[name="enabletrack"]`, 'br');
+    fancyBoxes();
 }

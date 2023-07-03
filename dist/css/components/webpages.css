@@ -115,9 +115,11 @@
   .species--overview {
     grid-row: span 2; }
     .species--overview .scroll {
-      height: calc(339px - var(--spacing-lg) - 61px); }
+      text-align: justify;
+      height: calc(360px - var(--spacing-lg));
+      padding-right: var(--spacing-lg); }
       .lgFont .species--overview .scroll {
-        height: calc(339px - var(--spacing-lg) - 69px); }
+        height: calc(360px - var(--spacing-lg)); }
   .species--facts {
     display: flex;
     flex-direction: column;
@@ -127,7 +129,9 @@
     font-size: var(--sBody);
     font-weight: 400;
     gap: var(--spacing-xs);
-    margin-bottom: var(--spacing-lg); }
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--border-secondary); }
   .species--fact {
     display: flex;
     gap: var(--spacing-sm); }
@@ -135,8 +139,13 @@
       font-weight: 600;
       color: var(--accent);
       letter-spacing: 0.2em; }
-  .species--abilities .scroll, .species--weaknesses .scroll {
-    height: 120px; }
+  .species--abilities, .species--weaknesses {
+    text-align: justify; }
+    .species--abilities .scroll, .species--weaknesses .scroll {
+      height: 167px;
+      padding-right: var(--spacing-md); }
+      .lgFont .species--abilities .scroll, .lgFont .species--weaknesses .scroll {
+        height: 199px; }
   .species--traits {
     grid-column: 1 / -1;
     display: grid;

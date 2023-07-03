@@ -32,6 +32,18 @@
 
         <!--Navigation-->
         <div id="nav-clip"></div>
+
+        <!-- Alerts -->
+        <div id="recent-alerts" style="display: none;">
+            <div class="alert--box">
+                <div class="alert--menu">
+                    <a href="javascript:close_alerts();" class="close-alerts" title="close alerts"><i class="fa-light fa-xmark"></i></a>
+                    <a href="javascript:read_alerts();" title="mark as read"><i class="fa-light fa-envelope-open"></i></a>
+                    <a href="/index.php?act=UserCP&amp;CODE=alerts" title="view all alerts"><i class="fa-light fa-mailbox-flag-up"></i></a>
+                </div>
+                <span id="recent-alerts-data" class="alert--main scroll"><div class="recent-alerts-msg"><div align="center"><% ALERTS %></div></div></span>
+            </div>
+        </div>
         
         <!--Main Body-->
         <main>

@@ -162,10 +162,12 @@
         grid-row: span 2;
 
         .scroll {
-            height: calc(339px - var(--spacing-lg) - 61px);
+            text-align: justify;
+            height: calc(360px - var(--spacing-lg));
+            padding-right: var(--spacing-lg);
 
             .lgFont & {
-                height: calc(339px - var(--spacing-lg) - 69px);
+                height: calc(360px - var(--spacing-lg));
             }
         }
     }
@@ -180,6 +182,8 @@
         font-weight: 400;
         gap: var(--spacing-xs);
         margin-bottom: var(--spacing-lg);
+        padding-bottom: var(--spacing-lg);
+        border-bottom: 1px solid var(--border-secondary);
     }
     &--fact {
         display: flex;
@@ -194,8 +198,15 @@
 
     &--abilities,
     &--weaknesses {
+        text-align: justify;
+
         .scroll {
-            height: 120px;
+            height: 167px;
+            padding-right: var(--spacing-md);
+
+            .lgFont & {
+                height: 199px;
+            }
         }
     }
 
