@@ -260,3 +260,30 @@ if(pageType === 'Post') {
     });
     fancyBoxes();
 }
+
+//store
+if(pageType === 'store') {
+    document.querySelector('#ucpmenu').innerHTML = `<div class="sticky"><b>Shop</b>
+    <div class="menu-section">
+    <a href="?act=store&code=shop&category=9">Appreciation Badges</a>
+    <a href="?act=store&code=shop&category=10">Event Badges</a>
+    <a href="?act=store&code=shop&category=3">Hobby Badges</a>
+    <a href="?act=store&code=shop&category=8">Loyalty Badges</a>
+    <a href="?act=store&code=shop&category=5">Player Badges</a>
+    <a href="?act=store&code=shop&category=6">Relationship Badges</a>
+    <a href="?act=store&code=shop&category=7">Species Badges</a>
+    <a href="?act=store&code=shop&category=1">Trait Badges</a>
+    <a href="?act=store&code=shop&category=4">Zodiac Badges</a>
+    </div>
+    <b>Personal</b>
+    <div class="menu-section">
+    <a href="?act=store&CODE=inventory">Inventory</a>
+    <a href="?act=store&code=donate_money">Send Money</a>
+    <a href="?act=store&code=donate_item">Send Item</a>
+    </div>
+    <b class="is-closed staffOnly">Staff</b>
+    <div class="menu-section">
+    <a href="?act=store&code=fine" class="staffOnly">Fine</a>
+    <a href="?act=store&code=edit_points" class="staffOnly">Edit Points</a>
+    <a href="?act=store&code=edit_inventory" class="staffOnly">Edit Inventory</a></div></div>`;
+}
