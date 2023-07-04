@@ -105,9 +105,13 @@
 
 .species {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: max-content max-content max-content;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(auto-fit, minmax(0, max-content));
   gap: var(--spacing-sm); }
+  @media only screen and (min-width: 1024px) {
+    .species {
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: max-content max-content max-content; } }
   .species > * {
     background: var(--bg-transparent);
     padding: var(--spacing-lg);
@@ -198,7 +202,8 @@
     font-family: var(--font-body-bold);
     font-size: var(--xlBody);
     font-weight: 600;
-    padding: 0 0 var(--spacing-sm) 0; }
+    padding: 0 0 var(--spacing-sm) 0;
+    border-bottom: 0; }
     .claims--item b:not(:only-child),
     .claims--item a:not(:only-child) {
       margin-bottom: var(--spacing-sm); }

@@ -116,15 +116,19 @@ img {
   object-fit: cover;
   object-position: center; }
 
-ul {
+ul,
+ol {
   margin: 0;
   padding: 0 0 0 12px;
   line-height: 200%; }
-  ul br {
+  ul br,
+  ol br {
     display: none; }
-  ul li {
+  ul li,
+  ol li {
     padding-left: 10px; }
-    ul li::marker {
+    ul li::marker,
+    ol li::marker {
       font-family: 'Font Awesome 6 Pro';
       font-weight: 300;
       font-style: normal;
@@ -1681,6 +1685,10 @@ input[type="range"]::-moz-range-progress {
     .input-wrap .fancy-input:hover {
       color: var(--text-on-color);
       background: var(--bg-color); }
+  .emoteWrap tag-highlight,
+  .repWrap tag-highlight,
+  .input-wrap tag-highlight {
+    padding: var(--spacing-xs) var(--spacing-sm); }
 
 option {
   font-size: var(--mBody); }

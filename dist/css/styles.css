@@ -459,15 +459,19 @@ img {
   -o-object-position: center;
      object-position: center; }
 
-ul {
+ul,
+ol {
   margin: 0;
   padding: 0 0 0 12px;
   line-height: 200%; }
-  ul br {
+  ul br,
+  ol br {
     display: none; }
-  ul li {
+  ul li,
+  ol li {
     padding-left: 10px; }
-    ul li::marker {
+    ul li::marker,
+    ol li::marker {
       font-family: 'Font Awesome 6 Pro';
       font-weight: 300;
       font-style: normal;
@@ -2053,6 +2057,10 @@ input[type="range"]::-moz-range-progress {
     .input-wrap .fancy-input:hover {
       color: var(--text-on-color);
       background: var(--bg-color); }
+  .emoteWrap tag-highlight,
+  .repWrap tag-highlight,
+  .input-wrap tag-highlight {
+    padding: var(--spacing-xs) var(--spacing-sm); }
 
 option {
   font-size: var(--mBody); }
@@ -4237,7 +4245,8 @@ header {
           -o-object-fit: contain;
              object-fit: contain;
           -o-object-position: center;
-             object-position: center; }
+             object-position: center;
+          border: none; }
         .post--item > div .scroll.awards {
           display: -webkit-box;
           display: -webkit-flex;
@@ -4777,15 +4786,15 @@ header {
   .profile--cheatsheet li:not(:last-child) {
     margin-bottom: var(--spacing-md); }
   .profile--cheatsheet .scroll {
-    max-height: 210px;
+    height: 210px;
     padding-right: var(--spacing-md); }
     .lgFont .profile--cheatsheet .scroll {
-      max-height: 203px; }
+      height: 203px; }
     @media only screen and (min-width: 768px) {
       .profile--cheatsheet .scroll {
-        max-height: 360px; }
+        height: 360px; }
         .lgFont .profile--cheatsheet .scroll {
-          max-height: 353px; } }
+          height: 353px; } }
 
 .profile--freeform {
   background: var(--bg-transparent);
@@ -4793,10 +4802,10 @@ header {
   padding: var(--spacing-md);
   text-align: justify; }
   .profile--freeform .scroll {
-    max-height: 360px;
+    height: 360px;
     padding-right: var(--spacing-md); }
     .lgFont .profile--freeform .scroll {
-      max-height: 353px; }
+      height: 353px; }
 
 .profile--overview, .profile--relationships {
   background: var(--bg-transparent);
@@ -4809,14 +4818,14 @@ header {
       grid-row: span 2; } }
   .profile--overview .scroll, .profile--relationships .scroll {
     padding-right: var(--spacing-md);
-    max-height: 260px; }
+    height: 260px; }
     .lgFont .profile--overview .scroll, .lgFont .profile--relationships .scroll {
-      max-height: 253px; }
+      height: 253px; }
     @media only screen and (min-width: 768px) {
       .profile--overview .scroll, .profile--relationships .scroll {
-        max-height: 360px; }
+        height: 360px; }
         .lgFont .profile--overview .scroll, .lgFont .profile--relationships .scroll {
-          max-height: 353px; } }
+          height: 353px; } }
 
 .profile--interested, .profile--avoiding {
   background: var(--bg-transparent);
@@ -4826,15 +4835,15 @@ header {
   .profile--interested li:not(:last-child), .profile--avoiding li:not(:last-child) {
     margin-bottom: var(--spacing-md); }
   .profile--interested .scroll, .profile--avoiding .scroll {
-    max-height: 210px;
+    height: 210px;
     padding-right: var(--spacing-md); }
     .lgFont .profile--interested .scroll, .lgFont .profile--avoiding .scroll {
-      max-height: 203px; }
+      height: 203px; }
     @media only screen and (min-width: 768px) {
       .profile--interested .scroll, .profile--avoiding .scroll {
-        max-height: 130px; }
+        height: 130px; }
         .lgFont .profile--interested .scroll, .lgFont .profile--avoiding .scroll {
-          max-height: 130px; } }
+          height: 130px; } }
 
 .profile--tracker-menu {
   background: var(--bg-transparent);
@@ -5020,9 +5029,9 @@ header {
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
     gap: var(--spacing-xs);
-    max-height: 60px; }
+    height: 60px; }
     .lgFont .profile--awards .scroll, .lgFont .profile--triggers .scroll {
-      max-height: 53px; }
+      height: 53px; }
     .profile--awards .scroll img, .profile--triggers .scroll img {
       width: 24px;
       height: 24px;
@@ -5499,13 +5508,19 @@ header {
 .species {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 2fr 1fr;
-  grid-template-columns: 2fr 1fr;
-  -ms-grid-rows: -webkit-max-content -webkit-max-content -webkit-max-content;
-  -ms-grid-rows: max-content max-content max-content;
-  grid-template-rows: -webkit-max-content -webkit-max-content -webkit-max-content;
-  grid-template-rows: max-content max-content max-content;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(auto-fit, minmax(0, -webkit-max-content));
+  grid-template-rows: repeat(auto-fit, minmax(0, max-content));
   gap: var(--spacing-sm); }
+  @media only screen and (min-width: 1024px) {
+    .species {
+      -ms-grid-columns: 2fr 1fr;
+      grid-template-columns: 2fr 1fr;
+      -ms-grid-rows: -webkit-max-content -webkit-max-content -webkit-max-content;
+      -ms-grid-rows: max-content max-content max-content;
+      grid-template-rows: -webkit-max-content -webkit-max-content -webkit-max-content;
+      grid-template-rows: max-content max-content max-content; } }
   .species > * {
     background: var(--bg-transparent);
     padding: var(--spacing-lg);
@@ -5623,7 +5638,8 @@ header {
     font-family: var(--font-body-bold);
     font-size: var(--xlBody);
     font-weight: 600;
-    padding: 0 0 var(--spacing-sm) 0; }
+    padding: 0 0 var(--spacing-sm) 0;
+    border-bottom: 0; }
     .claims--item b:not(:only-child),
     .claims--item a:not(:only-child) {
       margin-bottom: var(--spacing-sm); }
@@ -5864,12 +5880,18 @@ tag-highlight {
           #store main > table:first-of-type > tbody > tr > td#ucpcontent {
             padding: var(--spacing-lg); } }
         #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent input[type="text"],
+        #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent input[type="file"],
+        #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent input[type="password"],
         #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent textarea,
         #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent select,
         #Msg main > table:first-of-type > tbody > tr > td#ucpcontent input[type="text"],
+        #Msg main > table:first-of-type > tbody > tr > td#ucpcontent input[type="file"],
+        #Msg main > table:first-of-type > tbody > tr > td#ucpcontent input[type="password"],
         #Msg main > table:first-of-type > tbody > tr > td#ucpcontent textarea,
         #Msg main > table:first-of-type > tbody > tr > td#ucpcontent select,
         #store main > table:first-of-type > tbody > tr > td#ucpcontent input[type="text"],
+        #store main > table:first-of-type > tbody > tr > td#ucpcontent input[type="file"],
+        #store main > table:first-of-type > tbody > tr > td#ucpcontent input[type="password"],
         #store main > table:first-of-type > tbody > tr > td#ucpcontent textarea,
         #store main > table:first-of-type > tbody > tr > td#ucpcontent select {
           width: 100%;
@@ -5881,10 +5903,26 @@ tag-highlight {
         #Msg main > table:first-of-type > tbody > tr > td#ucpcontent .maintitle,
         #store main > table:first-of-type > tbody > tr > td#ucpcontent .maintitle {
           display: none; }
-        #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent .pformstrip,
-        #Msg main > table:first-of-type > tbody > tr > td#ucpcontent .pformstrip,
-        #store main > table:first-of-type > tbody > tr > td#ucpcontent .pformstrip {
-          text-align: center; }
+        #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent .pformstrip:not(:last-child),
+        #Msg main > table:first-of-type > tbody > tr > td#ucpcontent .pformstrip:not(:last-child),
+        #store main > table:first-of-type > tbody > tr > td#ucpcontent .pformstrip:not(:last-child) {
+          font-size: 22px;
+          font-family: var(--font-body-bold);
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.3em;
+          padding: var(--spacing-sm) 0 var(--spacing-sm) var(--spacing-lg); }
+          #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent .pformstrip:not(:last-child)::before,
+          #Msg main > table:first-of-type > tbody > tr > td#ucpcontent .pformstrip:not(:last-child)::before,
+          #store main > table:first-of-type > tbody > tr > td#ucpcontent .pformstrip:not(:last-child)::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 3px;
+            height: 100%;
+            background: var(--bg-color);
+            border-radius: 2px; }
         #UserCP main > table:first-of-type > tbody > tr > td#ucpcontent form > table,
         #Msg main > table:first-of-type > tbody > tr > td#ucpcontent form > table,
         #store main > table:first-of-type > tbody > tr > td#ucpcontent form > table {
@@ -6083,16 +6121,16 @@ tag-highlight {
 
 #UserCP.code-24 p {
   text-align: center;
-  margin-bottom: 15px; }
-  @media only screen and (min-width: 480px) {
-    #UserCP.code-24 p {
-      margin-bottom: 30px; } }
+  padding-bottom: var(--spacing-md); }
 
 #UserCP.code-24 #gallery_form {
   display: none; }
 
 #UserCP.code-24 .tablepad {
   font-size: 0; }
+  #UserCP.code-24 .tablepad img {
+    max-width: 400px;
+    max-height: 400px; }
 
 #UserCP.code-24 .tablebasic + .tablebasic .pformleft {
   display: none; }
@@ -6114,7 +6152,7 @@ tag-highlight {
   margin-bottom: 0;
   padding: 0; }
 
-#UserCP.code-54 .tableborder:first-child tbody {
+#UserCP.code-54 #ucpcontent .tableborder:first-child table > tbody {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6123,7 +6161,7 @@ tag-highlight {
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
   gap: 15px; }
-  #UserCP.code-54 .tableborder:first-child tbody > tr {
+  #UserCP.code-54 #ucpcontent .tableborder:first-child table > tbody > tr {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -6135,59 +6173,164 @@ tag-highlight {
             flex-direction: column;
     gap: 0;
     margin: 0; }
-    #UserCP.code-54 .tableborder:first-child tbody > tr:first-child {
+    #UserCP.code-54 #ucpcontent .tableborder:first-child table > tbody > tr:not(:last-child) {
+      background: var(--bg-alt);
+      border: 1px solid var(--border-secondary); }
+    #UserCP.code-54 #ucpcontent .tableborder:first-child table > tbody > tr:first-child {
       display: none; }
-    #UserCP.code-54 .tableborder:first-child tbody > tr:last-child {
+    #UserCP.code-54 #ucpcontent .tableborder:first-child table > tbody > tr:last-child {
       -webkit-box-flex: 0;
       -webkit-flex: 0 0 100%;
           -ms-flex: 0 0 100%;
               flex: 0 0 100%; }
-    #UserCP.code-54 .tableborder:first-child tbody > tr:not(:first-child):not(:last-child) {
+    #UserCP.code-54 #ucpcontent .tableborder:first-child table > tbody > tr:nth-child(2):nth-last-child(2) {
+      -webkit-box-flex: 0 !important;
+      -webkit-flex: 0 0 100% !important;
+          -ms-flex: 0 0 100% !important;
+              flex: 0 0 100% !important; }
+      #UserCP.code-54 #ucpcontent .tableborder:first-child table > tbody > tr:nth-child(2):nth-last-child(2) td:only-child {
+        position: relative !important;
+        width: 100%; }
+        #UserCP.code-54 #ucpcontent .tableborder:first-child table > tbody > tr:nth-child(2):nth-last-child(2) td:only-child > div {
+          text-align: left !important; }
+    #UserCP.code-54 #ucpcontent .tableborder:first-child table > tbody > tr .input-wrap {
+      position: absolute;
+      top: 0;
+      left: 0; }
+    #UserCP.code-54 #ucpcontent .tableborder:first-child table > tbody > tr:not(:first-child):not(:last-child) {
       -webkit-box-flex: 0;
       -webkit-flex: 0 0 100%;
           -ms-flex: 0 0 100%;
               flex: 0 0 100%;
-      padding: 5px; }
-      @media only screen and (min-width: 480px) {
-        #UserCP.code-54 .tableborder:first-child tbody > tr:not(:first-child):not(:last-child) {
-          padding: 10px; } }
+      padding: var(--spacing-sm); }
       @media only screen and (min-width: 768px) {
-        #UserCP.code-54 .tableborder:first-child tbody > tr:not(:first-child):not(:last-child) {
+        #UserCP.code-54 #ucpcontent .tableborder:first-child table > tbody > tr:not(:first-child):not(:last-child) {
           -webkit-box-flex: 0;
-          -webkit-flex: 0 0 calc(50% - 7.5px);
-              -ms-flex: 0 0 calc(50% - 7.5px);
-                  flex: 0 0 calc(50% - 7.5px); } }
+          -webkit-flex: 0 0 calc(50% - (var(--spacing-md) / 2));
+              -ms-flex: 0 0 calc(50% - (var(--spacing-md) / 2));
+                  flex: 0 0 calc(50% - (var(--spacing-md) / 2)); } }
       @media only screen and (min-width: 1024px) {
-        #UserCP.code-54 .tableborder:first-child tbody > tr:not(:first-child):not(:last-child) {
+        #UserCP.code-54 #ucpcontent .tableborder:first-child table > tbody > tr:not(:first-child):not(:last-child) {
           -webkit-box-flex: 0;
-          -webkit-flex: 0 0 calc((100% / 3) - 10px);
-              -ms-flex: 0 0 calc((100% / 3) - 10px);
-                  flex: 0 0 calc((100% / 3) - 10px); } }
-      #UserCP.code-54 .tableborder:first-child tbody > tr:not(:first-child):not(:last-child) > td {
+          -webkit-flex: 0 0 calc((100% / 3) - (var(--spacing-md) * 2 / 3));
+              -ms-flex: 0 0 calc((100% / 3) - (var(--spacing-md) * 2 / 3));
+                  flex: 0 0 calc((100% / 3) - (var(--spacing-md) * 2 / 3)); } }
+      #UserCP.code-54 #ucpcontent .tableborder:first-child table > tbody > tr:not(:first-child):not(:last-child) > td {
         margin: 0;
-        padding: 0 0 0 21px; }
-        @media only screen and (min-width: 480px) {
-          #UserCP.code-54 .tableborder:first-child tbody > tr:not(:first-child):not(:last-child) > td {
-            padding: 0 0 0 26px; } }
-        #UserCP.code-54 .tableborder:first-child tbody > tr:not(:first-child):not(:last-child) > td:last-child {
+        padding: 0 0 0 calc(var(--spacing-sm) + 20px);
+        text-align: left; }
+        #UserCP.code-54 #ucpcontent .tableborder:first-child table > tbody > tr:not(:first-child):not(:last-child) > td:first-child {
+          text-transform: uppercase;
+          font-family: var(--font-body-bold);
+          font-size: 18px;
+          letter-spacing: 0.1em;
+          padding-bottom: var(--spacing-sm);
+          margin-bottom: var(--spacing-sm);
+          margin-top: -5px; }
+          #UserCP.code-54 #ucpcontent .tableborder:first-child table > tbody > tr:not(:first-child):not(:last-child) > td:first-child::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: calc(var(--spacing-sm) + 20px);
+            width: 35px;
+            height: 3px;
+            background: var(--border-color);
+            border-radius: 2px; }
+        #UserCP.code-54 #ucpcontent .tableborder:first-child table > tbody > tr:not(:first-child):not(:last-child) > td:nth-child(2) {
+          font: var(--style-small-text);
+          letter-spacing: 0.1em;
+          text-transform: uppercase; }
+        #UserCP.code-54 #ucpcontent .tableborder:first-child table > tbody > tr:not(:first-child):not(:last-child) > td:last-child {
           position: absolute; }
 
+#UserCP.code-54 #ucpcontent .tableborder:not(:first-child) tr {
+  margin-bottom: 0;
+  margin-top: var(--spacing-md); }
+
+#UserCP.code-54 #ucpcontent .tableborder:not(:first-child) .pformleft {
+  line-height: 160%;
+  text-align: left;
+  display: block;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  font-size: calc(var(--xsBody) + 1px);
+  font-family: var(--font-body-bold);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--bg-color-transparent); }
+  #UserCP.code-54 #ucpcontent .tableborder:not(:first-child) .pformleft::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: var(--bg-color);
+    border-radius: 1px; }
+
 #UserCP.code-52 .row2 + table .pformleft {
-  font: initial; }
+  line-height: 160%;
+  text-align: left;
+  display: block;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  font-size: calc(var(--xsBody) + 1px);
+  font-family: var(--font-body-bold);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--bg-color-transparent); }
+  #UserCP.code-52 .row2 + table .pformleft::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: var(--bg-color);
+    border-radius: 1px; }
+
+#UserCP.code-28 form[name="form1"] > table > tbody > tr > td strong,
+#UserCP.code-28 form[name="form1"] > table > tbody > tr > td b,
+#UserCP.code-08 form[name="form1"] > table > tbody > tr > td strong,
+#UserCP.code-08 form[name="form1"] > table > tbody > tr > td b {
+  line-height: 160%;
+  text-align: left;
+  display: block;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  font-size: calc(var(--xsBody) + 1px);
+  font-family: var(--font-body-bold);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--bg-color-transparent); }
+  #UserCP.code-28 form[name="form1"] > table > tbody > tr > td strong::before,
+  #UserCP.code-28 form[name="form1"] > table > tbody > tr > td b::before,
+  #UserCP.code-08 form[name="form1"] > table > tbody > tr > td strong::before,
+  #UserCP.code-08 form[name="form1"] > table > tbody > tr > td b::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: var(--bg-color);
+    border-radius: 1px; }
 
 #UserCP.code-28 form[name="form1"] > table > tbody > tr > td:first-child,
 #UserCP.code-08 form[name="form1"] > table > tbody > tr > td:first-child {
   width: 100%; }
-  @media only screen and (min-width: 768px) {
-    #UserCP.code-28 form[name="form1"] > table > tbody > tr > td:first-child,
-    #UserCP.code-08 form[name="form1"] > table > tbody > tr > td:first-child {
-      padding: 15px 15px 15px 0; } }
-  #UserCP.code-28 form[name="form1"] > table > tbody > tr > td:first-child b,
-  #UserCP.code-08 form[name="form1"] > table > tbody > tr > td:first-child b {
-    display: block; }
-    #UserCP.code-28 form[name="form1"] > table > tbody > tr > td:first-child b ~ br,
-    #UserCP.code-08 form[name="form1"] > table > tbody > tr > td:first-child b ~ br {
-      display: none; }
+  #UserCP.code-28 form[name="form1"] > table > tbody > tr > td:first-child b ~ br,
+  #UserCP.code-08 form[name="form1"] > table > tbody > tr > td:first-child b ~ br {
+    display: none; }
 
 #UserCP.code-28 form[name="form1"] > table > tbody > tr > td:last-child,
 #UserCP.code-08 form[name="form1"] > table > tbody > tr > td:last-child {
@@ -6199,10 +6342,6 @@ tag-highlight {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content; }
-  @media only screen and (min-width: 768px) {
-    #UserCP.code-28 form[name="form1"] > table > tbody > tr > td:last-child,
-    #UserCP.code-08 form[name="form1"] > table > tbody > tr > td:last-child {
-      padding: 15px 0 15px 15px; } }
   #UserCP.code-28 form[name="form1"] > table > tbody > tr > td:last-child input,
   #UserCP.code-08 form[name="form1"] > table > tbody > tr > td:last-child input {
     width: 100%; }
@@ -6212,12 +6351,31 @@ tag-highlight {
   margin-bottom: 0;
   padding: 0; }
 
-#UserCP.code-alerts .ucp--wrapper > table img {
+#UserCP.code-alerts #ucpcontent > table img {
   display: none; }
 
-#UserCP.code-alerts .ucp--wrapper > form > .tableborder > table {
+#UserCP.code-alerts #ucpcontent > table:first-of-type > tbody > tr {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+  #UserCP.code-alerts #ucpcontent > table:first-of-type > tbody > tr .row1 {
+    text-align: left !important; }
+
+#UserCP.code-alerts #ucpcontent > form > .tableborder > table {
   display: block; }
-  #UserCP.code-alerts .ucp--wrapper > form > .tableborder > table > tbody {
+  #UserCP.code-alerts #ucpcontent > form > .tableborder > table > tbody {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -6225,8 +6383,8 @@ tag-highlight {
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
-    gap: 15px; }
-    #UserCP.code-alerts .ucp--wrapper > form > .tableborder > table > tbody > tr {
+    gap: var(--spacing-md); }
+    #UserCP.code-alerts #ucpcontent > form > .tableborder > table > tbody > tr {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -6238,54 +6396,114 @@ tag-highlight {
               flex-direction: column;
       gap: 0;
       margin: 0; }
-      #UserCP.code-alerts .ucp--wrapper > form > .tableborder > table > tbody > tr:first-child {
+      #UserCP.code-alerts #ucpcontent > form > .tableborder > table > tbody > tr:first-child {
         display: none; }
-      #UserCP.code-alerts .ucp--wrapper > form > .tableborder > table > tbody > tr:last-child {
+      #UserCP.code-alerts #ucpcontent > form > .tableborder > table > tbody > tr:last-child {
         -webkit-box-flex: 0;
         -webkit-flex: 0 0 100%;
             -ms-flex: 0 0 100%;
                 flex: 0 0 100%; }
-      #UserCP.code-alerts .ucp--wrapper > form > .tableborder > table > tbody > tr:not(:first-child):not(:last-child) {
+        #UserCP.code-alerts #ucpcontent > form > .tableborder > table > tbody > tr:last-child td {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -webkit-flex-direction: column;
+              -ms-flex-direction: column;
+                  flex-direction: column;
+          -webkit-box-align: end;
+          -webkit-align-items: end;
+              -ms-flex-align: end;
+                  align-items: end;
+          gap: var(--spacing-sm); }
+          #UserCP.code-alerts #ucpcontent > form > .tableborder > table > tbody > tr:last-child td input {
+            margin: 0;
+            line-height: 70%; }
+          #UserCP.code-alerts #ucpcontent > form > .tableborder > table > tbody > tr:last-child td > div:first-child {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            font: var(--style-small-text);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            -webkit-flex-wrap: wrap;
+                -ms-flex-wrap: wrap;
+                    flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+                -ms-flex-align: center;
+                    align-items: center; }
+            #UserCP.code-alerts #ucpcontent > form > .tableborder > table > tbody > tr:last-child td > div:first-child select {
+              width: auto;
+              font: var(--style-small-text);
+              text-transform: uppercase;
+              letter-spacing: 0.1em; }
+      #UserCP.code-alerts #ucpcontent > form > .tableborder > table > tbody > tr:not(:last-child) {
+        background: var(--bg-alt);
+        border: 1px solid var(--border-secondary); }
+      #UserCP.code-alerts #ucpcontent > form > .tableborder > table > tbody > tr:not(:first-child):not(:last-child) {
         -webkit-box-flex: 0;
         -webkit-flex: 0 0 100%;
             -ms-flex: 0 0 100%;
                 flex: 0 0 100%;
-        padding: 5px; }
-        @media only screen and (min-width: 480px) {
-          #UserCP.code-alerts .ucp--wrapper > form > .tableborder > table > tbody > tr:not(:first-child):not(:last-child) {
-            padding: 10px; } }
+        padding: var(--spacing-sm); }
         @media only screen and (min-width: 768px) {
-          #UserCP.code-alerts .ucp--wrapper > form > .tableborder > table > tbody > tr:not(:first-child):not(:last-child) {
+          #UserCP.code-alerts #ucpcontent > form > .tableborder > table > tbody > tr:not(:first-child):not(:last-child) {
             -webkit-box-flex: 0;
-            -webkit-flex: 0 0 calc(50% - 7.5px);
-                -ms-flex: 0 0 calc(50% - 7.5px);
-                    flex: 0 0 calc(50% - 7.5px); } }
+            -webkit-flex: 0 0 calc(50% - calc(var(--spacing-md) / 2));
+                -ms-flex: 0 0 calc(50% - calc(var(--spacing-md) / 2));
+                    flex: 0 0 calc(50% - calc(var(--spacing-md) / 2)); } }
         @media only screen and (min-width: 1024px) {
-          #UserCP.code-alerts .ucp--wrapper > form > .tableborder > table > tbody > tr:not(:first-child):not(:last-child) {
+          #UserCP.code-alerts #ucpcontent > form > .tableborder > table > tbody > tr:not(:first-child):not(:last-child) {
             -webkit-box-flex: 0;
-            -webkit-flex: 0 0 calc((100% / 3) - 10px);
-                -ms-flex: 0 0 calc((100% / 3) - 10px);
-                    flex: 0 0 calc((100% / 3) - 10px); } }
-        #UserCP.code-alerts .ucp--wrapper > form > .tableborder > table > tbody > tr:not(:first-child):not(:last-child) > td {
+            -webkit-flex: 0 0 calc((100% / 3) - calc(var(--spacing-md) * 2 / 3));
+                -ms-flex: 0 0 calc((100% / 3) - calc(var(--spacing-md) * 2 / 3));
+                    flex: 0 0 calc((100% / 3) - calc(var(--spacing-md) * 2 / 3)); } }
+        #UserCP.code-alerts #ucpcontent > form > .tableborder > table > tbody > tr:not(:first-child):not(:last-child) > td {
           margin: 0;
-          padding: 0 0 0 21px;
+          padding: 0 0 0 calc(var(--spacing-sm) + 20px);
           text-align: left; }
-          @media only screen and (min-width: 480px) {
-            #UserCP.code-alerts .ucp--wrapper > form > .tableborder > table > tbody > tr:not(:first-child):not(:last-child) > td {
-              padding: 0 0 0 26px; } }
-          #UserCP.code-alerts .ucp--wrapper > form > .tableborder > table > tbody > tr:not(:first-child):not(:last-child) > td:first-child {
+          #UserCP.code-alerts #ucpcontent > form > .tableborder > table > tbody > tr:not(:first-child):not(:last-child) > td:first-child {
             display: none; }
-          #UserCP.code-alerts .ucp--wrapper > form > .tableborder > table > tbody > tr:not(:first-child):not(:last-child) > td.alert-text img {
-            display: none; }
-          #UserCP.code-alerts .ucp--wrapper > form > .tableborder > table > tbody > tr:not(:first-child):not(:last-child) > td:last-child {
+          #UserCP.code-alerts #ucpcontent > form > .tableborder > table > tbody > tr:not(:first-child):not(:last-child) > td.alert-text {
+            text-transform: uppercase;
+            font: var(--style-small-text);
+            letter-spacing: 0.1em;
+            padding-bottom: var(--spacing-sm);
+            margin-bottom: var(--spacing-sm);
+            margin-top: -1px; }
+            #UserCP.code-alerts #ucpcontent > form > .tableborder > table > tbody > tr:not(:first-child):not(:last-child) > td.alert-text::before {
+              content: '';
+              position: absolute;
+              bottom: 0;
+              left: calc(var(--spacing-sm) + 20px);
+              width: 35px;
+              height: 3px;
+              background: var(--border-color);
+              border-radius: 2px; }
+            #UserCP.code-alerts #ucpcontent > form > .tableborder > table > tbody > tr:not(:first-child):not(:last-child) > td.alert-text img {
+              display: none; }
+            #UserCP.code-alerts #ucpcontent > form > .tableborder > table > tbody > tr:not(:first-child):not(:last-child) > td.alert-text + td {
+              font: var(--style-small-text);
+              letter-spacing: 0.1em;
+              text-transform: uppercase; }
+          #UserCP.code-alerts #ucpcontent > form > .tableborder > table > tbody > tr:not(:first-child):not(:last-child) > td:last-child {
             position: absolute;
-            padding: 0; }
+            left: 0;
+            padding-left: var(--spacing-sm); }
 
-#UserCP.code-50 .tableborder > table,
-#UserCP.code-26 .tableborder > table {
+#UserCP.code-alerts #ucpcontent .pagination ~ br {
+  display: none; }
+
+#UserCP.code-50 #ucpcontent .tableborder > table,
+#UserCP.code-26 #ucpcontent .tableborder > table {
   display: block; }
-  #UserCP.code-50 .tableborder > table > tbody,
-  #UserCP.code-26 .tableborder > table > tbody {
+  #UserCP.code-50 #ucpcontent .tableborder > table > tbody,
+  #UserCP.code-26 #ucpcontent .tableborder > table > tbody {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -6293,9 +6511,9 @@ tag-highlight {
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
-    gap: 15px; }
-    #UserCP.code-50 .tableborder > table > tbody > tr,
-    #UserCP.code-26 .tableborder > table > tbody > tr {
+    gap: var(--spacing-md); }
+    #UserCP.code-50 #ucpcontent .tableborder > table > tbody > tr,
+    #UserCP.code-26 #ucpcontent .tableborder > table > tbody > tr {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -6303,43 +6521,44 @@ tag-highlight {
       -webkit-flex-wrap: wrap;
           -ms-flex-wrap: wrap;
               flex-wrap: wrap; }
-      #UserCP.code-50 .tableborder > table > tbody > tr:not(.pformstrip),
-      #UserCP.code-26 .tableborder > table > tbody > tr:not(.pformstrip) {
-        padding: 5px;
+      #UserCP.code-50 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip),
+      #UserCP.code-26 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) {
         -webkit-box-flex: 0;
         -webkit-flex: 0 0 100%;
             -ms-flex: 0 0 100%;
-                flex: 0 0 100%; }
-        @media only screen and (min-width: 480px) {
-          #UserCP.code-50 .tableborder > table > tbody > tr:not(.pformstrip),
-          #UserCP.code-26 .tableborder > table > tbody > tr:not(.pformstrip) {
-            padding: 10px; } }
+                flex: 0 0 100%;
+        padding: var(--spacing-sm);
+        background: var(--bg-alt);
+        border: 1px solid var(--border-secondary);
+        font: var(--style-small-text);
+        text-transform: uppercase;
+        letter-spacing: 0.1em; }
         @media only screen and (min-width: 768px) {
-          #UserCP.code-50 .tableborder > table > tbody > tr:not(.pformstrip),
-          #UserCP.code-26 .tableborder > table > tbody > tr:not(.pformstrip) {
+          #UserCP.code-50 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip),
+          #UserCP.code-26 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) {
             -webkit-box-flex: 0;
-            -webkit-flex: 0 0 calc(50% - 7.5px);
-                -ms-flex: 0 0 calc(50% - 7.5px);
-                    flex: 0 0 calc(50% - 7.5px); } }
+            -webkit-flex: 0 0 calc(50% - (var(--spacing-md) / 2));
+                -ms-flex: 0 0 calc(50% - (var(--spacing-md) / 2));
+                    flex: 0 0 calc(50% - (var(--spacing-md) / 2)); } }
         @media only screen and (min-width: 1024px) {
-          #UserCP.code-50 .tableborder > table > tbody > tr:not(.pformstrip),
-          #UserCP.code-26 .tableborder > table > tbody > tr:not(.pformstrip) {
+          #UserCP.code-50 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip),
+          #UserCP.code-26 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) {
             -webkit-box-flex: 0;
-            -webkit-flex: 0 0 calc((100% / 3) - 10px);
-                -ms-flex: 0 0 calc((100% / 3) - 10px);
-                    flex: 0 0 calc((100% / 3) - 10px); } }
-        #UserCP.code-50 .tableborder > table > tbody > tr:not(.pformstrip) > td:first-child,
-        #UserCP.code-26 .tableborder > table > tbody > tr:not(.pformstrip) > td:first-child {
+            -webkit-flex: 0 0 calc((100% / 3) - (var(--spacing-md) * 2 / 3));
+                -ms-flex: 0 0 calc((100% / 3) - (var(--spacing-md) * 2 / 3));
+                    flex: 0 0 calc((100% / 3) - (var(--spacing-md) * 2 / 3)); } }
+        #UserCP.code-50 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:first-child,
+        #UserCP.code-26 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:first-child {
           display: none; }
-        #UserCP.code-50 .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(2), #UserCP.code-50 .tableborder > table > tbody > tr:not(.pformstrip) > td:last-child,
-        #UserCP.code-26 .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(2),
-        #UserCP.code-26 .tableborder > table > tbody > tr:not(.pformstrip) > td:last-child {
+        #UserCP.code-50 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(2), #UserCP.code-50 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:last-child,
+        #UserCP.code-26 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(2),
+        #UserCP.code-26 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:last-child {
           -webkit-box-flex: 0;
           -webkit-flex: 0 0 100%;
               -ms-flex: 0 0 100%;
                   flex: 0 0 100%; }
-        #UserCP.code-50 .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(2),
-        #UserCP.code-26 .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(2) {
+        #UserCP.code-50 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(2),
+        #UserCP.code-26 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(2) {
           display: -webkit-box;
           display: -webkit-flex;
           display: -ms-flexbox;
@@ -6350,101 +6569,166 @@ tag-highlight {
               -ms-flex-direction: column;
                   flex-direction: column;
           line-height: 200%; }
-          #UserCP.code-50 .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(2) br,
-          #UserCP.code-26 .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(2) br {
+          #UserCP.code-50 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(2) b:first-of-type,
+          #UserCP.code-26 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(2) b:first-of-type {
+            text-transform: uppercase;
+            font-family: var(--font-body-bold);
+            font-size: 18px;
+            letter-spacing: 0.1em;
+            padding-bottom: var(--spacing-sm);
+            margin-bottom: var(--spacing-sm);
+            margin-top: -5px; }
+            #UserCP.code-50 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(2) b:first-of-type::before,
+            #UserCP.code-26 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(2) b:first-of-type::before {
+              content: '';
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 35px;
+              height: 3px;
+              background: var(--border-color);
+              border-radius: 2px; }
+          #UserCP.code-50 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(2) br,
+          #UserCP.code-26 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(2) br {
             display: none; }
-        #UserCP.code-50 .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(3), #UserCP.code-50 .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(4),
-        #UserCP.code-26 .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(3),
-        #UserCP.code-26 .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(4) {
+        #UserCP.code-50 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(3), #UserCP.code-50 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(4),
+        #UserCP.code-26 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(3),
+        #UserCP.code-26 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(4) {
           font-weight: 600; }
-        #UserCP.code-50 .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(3)::after,
-        #UserCP.code-26 .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(3)::after {
+        #UserCP.code-50 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(3)::after,
+        #UserCP.code-26 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(3)::after {
           content: ' topics'; }
-        #UserCP.code-50 .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(4)::after,
-        #UserCP.code-26 .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(4)::after {
+        #UserCP.code-50 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(4)::after,
+        #UserCP.code-26 #ucpcontent .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(4)::after {
           content: ' replies'; }
-      #UserCP.code-50 .tableborder > table > tbody > tr:first-child,
-      #UserCP.code-26 .tableborder > table > tbody > tr:first-child {
+      #UserCP.code-50 #ucpcontent .tableborder > table > tbody > tr:first-child,
+      #UserCP.code-26 #ucpcontent .tableborder > table > tbody > tr:first-child {
         display: none; }
-      #UserCP.code-50 .tableborder > table > tbody > tr.pformstrip,
-      #UserCP.code-26 .tableborder > table > tbody > tr.pformstrip {
+      #UserCP.code-50 #ucpcontent .tableborder > table > tbody > tr.pformstrip,
+      #UserCP.code-26 #ucpcontent .tableborder > table > tbody > tr.pformstrip {
         -webkit-box-flex: 0;
         -webkit-flex: 0 0 100%;
             -ms-flex: 0 0 100%;
-                flex: 0 0 100%; }
-        #UserCP.code-50 .tableborder > table > tbody > tr.pformstrip:nth-child(2),
-        #UserCP.code-26 .tableborder > table > tbody > tr.pformstrip:nth-child(2) {
+                flex: 0 0 100%;
+        font-size: calc(var(--xsBody) + 1px);
+        font-family: var(--font-body-bold);
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        padding: var(--spacing-xs) var(--spacing-sm) !important;
+        background: var(--bg-color-transparent); }
+        #UserCP.code-50 #ucpcontent .tableborder > table > tbody > tr.pformstrip:nth-child(2),
+        #UserCP.code-26 #ucpcontent .tableborder > table > tbody > tr.pformstrip:nth-child(2) {
           border-top: none;
           margin-top: 0;
           padding-top: 0 !important; }
-        #UserCP.code-50 .tableborder > table > tbody > tr.pformstrip td,
-        #UserCP.code-26 .tableborder > table > tbody > tr.pformstrip td {
-          display: block;
+        #UserCP.code-50 #ucpcontent .tableborder > table > tbody > tr.pformstrip td,
+        #UserCP.code-26 #ucpcontent .tableborder > table > tbody > tr.pformstrip td {
           width: 100%;
-          text-align: center; }
+          font-size: calc(var(--xsBody) + 1px);
+          letter-spacing: 0.2em;
+          padding: 0; }
 
-#UserCP.code-26 .ucp--wrapper > .pformstrip span {
+#UserCP.code-26 #ucpcontent > .pformstrip span {
   display: none; }
 
-#UserCP.code-26 .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(2) {
-  display: block; }
-  #UserCP.code-26 .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(2) br {
-    display: initial; }
-  #UserCP.code-26 .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(2) a:first-child {
-    display: block; }
-
-#UserCP.code-26 .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(5) {
-  -webkit-box-flex: 0;
-  -webkit-flex: 0 0 100%;
-      -ms-flex: 0 0 100%;
-          flex: 0 0 100%; }
-
-#UserCP.code-26 .tableborder > table > tbody > tr:not(.pformstrip) > td:not(:last-child) {
-  padding-left: 21px; }
-  @media only screen and (min-width: 480px) {
-    #UserCP.code-26 .tableborder > table > tbody > tr:not(.pformstrip) > td:not(:last-child) {
-      padding-left: 26px; } }
-
-#UserCP.code-26 .tableborder > table > tbody > tr:not(.pformstrip) > td:last-child {
-  position: absolute; }
-
-#UserCP.code-04 .ucp--wrapper > form > table > tbody > tr > td:first-child {
+#UserCP.code-26 .tableborder > table > tbody {
   width: 100%; }
-  @media only screen and (min-width: 768px) {
-    #UserCP.code-04 .ucp--wrapper > form > table > tbody > tr > td:first-child {
-      padding: 15px 15px 15px 0; } }
-  #UserCP.code-04 .ucp--wrapper > form > table > tbody > tr > td:first-child b ~ br {
+  #UserCP.code-26 .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(2) {
+    display: block; }
+    #UserCP.code-26 .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(2) br {
+      display: initial; }
+    #UserCP.code-26 .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(2) a:first-child {
+      display: block; }
+  #UserCP.code-26 .tableborder > table > tbody > tr:not(.pformstrip) > td:nth-child(5) {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 100%;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%; }
+  #UserCP.code-26 .tableborder > table > tbody > tr:not(.pformstrip) > td:not(:last-child) {
+    padding: 0 0 0 calc(var(--spacing-sm) + 20px); }
+  #UserCP.code-26 .tableborder > table > tbody > tr:not(.pformstrip) > td:last-child {
+    position: absolute; }
+
+#UserCP.code-04 #ucpcontent > form > table > tbody > tr > td:first-child {
+  line-height: 160%;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  width: 100%;
+  display: block;
+  max-width: max-content;
+  font-size: calc(var(--xsBody) + 1px);
+  font-family: var(--font-body-bold);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--bg-color-transparent);
+  margin: var(--spacing-sm) 0 0; }
+  #UserCP.code-04 #ucpcontent > form > table > tbody > tr > td:first-child::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: var(--bg-color);
+    border-radius: 1px; }
+  #UserCP.code-04 #ucpcontent > form > table > tbody > tr > td:first-child b ~ br {
     display: none; }
 
-#UserCP.code-04 .ucp--wrapper > form > table > tbody > tr > td:last-child {
+#UserCP.code-04 #ucpcontent > form > table > tbody > tr > td:last-child {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   height: -webkit-max-content;
   height: -moz-max-content;
-  height: max-content; }
-  #UserCP.code-04 .ucp--wrapper > form > table > tbody > tr > td:last-child input {
+  height: max-content;
+  padding: 0; }
+  #UserCP.code-04 #ucpcontent > form > table > tbody > tr > td:last-child input {
     margin: 0;
     width: 100%; }
 
-#UserCP.code-04 .ucp--wrapper .input-wrap + br {
+#UserCP.code-04 #ucpcontent .input-wrap + br {
   display: none; }
 
-#UserCP.code-04 .ucp--wrapper .pformstrip:last-child {
+#UserCP.code-04 #ucpcontent .pformstrip:last-child {
   margin-bottom: 0;
   padding: 0; }
 
-#UserCP.code-alerts_settings .pformstrip {
+#UserCP.code-alerts_settings table .pformstrip {
   text-align: left;
-  padding: 0; }
-  #UserCP.code-alerts_settings .pformstrip::after {
+  padding: 0;
+  line-height: 160%;
+  font-size: calc(var(--xsBody) + 1px) !important;
+  font-family: var(--font-body-bold);
+  font-weight: 600;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase;
+  padding: var(--spacing-xs) var(--spacing-sm) !important;
+  background: var(--bg-color-transparent);
+  margin: var(--spacing-sm) 0 0; }
+  #UserCP.code-alerts_settings table .pformstrip::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: var(--bg-color);
+    border-radius: 1px; }
+  #UserCP.code-alerts_settings table .pformstrip::after {
     display: none; }
 
 #UserCP.code-alerts_settings table + .pformstrip {
   text-align: center;
   margin-bottom: 0;
-  padding: 0; }
+  padding: 0;
+  background: transparent; }
+  #UserCP.code-alerts_settings table + .pformstrip::before {
+    display: none; }
 
 #UserCP.code-alerts_settings tr:not(:nth-last-child(4)):not(:first-child) td {
   padding: 0 0 15px; }
@@ -6452,21 +6736,23 @@ tag-highlight {
 #UserCP.code-alerts_settings tr:nth-last-child(4) .pformstrip {
   padding-top: 15px; }
 
-#UserCP.code-02 .ucp--wrapper form > table > tbody > tr {
+#UserCP.code-02 #ucpcontent form > table > tbody > tr {
+  display: -ms-grid !important;
+  display: grid !important;
   -ms-grid-columns: -webkit-max-content auto;
   -ms-grid-columns: max-content auto;
   grid-template-columns: -webkit-max-content auto;
   grid-template-columns: max-content auto; }
 
-#UserCP.code-02 .ucp--wrapper .pformstrip:last-child {
+#UserCP.code-02 #ucpcontent .pformstrip:last-child {
   margin-bottom: 0;
   padding: 0; }
 
-#Msg.code-01 .ucp--wrapper > table > tbody > tr > td:first-child {
+#Msg.code-01 #ucpcontent > table > tbody > tr > td:first-child {
   display: none; }
 
-#Msg.code-01 .ucp--wrapper > table > tbody > tr > td > br,
-#Msg.code-01 .ucp--wrapper > table > tbody > tr > td > form {
+#Msg.code-01 #ucpcontent > table > tbody > tr > td > br,
+#Msg.code-01 #ucpcontent > table > tbody > tr > td > form {
   display: none; }
 
 #Msg.code-04 form > table > tbody > tr {
@@ -6474,12 +6760,34 @@ tag-highlight {
   #Msg.code-04 form > table > tbody > tr .pformstrip {
     text-align: left; }
   #Msg.code-04 form > table > tbody > tr:first-child {
-    margin-bottom: 0; }
+    margin-bottom: var(--spacing-md) !important; }
     #Msg.code-04 form > table > tbody > tr:first-child .pformstrip {
       margin-bottom: 0;
-      padding-bottom: 0; }
+      padding-bottom: 0;
+      line-height: 160%;
+      max-width: -webkit-max-content;
+      max-width: -moz-max-content;
+      max-width: max-content;
+      display: block;
+      max-width: max-content;
+      font-size: calc(var(--xsBody) + 1px);
+      font-family: var(--font-body-bold);
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: var(--spacing-xs) var(--spacing-sm);
+      background: var(--bg-color-transparent); }
+      #Msg.code-04 form > table > tbody > tr:first-child .pformstrip::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 2px;
+        height: 100%;
+        background: var(--bg-color);
+        border-radius: 1px; }
   #Msg.code-04 form > table > tbody > tr:nth-child(2), #Msg.code-04 form > table > tbody > tr:nth-child(4), #Msg.code-04 form > table > tbody > tr:nth-child(5), #Msg.code-04 form > table > tbody > tr:nth-child(6), #Msg.code-04 form > table > tbody > tr:nth-last-child(3), #Msg.code-04 form > table > tbody > tr#code-buttons-header, #Msg.code-04 form > table > tbody > tr#enter-your-post-header {
-    display: none; }
+    display: none !important; }
   #Msg.code-04 form > table > tbody > tr:nth-child(3) .pformleft {
     display: none; }
   #Msg.code-04 form > table > tbody > tr:nth-child(3) .pformright {
@@ -6550,6 +6858,79 @@ tag-highlight {
         height: 400px;
         -webkit-box-sizing: border-box;
                 box-sizing: border-box; }
+
+#Msg.code-03 #ucpcontent > .tableborder + div {
+  display: none; }
+
+#Msg.code-03 #ucpcontent .msg-normal > table {
+  display: block;
+  margin-top: var(--spacing-md); }
+  @media only screen and (min-width: 600px) {
+    #Msg.code-03 #ucpcontent .msg-normal > table {
+      margin-top: var(--spacing-lg); } }
+  #Msg.code-03 #ucpcontent .msg-normal > table tbody {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    #Msg.code-03 #ucpcontent .msg-normal > table tbody tr:nth-child(2n + 1) {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      gap: var(--spacing-sm);
+      font: var(--style-small-text);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: var(--spacing-lg); }
+      #Msg.code-03 #ucpcontent .msg-normal > table tbody tr:nth-child(2n + 1)::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 5px;
+        height: 100%;
+        border-radius: 3px;
+        background: var(--border-color); }
+      #Msg.code-03 #ucpcontent .msg-normal > table tbody tr:nth-child(2n + 1) a {
+        color: var(--text-content); }
+      #Msg.code-03 #ucpcontent .msg-normal > table tbody tr:nth-child(2n + 1) strong {
+        font-weight: 600; }
+      #Msg.code-03 #ucpcontent .msg-normal > table tbody tr:nth-child(2n + 1) td {
+        padding: 0;
+        width: 100%; }
+        #Msg.code-03 #ucpcontent .msg-normal > table tbody tr:nth-child(2n + 1) td:nth-child(1) {
+          text-transform: uppercase;
+          font-size: 24px;
+          font-family: var(--font-body-bold); }
+    #Msg.code-03 #ucpcontent .msg-normal > table tbody tr:nth-child(2n) {
+      display: block;
+      background: var(--bg-transparent);
+      border: 1px solid var(--border-secondary);
+      padding: var(--spacing-lg);
+      margin: var(--spacing-md) 0 var(--spacing-lg); }
+      #Msg.code-03 #ucpcontent .msg-normal > table tbody tr:nth-child(2n) td {
+        display: block;
+        width: 100%;
+        padding: 0;
+        text-align: justify;
+        font-size: var(--lBody);
+        line-height: 200%; }
+        #Msg.code-03 #ucpcontent .msg-normal > table tbody tr:nth-child(2n) td:first-child {
+          display: none; }
+    #Msg.code-03 #ucpcontent .msg-normal > table tbody tr:last-child {
+      display: none; }
 
 #store.store-home .ucp--wrapper > table > tbody > tr {
   display: -webkit-box;
@@ -7163,6 +7544,14 @@ tr .pformstrip:only-child input {
         #SF main > table tbody tr td .goto-firstunread,
         #ST main > table tbody tr td .goto-firstunread {
           display: none; }
+
+.macro--message {
+  text-align: center;
+  grid-column: 1 / -1;
+  font-size: var(--xlBody);
+  font-weight: 300;
+  margin-bottom: var(--spacing-xl);
+  margin-top: var(--spacing-sm); }
 
 .macro--button {
   font-size: 16px;
@@ -7928,7 +8317,7 @@ tr .pformstrip:only-child input {
     #Post #posting-form > tbody > tr:last-child {
       padding-bottom: var(--spacing-md);
       border-bottom: 1px solid var(--border-secondary); }
-    #Post #posting-form > tbody > tr#topic-settings-header, #Post #posting-form > tbody > tr#code-buttons-header, #Post #posting-form > tbody > tr#enter-your-post-header, #Post #posting-form > tbody > tr#post-icon-options, #Post #posting-form > tbody > tr#post-as-header,
+    #Post #posting-form > tbody > tr#topic-settings-header, #Post #posting-form > tbody > tr#code-buttons-header, #Post #posting-form > tbody > tr#enter-your-post-header, #Post #posting-form > tbody > tr#post-as-header,
     #Post #posting-form > tbody > tr#post-as + tr:not(:last-child),
     #Post #posting-form > tbody > tr#post-as .pformleft,
     #Post #posting-form > tbody > tr#post-options .pformleft,
@@ -8026,6 +8415,19 @@ tr .pformstrip:only-child input {
         #Post #posting-form > tbody > tr#post-as + tr + tr:not(:last-child) td select, #Post #posting-form > tbody > tr#post-as td select {
           width: 100%;
           max-width: 250px; }
+    #Post #posting-form > tbody > tr#post-icon-options {
+      display: block; }
+      #Post #posting-form > tbody > tr#post-icon-options .pformleft {
+        display: none; }
+      #Post #posting-form > tbody > tr#post-icon-options .pformright {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+        gap: var(--spacing-sm) 0; }
     #Post #posting-form > tbody > tr:last-child {
       display: block; }
       #Post #posting-form > tbody > tr:last-child .pformstrip:only-child {

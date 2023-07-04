@@ -448,7 +448,8 @@
           width: 22px;
           height: 22px;
           object-fit: contain;
-          object-position: center; }
+          object-position: center;
+          border: none; }
         .post--item > div .scroll.awards {
           display: flex;
           gap: var(--spacing-xs);

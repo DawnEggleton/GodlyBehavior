@@ -102,6 +102,8 @@
                             }
 
                             input[type="text"],
+                            input[type="file"],
+                            input[type="password"],
                             textarea,
                             select {
                                 width: 100%;
@@ -115,7 +117,25 @@
                                 display: none;
                             }
                             .pformstrip {
-                                text-align: center;
+                                &:not(:last-child) {
+                                    font-size: 22px;
+                                    font-family: var(--font-body-bold);
+                                    font-weight: 600;
+                                    text-transform: uppercase;
+                                    letter-spacing: 0.3em;
+                                    padding: var(--spacing-sm) 0 var(--spacing-sm) var(--spacing-lg);
+                                
+                                    &::before {
+                                        content: '';
+                                        position: absolute;
+                                        left: 0;
+                                        top: 0;
+                                        width: 3px;
+                                        height: 100%;
+                                        background: var(--bg-color);
+                                        border-radius: 2px;
+                                    }
+                                }
                             }
                     
                             form {
@@ -299,17 +319,18 @@
 #UserCP.code-24 {
     p {
         text-align: center;
-        margin-bottom: 15px;
-
-        @media only screen and (min-width: $xs) {
-            margin-bottom: 30px;
-        }
+        padding-bottom: var(--spacing-md);
     }
     #gallery_form {
         display: none;
     }
     .tablepad {
         font-size: 0;
+
+        img {
+            max-width: 400px;
+            max-height: 400px;
+        }
     }
     .tablebasic + .tablebasic {
         .pformleft {
@@ -338,9 +359,9 @@
 }
 //Subaccounts
 #UserCP.code-54 {
-    .tableborder {
+    #ucpcontent .tableborder {
         &:first-child {
-            tbody {
+            table > tbody {
                 display: flex;
                 flex-wrap: wrap;
                 gap: 15px;
@@ -351,41 +372,115 @@
                     gap: 0;
                     margin: 0;
 
+                    &:not(:last-child) {
+                        background: var(--bg-alt);
+                        border: 1px solid var(--border-secondary);
+                    }
+
                     &:first-child {
                         display: none;
                     }
                     &:last-child {
                         flex: 0 0 100%;
                     }
+                    &:nth-child(2):nth-last-child(2) {
+                        flex: 0 0 100% !important;
+
+                        td:only-child {
+                            position: relative !important;
+                            width: 100%;
+
+                            & > div {
+                                text-align: left !important;
+                            }
+                        }
+                    }
+
+                    .input-wrap {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
 
                     &:not(:first-child):not(:last-child) {
                         flex: 0 0 100%;
-                        padding: 5px;
-
-                        @media only screen and (min-width: $xs) {
-                            padding: 10px;
-                        }
+                        padding: var(--spacing-sm);
         
                         @media only screen and (min-width: $md) {
-                            flex: 0 0 calc(50% - 7.5px);
+                            flex: 0 0 calc(50% - (var(--spacing-md) / 2));
                         }
 
                         @media only screen and (min-width: $lg) {
-                            flex: 0 0 calc((100% / 3) - 10px);
+                            flex: 0 0 calc((100% / 3) - (var(--spacing-md) * 2 / 3));
                         }
 
                         & > td {
                             margin: 0;
-                            padding: 0 0 0 21px;
+                            padding: 0 0 0 calc(var(--spacing-sm) + 20px);
+                            text-align: left;
 
-                            @media only screen and (min-width: $xs) {
-                                padding: 0 0 0 26px;
+                            &:first-child {
+                                text-transform: uppercase;
+                                font-family: var(--font-body-bold);
+                                font-size: 18px;
+                                letter-spacing: 0.1em;
+                                padding-bottom: var(--spacing-sm);
+                                margin-bottom: var(--spacing-sm);
+                                margin-top: -5px;
+                                
+                                &::before {
+                                    content: '';
+                                    position: absolute;
+                                    bottom: 0;
+                                    left: calc(var(--spacing-sm) + 20px);
+                                    width: 35px;
+                                    height: 3px;
+                                    background: var(--border-color);
+                                    border-radius: 2px;
+                                }
                             }
+
+                            &:nth-child(2) {
+                                font: var(--style-small-text);
+                                letter-spacing: 0.1em;
+                                text-transform: uppercase;
+                            }
+                            
                             &:last-child {
                                 position: absolute;
                             }
                         }
                     }
+                }
+            }
+        }
+        &:not(:first-child) {
+            tr {
+                margin-bottom: 0;
+                margin-top: var(--spacing-md);
+            }
+            .pformleft {
+                line-height: 160%;
+                text-align: left;
+                display: block;
+                max-width: max-content;
+                font-size: calc(var(--xsBody) + 1px);
+                font-family: var(--font-body-bold);
+                font-weight: 600;
+                letter-spacing: 0.2em;
+                text-transform: uppercase;
+                padding: var(--spacing-xs) var(--spacing-sm);
+                background: var(--bg-color-transparent);
+            
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 2px;
+                    height: 100%;
+                    background: var(--bg-color);
+                    border-radius: 1px;
                 }
             }
         }
@@ -395,7 +490,28 @@
 #UserCP.code-52 {
     .row2 + table {
         .pformleft {
-            font: initial;
+            line-height: 160%;
+            text-align: left;
+            display: block;
+            max-width: max-content;
+            font-size: calc(var(--xsBody) + 1px);
+            font-family: var(--font-body-bold);
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            background: var(--bg-color-transparent);
+        
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 2px;
+                height: 100%;
+                background: var(--bg-color);
+                border-radius: 1px;
+            }
         }
     }
 }
@@ -407,16 +523,34 @@
             & > tbody {
                 & > tr {
                     & > td {
+                        strong,
+                        b {
+                            line-height: 160%;
+                            text-align: left;
+                            display: block;
+                            max-width: max-content;
+                            font-size: calc(var(--xsBody) + 1px);
+                            font-family: var(--font-body-bold);
+                            font-weight: 600;
+                            letter-spacing: 0.2em;
+                            text-transform: uppercase;
+                            padding: var(--spacing-xs) var(--spacing-sm);
+                            background: var(--bg-color-transparent);
+                        
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                left: 0;
+                                top: 0;
+                                width: 2px;
+                                height: 100%;
+                                background: var(--bg-color);
+                                border-radius: 1px;
+                            }
+                        }
                         &:first-child {
                             width: 100%;
-                            
-                            @media only screen and (min-width: $md) {
-                                padding: 15px 15px 15px 0;
-                            }
-
                             b {
-                                display: block;
-
                                 & ~ br {
                                     display: none;
                                 }
@@ -426,10 +560,6 @@
                             display: flex;
                             gap: 5px;
                             height: max-content;
-
-                            @media only screen and (min-width: $md) {
-                                padding: 15px 0 15px 15px;
-                            }
 
                             input {
                                 width: 100%;
@@ -448,10 +578,25 @@
 }
 //Alerts
 #UserCP.code-alerts {
-    .ucp--wrapper {
+    #ucpcontent {
         & > table {
             img {
                 display: none;
+            }
+
+            &:first-of-type {
+                & > tbody {
+                    & > tr {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        flex-wrap: wrap;
+
+                        .row1 {
+                            text-align: left !important;
+                        }
+                    }
+                }
             }
         }
         & > form {
@@ -462,7 +607,7 @@
                     & > tbody {
                         display: flex;
                         flex-wrap: wrap;
-                        gap: 15px;
+                        gap: var(--spacing-md);
         
                         & > tr {
                             display: flex;
@@ -475,44 +620,96 @@
                             }
                             &:last-child {
                                 flex: 0 0 100%;
+
+                                td {
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: end;
+                                    gap: var(--spacing-sm);
+
+                                    input {
+                                        margin: 0;
+                                        line-height: 70%;
+                                    }
+
+                                    & > div:first-child {
+                                        display: flex;
+                                        font: var(--style-small-text);
+                                        letter-spacing: 0.1em;
+                                        text-transform: uppercase;
+                                        flex-wrap: wrap;
+                                        gap: var(--spacing-sm);
+                                        align-items: center;
+
+                                        select {
+                                            width: auto;
+                                            font: var(--style-small-text);
+                                            text-transform: uppercase;
+                                            letter-spacing: 0.1em;
+                                        }
+                                    }
+                                }
+                            }
+
+                            &:not(:last-child) {
+                                background: var(--bg-alt);
+                                border: 1px solid var(--border-secondary);
                             }
         
                             &:not(:first-child):not(:last-child) {
                                 flex: 0 0 100%;
-                                padding: 5px;
-        
-                                @media only screen and (min-width: $xs) {
-                                    padding: 10px;
-                                }
+                                padding: var(--spacing-sm);
         
                                 @media only screen and (min-width: $md) {
-                                    flex: 0 0 calc(50% - 7.5px);
+                                    flex: 0 0 calc(50% - calc(var(--spacing-md) / 2));
                                 }
 
                                 @media only screen and (min-width: $lg) {
-                                    flex: 0 0 calc((100% / 3) - 10px);
+                                    flex: 0 0 calc((100% / 3) - calc(var(--spacing-md) * 2 / 3));
                                 }
         
                                 & > td {
                                     margin: 0;
-                                    padding: 0 0 0 21px;
+                                    padding: 0 0 0 calc(var(--spacing-sm) + 20px);
                                     text-align: left;
-        
-                                    @media only screen and (min-width: $xs) {
-                                        padding: 0 0 0 26px;
-                                    }
             
                                     &:first-child {
                                         display: none;
                                     }
                                     &.alert-text {
+                                        text-transform: uppercase;
+                                        font: var(--style-small-text);
+                                        letter-spacing: 0.1em;
+                                        padding-bottom: var(--spacing-sm);
+                                        margin-bottom: var(--spacing-sm);
+                                        margin-top: -1px;
+                                        
+                                        &::before {
+                                            content: '';
+                                            position: absolute;
+                                            bottom: 0;
+                                            left: calc(var(--spacing-sm) + 20px);
+                                            width: 35px;
+                                            height: 3px;
+                                            background: var(--border-color);
+                                            border-radius: 2px;
+                                        }
+
                                         img {
                                             display: none;
                                         }
+
+                                        & + td {
+                                            font: var(--style-small-text);
+                                            letter-spacing: 0.1em;
+                                            text-transform: uppercase;
+                                        }
                                     }
+                                    
                                     &:last-child {
                                         position: absolute;
-                                        padding: 0;
+                                        left: 0;
+                                        padding-left: var(--spacing-sm);
                                     }
                                 }
                             }
@@ -521,38 +718,42 @@
                 }
             }
         }
+        .pagination ~ br {
+            display: none;
+        }
     }
 }
 //Forum & Topic Subscriptions
 #UserCP.code-50,
 #UserCP.code-26 {
-    .tableborder {
+    #ucpcontent .tableborder {
         & > table {
             display: block;
 
             & > tbody {
                 display: flex;
                 flex-wrap: wrap;
-                gap: 15px;
+                gap: var(--spacing-md);
 
                 & > tr {
                     display: flex;
                     flex-wrap: wrap;
 
                     &:not(.pformstrip) {
-                        padding: 5px;
                         flex: 0 0 100%;
-
-                        @media only screen and (min-width: $xs) {
-                            padding: 10px;
-                        }
-
+                        padding: var(--spacing-sm);
+                        background: var(--bg-alt);
+                        border: 1px solid var(--border-secondary);
+                        font: var(--style-small-text);
+                        text-transform: uppercase;
+                        letter-spacing: 0.1em;
+        
                         @media only screen and (min-width: $md) {
-                            flex: 0 0 calc(50% - 7.5px);
+                            flex: 0 0 calc(50% - (var(--spacing-md) / 2));
                         }
 
                         @media only screen and (min-width: $lg) {
-                            flex: 0 0 calc((100% / 3) - 10px);
+                            flex: 0 0 calc((100% / 3) - (var(--spacing-md) * 2 / 3));
                         }
 
                         & > td {
@@ -567,6 +768,27 @@
                                 display: flex;
                                 flex-direction: column;
                                 line-height: 200%;
+
+                                b:first-of-type {
+                                    text-transform: uppercase;
+                                    font-family: var(--font-body-bold);
+                                    font-size: 18px;
+                                    letter-spacing: 0.1em;
+                                    padding-bottom: var(--spacing-sm);
+                                    margin-bottom: var(--spacing-sm);
+                                    margin-top: -5px;
+                                    
+                                    &::before {
+                                        content: '';
+                                        position: absolute;
+                                        bottom: 0;
+                                        left: 0;
+                                        width: 35px;
+                                        height: 3px;
+                                        background: var(--border-color);
+                                        border-radius: 2px;
+                                    }
+                                }
     
                                 br {
                                     display: none;
@@ -594,6 +816,13 @@
                     }
                     &.pformstrip {
                         flex: 0 0 100%;
+                        font-size: calc(var(--xsBody) + 1px);
+                        font-family: var(--font-body-bold);
+                        font-weight: 600;
+                        letter-spacing: 0.2em;
+                        text-transform: uppercase;
+                        padding: var(--spacing-xs) var(--spacing-sm) !important;
+                        background: var(--bg-color-transparent);
 
                         &:nth-child(2) {
                             border-top: none;
@@ -602,9 +831,10 @@
                         }
 
                         td {
-                            display: block;
                             width: 100%;
-                            text-align: center;
+                            font-size: calc(var(--xsBody) + 1px);
+                            letter-spacing: 0.2em;
+                            padding: 0;
                         }
                     }
                 }
@@ -613,7 +843,7 @@
     }
 }
 #UserCP.code-26 {
-    .ucp--wrapper {
+    #ucpcontent {
         & > .pformstrip {
             span {
                 display: none;
@@ -623,6 +853,8 @@
     .tableborder {
         & > table {
             & > tbody {
+                width: 100%;
+
                 & > tr {
                     &:not(.pformstrip) {
                         & > td {
@@ -640,11 +872,7 @@
                                 flex: 0 0 100%;
                             }
                             &:not(:last-child) {
-                                padding-left: 21px;
-
-                                @media only screen and (min-width: $xs) {
-                                    padding-left: 26px;
-                                }
+                                padding: 0 0 0 calc(var(--spacing-sm) + 20px);
                             }
                             &:last-child {
                                 position: absolute;
@@ -658,17 +886,36 @@
 }
 //Board Settings
 #UserCP.code-04 {
-    .ucp--wrapper {
+    #ucpcontent {
         & > form {
             & > table {
                 & > tbody {
                     & > tr {
                         & > td {
                             &:first-child {
+                                line-height: 160%;
+                                max-width: max-content;
                                 width: 100%;
-                                
-                                @media only screen and (min-width: $md) {
-                                    padding: 15px 15px 15px 0;
+                                display: block;
+                                max-width: max-content;
+                                font-size: calc(var(--xsBody) + 1px);
+                                font-family: var(--font-body-bold);
+                                font-weight: 600;
+                                letter-spacing: 0.2em;
+                                text-transform: uppercase;
+                                padding: var(--spacing-xs) var(--spacing-sm);
+                                background: var(--bg-color-transparent);
+                                margin: var(--spacing-sm) 0 0;
+                            
+                                &::before {
+                                    content: '';
+                                    position: absolute;
+                                    left: 0;
+                                    top: 0;
+                                    width: 2px;
+                                    height: 100%;
+                                    background: var(--bg-color);
+                                    border-radius: 1px;
                                 }
 
                                 b {
@@ -680,6 +927,7 @@
                             &:last-child {
                                 display: flex;
                                 height: max-content;
+                                padding: 0;
 
                                 input {
                                     margin: 0;
@@ -704,19 +952,44 @@
 }
 //Alert Settings
 #UserCP.code-alerts_settings {
-    .pformstrip {
-        text-align: left;
-        padding: 0;
-
-        &::after {
-            display: none;
-        }
-    }
     table {
+        .pformstrip {
+            text-align: left;
+            padding: 0;
+            line-height: 160%;
+            font-size: calc(var(--xsBody) + 1px) !important;
+            font-family: var(--font-body-bold);
+            font-weight: 600;
+            letter-spacing: 0.2em !important;
+            text-transform: uppercase;
+            padding: var(--spacing-xs) var(--spacing-sm) !important;
+            background: var(--bg-color-transparent);
+            margin: var(--spacing-sm) 0 0;
+        
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 2px;
+                height: 100%;
+                background: var(--bg-color);
+                border-radius: 1px;
+            }
+    
+            &::after {
+                display: none;
+            }
+        }
         & + .pformstrip {
             text-align: center;
             margin-bottom: 0;
             padding: 0;
+            background: transparent;
+
+            &::before {
+                display: none;
+            }
         }
     }
     tr {
@@ -734,11 +1007,12 @@
 }
 //Email Settings
 #UserCP.code-02 {
-    .ucp--wrapper {
+    #ucpcontent {
         form {
             & > table {
                 & > tbody {
                     & > tr {
+                        display: grid !important;
                         grid-template-columns: max-content auto;
                     }
                 }
@@ -752,7 +1026,7 @@
 }
 //Inbox
 #Msg.code-01 {
-    .ucp--wrapper {
+    #ucpcontent {
         & > table {
             & > tbody {
                 & > tr {
@@ -783,11 +1057,33 @@
                         text-align: left;
                     }
                     &:first-child {
-                        margin-bottom: 0;
+                        margin-bottom: var(--spacing-md) !important;
 
                         .pformstrip {
                             margin-bottom: 0;
                             padding-bottom: 0;
+                            line-height: 160%;
+                            max-width: max-content;
+                            display: block;
+                            max-width: max-content;
+                            font-size: calc(var(--xsBody) + 1px);
+                            font-family: var(--font-body-bold);
+                            font-weight: 600;
+                            letter-spacing: 0.2em;
+                            text-transform: uppercase;
+                            padding: var(--spacing-xs) var(--spacing-sm);
+                            background: var(--bg-color-transparent);
+                        
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                left: 0;
+                                top: 0;
+                                width: 2px;
+                                height: 100%;
+                                background: var(--bg-color);
+                                border-radius: 1px;
+                            }
                         }
                     }
                     &:nth-child(2),
@@ -797,7 +1093,7 @@
                     &:nth-last-child(3),
                     &#code-buttons-header,
                     &#enter-your-post-header {
-                        display: none;
+                        display: none !important;
                     }
                 
                     &:nth-child(3) {
@@ -896,6 +1192,96 @@
                                 box-sizing: border-box;
                             }
                         }
+                    }
+                }
+            }
+        }
+    }
+}
+//View Message
+#Msg.code-03 {
+    #ucpcontent {
+        & > .tableborder {
+            & + div {
+                display: none;
+            }
+        }
+        .msg-normal > table {
+            display: block;
+            margin-top: var(--spacing-md);
+    
+            @media only screen and (min-width: $sm) {
+                margin-top: var(--spacing-lg);
+            }
+
+            tbody {
+                display: flex;
+                flex-direction: column;
+
+                tr {
+                    &:nth-child(2n + 1) {
+                        display: flex;
+                        flex-direction: column;
+                        gap: var(--spacing-sm);
+                        font: var(--style-small-text);
+                        letter-spacing: 0.1em;
+                        text-transform: uppercase;
+                        font-weight: 600;
+                        padding: var(--spacing-lg);
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 5px;
+                            height: 100%;
+                            border-radius: 3px;
+                            background: var(--border-color);
+                        }
+
+                        a {
+                            color: var(--text-content);
+                        }
+
+                        strong {
+                            font-weight: 600;
+                        }
+
+                        td {
+                            padding: 0;
+                            width: 100%;
+
+                            &:nth-child(1) {
+                                text-transform: uppercase;
+                                font-size: 24px;
+                                font-family: var(--font-body-bold);
+                            }
+                        }
+                    }
+
+                    &:nth-child(2n) {
+                        display: block;
+                        background: var(--bg-transparent);
+                        border: 1px solid var(--border-secondary);
+                        padding: var(--spacing-lg);
+                        margin: var(--spacing-md) 0 var(--spacing-lg);
+
+                        td {
+                            display: block;
+                            width: 100%;
+                            padding: 0;
+                            text-align: justify;
+                            font-size: var(--lBody);
+                            line-height: 200%;
+
+                            &:first-child {
+                                display: none;
+                            }
+                        }
+                    }
+                    &:last-child {
+                        display: none;
                     }
                 }
             }

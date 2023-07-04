@@ -398,18 +398,18 @@
         }
 
         .scroll {
-            max-height: 210px;
+            height: 210px;
             padding-right: var(--spacing-md);
 
             .lgFont & {
-                max-height: 203px;
+                height: 203px;
             }
 
             @media only screen and (min-width: $md) {
-                max-height: 360px;
+                height: 360px;
     
                 .lgFont & {
-                    max-height: 353px;
+                    height: 353px;
                 }
             }
         }
@@ -422,11 +422,11 @@
         text-align: justify;
 
         .scroll {
-            max-height: 360px;
+            height: 360px;
             padding-right: var(--spacing-md);
             
             .lgFont & {
-                max-height: 353px;
+                height: 353px;
             }
         }
     }
@@ -444,17 +444,17 @@
 
         .scroll {
             padding-right: var(--spacing-md);
-            max-height: 260px;
+            height: 260px;
             
             .lgFont & {
-                max-height: 253px;
+                height: 253px;
             }
 
             @media only screen and (min-width: $md) {
-                max-height: 360px;
+                height: 360px;
                 
                 .lgFont & {
-                    max-height: 353px;
+                    height: 353px;
                 }
             }
         }
@@ -474,18 +474,18 @@
         }
 
         .scroll {
-            max-height: 210px;
+            height: 210px;
             padding-right: var(--spacing-md);
 
             .lgFont & {
-                max-height: 203px;
+                height: 203px;
             }
 
             @media only screen and (min-width: $md) {
-                max-height: 130px;
+                height: 130px;
     
                 .lgFont & {
-                    max-height: 130px;
+                    height: 130px;
                 }
             }
         }
@@ -705,10 +705,10 @@
             display: flex;
             flex-wrap: wrap;
             gap: var(--spacing-xs);
-            max-height: 60px;
+            height: 60px;
 
             .lgFont & {
-                max-height: 53px;
+                height: 53px;
             }
 
             img {

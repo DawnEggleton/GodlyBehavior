@@ -296,15 +296,15 @@
   .profile--cheatsheet li:not(:last-child) {
     margin-bottom: var(--spacing-md); }
   .profile--cheatsheet .scroll {
-    max-height: 210px;
+    height: 210px;
     padding-right: var(--spacing-md); }
     .lgFont .profile--cheatsheet .scroll {
-      max-height: 203px; }
+      height: 203px; }
     @media only screen and (min-width: 768px) {
       .profile--cheatsheet .scroll {
-        max-height: 360px; }
+        height: 360px; }
         .lgFont .profile--cheatsheet .scroll {
-          max-height: 353px; } }
+          height: 353px; } }
 
 .profile--freeform {
   background: var(--bg-transparent);
@@ -312,10 +312,10 @@
   padding: var(--spacing-md);
   text-align: justify; }
   .profile--freeform .scroll {
-    max-height: 360px;
+    height: 360px;
     padding-right: var(--spacing-md); }
     .lgFont .profile--freeform .scroll {
-      max-height: 353px; }
+      height: 353px; }
 
 .profile--overview, .profile--relationships {
   background: var(--bg-transparent);
@@ -327,14 +327,14 @@
       grid-row: span 2; } }
   .profile--overview .scroll, .profile--relationships .scroll {
     padding-right: var(--spacing-md);
-    max-height: 260px; }
+    height: 260px; }
     .lgFont .profile--overview .scroll, .lgFont .profile--relationships .scroll {
-      max-height: 253px; }
+      height: 253px; }
     @media only screen and (min-width: 768px) {
       .profile--overview .scroll, .profile--relationships .scroll {
-        max-height: 360px; }
+        height: 360px; }
         .lgFont .profile--overview .scroll, .lgFont .profile--relationships .scroll {
-          max-height: 353px; } }
+          height: 353px; } }
 
 .profile--interested, .profile--avoiding {
   background: var(--bg-transparent);
@@ -344,15 +344,15 @@
   .profile--interested li:not(:last-child), .profile--avoiding li:not(:last-child) {
     margin-bottom: var(--spacing-md); }
   .profile--interested .scroll, .profile--avoiding .scroll {
-    max-height: 210px;
+    height: 210px;
     padding-right: var(--spacing-md); }
     .lgFont .profile--interested .scroll, .lgFont .profile--avoiding .scroll {
-      max-height: 203px; }
+      height: 203px; }
     @media only screen and (min-width: 768px) {
       .profile--interested .scroll, .profile--avoiding .scroll {
-        max-height: 130px; }
+        height: 130px; }
         .lgFont .profile--interested .scroll, .lgFont .profile--avoiding .scroll {
-          max-height: 130px; } }
+          height: 130px; } }
 
 .profile--tracker-menu {
   background: var(--bg-transparent);
@@ -509,9 +509,9 @@
     display: flex;
     flex-wrap: wrap;
     gap: var(--spacing-xs);
-    max-height: 60px; }
+    height: 60px; }
     .lgFont .profile--awards .scroll, .lgFont .profile--triggers .scroll {
-      max-height: 53px; }
+      height: 53px; }
     .profile--awards .scroll img, .profile--triggers .scroll img {
       width: 24px;
       height: 24px;

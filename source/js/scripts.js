@@ -165,6 +165,48 @@ if(pageType === 'UserCP' || pageType === 'Msg') {
             });
         });
     }
+
+    //subaccounts
+    if($('body.code-54').length > 0) {
+        document.querySelectorAll('input[name="sub_ids[]"]').forEach(input => {
+            inputWrap(input);
+        });
+        fancyBoxes();
+    }
+
+    //alerts
+    if($('body.code-alerts').length > 0) {
+        document.querySelectorAll('input[name="alert_id[]"]').forEach(input => {
+            inputWrap(input);
+        });
+        fancyBoxes();
+    }
+
+    //forum and topic subscriptions
+    if (pageClasses.contains('code-50') || pageClasses.contains('code-26')) {
+        document.querySelectorAll('.tableborder > table > tbody > tr').forEach(row => {
+            if(row.querySelectorAll('th, td').length === 1) {
+                row.classList.add('ucp--header', 'pformstrip');
+            }
+        });
+
+        if(pageClasses.contains('code-26')) {
+            document.querySelectorAll(`.tableborder input[type="checkbox"]`).forEach(input => inputWrap(input));
+            fancyBoxes();
+        }
+    }
+    
+    //board settings
+    if (pageClasses.contains('code-04')) {
+        inputWrap(document.querySelector(`input[name="DST"]`));
+        fancyBoxes();
+    }
+    
+    //alert settings
+    if (pageClasses.contains('code-alerts_settings') || pageClasses.contains('code-02')) {
+        document.querySelectorAll(`input[type="checkbox"]`).forEach(input => inputWrap(input));
+        fancyBoxes();
+    }
 }
 
 //Login
@@ -213,5 +255,8 @@ if(pageType === 'Post') {
     inputWrap(`input[name="enableemo"]`, 'br');
     inputWrap(`input[name="enablesig"]`, 'br');
     inputWrap(`input[name="enabletrack"]`, 'br');
+    document.querySelectorAll('input[name="iconid"]').forEach(icon => {
+        inputWrap(icon, `input`, 'radio');
+    });
     fancyBoxes();
 }

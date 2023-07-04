@@ -199,6 +199,14 @@ body:not(#ST) {
     }
 }
 .macro {
+    &--message {
+        text-align: center;
+        grid-column: 1 / -1;
+        font-size: var(--xlBody);
+        font-weight: 300;
+        margin-bottom: var(--spacing-xl);
+        margin-top: var(--spacing-sm);
+    }
     &--button {
         font-size: 16px;
         text-transform: uppercase;
@@ -1047,7 +1055,6 @@ body:not(#ST) {
                 &#topic-settings-header,
                 &#code-buttons-header,
                 &#enter-your-post-header,
-                &#post-icon-options,
                 &#post-as-header,
                 &#post-as + tr:not(:last-child),
                 &#post-as .pformleft,
@@ -1192,6 +1199,19 @@ body:not(#ST) {
                             width: 100%;
                             max-width: 250px;
                         }
+                    }
+                }
+
+                &#post-icon-options {
+                    display: block;
+
+                    .pformleft {
+                        display: none;
+                    }
+                    .pformright {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: var(--spacing-sm) 0;
                     }
                 }
 

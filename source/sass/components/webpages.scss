@@ -148,9 +148,14 @@
 
 .species {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: max-content max-content max-content;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fit, minmax(0, max-content));
     gap: var(--spacing-sm);
+
+    @media only screen and (min-width: $lg) {
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: max-content max-content max-content;
+    }
 
     & > * {
         background: var(--bg-transparent);
@@ -275,6 +280,7 @@
             font-size: var(--xlBody);
             font-weight: 600;
             padding: 0 0 var(--spacing-sm) 0;
+            border-bottom: 0;
 
             &:not(:only-child) {
                 margin-bottom: var(--spacing-sm);
