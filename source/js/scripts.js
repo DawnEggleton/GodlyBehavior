@@ -22,6 +22,8 @@ setTheme();
 setSize();
 initModals();
 initTabs();
+initCopyLink();
+highlightCode();
 
 //click to change subaccounts
 document.querySelectorAll('#post_as_menu option').forEach(account => {
@@ -286,4 +288,6 @@ if(pageType === 'store') {
     <a href="?act=store&code=fine" class="staffOnly">Fine</a>
     <a href="?act=store&code=edit_points" class="staffOnly">Edit Points</a>
     <a href="?act=store&code=edit_inventory" class="staffOnly">Edit Inventory</a></div></div>`;
+
+    initMenuToggles();
 }

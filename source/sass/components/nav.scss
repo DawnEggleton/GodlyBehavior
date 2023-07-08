@@ -234,6 +234,7 @@ nav {
             align-items: center;
             height: var(--size-submenu-height);
             color: var(--text-content);
+            flex-wrap: wrap;
 
             a {
                 color: var(--text-content);

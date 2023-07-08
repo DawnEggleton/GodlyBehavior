@@ -154,7 +154,7 @@ async function FillTracker(username, params = {}) {
             return `<div class="profile--tracker-item" data-owing="${turn}">
                 <a href="${url}">${title}</a>
                 <span>${desc}</span>
-                <span>Posted in <a href="${forumURL}">${forum}</a></span>
+                <span>Posted in <a href="?showforum=${forumURL}">${forum}</a></span>
                 <span>Last post by <a href="${posterURL}">${poster}</a></span>
                 <span>${date}</span>
                 <i class="fa-light fa-anchor"></i>

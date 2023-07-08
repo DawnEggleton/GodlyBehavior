@@ -164,7 +164,8 @@ nav {
     display: flex;
     align-items: center;
     height: var(--size-submenu-height);
-    color: var(--text-content); }
+    color: var(--text-content);
+    flex-wrap: wrap; }
     .nav--breadcrumb #navstrip a {
       color: var(--text-content); }
     .nav--breadcrumb #navstrip ~ br {

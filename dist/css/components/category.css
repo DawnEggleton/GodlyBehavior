@@ -40,7 +40,7 @@
   .forum--title {
     display: flex;
     gap: var(--spacing-md); }
-    .forum--title a {
+    .forum--title a:last-child {
       display: block;
       line-height: 160%;
       letter-spacing: 0;
@@ -52,7 +52,7 @@
       margin-bottom: var(--spacing-sm);
       text-transform: uppercase;
       letter-spacing: 0.05em; }
-      .forum--title a::after {
+      .forum--title a:last-child::after {
         content: '';
         position: absolute;
         bottom: 0;

@@ -191,6 +191,7 @@
       grid-column: span 1;
       grid-row: span 2; } }
   .profile--aesthetic span {
+    display: block;
     width: 100%;
     height: 100%; }
     .profile--aesthetic span img {

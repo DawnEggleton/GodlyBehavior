@@ -10,7 +10,11 @@
 
 [data-type="grid"],
 [data-type="Grid"],
-[data-type="GRID"] {
+[data-type="GRID"],
+[data-type="imagegrid"],
+[data-type="imageGrid"],
+[data-type="ImageGrid"],
+[data-type="IMAGEGRID"] {
     display: grid;
     gap: var(--spacing-lg);
     grid-template-rows: repeat(auto-fit, minmax(0, max-content));
@@ -71,6 +75,16 @@
         max-width: max-content;
     }
 }
+[data-type="imagegrid"],
+[data-type="imageGrid"],
+[data-type="ImageGrid"],
+[data-type="IMAGEGRID"] {
+    gap: var(--spacing-sm);
+
+    tag-image {
+        width: 100% !important;
+    }
+}
 
 [data-box-align="left"],
 [data-box-align="Left"],
@@ -88,19 +102,19 @@
     margin: 0 0 0 auto;
 }
 
-[data-box-align="left"],
-[data-box-align="Left"],
-[data-box-align="LEFT"] {
+[data-text-align="left"],
+[data-text-align="Left"],
+[data-text-align="LEFT"] {
     text-align: left;
 }
-[data-box-align="center"],
-[data-box-align="Center"],
-[data-box-align="CENTER"] {
+[data-text-align="center"],
+[data-text-align="Center"],
+[data-text-align="CENTER"] {
     text-align: center;
 }
-[data-box-align="right"],
-[data-box-align="Right"],
-[data-box-align="RIGHT"] {
+[data-text-align="right"],
+[data-text-align="Right"],
+[data-text-align="RIGHT"] {
     text-align: right;
 }
 [data-text-align="justify"],
@@ -113,4 +127,51 @@
     filter: blur(5px);
     transform: scale(120%);
     transform-origin: center;
+}
+
+[data-ratio] {
+    display: block;
+    height: 0;
+    padding-top: 100%;
+
+    & > * {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+[data-ratio="1:1"] {
+    padding-top: 100%;
+}
+[data-ratio="16:9"] {
+    padding-top: 56.25%;
+}
+[data-ratio="9:16"] {
+    padding-top: 177.78%;
+}
+[data-ratio="2:3"] {
+    padding-top: 150%;
+}
+[data-ratio="3:2"] {
+    padding-top: 66.67%;
+}
+[data-ratio="4:3"] {
+    padding-top: 75%;
+}
+[data-ratio="3:4"] {
+    padding-top: 133.33%;
+}
+[data-ratio="2:1"] {
+    padding-top: 50%;
+}
+[data-ratio="1:2"] {
+    padding-top: 200%;
+}
+[data-ratio="3:1"] {
+    padding-top: 33.33%;
+}
+[data-ratio="1:3"] {
+    padding-top: 300%;
 }

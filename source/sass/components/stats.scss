@@ -163,8 +163,15 @@
     }
 
     &--right {
+        padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) calc(var(--spacing-md) / 2);
+
+        & > strong {
+            margin-left: calc(var(--spacing-md) / 2);
+        }
+
         .scroll {
             height: 243px;
+            padding-left: calc(var(--spacing-md) / 2);
     
             .lgFont & {
                 height: 253px;

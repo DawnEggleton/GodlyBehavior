@@ -484,7 +484,7 @@ function initCodebox() {
         var cc = $(this).find("td[id='CODE']").html();
 
         $(this).html(
-            "<div class='codeblock code--wrapper'><div class='c-title codeclick'>Copy</div><div class='codecon'><pre><code class='scroll'>"
+            "<div class='codeblock code--wrapper'><div class='c-title codeclick'>Click to Copy</div><div class='codecon'><pre><code class='scroll'>"
             + cc +
             "</code></pre></div></div>"
         );
@@ -503,6 +503,17 @@ function initCopyLink() {
 }
 
 /********** Utilities **********/
+function highlightCode() {
+    let clipcodeQuick = new Clipboard('.copyQuick', {
+        target: function(trigger) {
+            if(trigger.nextElementSibling.querySelector('textarea')) {
+                return trigger.nextElementSibling.querySelector('textarea');
+            } else {
+                return trigger.nextElementSibling.querySelector('code');
+            }
+        }
+    });
+}
 function fixMc(str) {
     return (""+str).replace(/Mc(.)/g, function(m, m1) {
         return 'Mc' + m1.toUpperCase();
