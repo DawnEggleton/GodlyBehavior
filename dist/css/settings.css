@@ -76,6 +76,9 @@ a[target="_blank"]:not(.staffOnly)::after {
 .forum--message .h8 a::after {
   content: '\f178'; }
 
+.species--tag a::after {
+  content: '\f178'; }
+
 .f-3,
 .f-35 {
   padding: var(--spacing-md); }

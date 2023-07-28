@@ -260,7 +260,7 @@
     }
 
     &--today {
-        background: var(--bg-color-transparent);
+        background: var(--bg-alt);
         border-radius: 3px;
         padding: var(--spacing-sm);
         margin-bottom: var(--spacing-sm);
@@ -273,6 +273,17 @@
             line-height: 250%;
             height: 80px;
             text-align: justify;
+            overflow-x: hidden;
+
+            a {
+                span {
+                    background: var(--bg-color-transparent);
+                    padding: 0 5px;
+                    border-left: 2px solid var(--border-color);
+                    -webkit-box-decoration-break: clone;
+                    box-decoration-break: clone;
+                }
+            }
         }
     }
 

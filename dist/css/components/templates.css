@@ -123,7 +123,18 @@ tag-labels {
     gap: var(--spacing-sm);
     align-items: center;
     overflow-x: auto;
+    overflow-y: hidden;
     scrollbar-width: none; }
+    tag-labels tag-labelset::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+      border-radius: 3px; }
+    tag-labels tag-labelset::-webkit-scrollbar-thumb {
+      background-color: var(--bg-color);
+      height: 5px;
+      border-radius: 3px; }
+    tag-labels tag-labelset::-webkit-scrollbar-track {
+      background-color: transparent; }
     tag-labels tag-labelset a,
     tag-labels tag-labelset tag-label {
       text-transform: uppercase;
@@ -770,7 +781,8 @@ tag-comm {
     tag-comm[data-type="image"] > tag-contact, tag-comm[data-type="Image"] > tag-contact, tag-comm[data-type="IMAGE"] > tag-contact {
       position: absolute;
       top: var(--spacing-md);
-      text-shadow: 1px 1px 2px var(--bg-content); }
+      text-shadow: 1px 1px 2px var(--bg-content);
+      text-align: left; }
     tag-comm[data-type="image"] tag-scroll, tag-comm[data-type="Image"] tag-scroll, tag-comm[data-type="IMAGE"] tag-scroll {
       display: grid;
       gap: var(--spacing-sm);

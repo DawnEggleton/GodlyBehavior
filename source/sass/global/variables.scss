@@ -174,8 +174,8 @@ body {
     [data-group="blueberry"],
     [data-group="Blueberry"],
     [data-group="BLUEBERRY"] {
-        --accent: rgb(88, 132, 151);
-        --accent-20: rgba(88, 132, 151, 0.2);
+        --accent: rgb(70, 120, 142);
+        --accent-20: rgba(70, 120, 142, 0.2);
         --bg-color: var(--accent);
         --bg-color-transparent: var(--accent-20);
         --text-color: var(--accent);
@@ -202,8 +202,8 @@ body {
     [data-group="hemlock"],
     [data-group="Hemlock"],
     [data-group="HEMLOCK"] {
-        --accent: rgb(88, 146, 156);
-        --accent-20: rgba(88, 146, 156, 0.2);
+        --accent: rgb(88, 156, 150);
+        --accent-20: rgba(88, 156, 150, 0.2);
         --bg-color: var(--accent);
         --bg-color-transparent: var(--accent-20);
         --text-color: var(--accent);
@@ -246,6 +246,62 @@ body {
     [data-group="SUNDEW"] {
         --accent: rgb(189, 134, 101);
         --accent-20: rgba(189, 134, 101, 0.2);
+        --bg-color: var(--accent);
+        --bg-color-transparent: var(--accent-20);
+        --text-color: var(--accent);
+        --border-color: var(--accent);
+    }
+
+    //Tobacco
+    &.g-17,
+    .g-17,
+    [data-group="tobacco"],
+    [data-group="Tobacco"],
+    [data-group="TOBACCO"] {
+        --accent: rgb(132, 97, 69);
+        --accent-20: rgba(132, 97, 69, 0.2);
+        --bg-color: var(--accent);
+        --bg-color-transparent: var(--accent-20);
+        --text-color: var(--accent);
+        --border-color: var(--accent);
+    }
+
+    //Thistle
+    &.g-18,
+    .g-18,
+    [data-group="thistle"],
+    [data-group="Thistle"],
+    [data-group="THISTLE"] {
+        --accent: rgb(138, 102, 149);
+        --accent-20: rgba(138, 102, 149, 0.2);
+        --bg-color: var(--accent);
+        --bg-color-transparent: var(--accent-20);
+        --text-color: var(--accent);
+        --border-color: var(--accent);
+    }
+
+    //Balsam
+    &.g-19,
+    .g-19,
+    [data-group="balsam"],
+    [data-group="Balsam"],
+    [data-group="BALSAM"] {
+        --accent: rgb(134, 124, 116);
+        --accent-20: rgba(134, 124, 116, 0.2);
+        --bg-color: var(--accent);
+        --bg-color-transparent: var(--accent-20);
+        --text-color: var(--accent);
+        --border-color: var(--accent);
+    }
+
+    //Clover
+    &.g-20,
+    .g-20,
+    [data-group="clover"],
+    [data-group="Clover"],
+    [data-group="CLOVER"] {
+        --accent: rgb(85, 111, 74);
+        --accent-20: rgba(85, 111, 74, 0.2);
         --bg-color: var(--accent);
         --bg-color-transparent: var(--accent-20);
         --text-color: var(--accent);

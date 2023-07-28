@@ -24,7 +24,13 @@ function structureSpecies(species) {
     } else {
         credits = creditsArray[0];
     }
-    let infoBlock = `<div class="species--overview">
+    let speciesTag = ``;
+    if(species.Premium) {
+        console.log(`${speciesFormatted} - add premium`);
+    } else {
+        console.log(`${speciesFormatted} - add regular`);
+    }
+    let infoBlock = `<div class="species--overview">${speciesTag};
         <h2>${species.Species}</h2>
         <div class="species--facts">
             <div class="species--fact">

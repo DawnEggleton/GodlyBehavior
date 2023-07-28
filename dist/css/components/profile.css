@@ -268,6 +268,9 @@
       border-radius: 1px; }
   .profile--item span {
     line-height: 200%; }
+    .profile--item span u {
+      font-size: 0.8em;
+      font-weight: 700; }
 
 .profile--traits {
   background: var(--bg-transparent);

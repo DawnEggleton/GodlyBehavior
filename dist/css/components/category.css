@@ -32,7 +32,6 @@
   letter-spacing: 0.1em;
   text-transform: uppercase; }
   .forum .fa-anchor {
-    display: none;
     font-size: 20px;
     top: 10px; }
   .forum.forum-new-post .fa-anchor {

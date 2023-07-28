@@ -116,6 +116,43 @@
     background: var(--bg-transparent);
     padding: var(--spacing-lg);
     border: 1px solid var(--border-secondary); }
+  .species--tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: block;
+    max-width: max-content;
+    font-size: calc(var(--xsBody) + 1px);
+    font-family: var(--font-body-bold);
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: var(--bg-color-transparent);
+    line-height: 160%; }
+    .species--tag::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background: var(--bg-color);
+      border-radius: 1px; }
+    .species--tag a {
+      font-size: 1em;
+      border: 0;
+      letter-spacing: 0.2em;
+      font-weight: 600; }
+      .species--tag a::after {
+        font-family: 'Font Awesome 6 Pro';
+        padding-left: var(--spacing-sm);
+        font-weight: 300;
+        position: relative;
+        right: 0;
+        transition-duration: var(--style-duration); }
+      .species--tag a:hover::after {
+        right: -5px; }
   .species--overview {
     grid-row: span 2; }
     .species--overview .scroll {

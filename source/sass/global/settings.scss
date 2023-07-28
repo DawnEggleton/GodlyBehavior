@@ -32,6 +32,11 @@ a[target="_blank"]:not(.staffOnly)::after {
         }
     }
 }
+.species--tag {
+    a::after {
+        content: '\f178';
+    }
+}
 
 //highlight forums
 .f-3,

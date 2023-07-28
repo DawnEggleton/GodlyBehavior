@@ -261,6 +261,7 @@ document.querySelector('#form-species-add').addEventListener('submit', e => {
             credits += `+`;
         }
     }
+    let premium = e.currentTarget.querySelector('#premium').checked;
 
     let data = {
         species: species,
@@ -272,6 +273,7 @@ document.querySelector('#form-species-add').addEventListener('submit', e => {
         weaknesses: weaknesses,
         traits: traits,
         credits: credits,
+	premium: premium,
     }
 
     submitSpecies(data);

@@ -198,7 +198,7 @@
             .stats--right table tbody tr td.recent-topics-date {
               font-style: italic; }
   .stats--today {
-    background: var(--bg-color-transparent);
+    background: var(--bg-alt);
     border-radius: 3px;
     padding: var(--spacing-sm);
     margin-bottom: var(--spacing-sm);
@@ -209,7 +209,14 @@
       letter-spacing: 0.1em;
       line-height: 250%;
       height: 80px;
-      text-align: justify; }
+      text-align: justify;
+      overflow-x: hidden; }
+      .stats--today .scroll a span {
+        background: var(--bg-color-transparent);
+        padding: 0 5px;
+        border-left: 2px solid var(--border-color);
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone; }
   .stats--stat {
     font: var(--style-small-text);
     text-transform: uppercase;

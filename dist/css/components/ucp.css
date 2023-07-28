@@ -1124,8 +1124,8 @@
               font-size: var(--xsBody);
               font-weight: normal;
               line-height: 100%; }
-          #store.store-shop #ucpcontent > table > tbody > tr:not(:first-child):not(:last-child) > td:nth-child(4)::after {
-            content: ' Owned'; }
+          #store.store-shop #ucpcontent > table > tbody > tr:not(:first-child):not(:last-child) > td:nth-child(4)::before {
+            content: '$'; }
           #store.store-shop #ucpcontent > table > tbody > tr:not(:first-child):not(:last-child) > td:nth-child(5) {
             text-align: right; }
             #store.store-shop #ucpcontent > table > tbody > tr:not(:first-child):not(:last-child) > td:nth-child(5)::after {
@@ -1223,7 +1223,7 @@
         padding: var(--spacing-md);
         display: grid;
         grid-template-columns: 24px calc(100% - 24px - var(--spacing-md));
-        grid-template-rows: repeat(auto-fit, minmax(0, max-content));
+        grid-template-rows: max-content max-content max-content max-content auto;
         gap: var(--spacing-md); }
         #store.store-inventory #ucpcontent > table > tbody > tr:not(:first-child):not(:nth-child(2)):not(:nth-child(3)) td {
           padding: 0;
@@ -1272,12 +1272,14 @@
               font-size: var(--xsBody);
               font-weight: normal;
               line-height: 100%; }
-          #store.store-inventory #ucpcontent > table > tbody > tr:not(:first-child):not(:nth-child(2)):not(:nth-child(3)) td:nth-child(5) {
+          #store.store-inventory #ucpcontent > table > tbody > tr:not(:first-child):not(:nth-child(2)):not(:nth-child(3)) td:last-child {
+            display: flex;
+            align-items: end;
             flex: 0 0 100%;
             order: 5;
             border-top: 1px solid var(--border-secondary);
             padding: var(--spacing-md) 0 0; }
-            #store.store-inventory #ucpcontent > table > tbody > tr:not(:first-child):not(:nth-child(2)):not(:nth-child(3)) td:nth-child(5) a {
+            #store.store-inventory #ucpcontent > table > tbody > tr:not(:first-child):not(:nth-child(2)):not(:nth-child(3)) td:last-child a {
               display: block;
               max-width: max-content;
               margin: 0 0 0 auto;
@@ -1290,7 +1292,7 @@
               padding: var(--spacing-sm);
               transition-duration: var(--style-duration);
               z-index: 1; }
-              #store.store-inventory #ucpcontent > table > tbody > tr:not(:first-child):not(:nth-child(2)):not(:nth-child(3)) td:nth-child(5) a::before {
+              #store.store-inventory #ucpcontent > table > tbody > tr:not(:first-child):not(:nth-child(2)):not(:nth-child(3)) td:last-child a::before {
                 content: '';
                 position: absolute;
                 top: 0;
@@ -1300,11 +1302,11 @@
                 background: var(--bg-color);
                 transition-duration: var(--style-duration);
                 z-index: -1; }
-              #store.store-inventory #ucpcontent > table > tbody > tr:not(:first-child):not(:nth-child(2)):not(:nth-child(3)) td:nth-child(5) a:hover {
+              #store.store-inventory #ucpcontent > table > tbody > tr:not(:first-child):not(:nth-child(2)):not(:nth-child(3)) td:last-child a:hover {
                 color: var(--text-on-color); }
-                #store.store-inventory #ucpcontent > table > tbody > tr:not(:first-child):not(:nth-child(2)):not(:nth-child(3)) td:nth-child(5) a:hover::before {
+                #store.store-inventory #ucpcontent > table > tbody > tr:not(:first-child):not(:nth-child(2)):not(:nth-child(3)) td:last-child a:hover::before {
                   width: 100%; }
-            #store.store-inventory #ucpcontent > table > tbody > tr:not(:first-child):not(:nth-child(2)):not(:nth-child(3)) td:nth-child(5) br {
+            #store.store-inventory #ucpcontent > table > tbody > tr:not(:first-child):not(:nth-child(2)):not(:nth-child(3)) td:last-child br {
               display: none; }
 
 #store.store-donate_money #ucpcontent > table > tbody > tr:not(:last-child),

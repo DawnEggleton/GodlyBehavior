@@ -192,6 +192,170 @@
     max-width: -webkit-max-content;
     max-width: -moz-max-content;
     max-width: max-content; }
+  [data-type="grid"][data-gap="xsmall"], [data-type="grid"][data-gap="XSmall"], [data-type="grid"][data-gap="Xsmall"], [data-type="grid"][data-gap="XSMALL"], [data-type="grid"][data-gap="xs"], [data-type="grid"][data-gap="Xs"], [data-type="grid"][data-gap="XS"],
+  [data-type="Grid"][data-gap="xsmall"],
+  [data-type="Grid"][data-gap="XSmall"],
+  [data-type="Grid"][data-gap="Xsmall"],
+  [data-type="Grid"][data-gap="XSMALL"],
+  [data-type="Grid"][data-gap="xs"],
+  [data-type="Grid"][data-gap="Xs"],
+  [data-type="Grid"][data-gap="XS"],
+  [data-type="GRID"][data-gap="xsmall"],
+  [data-type="GRID"][data-gap="XSmall"],
+  [data-type="GRID"][data-gap="Xsmall"],
+  [data-type="GRID"][data-gap="XSMALL"],
+  [data-type="GRID"][data-gap="xs"],
+  [data-type="GRID"][data-gap="Xs"],
+  [data-type="GRID"][data-gap="XS"],
+  [data-type="imagegrid"][data-gap="xsmall"],
+  [data-type="imagegrid"][data-gap="XSmall"],
+  [data-type="imagegrid"][data-gap="Xsmall"],
+  [data-type="imagegrid"][data-gap="XSMALL"],
+  [data-type="imagegrid"][data-gap="xs"],
+  [data-type="imagegrid"][data-gap="Xs"],
+  [data-type="imagegrid"][data-gap="XS"],
+  [data-type="imageGrid"][data-gap="xsmall"],
+  [data-type="imageGrid"][data-gap="XSmall"],
+  [data-type="imageGrid"][data-gap="Xsmall"],
+  [data-type="imageGrid"][data-gap="XSMALL"],
+  [data-type="imageGrid"][data-gap="xs"],
+  [data-type="imageGrid"][data-gap="Xs"],
+  [data-type="imageGrid"][data-gap="XS"],
+  [data-type="ImageGrid"][data-gap="xsmall"],
+  [data-type="ImageGrid"][data-gap="XSmall"],
+  [data-type="ImageGrid"][data-gap="Xsmall"],
+  [data-type="ImageGrid"][data-gap="XSMALL"],
+  [data-type="ImageGrid"][data-gap="xs"],
+  [data-type="ImageGrid"][data-gap="Xs"],
+  [data-type="ImageGrid"][data-gap="XS"],
+  [data-type="IMAGEGRID"][data-gap="xsmall"],
+  [data-type="IMAGEGRID"][data-gap="XSmall"],
+  [data-type="IMAGEGRID"][data-gap="Xsmall"],
+  [data-type="IMAGEGRID"][data-gap="XSMALL"],
+  [data-type="IMAGEGRID"][data-gap="xs"],
+  [data-type="IMAGEGRID"][data-gap="Xs"],
+  [data-type="IMAGEGRID"][data-gap="XS"] {
+    gap: var(--spacing-xs) var(--spacing-md); }
+  [data-type="grid"][data-gap="sm"], [data-type="grid"][data-gap="Sm"], [data-type="grid"][data-gap="SM"], [data-type="grid"][data-gap="small"], [data-type="grid"][data-gap="Small"], [data-type="grid"][data-gap="SMALL"],
+  [data-type="Grid"][data-gap="sm"],
+  [data-type="Grid"][data-gap="Sm"],
+  [data-type="Grid"][data-gap="SM"],
+  [data-type="Grid"][data-gap="small"],
+  [data-type="Grid"][data-gap="Small"],
+  [data-type="Grid"][data-gap="SMALL"],
+  [data-type="GRID"][data-gap="sm"],
+  [data-type="GRID"][data-gap="Sm"],
+  [data-type="GRID"][data-gap="SM"],
+  [data-type="GRID"][data-gap="small"],
+  [data-type="GRID"][data-gap="Small"],
+  [data-type="GRID"][data-gap="SMALL"],
+  [data-type="imagegrid"][data-gap="sm"],
+  [data-type="imagegrid"][data-gap="Sm"],
+  [data-type="imagegrid"][data-gap="SM"],
+  [data-type="imagegrid"][data-gap="small"],
+  [data-type="imagegrid"][data-gap="Small"],
+  [data-type="imagegrid"][data-gap="SMALL"],
+  [data-type="imageGrid"][data-gap="sm"],
+  [data-type="imageGrid"][data-gap="Sm"],
+  [data-type="imageGrid"][data-gap="SM"],
+  [data-type="imageGrid"][data-gap="small"],
+  [data-type="imageGrid"][data-gap="Small"],
+  [data-type="imageGrid"][data-gap="SMALL"],
+  [data-type="ImageGrid"][data-gap="sm"],
+  [data-type="ImageGrid"][data-gap="Sm"],
+  [data-type="ImageGrid"][data-gap="SM"],
+  [data-type="ImageGrid"][data-gap="small"],
+  [data-type="ImageGrid"][data-gap="Small"],
+  [data-type="ImageGrid"][data-gap="SMALL"],
+  [data-type="IMAGEGRID"][data-gap="sm"],
+  [data-type="IMAGEGRID"][data-gap="Sm"],
+  [data-type="IMAGEGRID"][data-gap="SM"],
+  [data-type="IMAGEGRID"][data-gap="small"],
+  [data-type="IMAGEGRID"][data-gap="Small"],
+  [data-type="IMAGEGRID"][data-gap="SMALL"] {
+    gap: var(--spacing-sm) var(--spacing-md); }
+  [data-type="grid"][data-gap="md"], [data-type="grid"][data-gap="Md"], [data-type="grid"][data-gap="MD"], [data-type="grid"][data-gap="medium"], [data-type="grid"][data-gap="Medium"], [data-type="grid"][data-gap="MEDIUM"],
+  [data-type="Grid"][data-gap="md"],
+  [data-type="Grid"][data-gap="Md"],
+  [data-type="Grid"][data-gap="MD"],
+  [data-type="Grid"][data-gap="medium"],
+  [data-type="Grid"][data-gap="Medium"],
+  [data-type="Grid"][data-gap="MEDIUM"],
+  [data-type="GRID"][data-gap="md"],
+  [data-type="GRID"][data-gap="Md"],
+  [data-type="GRID"][data-gap="MD"],
+  [data-type="GRID"][data-gap="medium"],
+  [data-type="GRID"][data-gap="Medium"],
+  [data-type="GRID"][data-gap="MEDIUM"],
+  [data-type="imagegrid"][data-gap="md"],
+  [data-type="imagegrid"][data-gap="Md"],
+  [data-type="imagegrid"][data-gap="MD"],
+  [data-type="imagegrid"][data-gap="medium"],
+  [data-type="imagegrid"][data-gap="Medium"],
+  [data-type="imagegrid"][data-gap="MEDIUM"],
+  [data-type="imageGrid"][data-gap="md"],
+  [data-type="imageGrid"][data-gap="Md"],
+  [data-type="imageGrid"][data-gap="MD"],
+  [data-type="imageGrid"][data-gap="medium"],
+  [data-type="imageGrid"][data-gap="Medium"],
+  [data-type="imageGrid"][data-gap="MEDIUM"],
+  [data-type="ImageGrid"][data-gap="md"],
+  [data-type="ImageGrid"][data-gap="Md"],
+  [data-type="ImageGrid"][data-gap="MD"],
+  [data-type="ImageGrid"][data-gap="medium"],
+  [data-type="ImageGrid"][data-gap="Medium"],
+  [data-type="ImageGrid"][data-gap="MEDIUM"],
+  [data-type="IMAGEGRID"][data-gap="md"],
+  [data-type="IMAGEGRID"][data-gap="Md"],
+  [data-type="IMAGEGRID"][data-gap="MD"],
+  [data-type="IMAGEGRID"][data-gap="medium"],
+  [data-type="IMAGEGRID"][data-gap="Medium"],
+  [data-type="IMAGEGRID"][data-gap="MEDIUM"] {
+    gap: var(--spacing-md) var(--spacing-md); }
+  [data-type="grid"][data-gap="xl"], [data-type="grid"][data-gap="Xl"], [data-type="grid"][data-gap="XL"], [data-type="grid"][data-gap="xlarge"], [data-type="grid"][data-gap="XLarge"], [data-type="grid"][data-gap="Xlarge"], [data-type="grid"][data-gap="XLARGE"],
+  [data-type="Grid"][data-gap="xl"],
+  [data-type="Grid"][data-gap="Xl"],
+  [data-type="Grid"][data-gap="XL"],
+  [data-type="Grid"][data-gap="xlarge"],
+  [data-type="Grid"][data-gap="XLarge"],
+  [data-type="Grid"][data-gap="Xlarge"],
+  [data-type="Grid"][data-gap="XLARGE"],
+  [data-type="GRID"][data-gap="xl"],
+  [data-type="GRID"][data-gap="Xl"],
+  [data-type="GRID"][data-gap="XL"],
+  [data-type="GRID"][data-gap="xlarge"],
+  [data-type="GRID"][data-gap="XLarge"],
+  [data-type="GRID"][data-gap="Xlarge"],
+  [data-type="GRID"][data-gap="XLARGE"],
+  [data-type="imagegrid"][data-gap="xl"],
+  [data-type="imagegrid"][data-gap="Xl"],
+  [data-type="imagegrid"][data-gap="XL"],
+  [data-type="imagegrid"][data-gap="xlarge"],
+  [data-type="imagegrid"][data-gap="XLarge"],
+  [data-type="imagegrid"][data-gap="Xlarge"],
+  [data-type="imagegrid"][data-gap="XLARGE"],
+  [data-type="imageGrid"][data-gap="xl"],
+  [data-type="imageGrid"][data-gap="Xl"],
+  [data-type="imageGrid"][data-gap="XL"],
+  [data-type="imageGrid"][data-gap="xlarge"],
+  [data-type="imageGrid"][data-gap="XLarge"],
+  [data-type="imageGrid"][data-gap="Xlarge"],
+  [data-type="imageGrid"][data-gap="XLARGE"],
+  [data-type="ImageGrid"][data-gap="xl"],
+  [data-type="ImageGrid"][data-gap="Xl"],
+  [data-type="ImageGrid"][data-gap="XL"],
+  [data-type="ImageGrid"][data-gap="xlarge"],
+  [data-type="ImageGrid"][data-gap="XLarge"],
+  [data-type="ImageGrid"][data-gap="Xlarge"],
+  [data-type="ImageGrid"][data-gap="XLARGE"],
+  [data-type="IMAGEGRID"][data-gap="xl"],
+  [data-type="IMAGEGRID"][data-gap="Xl"],
+  [data-type="IMAGEGRID"][data-gap="XL"],
+  [data-type="IMAGEGRID"][data-gap="xlarge"],
+  [data-type="IMAGEGRID"][data-gap="XLarge"],
+  [data-type="IMAGEGRID"][data-gap="Xlarge"],
+  [data-type="IMAGEGRID"][data-gap="XLARGE"] {
+    gap: var(--spacing-xl) var(--spacing-xl); }
 
 [data-type="imagegrid"],
 [data-type="imageGrid"],
@@ -249,48 +413,61 @@
       -ms-transform-origin: center;
           transform-origin: center; }
 
-[data-ratio] {
+[data-ratio]:not(tag-wrap),
+tag-wrap[data-ratio] tag-image {
   display: block;
   height: 0;
   padding-top: 100%; }
-  [data-ratio] > * {
+  [data-ratio]:not(tag-wrap) > *,
+  tag-wrap[data-ratio] tag-image > * {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%; }
 
-[data-ratio="1:1"] {
+[data-ratio="1:1"]:not(tag-wrap),
+tag-wrap[data-ratio="1:1"] tag-image {
   padding-top: 100%; }
 
-[data-ratio="16:9"] {
+[data-ratio="16:9"]:not(tag-wrap),
+tag-wrap[data-ratio="16:9"] tag-image {
   padding-top: 56.25%; }
 
-[data-ratio="9:16"] {
+[data-ratio="9:16"]:not(tag-wrap),
+tag-wrap[data-ratio="9:16"] tag-image {
   padding-top: 177.78%; }
 
-[data-ratio="2:3"] {
+[data-ratio="2:3"]:not(tag-wrap),
+tag-wrap[data-ratio="2:3"] tag-image {
   padding-top: 150%; }
 
-[data-ratio="3:2"] {
+[data-ratio="3:2"]:not(tag-wrap),
+tag-wrap[data-ratio="3:2"] tag-image {
   padding-top: 66.67%; }
 
-[data-ratio="4:3"] {
+[data-ratio="4:3"]:not(tag-wrap),
+tag-wrap[data-ratio="4:3"] tag-image {
   padding-top: 75%; }
 
-[data-ratio="3:4"] {
+[data-ratio="3:4"]:not(tag-wrap),
+tag-wrap[data-ratio="3:4"] tag-image {
   padding-top: 133.33%; }
 
-[data-ratio="2:1"] {
+[data-ratio="2:1"]:not(tag-wrap),
+tag-wrap[data-ratio="2:1"] tag-image {
   padding-top: 50%; }
 
-[data-ratio="1:2"] {
+[data-ratio="1:2"]:not(tag-wrap),
+tag-wrap[data-ratio="1:2"] tag-image {
   padding-top: 200%; }
 
-[data-ratio="3:1"] {
+[data-ratio="3:1"]:not(tag-wrap),
+tag-wrap[data-ratio="3:1"] tag-image {
   padding-top: 33.33%; }
 
-[data-ratio="1:3"] {
+[data-ratio="1:3"]:not(tag-wrap),
+tag-wrap[data-ratio="1:3"] tag-image {
   padding-top: 300%; }
 
 /*******************************
@@ -449,7 +626,18 @@ tag-labels {
         -ms-flex-align: center;
             align-items: center;
     overflow-x: auto;
+    overflow-y: hidden;
     scrollbar-width: none; }
+    tag-labels tag-labelset::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+      border-radius: 3px; }
+    tag-labels tag-labelset::-webkit-scrollbar-thumb {
+      background-color: var(--bg-color);
+      height: 5px;
+      border-radius: 3px; }
+    tag-labels tag-labelset::-webkit-scrollbar-track {
+      background-color: transparent; }
     tag-labels tag-labelset a,
     tag-labels tag-labelset tag-label {
       text-transform: uppercase;
@@ -1214,7 +1402,8 @@ tag-comm {
     tag-comm[data-type="image"] > tag-contact, tag-comm[data-type="Image"] > tag-contact, tag-comm[data-type="IMAGE"] > tag-contact {
       position: absolute;
       top: var(--spacing-md);
-      text-shadow: 1px 1px 2px var(--bg-content); }
+      text-shadow: 1px 1px 2px var(--bg-content);
+      text-align: left; }
     tag-comm[data-type="image"] tag-scroll, tag-comm[data-type="Image"] tag-scroll, tag-comm[data-type="IMAGE"] tag-scroll {
       display: -ms-grid;
       display: grid;

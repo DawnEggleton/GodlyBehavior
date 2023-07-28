@@ -338,6 +338,27 @@ ol {
             background: var(--bg-color);
             border-radius: 2px;
         }
+
+        &[data-align="right"],
+        &[data-text-align="right"],
+        &[data-box-align="right"] {
+            padding: var(--spacing-sm) var(--spacing-lg) var(--spacing-sm) 0;
+
+            &::before {
+                display: none;
+            }
+    
+            &::after {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 3px;
+                height: 100%;
+                background: var(--bg-color);
+                border-radius: 2px;
+            }
+        }
     }
     h5,
     .h5 {
@@ -357,6 +378,27 @@ ol {
             height: 100%;
             background: var(--bg-color);
             border-radius: 2px;
+        }
+
+        &[data-align="right"],
+        &[data-text-align="right"],
+        &[data-box-align="right"] {
+            padding: var(--spacing-xs) var(--spacing-md) var(--spacing-xs) 0;
+
+            &::before {
+                display: none;
+            }
+    
+            &::after {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 3px;
+                height: 100%;
+                background: var(--bg-color);
+                border-radius: 2px;
+            }
         }
     }
     h6,
@@ -378,6 +420,25 @@ ol {
             height: 100%;
             background: var(--bg-color);
             border-radius: 1px;
+        }
+
+        &[data-align="right"],
+        &[data-text-align="right"],
+        &[data-box-align="right"] {
+            &::before {
+                display: none;
+            }
+    
+            &::after {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 2px;
+                height: 100%;
+                background: var(--bg-color);
+                border-radius: 1px;
+            }
         }
     }
     h7,
@@ -401,6 +462,25 @@ ol {
             height: 100%;
             background: var(--bg-color);
             border-radius: 1px;
+        }
+
+        &[data-align="right"],
+        &[data-text-align="right"],
+        &[data-box-align="right"] {
+            &::before {
+                display: none;
+            }
+    
+            &::after {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 2px;
+                height: 100%;
+                background: var(--bg-color);
+                border-radius: 1px;
+            }
         }
     }
     h8,

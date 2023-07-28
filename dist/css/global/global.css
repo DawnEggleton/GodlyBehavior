@@ -1430,6 +1430,100 @@ ol {
     height: 100%;
     background: var(--bg-color);
     border-radius: 2px; }
+  .webpage--content h4[data-align="right"], .webpage--content h4[data-text-align="right"], .webpage--content h4[data-box-align="right"],
+  .webpage--content .h4[data-align="right"],
+  .webpage--content .h4[data-text-align="right"],
+  .webpage--content .h4[data-box-align="right"],
+  .profile--content h4[data-align="right"],
+  .profile--content h4[data-text-align="right"],
+  .profile--content h4[data-box-align="right"],
+  .profile--content .h4[data-align="right"],
+  .profile--content .h4[data-text-align="right"],
+  .profile--content .h4[data-box-align="right"],
+  .post--content h4[data-align="right"],
+  .post--content h4[data-text-align="right"],
+  .post--content h4[data-box-align="right"],
+  .post--content .h4[data-align="right"],
+  .post--content .h4[data-text-align="right"],
+  .post--content .h4[data-box-align="right"],
+  #Post .postcolor h4[data-align="right"],
+  #Post .postcolor h4[data-text-align="right"],
+  #Post .postcolor h4[data-box-align="right"],
+  #Post .postcolor .h4[data-align="right"],
+  #Post .postcolor .h4[data-text-align="right"],
+  #Post .postcolor .h4[data-box-align="right"],
+  .forum--message h4[data-align="right"],
+  .forum--message h4[data-text-align="right"],
+  .forum--message h4[data-box-align="right"],
+  .forum--message .h4[data-align="right"],
+  .forum--message .h4[data-text-align="right"],
+  .forum--message .h4[data-box-align="right"] {
+    padding: var(--spacing-sm) var(--spacing-lg) var(--spacing-sm) 0; }
+    .webpage--content h4[data-align="right"]::before, .webpage--content h4[data-text-align="right"]::before, .webpage--content h4[data-box-align="right"]::before,
+    .webpage--content .h4[data-align="right"]::before,
+    .webpage--content .h4[data-text-align="right"]::before,
+    .webpage--content .h4[data-box-align="right"]::before,
+    .profile--content h4[data-align="right"]::before,
+    .profile--content h4[data-text-align="right"]::before,
+    .profile--content h4[data-box-align="right"]::before,
+    .profile--content .h4[data-align="right"]::before,
+    .profile--content .h4[data-text-align="right"]::before,
+    .profile--content .h4[data-box-align="right"]::before,
+    .post--content h4[data-align="right"]::before,
+    .post--content h4[data-text-align="right"]::before,
+    .post--content h4[data-box-align="right"]::before,
+    .post--content .h4[data-align="right"]::before,
+    .post--content .h4[data-text-align="right"]::before,
+    .post--content .h4[data-box-align="right"]::before,
+    #Post .postcolor h4[data-align="right"]::before,
+    #Post .postcolor h4[data-text-align="right"]::before,
+    #Post .postcolor h4[data-box-align="right"]::before,
+    #Post .postcolor .h4[data-align="right"]::before,
+    #Post .postcolor .h4[data-text-align="right"]::before,
+    #Post .postcolor .h4[data-box-align="right"]::before,
+    .forum--message h4[data-align="right"]::before,
+    .forum--message h4[data-text-align="right"]::before,
+    .forum--message h4[data-box-align="right"]::before,
+    .forum--message .h4[data-align="right"]::before,
+    .forum--message .h4[data-text-align="right"]::before,
+    .forum--message .h4[data-box-align="right"]::before {
+      display: none; }
+    .webpage--content h4[data-align="right"]::after, .webpage--content h4[data-text-align="right"]::after, .webpage--content h4[data-box-align="right"]::after,
+    .webpage--content .h4[data-align="right"]::after,
+    .webpage--content .h4[data-text-align="right"]::after,
+    .webpage--content .h4[data-box-align="right"]::after,
+    .profile--content h4[data-align="right"]::after,
+    .profile--content h4[data-text-align="right"]::after,
+    .profile--content h4[data-box-align="right"]::after,
+    .profile--content .h4[data-align="right"]::after,
+    .profile--content .h4[data-text-align="right"]::after,
+    .profile--content .h4[data-box-align="right"]::after,
+    .post--content h4[data-align="right"]::after,
+    .post--content h4[data-text-align="right"]::after,
+    .post--content h4[data-box-align="right"]::after,
+    .post--content .h4[data-align="right"]::after,
+    .post--content .h4[data-text-align="right"]::after,
+    .post--content .h4[data-box-align="right"]::after,
+    #Post .postcolor h4[data-align="right"]::after,
+    #Post .postcolor h4[data-text-align="right"]::after,
+    #Post .postcolor h4[data-box-align="right"]::after,
+    #Post .postcolor .h4[data-align="right"]::after,
+    #Post .postcolor .h4[data-text-align="right"]::after,
+    #Post .postcolor .h4[data-box-align="right"]::after,
+    .forum--message h4[data-align="right"]::after,
+    .forum--message h4[data-text-align="right"]::after,
+    .forum--message h4[data-box-align="right"]::after,
+    .forum--message .h4[data-align="right"]::after,
+    .forum--message .h4[data-text-align="right"]::after,
+    .forum--message .h4[data-box-align="right"]::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 3px;
+      height: 100%;
+      background: var(--bg-color);
+      border-radius: 2px; }
 
 .webpage--content h5,
 .webpage--content .h5,
@@ -1465,6 +1559,100 @@ ol {
     height: 100%;
     background: var(--bg-color);
     border-radius: 2px; }
+  .webpage--content h5[data-align="right"], .webpage--content h5[data-text-align="right"], .webpage--content h5[data-box-align="right"],
+  .webpage--content .h5[data-align="right"],
+  .webpage--content .h5[data-text-align="right"],
+  .webpage--content .h5[data-box-align="right"],
+  .profile--content h5[data-align="right"],
+  .profile--content h5[data-text-align="right"],
+  .profile--content h5[data-box-align="right"],
+  .profile--content .h5[data-align="right"],
+  .profile--content .h5[data-text-align="right"],
+  .profile--content .h5[data-box-align="right"],
+  .post--content h5[data-align="right"],
+  .post--content h5[data-text-align="right"],
+  .post--content h5[data-box-align="right"],
+  .post--content .h5[data-align="right"],
+  .post--content .h5[data-text-align="right"],
+  .post--content .h5[data-box-align="right"],
+  #Post .postcolor h5[data-align="right"],
+  #Post .postcolor h5[data-text-align="right"],
+  #Post .postcolor h5[data-box-align="right"],
+  #Post .postcolor .h5[data-align="right"],
+  #Post .postcolor .h5[data-text-align="right"],
+  #Post .postcolor .h5[data-box-align="right"],
+  .forum--message h5[data-align="right"],
+  .forum--message h5[data-text-align="right"],
+  .forum--message h5[data-box-align="right"],
+  .forum--message .h5[data-align="right"],
+  .forum--message .h5[data-text-align="right"],
+  .forum--message .h5[data-box-align="right"] {
+    padding: var(--spacing-xs) var(--spacing-md) var(--spacing-xs) 0; }
+    .webpage--content h5[data-align="right"]::before, .webpage--content h5[data-text-align="right"]::before, .webpage--content h5[data-box-align="right"]::before,
+    .webpage--content .h5[data-align="right"]::before,
+    .webpage--content .h5[data-text-align="right"]::before,
+    .webpage--content .h5[data-box-align="right"]::before,
+    .profile--content h5[data-align="right"]::before,
+    .profile--content h5[data-text-align="right"]::before,
+    .profile--content h5[data-box-align="right"]::before,
+    .profile--content .h5[data-align="right"]::before,
+    .profile--content .h5[data-text-align="right"]::before,
+    .profile--content .h5[data-box-align="right"]::before,
+    .post--content h5[data-align="right"]::before,
+    .post--content h5[data-text-align="right"]::before,
+    .post--content h5[data-box-align="right"]::before,
+    .post--content .h5[data-align="right"]::before,
+    .post--content .h5[data-text-align="right"]::before,
+    .post--content .h5[data-box-align="right"]::before,
+    #Post .postcolor h5[data-align="right"]::before,
+    #Post .postcolor h5[data-text-align="right"]::before,
+    #Post .postcolor h5[data-box-align="right"]::before,
+    #Post .postcolor .h5[data-align="right"]::before,
+    #Post .postcolor .h5[data-text-align="right"]::before,
+    #Post .postcolor .h5[data-box-align="right"]::before,
+    .forum--message h5[data-align="right"]::before,
+    .forum--message h5[data-text-align="right"]::before,
+    .forum--message h5[data-box-align="right"]::before,
+    .forum--message .h5[data-align="right"]::before,
+    .forum--message .h5[data-text-align="right"]::before,
+    .forum--message .h5[data-box-align="right"]::before {
+      display: none; }
+    .webpage--content h5[data-align="right"]::after, .webpage--content h5[data-text-align="right"]::after, .webpage--content h5[data-box-align="right"]::after,
+    .webpage--content .h5[data-align="right"]::after,
+    .webpage--content .h5[data-text-align="right"]::after,
+    .webpage--content .h5[data-box-align="right"]::after,
+    .profile--content h5[data-align="right"]::after,
+    .profile--content h5[data-text-align="right"]::after,
+    .profile--content h5[data-box-align="right"]::after,
+    .profile--content .h5[data-align="right"]::after,
+    .profile--content .h5[data-text-align="right"]::after,
+    .profile--content .h5[data-box-align="right"]::after,
+    .post--content h5[data-align="right"]::after,
+    .post--content h5[data-text-align="right"]::after,
+    .post--content h5[data-box-align="right"]::after,
+    .post--content .h5[data-align="right"]::after,
+    .post--content .h5[data-text-align="right"]::after,
+    .post--content .h5[data-box-align="right"]::after,
+    #Post .postcolor h5[data-align="right"]::after,
+    #Post .postcolor h5[data-text-align="right"]::after,
+    #Post .postcolor h5[data-box-align="right"]::after,
+    #Post .postcolor .h5[data-align="right"]::after,
+    #Post .postcolor .h5[data-text-align="right"]::after,
+    #Post .postcolor .h5[data-box-align="right"]::after,
+    .forum--message h5[data-align="right"]::after,
+    .forum--message h5[data-text-align="right"]::after,
+    .forum--message h5[data-box-align="right"]::after,
+    .forum--message .h5[data-align="right"]::after,
+    .forum--message .h5[data-text-align="right"]::after,
+    .forum--message .h5[data-box-align="right"]::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 3px;
+      height: 100%;
+      background: var(--bg-color);
+      border-radius: 2px; }
 
 .webpage--content h6,
 .webpage--content .h6,
@@ -1496,6 +1684,71 @@ ol {
     content: '';
     position: absolute;
     left: 0;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: var(--bg-color);
+    border-radius: 1px; }
+  .webpage--content h6[data-align="right"]::before, .webpage--content h6[data-text-align="right"]::before, .webpage--content h6[data-box-align="right"]::before,
+  .webpage--content .h6[data-align="right"]::before,
+  .webpage--content .h6[data-text-align="right"]::before,
+  .webpage--content .h6[data-box-align="right"]::before,
+  .profile--content h6[data-align="right"]::before,
+  .profile--content h6[data-text-align="right"]::before,
+  .profile--content h6[data-box-align="right"]::before,
+  .profile--content .h6[data-align="right"]::before,
+  .profile--content .h6[data-text-align="right"]::before,
+  .profile--content .h6[data-box-align="right"]::before,
+  .post--content h6[data-align="right"]::before,
+  .post--content h6[data-text-align="right"]::before,
+  .post--content h6[data-box-align="right"]::before,
+  .post--content .h6[data-align="right"]::before,
+  .post--content .h6[data-text-align="right"]::before,
+  .post--content .h6[data-box-align="right"]::before,
+  #Post .postcolor h6[data-align="right"]::before,
+  #Post .postcolor h6[data-text-align="right"]::before,
+  #Post .postcolor h6[data-box-align="right"]::before,
+  #Post .postcolor .h6[data-align="right"]::before,
+  #Post .postcolor .h6[data-text-align="right"]::before,
+  #Post .postcolor .h6[data-box-align="right"]::before,
+  .forum--message h6[data-align="right"]::before,
+  .forum--message h6[data-text-align="right"]::before,
+  .forum--message h6[data-box-align="right"]::before,
+  .forum--message .h6[data-align="right"]::before,
+  .forum--message .h6[data-text-align="right"]::before,
+  .forum--message .h6[data-box-align="right"]::before {
+    display: none; }
+  .webpage--content h6[data-align="right"]::after, .webpage--content h6[data-text-align="right"]::after, .webpage--content h6[data-box-align="right"]::after,
+  .webpage--content .h6[data-align="right"]::after,
+  .webpage--content .h6[data-text-align="right"]::after,
+  .webpage--content .h6[data-box-align="right"]::after,
+  .profile--content h6[data-align="right"]::after,
+  .profile--content h6[data-text-align="right"]::after,
+  .profile--content h6[data-box-align="right"]::after,
+  .profile--content .h6[data-align="right"]::after,
+  .profile--content .h6[data-text-align="right"]::after,
+  .profile--content .h6[data-box-align="right"]::after,
+  .post--content h6[data-align="right"]::after,
+  .post--content h6[data-text-align="right"]::after,
+  .post--content h6[data-box-align="right"]::after,
+  .post--content .h6[data-align="right"]::after,
+  .post--content .h6[data-text-align="right"]::after,
+  .post--content .h6[data-box-align="right"]::after,
+  #Post .postcolor h6[data-align="right"]::after,
+  #Post .postcolor h6[data-text-align="right"]::after,
+  #Post .postcolor h6[data-box-align="right"]::after,
+  #Post .postcolor .h6[data-align="right"]::after,
+  #Post .postcolor .h6[data-text-align="right"]::after,
+  #Post .postcolor .h6[data-box-align="right"]::after,
+  .forum--message h6[data-align="right"]::after,
+  .forum--message h6[data-text-align="right"]::after,
+  .forum--message h6[data-box-align="right"]::after,
+  .forum--message .h6[data-align="right"]::after,
+  .forum--message .h6[data-text-align="right"]::after,
+  .forum--message .h6[data-box-align="right"]::after {
+    content: '';
+    position: absolute;
+    right: 0;
     top: 0;
     width: 2px;
     height: 100%;
@@ -1534,6 +1787,71 @@ ol {
     content: '';
     position: absolute;
     left: 0;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: var(--bg-color);
+    border-radius: 1px; }
+  .webpage--content h7[data-align="right"]::before, .webpage--content h7[data-text-align="right"]::before, .webpage--content h7[data-box-align="right"]::before,
+  .webpage--content .h7[data-align="right"]::before,
+  .webpage--content .h7[data-text-align="right"]::before,
+  .webpage--content .h7[data-box-align="right"]::before,
+  .profile--content h7[data-align="right"]::before,
+  .profile--content h7[data-text-align="right"]::before,
+  .profile--content h7[data-box-align="right"]::before,
+  .profile--content .h7[data-align="right"]::before,
+  .profile--content .h7[data-text-align="right"]::before,
+  .profile--content .h7[data-box-align="right"]::before,
+  .post--content h7[data-align="right"]::before,
+  .post--content h7[data-text-align="right"]::before,
+  .post--content h7[data-box-align="right"]::before,
+  .post--content .h7[data-align="right"]::before,
+  .post--content .h7[data-text-align="right"]::before,
+  .post--content .h7[data-box-align="right"]::before,
+  #Post .postcolor h7[data-align="right"]::before,
+  #Post .postcolor h7[data-text-align="right"]::before,
+  #Post .postcolor h7[data-box-align="right"]::before,
+  #Post .postcolor .h7[data-align="right"]::before,
+  #Post .postcolor .h7[data-text-align="right"]::before,
+  #Post .postcolor .h7[data-box-align="right"]::before,
+  .forum--message h7[data-align="right"]::before,
+  .forum--message h7[data-text-align="right"]::before,
+  .forum--message h7[data-box-align="right"]::before,
+  .forum--message .h7[data-align="right"]::before,
+  .forum--message .h7[data-text-align="right"]::before,
+  .forum--message .h7[data-box-align="right"]::before {
+    display: none; }
+  .webpage--content h7[data-align="right"]::after, .webpage--content h7[data-text-align="right"]::after, .webpage--content h7[data-box-align="right"]::after,
+  .webpage--content .h7[data-align="right"]::after,
+  .webpage--content .h7[data-text-align="right"]::after,
+  .webpage--content .h7[data-box-align="right"]::after,
+  .profile--content h7[data-align="right"]::after,
+  .profile--content h7[data-text-align="right"]::after,
+  .profile--content h7[data-box-align="right"]::after,
+  .profile--content .h7[data-align="right"]::after,
+  .profile--content .h7[data-text-align="right"]::after,
+  .profile--content .h7[data-box-align="right"]::after,
+  .post--content h7[data-align="right"]::after,
+  .post--content h7[data-text-align="right"]::after,
+  .post--content h7[data-box-align="right"]::after,
+  .post--content .h7[data-align="right"]::after,
+  .post--content .h7[data-text-align="right"]::after,
+  .post--content .h7[data-box-align="right"]::after,
+  #Post .postcolor h7[data-align="right"]::after,
+  #Post .postcolor h7[data-text-align="right"]::after,
+  #Post .postcolor h7[data-box-align="right"]::after,
+  #Post .postcolor .h7[data-align="right"]::after,
+  #Post .postcolor .h7[data-text-align="right"]::after,
+  #Post .postcolor .h7[data-box-align="right"]::after,
+  .forum--message h7[data-align="right"]::after,
+  .forum--message h7[data-text-align="right"]::after,
+  .forum--message h7[data-box-align="right"]::after,
+  .forum--message .h7[data-align="right"]::after,
+  .forum--message .h7[data-text-align="right"]::after,
+  .forum--message .h7[data-box-align="right"]::after {
+    content: '';
+    position: absolute;
+    right: 0;
     top: 0;
     width: 2px;
     height: 100%;

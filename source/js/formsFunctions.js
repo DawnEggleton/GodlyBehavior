@@ -535,6 +535,7 @@ function submitSpecies(data, discord) {
             "Weaknesses": data.weaknesses,
             "Traits": data.traits,
             "Credit": data.credits,
+            "Premium": data.premium,
         },
         method: "POST",
         type: "POST",
