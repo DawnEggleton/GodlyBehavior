@@ -135,6 +135,7 @@ ol {
       font-size: 0.7em;
       color: var(--accent); }
 
+.species--item b,
 .webpage--content b,
 .profile--content b,
 .post--content b,
@@ -147,6 +148,7 @@ ol {
   letter-spacing: 0.05em;
   padding: 0 2px; }
 
+.species--item i,
 .webpage--content i,
 .profile--content i,
 .post--content i,
@@ -158,6 +160,7 @@ ol {
   color: var(--text-color);
   padding: 0 2px; }
 
+.species--item u,
 .webpage--content u,
 .profile--content u,
 .post--content u,
@@ -168,6 +171,7 @@ ol {
   background: var(--bg-color-transparent);
   padding: 0 7px; }
 
+.species--item a,
 .webpage--content a,
 .profile--content a,
 .post--content a,
@@ -180,6 +184,7 @@ ol {
   border-bottom: 2px solid var(--accent);
   padding: 0 var(--spacing-xs); }
 
+.species--item s,
 .webpage--content s,
 .profile--content s,
 .post--content s,
@@ -191,6 +196,20 @@ ol {
   color: var(--text-color);
   text-decoration-thickness: 1px; }
 
+.species--item h2,
+.species--item .h2,
+.species--item h3,
+.species--item .h3,
+.species--item h4,
+.species--item .h4,
+.species--item h5,
+.species--item .h5,
+.species--item h6,
+.species--item .h6,
+.species--item h7,
+.species--item .h7,
+.species--item h8,
+.species--item .h8,
 .webpage--content h2,
 .webpage--content .h2,
 .webpage--content h3,
@@ -263,6 +282,20 @@ ol {
 .forum--message .h8 {
   line-height: 160%;
   max-width: max-content; }
+  .species--item h2:first-child,
+  .species--item .h2:first-child,
+  .species--item h3:first-child,
+  .species--item .h3:first-child,
+  .species--item h4:first-child,
+  .species--item .h4:first-child,
+  .species--item h5:first-child,
+  .species--item .h5:first-child,
+  .species--item h6:first-child,
+  .species--item .h6:first-child,
+  .species--item h7:first-child,
+  .species--item .h7:first-child,
+  .species--item h8:first-child,
+  .species--item .h8:first-child,
   .webpage--content h2:first-child,
   .webpage--content .h2:first-child,
   .webpage--content h3:first-child,
@@ -334,6 +367,20 @@ ol {
   .forum--message h8:first-child,
   .forum--message .h8:first-child {
     margin-top: 0; }
+  .species--item h2:not(:first-child),
+  .species--item .h2:not(:first-child),
+  .species--item h3:not(:first-child),
+  .species--item .h3:not(:first-child),
+  .species--item h4:not(:first-child),
+  .species--item .h4:not(:first-child),
+  .species--item h5:not(:first-child),
+  .species--item .h5:not(:first-child),
+  .species--item h6:not(:first-child),
+  .species--item .h6:not(:first-child),
+  .species--item h7:not(:first-child),
+  .species--item .h7:not(:first-child),
+  .species--item h8:not(:first-child),
+  .species--item .h8:not(:first-child),
   .webpage--content h2:not(:first-child),
   .webpage--content .h2:not(:first-child),
   .webpage--content h3:not(:first-child),
@@ -405,7 +452,21 @@ ol {
   .forum--message h8:not(:first-child),
   .forum--message .h8:not(:first-child) {
     margin-top: var(--spacing-lg); }
-  p + .webpage--content h2:not(:first-child), p +
+  p + .species--item h2:not(:first-child), p +
+  .species--item .h2:not(:first-child), p +
+  .species--item h3:not(:first-child), p +
+  .species--item .h3:not(:first-child), p +
+  .species--item h4:not(:first-child), p +
+  .species--item .h4:not(:first-child), p +
+  .species--item h5:not(:first-child), p +
+  .species--item .h5:not(:first-child), p +
+  .species--item h6:not(:first-child), p +
+  .species--item .h6:not(:first-child), p +
+  .species--item h7:not(:first-child), p +
+  .species--item .h7:not(:first-child), p +
+  .species--item h8:not(:first-child), p +
+  .species--item .h8:not(:first-child), p +
+  .webpage--content h2:not(:first-child), p +
   .webpage--content .h2:not(:first-child), p +
   .webpage--content h3:not(:first-child), p +
   .webpage--content .h3:not(:first-child), p +
@@ -476,6 +537,105 @@ ol {
   .forum--message h8:not(:first-child), p +
   .forum--message .h8:not(:first-child) {
     margin-top: var(--spacing-xl); }
+  .species--item h2 + br,
+  .species--item .h2 + br,
+  .species--item h3 + br,
+  .species--item .h3 + br,
+  .species--item h4 + br,
+  .species--item .h4 + br,
+  .species--item h5 + br,
+  .species--item .h5 + br,
+  .species--item h6 + br,
+  .species--item .h6 + br,
+  .species--item h7 + br,
+  .species--item .h7 + br,
+  .species--item h8 + br,
+  .species--item .h8 + br,
+  .webpage--content h2 + br,
+  .webpage--content .h2 + br,
+  .webpage--content h3 + br,
+  .webpage--content .h3 + br,
+  .webpage--content h4 + br,
+  .webpage--content .h4 + br,
+  .webpage--content h5 + br,
+  .webpage--content .h5 + br,
+  .webpage--content h6 + br,
+  .webpage--content .h6 + br,
+  .webpage--content h7 + br,
+  .webpage--content .h7 + br,
+  .webpage--content h8 + br,
+  .webpage--content .h8 + br,
+  .profile--content h2 + br,
+  .profile--content .h2 + br,
+  .profile--content h3 + br,
+  .profile--content .h3 + br,
+  .profile--content h4 + br,
+  .profile--content .h4 + br,
+  .profile--content h5 + br,
+  .profile--content .h5 + br,
+  .profile--content h6 + br,
+  .profile--content .h6 + br,
+  .profile--content h7 + br,
+  .profile--content .h7 + br,
+  .profile--content h8 + br,
+  .profile--content .h8 + br,
+  .post--content h2 + br,
+  .post--content .h2 + br,
+  .post--content h3 + br,
+  .post--content .h3 + br,
+  .post--content h4 + br,
+  .post--content .h4 + br,
+  .post--content h5 + br,
+  .post--content .h5 + br,
+  .post--content h6 + br,
+  .post--content .h6 + br,
+  .post--content h7 + br,
+  .post--content .h7 + br,
+  .post--content h8 + br,
+  .post--content .h8 + br,
+  #Post .postcolor h2 + br,
+  #Post .postcolor .h2 + br,
+  #Post .postcolor h3 + br,
+  #Post .postcolor .h3 + br,
+  #Post .postcolor h4 + br,
+  #Post .postcolor .h4 + br,
+  #Post .postcolor h5 + br,
+  #Post .postcolor .h5 + br,
+  #Post .postcolor h6 + br,
+  #Post .postcolor .h6 + br,
+  #Post .postcolor h7 + br,
+  #Post .postcolor .h7 + br,
+  #Post .postcolor h8 + br,
+  #Post .postcolor .h8 + br,
+  .forum--message h2 + br,
+  .forum--message .h2 + br,
+  .forum--message h3 + br,
+  .forum--message .h3 + br,
+  .forum--message h4 + br,
+  .forum--message .h4 + br,
+  .forum--message h5 + br,
+  .forum--message .h5 + br,
+  .forum--message h6 + br,
+  .forum--message .h6 + br,
+  .forum--message h7 + br,
+  .forum--message .h7 + br,
+  .forum--message h8 + br,
+  .forum--message .h8 + br {
+    display: none; }
+  .species--item h2 a,
+  .species--item .h2 a,
+  .species--item h3 a,
+  .species--item .h3 a,
+  .species--item h4 a,
+  .species--item .h4 a,
+  .species--item h5 a,
+  .species--item .h5 a,
+  .species--item h6 a,
+  .species--item .h6 a,
+  .species--item h7 a,
+  .species--item .h7 a,
+  .species--item h8 a,
+  .species--item .h8 a,
   .webpage--content h2 a,
   .webpage--content .h2 a,
   .webpage--content h3 a,
@@ -548,6 +708,20 @@ ol {
   .forum--message .h8 a {
     font-size: 1em !important;
     border-bottom: none !important; }
+    .species--item h2 a::after,
+    .species--item .h2 a::after,
+    .species--item h3 a::after,
+    .species--item .h3 a::after,
+    .species--item h4 a::after,
+    .species--item .h4 a::after,
+    .species--item h5 a::after,
+    .species--item .h5 a::after,
+    .species--item h6 a::after,
+    .species--item .h6 a::after,
+    .species--item h7 a::after,
+    .species--item .h7 a::after,
+    .species--item h8 a::after,
+    .species--item .h8 a::after,
     .webpage--content h2 a::after,
     .webpage--content .h2 a::after,
     .webpage--content h3 a::after,
@@ -624,6 +798,20 @@ ol {
       position: relative;
       right: 0;
       transition-duration: var(--style-duration); }
+    .species--item h2 a:hover::after,
+    .species--item .h2 a:hover::after,
+    .species--item h3 a:hover::after,
+    .species--item .h3 a:hover::after,
+    .species--item h4 a:hover::after,
+    .species--item .h4 a:hover::after,
+    .species--item h5 a:hover::after,
+    .species--item .h5 a:hover::after,
+    .species--item h6 a:hover::after,
+    .species--item .h6 a:hover::after,
+    .species--item h7 a:hover::after,
+    .species--item .h7 a:hover::after,
+    .species--item h8 a:hover::after,
+    .species--item .h8 a:hover::after,
     .webpage--content h2 a:hover::after,
     .webpage--content .h2 a:hover::after,
     .webpage--content h3 a:hover::after,
@@ -695,7 +883,49 @@ ol {
     .forum--message h8 a:hover::after,
     .forum--message .h8 a:hover::after {
       right: -5px; }
-  .webpage--content h2[data-align="left"], .webpage--content h2[data-align="Left"], .webpage--content h2[data-align="LEFT"],
+  .species--item h2[data-align="left"], .species--item h2[data-align="Left"], .species--item h2[data-align="LEFT"],
+  .species--item .h2[data-align="left"],
+  .species--item .h2[data-align="Left"],
+  .species--item .h2[data-align="LEFT"],
+  .species--item h3[data-align="left"],
+  .species--item h3[data-align="Left"],
+  .species--item h3[data-align="LEFT"],
+  .species--item .h3[data-align="left"],
+  .species--item .h3[data-align="Left"],
+  .species--item .h3[data-align="LEFT"],
+  .species--item h4[data-align="left"],
+  .species--item h4[data-align="Left"],
+  .species--item h4[data-align="LEFT"],
+  .species--item .h4[data-align="left"],
+  .species--item .h4[data-align="Left"],
+  .species--item .h4[data-align="LEFT"],
+  .species--item h5[data-align="left"],
+  .species--item h5[data-align="Left"],
+  .species--item h5[data-align="LEFT"],
+  .species--item .h5[data-align="left"],
+  .species--item .h5[data-align="Left"],
+  .species--item .h5[data-align="LEFT"],
+  .species--item h6[data-align="left"],
+  .species--item h6[data-align="Left"],
+  .species--item h6[data-align="LEFT"],
+  .species--item .h6[data-align="left"],
+  .species--item .h6[data-align="Left"],
+  .species--item .h6[data-align="LEFT"],
+  .species--item h7[data-align="left"],
+  .species--item h7[data-align="Left"],
+  .species--item h7[data-align="LEFT"],
+  .species--item .h7[data-align="left"],
+  .species--item .h7[data-align="Left"],
+  .species--item .h7[data-align="LEFT"],
+  .species--item h8[data-align="left"],
+  .species--item h8[data-align="Left"],
+  .species--item h8[data-align="LEFT"],
+  .species--item .h8[data-align="left"],
+  .species--item .h8[data-align="Left"],
+  .species--item .h8[data-align="LEFT"],
+  .webpage--content h2[data-align="left"],
+  .webpage--content h2[data-align="Left"],
+  .webpage--content h2[data-align="LEFT"],
   .webpage--content .h2[data-align="left"],
   .webpage--content .h2[data-align="Left"],
   .webpage--content .h2[data-align="LEFT"],
@@ -906,7 +1136,49 @@ ol {
     margin-left: 0;
     margin-right: auto;
     text-align: left; }
-  .webpage--content h2[data-align="center"], .webpage--content h2[data-align="Center"], .webpage--content h2[data-align="CENTER"],
+  .species--item h2[data-align="center"], .species--item h2[data-align="Center"], .species--item h2[data-align="CENTER"],
+  .species--item .h2[data-align="center"],
+  .species--item .h2[data-align="Center"],
+  .species--item .h2[data-align="CENTER"],
+  .species--item h3[data-align="center"],
+  .species--item h3[data-align="Center"],
+  .species--item h3[data-align="CENTER"],
+  .species--item .h3[data-align="center"],
+  .species--item .h3[data-align="Center"],
+  .species--item .h3[data-align="CENTER"],
+  .species--item h4[data-align="center"],
+  .species--item h4[data-align="Center"],
+  .species--item h4[data-align="CENTER"],
+  .species--item .h4[data-align="center"],
+  .species--item .h4[data-align="Center"],
+  .species--item .h4[data-align="CENTER"],
+  .species--item h5[data-align="center"],
+  .species--item h5[data-align="Center"],
+  .species--item h5[data-align="CENTER"],
+  .species--item .h5[data-align="center"],
+  .species--item .h5[data-align="Center"],
+  .species--item .h5[data-align="CENTER"],
+  .species--item h6[data-align="center"],
+  .species--item h6[data-align="Center"],
+  .species--item h6[data-align="CENTER"],
+  .species--item .h6[data-align="center"],
+  .species--item .h6[data-align="Center"],
+  .species--item .h6[data-align="CENTER"],
+  .species--item h7[data-align="center"],
+  .species--item h7[data-align="Center"],
+  .species--item h7[data-align="CENTER"],
+  .species--item .h7[data-align="center"],
+  .species--item .h7[data-align="Center"],
+  .species--item .h7[data-align="CENTER"],
+  .species--item h8[data-align="center"],
+  .species--item h8[data-align="Center"],
+  .species--item h8[data-align="CENTER"],
+  .species--item .h8[data-align="center"],
+  .species--item .h8[data-align="Center"],
+  .species--item .h8[data-align="CENTER"],
+  .webpage--content h2[data-align="center"],
+  .webpage--content h2[data-align="Center"],
+  .webpage--content h2[data-align="CENTER"],
   .webpage--content .h2[data-align="center"],
   .webpage--content .h2[data-align="Center"],
   .webpage--content .h2[data-align="CENTER"],
@@ -1117,7 +1389,49 @@ ol {
     margin-left: auto;
     margin-right: auto;
     text-align: center; }
-  .webpage--content h2[data-align="right"], .webpage--content h2[data-align="Right"], .webpage--content h2[data-align="RIGHT"],
+  .species--item h2[data-align="right"], .species--item h2[data-align="Right"], .species--item h2[data-align="RIGHT"],
+  .species--item .h2[data-align="right"],
+  .species--item .h2[data-align="Right"],
+  .species--item .h2[data-align="RIGHT"],
+  .species--item h3[data-align="right"],
+  .species--item h3[data-align="Right"],
+  .species--item h3[data-align="RIGHT"],
+  .species--item .h3[data-align="right"],
+  .species--item .h3[data-align="Right"],
+  .species--item .h3[data-align="RIGHT"],
+  .species--item h4[data-align="right"],
+  .species--item h4[data-align="Right"],
+  .species--item h4[data-align="RIGHT"],
+  .species--item .h4[data-align="right"],
+  .species--item .h4[data-align="Right"],
+  .species--item .h4[data-align="RIGHT"],
+  .species--item h5[data-align="right"],
+  .species--item h5[data-align="Right"],
+  .species--item h5[data-align="RIGHT"],
+  .species--item .h5[data-align="right"],
+  .species--item .h5[data-align="Right"],
+  .species--item .h5[data-align="RIGHT"],
+  .species--item h6[data-align="right"],
+  .species--item h6[data-align="Right"],
+  .species--item h6[data-align="RIGHT"],
+  .species--item .h6[data-align="right"],
+  .species--item .h6[data-align="Right"],
+  .species--item .h6[data-align="RIGHT"],
+  .species--item h7[data-align="right"],
+  .species--item h7[data-align="Right"],
+  .species--item h7[data-align="RIGHT"],
+  .species--item .h7[data-align="right"],
+  .species--item .h7[data-align="Right"],
+  .species--item .h7[data-align="RIGHT"],
+  .species--item h8[data-align="right"],
+  .species--item h8[data-align="Right"],
+  .species--item h8[data-align="RIGHT"],
+  .species--item .h8[data-align="right"],
+  .species--item .h8[data-align="Right"],
+  .species--item .h8[data-align="RIGHT"],
+  .webpage--content h2[data-align="right"],
+  .webpage--content h2[data-align="Right"],
+  .webpage--content h2[data-align="RIGHT"],
   .webpage--content .h2[data-align="right"],
   .webpage--content .h2[data-align="Right"],
   .webpage--content .h2[data-align="RIGHT"],
@@ -1329,6 +1643,8 @@ ol {
     margin-right: 0;
     text-align: right; }
 
+.species--item h2,
+.species--item .h2,
 .webpage--content h2,
 .webpage--content .h2,
 .profile--content h2,
@@ -1339,11 +1655,13 @@ ol {
 #Post .postcolor .h2,
 .forum--message h2,
 .forum--message .h2 {
-  font-size: 40px;
+  font-size: min(40px, 4vw);
   font-family: var(--font-serif);
   margin: 0 auto var(--spacing-lg);
   padding-bottom: 10px;
   text-align: center; }
+  .species--item h2::after,
+  .species--item .h2::after,
   .webpage--content h2::after,
   .webpage--content .h2::after,
   .profile--content h2::after,
@@ -1363,6 +1681,8 @@ ol {
     background: var(--bg-color);
     border-radius: 2px; }
 
+.species--item h3,
+.species--item .h3,
 .webpage--content h3,
 .webpage--content .h3,
 .profile--content h3,
@@ -1373,10 +1693,12 @@ ol {
 #Post .postcolor .h3,
 .forum--message h3,
 .forum--message .h3 {
-  font-size: 26px;
+  font-size: min(26px, 2.6vw);
   font-family: var(--font-serif);
   margin: 0 auto var(--spacing-lg) 0;
   padding: 0 0 10px var(--spacing-md); }
+  .species--item h3::after,
+  .species--item .h3::after,
   .webpage--content h3::after,
   .webpage--content .h3::after,
   .profile--content h3::after,
@@ -1396,6 +1718,8 @@ ol {
     background: var(--bg-color);
     border-radius: 2px; }
 
+.species--item h4,
+.species--item .h4,
 .webpage--content h4,
 .webpage--content .h4,
 .profile--content h4,
@@ -1406,12 +1730,14 @@ ol {
 #Post .postcolor .h4,
 .forum--message h4,
 .forum--message .h4 {
-  font-size: 22px;
+  font-size: min(22px, 2.2vw);
   font-family: var(--font-body-bold);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.3em;
   padding: var(--spacing-sm) 0 var(--spacing-sm) var(--spacing-lg); }
+  .species--item h4::before,
+  .species--item .h4::before,
   .webpage--content h4::before,
   .webpage--content .h4::before,
   .profile--content h4::before,
@@ -1430,7 +1756,13 @@ ol {
     height: 100%;
     background: var(--bg-color);
     border-radius: 2px; }
-  .webpage--content h4[data-align="right"], .webpage--content h4[data-text-align="right"], .webpage--content h4[data-box-align="right"],
+  .species--item h4[data-align="right"], .species--item h4[data-text-align="right"], .species--item h4[data-box-align="right"],
+  .species--item .h4[data-align="right"],
+  .species--item .h4[data-text-align="right"],
+  .species--item .h4[data-box-align="right"],
+  .webpage--content h4[data-align="right"],
+  .webpage--content h4[data-text-align="right"],
+  .webpage--content h4[data-box-align="right"],
   .webpage--content .h4[data-align="right"],
   .webpage--content .h4[data-text-align="right"],
   .webpage--content .h4[data-box-align="right"],
@@ -1459,7 +1791,13 @@ ol {
   .forum--message .h4[data-text-align="right"],
   .forum--message .h4[data-box-align="right"] {
     padding: var(--spacing-sm) var(--spacing-lg) var(--spacing-sm) 0; }
-    .webpage--content h4[data-align="right"]::before, .webpage--content h4[data-text-align="right"]::before, .webpage--content h4[data-box-align="right"]::before,
+    .species--item h4[data-align="right"]::before, .species--item h4[data-text-align="right"]::before, .species--item h4[data-box-align="right"]::before,
+    .species--item .h4[data-align="right"]::before,
+    .species--item .h4[data-text-align="right"]::before,
+    .species--item .h4[data-box-align="right"]::before,
+    .webpage--content h4[data-align="right"]::before,
+    .webpage--content h4[data-text-align="right"]::before,
+    .webpage--content h4[data-box-align="right"]::before,
     .webpage--content .h4[data-align="right"]::before,
     .webpage--content .h4[data-text-align="right"]::before,
     .webpage--content .h4[data-box-align="right"]::before,
@@ -1488,7 +1826,13 @@ ol {
     .forum--message .h4[data-text-align="right"]::before,
     .forum--message .h4[data-box-align="right"]::before {
       display: none; }
-    .webpage--content h4[data-align="right"]::after, .webpage--content h4[data-text-align="right"]::after, .webpage--content h4[data-box-align="right"]::after,
+    .species--item h4[data-align="right"]::after, .species--item h4[data-text-align="right"]::after, .species--item h4[data-box-align="right"]::after,
+    .species--item .h4[data-align="right"]::after,
+    .species--item .h4[data-text-align="right"]::after,
+    .species--item .h4[data-box-align="right"]::after,
+    .webpage--content h4[data-align="right"]::after,
+    .webpage--content h4[data-text-align="right"]::after,
+    .webpage--content h4[data-box-align="right"]::after,
     .webpage--content .h4[data-align="right"]::after,
     .webpage--content .h4[data-text-align="right"]::after,
     .webpage--content .h4[data-box-align="right"]::after,
@@ -1525,6 +1869,8 @@ ol {
       background: var(--bg-color);
       border-radius: 2px; }
 
+.species--item h5,
+.species--item .h5,
 .webpage--content h5,
 .webpage--content .h5,
 .profile--content h5,
@@ -1541,6 +1887,8 @@ ol {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   padding: var(--spacing-xs) 0 var(--spacing-xs) var(--spacing-md); }
+  .species--item h5::before,
+  .species--item .h5::before,
   .webpage--content h5::before,
   .webpage--content .h5::before,
   .profile--content h5::before,
@@ -1559,7 +1907,13 @@ ol {
     height: 100%;
     background: var(--bg-color);
     border-radius: 2px; }
-  .webpage--content h5[data-align="right"], .webpage--content h5[data-text-align="right"], .webpage--content h5[data-box-align="right"],
+  .species--item h5[data-align="right"], .species--item h5[data-text-align="right"], .species--item h5[data-box-align="right"],
+  .species--item .h5[data-align="right"],
+  .species--item .h5[data-text-align="right"],
+  .species--item .h5[data-box-align="right"],
+  .webpage--content h5[data-align="right"],
+  .webpage--content h5[data-text-align="right"],
+  .webpage--content h5[data-box-align="right"],
   .webpage--content .h5[data-align="right"],
   .webpage--content .h5[data-text-align="right"],
   .webpage--content .h5[data-box-align="right"],
@@ -1588,7 +1942,13 @@ ol {
   .forum--message .h5[data-text-align="right"],
   .forum--message .h5[data-box-align="right"] {
     padding: var(--spacing-xs) var(--spacing-md) var(--spacing-xs) 0; }
-    .webpage--content h5[data-align="right"]::before, .webpage--content h5[data-text-align="right"]::before, .webpage--content h5[data-box-align="right"]::before,
+    .species--item h5[data-align="right"]::before, .species--item h5[data-text-align="right"]::before, .species--item h5[data-box-align="right"]::before,
+    .species--item .h5[data-align="right"]::before,
+    .species--item .h5[data-text-align="right"]::before,
+    .species--item .h5[data-box-align="right"]::before,
+    .webpage--content h5[data-align="right"]::before,
+    .webpage--content h5[data-text-align="right"]::before,
+    .webpage--content h5[data-box-align="right"]::before,
     .webpage--content .h5[data-align="right"]::before,
     .webpage--content .h5[data-text-align="right"]::before,
     .webpage--content .h5[data-box-align="right"]::before,
@@ -1617,7 +1977,13 @@ ol {
     .forum--message .h5[data-text-align="right"]::before,
     .forum--message .h5[data-box-align="right"]::before {
       display: none; }
-    .webpage--content h5[data-align="right"]::after, .webpage--content h5[data-text-align="right"]::after, .webpage--content h5[data-box-align="right"]::after,
+    .species--item h5[data-align="right"]::after, .species--item h5[data-text-align="right"]::after, .species--item h5[data-box-align="right"]::after,
+    .species--item .h5[data-align="right"]::after,
+    .species--item .h5[data-text-align="right"]::after,
+    .species--item .h5[data-box-align="right"]::after,
+    .webpage--content h5[data-align="right"]::after,
+    .webpage--content h5[data-text-align="right"]::after,
+    .webpage--content h5[data-box-align="right"]::after,
     .webpage--content .h5[data-align="right"]::after,
     .webpage--content .h5[data-text-align="right"]::after,
     .webpage--content .h5[data-box-align="right"]::after,
@@ -1654,6 +2020,8 @@ ol {
       background: var(--bg-color);
       border-radius: 2px; }
 
+.species--item h6,
+.species--item .h6,
 .webpage--content h6,
 .webpage--content .h6,
 .profile--content h6,
@@ -1671,6 +2039,8 @@ ol {
   text-transform: uppercase;
   padding: var(--spacing-sm) var(--spacing-md);
   background: var(--bg-color-transparent); }
+  .species--item h6::before,
+  .species--item .h6::before,
   .webpage--content h6::before,
   .webpage--content .h6::before,
   .profile--content h6::before,
@@ -1689,7 +2059,13 @@ ol {
     height: 100%;
     background: var(--bg-color);
     border-radius: 1px; }
-  .webpage--content h6[data-align="right"]::before, .webpage--content h6[data-text-align="right"]::before, .webpage--content h6[data-box-align="right"]::before,
+  .species--item h6[data-align="right"]::before, .species--item h6[data-text-align="right"]::before, .species--item h6[data-box-align="right"]::before,
+  .species--item .h6[data-align="right"]::before,
+  .species--item .h6[data-text-align="right"]::before,
+  .species--item .h6[data-box-align="right"]::before,
+  .webpage--content h6[data-align="right"]::before,
+  .webpage--content h6[data-text-align="right"]::before,
+  .webpage--content h6[data-box-align="right"]::before,
   .webpage--content .h6[data-align="right"]::before,
   .webpage--content .h6[data-text-align="right"]::before,
   .webpage--content .h6[data-box-align="right"]::before,
@@ -1718,7 +2094,13 @@ ol {
   .forum--message .h6[data-text-align="right"]::before,
   .forum--message .h6[data-box-align="right"]::before {
     display: none; }
-  .webpage--content h6[data-align="right"]::after, .webpage--content h6[data-text-align="right"]::after, .webpage--content h6[data-box-align="right"]::after,
+  .species--item h6[data-align="right"]::after, .species--item h6[data-text-align="right"]::after, .species--item h6[data-box-align="right"]::after,
+  .species--item .h6[data-align="right"]::after,
+  .species--item .h6[data-text-align="right"]::after,
+  .species--item .h6[data-box-align="right"]::after,
+  .webpage--content h6[data-align="right"]::after,
+  .webpage--content h6[data-text-align="right"]::after,
+  .webpage--content h6[data-box-align="right"]::after,
   .webpage--content .h6[data-align="right"]::after,
   .webpage--content .h6[data-text-align="right"]::after,
   .webpage--content .h6[data-box-align="right"]::after,
@@ -1755,6 +2137,8 @@ ol {
     background: var(--bg-color);
     border-radius: 1px; }
 
+.species--item h7,
+.species--item .h7,
 .webpage--content h7,
 .webpage--content .h7,
 .profile--content h7,
@@ -1774,6 +2158,8 @@ ol {
   text-transform: uppercase;
   padding: var(--spacing-xs) var(--spacing-sm);
   background: var(--bg-color-transparent); }
+  .species--item h7::before,
+  .species--item .h7::before,
   .webpage--content h7::before,
   .webpage--content .h7::before,
   .profile--content h7::before,
@@ -1792,7 +2178,13 @@ ol {
     height: 100%;
     background: var(--bg-color);
     border-radius: 1px; }
-  .webpage--content h7[data-align="right"]::before, .webpage--content h7[data-text-align="right"]::before, .webpage--content h7[data-box-align="right"]::before,
+  .species--item h7[data-align="right"]::before, .species--item h7[data-text-align="right"]::before, .species--item h7[data-box-align="right"]::before,
+  .species--item .h7[data-align="right"]::before,
+  .species--item .h7[data-text-align="right"]::before,
+  .species--item .h7[data-box-align="right"]::before,
+  .webpage--content h7[data-align="right"]::before,
+  .webpage--content h7[data-text-align="right"]::before,
+  .webpage--content h7[data-box-align="right"]::before,
   .webpage--content .h7[data-align="right"]::before,
   .webpage--content .h7[data-text-align="right"]::before,
   .webpage--content .h7[data-box-align="right"]::before,
@@ -1821,7 +2213,13 @@ ol {
   .forum--message .h7[data-text-align="right"]::before,
   .forum--message .h7[data-box-align="right"]::before {
     display: none; }
-  .webpage--content h7[data-align="right"]::after, .webpage--content h7[data-text-align="right"]::after, .webpage--content h7[data-box-align="right"]::after,
+  .species--item h7[data-align="right"]::after, .species--item h7[data-text-align="right"]::after, .species--item h7[data-box-align="right"]::after,
+  .species--item .h7[data-align="right"]::after,
+  .species--item .h7[data-text-align="right"]::after,
+  .species--item .h7[data-box-align="right"]::after,
+  .webpage--content h7[data-align="right"]::after,
+  .webpage--content h7[data-text-align="right"]::after,
+  .webpage--content h7[data-box-align="right"]::after,
   .webpage--content .h7[data-align="right"]::after,
   .webpage--content .h7[data-text-align="right"]::after,
   .webpage--content .h7[data-box-align="right"]::after,
@@ -1858,6 +2256,8 @@ ol {
     background: var(--bg-color);
     border-radius: 1px; }
 
+.species--item h8,
+.species--item .h8,
 .webpage--content h8,
 .webpage--content .h8,
 .profile--content h8,
@@ -1878,6 +2278,9 @@ ol {
   max-width: 300px;
   line-height: 275%; }
 
+.species--item .h2::before,
+.species--item .h3::before,
+.species--item .h8::before,
 .webpage--content .h2::before,
 .webpage--content .h3::before,
 .webpage--content .h8::before,
@@ -1895,6 +2298,11 @@ ol {
 .forum--message .h8::before {
   display: none; }
 
+.species--item .h4::after,
+.species--item .h5::after,
+.species--item .h6::after,
+.species--item .h7::after,
+.species--item .h8::after,
 .webpage--content .h4::after,
 .webpage--content .h5::after,
 .webpage--content .h6::after,
@@ -1922,6 +2330,7 @@ ol {
 .forum--message .h8::after {
   display: none; }
 
+.species--item blockquote,
 .webpage--content blockquote,
 .profile--content blockquote,
 .post--content blockquote,

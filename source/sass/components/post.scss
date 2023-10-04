@@ -323,7 +323,9 @@
     }
 
     &--right {
-        .onlyTablet {
+        z-index: 1;
+
+        & > .sticky > .onlyTablet {
             display: flex;
             width: 32px;
             height: 32px;
@@ -366,8 +368,8 @@
             }
         }
 
-        .is-active {
-            .onlyTablet {
+        & > .sticky.is-active {
+            & > .onlyTablet {
                 color: var(--text-on-color);
 
                 &::before {
@@ -450,10 +452,14 @@
 
             & > .scroll {
                 display: flex;
-                flex-direction: column;
+                flex-wrap: wrap;
                 gap: 20px;
                 justify-content: center;
                 height: calc(450px - (var(--spacing-md) * 2));
+
+                & > * {
+                    flex: 1 0 100%;
+                }
             }
         }
 

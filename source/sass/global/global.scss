@@ -169,6 +169,7 @@ ol {
         }
     }
 }
+.species--item,
 .webpage--content,
 .profile--content,
 .post--content,
@@ -240,6 +241,10 @@ ol {
             margin-top: var(--spacing-xl);
         }
 
+        & + br {
+            display: none;
+        }
+
         a {
             font-size: 1em !important;
             border-bottom: none !important;
@@ -284,7 +289,7 @@ ol {
     }
     h2,
     .h2 {
-        font-size: 40px;
+        font-size: #{"min(40px, 4vw)"};
         font-family: var(--font-serif);
         margin: 0 auto var(--spacing-lg);
         padding-bottom: 10px;
@@ -303,7 +308,7 @@ ol {
     }
     h3,
     .h3 {
-        font-size: 26px;
+        font-size: #{"min(26px, 2.6vw)"};
         font-family: var(--font-serif);
         margin: 0 auto var(--spacing-lg) 0;
         padding: 0 0 10px var(--spacing-md);
@@ -321,7 +326,7 @@ ol {
     }
     h4,
     .h4 {
-        font-size: 22px;
+        font-size: #{"min(22px, 2.2vw)"};
         font-family: var(--font-body-bold);
         font-weight: 600;
         text-transform: uppercase;

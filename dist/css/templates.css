@@ -473,6 +473,14 @@ tag-wrap[data-ratio="1:3"] tag-image {
 /*******************************
     Templates
 ********************************/
+tag-sidescroll {
+  overflow-y: hidden !important;
+  overflow-x: auto !important;
+  width: 0;
+  display: block;
+  padding-bottom: 20px;
+  min-width: 100%; }
+
 tag-wrap {
   display: block;
   width: 100%;
@@ -482,16 +490,64 @@ tag-wrap {
   tag-wrap[data-html] tag-scroll {
     white-space: pre-line;
     text-align: justify; }
-  tag-wrap:not([data-type="header"]):not([data-type="timeline"]):not([data-type="imagegrid"]):not([data-type="playlist"]):not([data-type="tabs"]):not([data-type="Header"]):not([data-type="Timeline"]):not([data-type="imageGrid"]):not([data-type="ImageGrid"]):not([data-type="Playlist"]):not([data-type="Tabs"]):not([data-type="HEADER"]):not([data-type="TIMELINE"]):not([data-type="IMAGEGRID"]):not([data-type="PLAYLIST"]):not([data-type="TABS"]) {
+  tag-wrap:not([data-type="header"]):not([data-type="timeline"]):not([data-type="imagegrid"]):not([data-type="playlist"]):not([data-type="tabs"]):not([data-type="bingo"]):not([data-type="Header"]):not([data-type="Timeline"]):not([data-type="imageGrid"]):not([data-type="ImageGrid"]):not([data-type="Playlist"]):not([data-type="Tabs"]):not([data-type="Bingo"]):not([data-type="HEADER"]):not([data-type="TIMELINE"]):not([data-type="IMAGEGRID"]):not([data-type="PLAYLIST"]):not([data-type="TABS"]):not([data-type="BINGO"]) {
     background: var(--bg-alt);
     border: 1px solid var(--border-secondary);
     padding: var(--spacing-sm); }
     @media only screen and (min-width: 480px) {
-      tag-wrap:not([data-type="header"]):not([data-type="timeline"]):not([data-type="imagegrid"]):not([data-type="playlist"]):not([data-type="tabs"]):not([data-type="Header"]):not([data-type="Timeline"]):not([data-type="imageGrid"]):not([data-type="ImageGrid"]):not([data-type="Playlist"]):not([data-type="Tabs"]):not([data-type="HEADER"]):not([data-type="TIMELINE"]):not([data-type="IMAGEGRID"]):not([data-type="PLAYLIST"]):not([data-type="TABS"]) {
+      tag-wrap:not([data-type="header"]):not([data-type="timeline"]):not([data-type="imagegrid"]):not([data-type="playlist"]):not([data-type="tabs"]):not([data-type="bingo"]):not([data-type="Header"]):not([data-type="Timeline"]):not([data-type="imageGrid"]):not([data-type="ImageGrid"]):not([data-type="Playlist"]):not([data-type="Tabs"]):not([data-type="Bingo"]):not([data-type="HEADER"]):not([data-type="TIMELINE"]):not([data-type="IMAGEGRID"]):not([data-type="PLAYLIST"]):not([data-type="TABS"]):not([data-type="BINGO"]) {
         padding: var(--spacing-md); } }
     @media only screen and (min-width: 600px) {
-      tag-wrap:not([data-type="header"]):not([data-type="timeline"]):not([data-type="imagegrid"]):not([data-type="playlist"]):not([data-type="tabs"]):not([data-type="Header"]):not([data-type="Timeline"]):not([data-type="imageGrid"]):not([data-type="ImageGrid"]):not([data-type="Playlist"]):not([data-type="Tabs"]):not([data-type="HEADER"]):not([data-type="TIMELINE"]):not([data-type="IMAGEGRID"]):not([data-type="PLAYLIST"]):not([data-type="TABS"]) {
+      tag-wrap:not([data-type="header"]):not([data-type="timeline"]):not([data-type="imagegrid"]):not([data-type="playlist"]):not([data-type="tabs"]):not([data-type="bingo"]):not([data-type="Header"]):not([data-type="Timeline"]):not([data-type="imageGrid"]):not([data-type="ImageGrid"]):not([data-type="Playlist"]):not([data-type="Tabs"]):not([data-type="Bingo"]):not([data-type="HEADER"]):not([data-type="TIMELINE"]):not([data-type="IMAGEGRID"]):not([data-type="PLAYLIST"]):not([data-type="TABS"]):not([data-type="BINGO"]) {
         padding: var(--spacing-lg); } }
+  tag-wrap[data-type="bingo"], tag-wrap[data-type="Bingo"], tag-wrap[data-type="BINGO"] {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[5];
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--spacing-sm);
+    width: 700px; }
+    tag-wrap[data-type="bingo"] span, tag-wrap[data-type="Bingo"] span, tag-wrap[data-type="BINGO"] span {
+      -webkit-align-self: end;
+          -ms-flex-item-align: end;
+                  -ms-grid-row-align: end;
+              align-self: end;
+      text-align: center !important;
+      margin-top: 0 !important;
+      padding: var(--spacing-sm) !important;
+      font-size: var(--xsBody) !important;
+      letter-spacing: 0.1em !important;
+      line-height: 200% !important;
+      border-bottom: 2px solid var(--border-color) !important; }
+    tag-wrap[data-type="bingo"] a, tag-wrap[data-type="Bingo"] a, tag-wrap[data-type="BINGO"] a {
+      border: 1px solid var(--border-color) !important;
+      background: var(--bg-color-transparent);
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      text-align: center;
+      padding: var(--spacing-sm) !important;
+      font-size: var(--xsBody) !important;
+      letter-spacing: 0.1em !important;
+      line-height: 200% !important; }
+      tag-wrap[data-type="bingo"] a[href="urlhere"], tag-wrap[data-type="bingo"] a[href=""], tag-wrap[data-type="Bingo"] a[href="urlhere"], tag-wrap[data-type="Bingo"] a[href=""], tag-wrap[data-type="BINGO"] a[href="urlhere"], tag-wrap[data-type="BINGO"] a[href=""] {
+        background: var(--bg-alt);
+        opacity: 0.5;
+        border: 1px solid var(--border-secondary) !important;
+        -webkit-transition: 0.3s;
+        -o-transition: 0.3s;
+        transition: 0.3s; }
+        tag-wrap[data-type="bingo"] a[href="urlhere"]:hover, tag-wrap[data-type="bingo"] a[href=""]:hover, tag-wrap[data-type="Bingo"] a[href="urlhere"]:hover, tag-wrap[data-type="Bingo"] a[href=""]:hover, tag-wrap[data-type="BINGO"] a[href="urlhere"]:hover, tag-wrap[data-type="BINGO"] a[href=""]:hover {
+          opacity: 1; }
   tag-wrap[data-type="timeline"], tag-wrap[data-type="playlist"], tag-wrap[data-type="Timeline"], tag-wrap[data-type="Playlist"], tag-wrap[data-type="TIMELINE"], tag-wrap[data-type="PLAYLIST"] {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1405,14 +1461,23 @@ tag-comm {
       text-shadow: 1px 1px 2px var(--bg-content);
       text-align: left; }
     tag-comm[data-type="image"] tag-scroll, tag-comm[data-type="Image"] tag-scroll, tag-comm[data-type="IMAGE"] tag-scroll {
-      display: -ms-grid;
-      display: grid;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
       gap: var(--spacing-sm);
-      max-height: 300px;
-      -ms-grid-rows: -webkit-max-content;
-      -ms-grid-rows: max-content;
-      grid-template-rows: -webkit-max-content;
-      grid-template-rows: max-content; }
+      max-height: 300px; }
+      tag-comm[data-type="image"] tag-scroll tag-msg,
+      tag-comm[data-type="image"] tag-scroll tag-action, tag-comm[data-type="Image"] tag-scroll tag-msg,
+      tag-comm[data-type="Image"] tag-scroll tag-action, tag-comm[data-type="IMAGE"] tag-scroll tag-msg,
+      tag-comm[data-type="IMAGE"] tag-scroll tag-action {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1 0 100%;
+            -ms-flex: 1 0 100%;
+                flex: 1 0 100%; }
     tag-comm[data-type="image"] tag-msg, tag-comm[data-type="Image"] tag-msg, tag-comm[data-type="IMAGE"] tag-msg {
       background: var(--bg-content);
       border: 0;

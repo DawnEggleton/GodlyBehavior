@@ -1928,7 +1928,7 @@
                         }
                     }
                     &:first-child,
-                    &:nth-last-child(2) {
+                    &:nth-last-child(2):not(:nth-child(2)) {
                         display: none;
                     }
                     &:last-child {

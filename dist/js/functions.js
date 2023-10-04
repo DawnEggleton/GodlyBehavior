@@ -45,6 +45,7 @@ function initStickyMenu() {
     const webMenu = document.querySelector('.webpage--menu');
     const profileMenu = document.querySelector('.profile--menu');
     const membersMenu = document.querySelector('.ml--header');
+    const speciesMenu = document.querySelector('.species--header');
     const initScroll = document.documentElement.scrollTop;
     if (initScroll > 0) {
         sticky.classList.add("is-sticky");
@@ -57,6 +58,9 @@ function initStickyMenu() {
         }
         if(membersMenu) {
             membersMenu.classList.add('is-sticky');
+        }
+        if(speciesMenu) {
+            speciesMenu.classList.add('is-sticky');
         }
     }
 
@@ -86,6 +90,9 @@ function initStickyMenu() {
             if(membersMenu) {
                 membersMenu.classList.add('is-sticky');
             }
+            if(speciesMenu) {
+                speciesMenu.classList.add('is-sticky');
+            }
         } else {
             sticky.classList.remove("is-sticky")
             breadcrumb.classList.remove("is-sticky");
@@ -97,6 +104,9 @@ function initStickyMenu() {
             }
             if(membersMenu) {
                 membersMenu.classList.remove('is-sticky');
+            }
+            if(speciesMenu) {
+                speciesMenu.classList.remove('is-sticky');
             }
         }
     });

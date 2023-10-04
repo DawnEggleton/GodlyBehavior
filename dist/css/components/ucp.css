@@ -1467,7 +1467,7 @@
           flex: 0 0 100%; }
           #store.store-do_staff_inventory #ucpcontent > table > tbody > tr > td:nth-child(5) .input-wrap::after {
             content: 'Delete'; }
-      #store.store-do_staff_inventory #ucpcontent > table > tbody > tr:first-child, #store.store-do_staff_inventory #ucpcontent > table > tbody > tr:nth-last-child(2) {
+      #store.store-do_staff_inventory #ucpcontent > table > tbody > tr:first-child, #store.store-do_staff_inventory #ucpcontent > table > tbody > tr:nth-last-child(2):not(:nth-child(2)) {
         display: none; }
       #store.store-do_staff_inventory #ucpcontent > table > tbody > tr:last-child {
         flex: 0 0 100%;
