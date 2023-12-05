@@ -117,10 +117,12 @@
     .topic--started > span:last-child, .topic--latest > span:last-child {
       font-size: var(--xsBody);
       font-style: italic; }
-  body.g-4 .topic .staffOnly.input-wrap {
+  body.g-4 .topic .staffOnly.input-wrap,
+  body.g-26 .topic .staffOnly.input-wrap {
     display: flex !important;
     align-items: center; }
-    body.g-4 .topic .staffOnly.input-wrap .fancy-input {
+    body.g-4 .topic .staffOnly.input-wrap .fancy-input,
+    body.g-26 .topic .staffOnly.input-wrap .fancy-input {
       height: 18px;
       width: 18px;
       background: var(--bg-color-transparent);
@@ -132,7 +134,8 @@
       margin-right: var(--spacing-sm);
       cursor: pointer;
       transition-duration: var(--style-duration); }
-      body.g-4 .topic .staffOnly.input-wrap .fancy-input::before {
+      body.g-4 .topic .staffOnly.input-wrap .fancy-input::before,
+      body.g-26 .topic .staffOnly.input-wrap .fancy-input::before {
         content: '';
         position: absolute;
         top: 0;
@@ -142,13 +145,18 @@
         background: var(--bg-color);
         border-radius: 3px;
         transition-duration: var(--style-duration); }
-      body.g-4 .topic .staffOnly.input-wrap .fancy-input:hover {
+      body.g-4 .topic .staffOnly.input-wrap .fancy-input:hover,
+      body.g-26 .topic .staffOnly.input-wrap .fancy-input:hover {
         color: var(--text-on-color); }
-        body.g-4 .topic .staffOnly.input-wrap .fancy-input:hover::before {
+        body.g-4 .topic .staffOnly.input-wrap .fancy-input:hover::before,
+        body.g-26 .topic .staffOnly.input-wrap .fancy-input:hover::before {
           width: 100%; }
-    body.g-4 .topic .staffOnly.input-wrap input {
+    body.g-4 .topic .staffOnly.input-wrap input,
+    body.g-26 .topic .staffOnly.input-wrap input {
       display: none; }
-      body.g-4 .topic .staffOnly.input-wrap input:checked + .fancy-input {
+      body.g-4 .topic .staffOnly.input-wrap input:checked + .fancy-input,
+      body.g-26 .topic .staffOnly.input-wrap input:checked + .fancy-input {
         color: var(--text-on-color); }
-        body.g-4 .topic .staffOnly.input-wrap input:checked + .fancy-input::before {
+        body.g-4 .topic .staffOnly.input-wrap input:checked + .fancy-input::before,
+        body.g-26 .topic .staffOnly.input-wrap input:checked + .fancy-input::before {
           width: 100%; }

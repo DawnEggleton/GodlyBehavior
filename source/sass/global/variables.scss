@@ -84,6 +84,30 @@ body {
         --border-color: var(--accent);
     }
 
+    //Retired
+    &.g-27,
+    .g-27,
+    [data-group="retired"],
+    [data-group="Retired"],
+    [data-group="RETIRED"] {
+        --accent: rgb(185, 185, 185);
+        --accent-20: rgba(185, 185, 185, 0.2);
+        --bg-color: var(--accent);
+        --bg-color-transparent: var(--accent-20);
+        --text-color: var(--accent);
+        --border-color: var(--accent);
+
+        &.profile,
+        &.mem {
+            opacity: 0.45;
+            transition-duration: var(--style-duration);
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
     //Staff
     &.g-4,
     .g-4,
@@ -92,6 +116,20 @@ body {
     [data-group="STAFF"] {
         --accent: rgb(140, 168, 161);
         --accent-20: rgba(140, 168, 161, 0.2);
+        --bg-color: var(--accent);
+        --bg-color-transparent: var(--accent-20);
+        --text-color: var(--accent);
+        --border-color: var(--accent);
+    }
+
+    //Ambassadors
+    &.g-26,
+    .g-26,
+    [data-group="ambassador"],
+    [data-group="Ambassador"],
+    [data-group="AMBASSADOR"] {
+        --accent: rgb(191, 115, 77);
+        --accent-20: rgba(191, 115, 77, 0.2);
         --bg-color: var(--accent);
         --bg-color-transparent: var(--accent-20);
         --text-color: var(--accent);
@@ -307,6 +345,62 @@ body {
         --text-color: var(--accent);
         --border-color: var(--accent);
     }
+
+    //Cedar
+    &.g-22,
+    .g-22,
+    [data-group="cedar"],
+    [data-group="Cedar"],
+    [data-group="CEDAR"] {
+        --accent: rgb(174, 143, 110);
+        --accent-20: rgba(174, 143, 110, 0.2);
+        --bg-color: var(--accent);
+        --bg-color-transparent: var(--accent-20);
+        --text-color: var(--accent);
+        --border-color: var(--accent);
+    }
+
+    //Laurel
+    &.g-23,
+    .g-23,
+    [data-group="laurel"],
+    [data-group="Laurel"],
+    [data-group="LAUREL"] {
+        --accent: rgb(119, 97, 109);
+        --accent-20: rgba(119, 97, 109, 0.2);
+        --bg-color: var(--accent);
+        --bg-color-transparent: var(--accent-20);
+        --text-color: var(--accent);
+        --border-color: var(--accent);
+    }
+
+    //Sage
+    &.g-24,
+    .g-24,
+    [data-group="sage"],
+    [data-group="Sage"],
+    [data-group="SAGE"] {
+        --accent: rgb(149, 155, 127);
+        --accent-20: rgba(149, 155, 127, 0.2);
+        --bg-color: var(--accent);
+        --bg-color-transparent: var(--accent-20);
+        --text-color: var(--accent);
+        --border-color: var(--accent);
+    }
+
+    //Goldenrod
+    &.g-25,
+    .g-25,
+    [data-group="goldenrod"],
+    [data-group="Goldenrod"],
+    [data-group="GOLDENROD"] {
+        --accent: rgb(168, 124, 38);
+        --accent-20: rgba(168, 124, 38, 0.2);
+        --bg-color: var(--accent);
+        --bg-color-transparent: var(--accent-20);
+        --text-color: var(--accent);
+        --border-color: var(--accent);
+    }
 }
 
 .light {
@@ -357,6 +451,9 @@ body {
         --accent: rgb(121, 147, 140);
         --accent-20: rgba(140, 168, 161, 0.2);
         --bg-color: var(--accent);
+        --bg-color-transparent: var(--accent-20);
+        --text-color: var(--accent);
+        --border-color: var(--accent);
     }
 
     //Sorted
@@ -365,9 +462,12 @@ body {
     [data-group="writer"],
     [data-group="Writer"],
     [data-group="WRITER"] {
-        --accent: rgb(130, 147, 109);
-        --accent-20: rgba(130, 147, 109, 0.2);
+        --accent: rgb(134, 155, 108);
+        --accent-20: rgba(134, 155, 108, 0.2);
         --bg-color: var(--accent);
+        --bg-color-transparent: var(--accent-20);
+        --text-color: var(--accent);
+        --border-color: var(--accent);
     }
     
     //Birch
@@ -379,6 +479,23 @@ body {
         --accent: rgb(159, 143, 131);
         --accent-20: rgba(159, 143, 131, 0.2);
         --bg-color: var(--accent);
+        --bg-color-transparent: var(--accent-20);
+        --text-color: var(--accent);
+        --border-color: var(--accent);
+    }
+    
+    //Dandelion
+    &.g-10,
+    .g-10,
+    [data-group="dandelion"],
+    [data-group="Dandelion"],
+    [data-group="DANDELION"] {
+        --accent: rgb(185, 155, 98);
+        --accent-20: rgba(185, 155, 98, 0.2);
+        --bg-color: var(--accent);
+        --bg-color-transparent: var(--accent-20);
+        --text-color: var(--accent);
+        --border-color: var(--accent);
     }
     
     //Hemlock
@@ -390,6 +507,9 @@ body {
         --accent: rgb(105, 153, 162);
         --accent-20: rgba(105, 153, 162, 0.2);
         --bg-color: var(--accent);
+        --bg-color-transparent: var(--accent-20);
+        --text-color: var(--accent);
+        --border-color: var(--accent);
     }
     
     //Nettle
@@ -401,6 +521,9 @@ body {
         --accent: rgb(120, 145, 116);
         --accent-20: rgba(120, 145, 116, 0.2);
         --bg-color: var(--accent);
+        --bg-color-transparent: var(--accent-20);
+        --text-color: var(--accent);
+        --border-color: var(--accent);
     }
 
     //Sundew
@@ -409,8 +532,8 @@ body {
     [data-group="sundew"],
     [data-group="Sundew"],
     [data-group="SUNDEW"] {
-        --accent: rgb(181, 139, 114);
-        --accent-20: rgba(181, 139, 114, 0.2);
+        --accent: rgb(189, 140, 112);
+        --accent-20: rgba(189, 140, 112, 0.2);
         --bg-color: var(--accent);
         --bg-color-transparent: var(--accent-20);
         --text-color: var(--accent);

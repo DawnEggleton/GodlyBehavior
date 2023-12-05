@@ -1,3 +1,4 @@
+.jobs--menu .jobs--border > tag-tabset tag-labelset a::before,
 li::marker {
   content: '\f178'; }
 

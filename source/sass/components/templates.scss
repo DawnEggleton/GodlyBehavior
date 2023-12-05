@@ -4,6 +4,20 @@
     Templates
 ********************************/
 tag {
+    &-spoiler {
+        border-radius: 2px;
+        padding: 0 5px;
+        
+        &.is-visible {
+            border: 1px solid var(--border-main);
+        }
+        &:not(.is-visible) {
+            color: transparent;
+            background: var(--text-content);
+            border: 1px solid var(--text-content);
+            cursor: pointer;
+        }
+    }
     &-sidescroll {
         overflow-y: hidden !important;
         overflow-x: auto !important;
@@ -1114,9 +1128,6 @@ tag {
         height: max-content;
     }
     &-action {
-        display: grid;
-        grid-template-columns: 15px auto;
-        gap: var(--spacing-sm);
         font-size: calc(var(--xsBody) + 1px);
         text-transform: uppercase;
         letter-spacing: 0.15em;
@@ -1132,6 +1143,8 @@ tag {
             height: 2px;
             border-radius: 1px;
             background: var(--border-color);
+            float: left;
+            margin-right: var(--spacing-sm);
         }
     }
 

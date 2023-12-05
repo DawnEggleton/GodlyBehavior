@@ -166,7 +166,8 @@
             margin-bottom: var(--spacing-md); }
           .stats--right table tbody tr td {
             width: 100%;
-            padding: 0; }
+            padding: 0;
+            word-break: break-word; }
             .stats--right table tbody tr td.recent-topics-info {
               font-size: 0; }
               .stats--right table tbody tr td.recent-topics-info a:first-of-type {

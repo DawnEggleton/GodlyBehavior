@@ -81,6 +81,40 @@ body {
     --bg-color-transparent: var(--accent-20);
     --text-color: var(--accent);
     --border-color: var(--accent); }
+  body.g-27,
+  body .g-27,
+  body [data-group="retired"],
+  body [data-group="Retired"],
+  body [data-group="RETIRED"] {
+    --accent: rgb(185, 185, 185);
+    --accent-20: rgba(185, 185, 185, 0.2);
+    --bg-color: var(--accent);
+    --bg-color-transparent: var(--accent-20);
+    --text-color: var(--accent);
+    --border-color: var(--accent); }
+    body.g-27.profile, body.g-27.mem,
+    body .g-27.profile,
+    body .g-27.mem,
+    body [data-group="retired"].profile,
+    body [data-group="retired"].mem,
+    body [data-group="Retired"].profile,
+    body [data-group="Retired"].mem,
+    body [data-group="RETIRED"].profile,
+    body [data-group="RETIRED"].mem {
+      opacity: 0.45;
+      -webkit-transition-duration: var(--style-duration);
+           -o-transition-duration: var(--style-duration);
+              transition-duration: var(--style-duration); }
+      body.g-27.profile:hover, body.g-27.mem:hover,
+      body .g-27.profile:hover,
+      body .g-27.mem:hover,
+      body [data-group="retired"].profile:hover,
+      body [data-group="retired"].mem:hover,
+      body [data-group="Retired"].profile:hover,
+      body [data-group="Retired"].mem:hover,
+      body [data-group="RETIRED"].profile:hover,
+      body [data-group="RETIRED"].mem:hover {
+        opacity: 1; }
   body.g-4,
   body .g-4,
   body [data-group="staff"],
@@ -88,6 +122,17 @@ body {
   body [data-group="STAFF"] {
     --accent: rgb(140, 168, 161);
     --accent-20: rgba(140, 168, 161, 0.2);
+    --bg-color: var(--accent);
+    --bg-color-transparent: var(--accent-20);
+    --text-color: var(--accent);
+    --border-color: var(--accent); }
+  body.g-26,
+  body .g-26,
+  body [data-group="ambassador"],
+  body [data-group="Ambassador"],
+  body [data-group="AMBASSADOR"] {
+    --accent: rgb(191, 115, 77);
+    --accent-20: rgba(191, 115, 77, 0.2);
     --bg-color: var(--accent);
     --bg-color-transparent: var(--accent-20);
     --text-color: var(--accent);
@@ -257,6 +302,50 @@ body {
     --bg-color-transparent: var(--accent-20);
     --text-color: var(--accent);
     --border-color: var(--accent); }
+  body.g-22,
+  body .g-22,
+  body [data-group="cedar"],
+  body [data-group="Cedar"],
+  body [data-group="CEDAR"] {
+    --accent: rgb(174, 143, 110);
+    --accent-20: rgba(174, 143, 110, 0.2);
+    --bg-color: var(--accent);
+    --bg-color-transparent: var(--accent-20);
+    --text-color: var(--accent);
+    --border-color: var(--accent); }
+  body.g-23,
+  body .g-23,
+  body [data-group="laurel"],
+  body [data-group="Laurel"],
+  body [data-group="LAUREL"] {
+    --accent: rgb(119, 97, 109);
+    --accent-20: rgba(119, 97, 109, 0.2);
+    --bg-color: var(--accent);
+    --bg-color-transparent: var(--accent-20);
+    --text-color: var(--accent);
+    --border-color: var(--accent); }
+  body.g-24,
+  body .g-24,
+  body [data-group="sage"],
+  body [data-group="Sage"],
+  body [data-group="SAGE"] {
+    --accent: rgb(149, 155, 127);
+    --accent-20: rgba(149, 155, 127, 0.2);
+    --bg-color: var(--accent);
+    --bg-color-transparent: var(--accent-20);
+    --text-color: var(--accent);
+    --border-color: var(--accent); }
+  body.g-25,
+  body .g-25,
+  body [data-group="goldenrod"],
+  body [data-group="Goldenrod"],
+  body [data-group="GOLDENROD"] {
+    --accent: rgb(168, 124, 38);
+    --accent-20: rgba(168, 124, 38, 0.2);
+    --bg-color: var(--accent);
+    --bg-color-transparent: var(--accent-20);
+    --text-color: var(--accent);
+    --border-color: var(--accent); }
 
 .light {
   --accent: rgb(126, 137, 138);
@@ -294,15 +383,21 @@ body {
   .light [data-group="STAFF"] {
     --accent: rgb(121, 147, 140);
     --accent-20: rgba(140, 168, 161, 0.2);
-    --bg-color: var(--accent); }
+    --bg-color: var(--accent);
+    --bg-color-transparent: var(--accent-20);
+    --text-color: var(--accent);
+    --border-color: var(--accent); }
   .light.g-6,
   .light .g-6,
   .light [data-group="writer"],
   .light [data-group="Writer"],
   .light [data-group="WRITER"] {
-    --accent: rgb(130, 147, 109);
-    --accent-20: rgba(130, 147, 109, 0.2);
-    --bg-color: var(--accent); }
+    --accent: rgb(134, 155, 108);
+    --accent-20: rgba(134, 155, 108, 0.2);
+    --bg-color: var(--accent);
+    --bg-color-transparent: var(--accent-20);
+    --text-color: var(--accent);
+    --border-color: var(--accent); }
   .light.g-7,
   .light .g-7,
   .light [data-group="birch"],
@@ -310,7 +405,21 @@ body {
   .light [data-group="BIRCH"] {
     --accent: rgb(159, 143, 131);
     --accent-20: rgba(159, 143, 131, 0.2);
-    --bg-color: var(--accent); }
+    --bg-color: var(--accent);
+    --bg-color-transparent: var(--accent-20);
+    --text-color: var(--accent);
+    --border-color: var(--accent); }
+  .light.g-10,
+  .light .g-10,
+  .light [data-group="dandelion"],
+  .light [data-group="Dandelion"],
+  .light [data-group="DANDELION"] {
+    --accent: rgb(185, 155, 98);
+    --accent-20: rgba(185, 155, 98, 0.2);
+    --bg-color: var(--accent);
+    --bg-color-transparent: var(--accent-20);
+    --text-color: var(--accent);
+    --border-color: var(--accent); }
   .light.g-13,
   .light .g-13,
   .light [data-group="hemlock"],
@@ -318,7 +427,10 @@ body {
   .light [data-group="HEMLOCK"] {
     --accent: rgb(105, 153, 162);
     --accent-20: rgba(105, 153, 162, 0.2);
-    --bg-color: var(--accent); }
+    --bg-color: var(--accent);
+    --bg-color-transparent: var(--accent-20);
+    --text-color: var(--accent);
+    --border-color: var(--accent); }
   .light.g-14,
   .light .g-14,
   .light [data-group="nettle"],
@@ -326,14 +438,17 @@ body {
   .light [data-group="NETTLE"] {
     --accent: rgb(120, 145, 116);
     --accent-20: rgba(120, 145, 116, 0.2);
-    --bg-color: var(--accent); }
+    --bg-color: var(--accent);
+    --bg-color-transparent: var(--accent-20);
+    --text-color: var(--accent);
+    --border-color: var(--accent); }
   .light.g-16,
   .light .g-16,
   .light [data-group="sundew"],
   .light [data-group="Sundew"],
   .light [data-group="SUNDEW"] {
-    --accent: rgb(181, 139, 114);
-    --accent-20: rgba(181, 139, 114, 0.2);
+    --accent: rgb(189, 140, 112);
+    --accent-20: rgba(189, 140, 112, 0.2);
     --bg-color: var(--accent);
     --bg-color-transparent: var(--accent-20);
     --text-color: var(--accent);
@@ -527,7 +642,8 @@ ol {
 .profile--content b,
 .post--content b,
 #Post .postcolor b,
-.forum--message b {
+.forum--message b,
+.job b {
   color: var(--text-color);
   font-family: var(--font-body-bold);
   font-size: 1.1em;
@@ -540,7 +656,8 @@ ol {
 .profile--content i,
 .post--content i,
 #Post .postcolor i,
-.forum--message i {
+.forum--message i,
+.job i {
   font-weight: 300;
   letter-spacing: 0.05em;
   font-size: 1.1em;
@@ -552,7 +669,8 @@ ol {
 .profile--content u,
 .post--content u,
 #Post .postcolor u,
-.forum--message u {
+.forum--message u,
+.job u {
   text-decoration: none;
   border-bottom: 2px solid var(--border-color);
   background: var(--bg-color-transparent);
@@ -563,7 +681,8 @@ ol {
 .profile--content a,
 .post--content a,
 #Post .postcolor a,
-.forum--message a {
+.forum--message a,
+.job a {
   font-family: var(--font-body-bold);
   text-transform: uppercase;
   font-size: 0.9em;
@@ -576,7 +695,8 @@ ol {
 .profile--content s,
 .post--content s,
 #Post .postcolor s,
-.forum--message s {
+.forum--message s,
+.job s {
   font-style: italic;
   -webkit-text-decoration-style: dotted;
           text-decoration-style: dotted;
@@ -668,7 +788,21 @@ ol {
 .forum--message h7,
 .forum--message .h7,
 .forum--message h8,
-.forum--message .h8 {
+.forum--message .h8,
+.job h2,
+.job .h2,
+.job h3,
+.job .h3,
+.job h4,
+.job .h4,
+.job h5,
+.job .h5,
+.job h6,
+.job .h6,
+.job h7,
+.job .h7,
+.job h8,
+.job .h8 {
   line-height: 160%;
   max-width: -webkit-max-content;
   max-width: -moz-max-content;
@@ -756,7 +890,21 @@ ol {
   .forum--message h7:first-child,
   .forum--message .h7:first-child,
   .forum--message h8:first-child,
-  .forum--message .h8:first-child {
+  .forum--message .h8:first-child,
+  .job h2:first-child,
+  .job .h2:first-child,
+  .job h3:first-child,
+  .job .h3:first-child,
+  .job h4:first-child,
+  .job .h4:first-child,
+  .job h5:first-child,
+  .job .h5:first-child,
+  .job h6:first-child,
+  .job .h6:first-child,
+  .job h7:first-child,
+  .job .h7:first-child,
+  .job h8:first-child,
+  .job .h8:first-child {
     margin-top: 0; }
   .species--item h2:not(:first-child),
   .species--item .h2:not(:first-child),
@@ -841,7 +989,21 @@ ol {
   .forum--message h7:not(:first-child),
   .forum--message .h7:not(:first-child),
   .forum--message h8:not(:first-child),
-  .forum--message .h8:not(:first-child) {
+  .forum--message .h8:not(:first-child),
+  .job h2:not(:first-child),
+  .job .h2:not(:first-child),
+  .job h3:not(:first-child),
+  .job .h3:not(:first-child),
+  .job h4:not(:first-child),
+  .job .h4:not(:first-child),
+  .job h5:not(:first-child),
+  .job .h5:not(:first-child),
+  .job h6:not(:first-child),
+  .job .h6:not(:first-child),
+  .job h7:not(:first-child),
+  .job .h7:not(:first-child),
+  .job h8:not(:first-child),
+  .job .h8:not(:first-child) {
     margin-top: var(--spacing-lg); }
   p + .species--item h2:not(:first-child), p +
   .species--item .h2:not(:first-child), p +
@@ -926,7 +1088,21 @@ ol {
   .forum--message h7:not(:first-child), p +
   .forum--message .h7:not(:first-child), p +
   .forum--message h8:not(:first-child), p +
-  .forum--message .h8:not(:first-child) {
+  .forum--message .h8:not(:first-child), p +
+  .job h2:not(:first-child), p +
+  .job .h2:not(:first-child), p +
+  .job h3:not(:first-child), p +
+  .job .h3:not(:first-child), p +
+  .job h4:not(:first-child), p +
+  .job .h4:not(:first-child), p +
+  .job h5:not(:first-child), p +
+  .job .h5:not(:first-child), p +
+  .job h6:not(:first-child), p +
+  .job .h6:not(:first-child), p +
+  .job h7:not(:first-child), p +
+  .job .h7:not(:first-child), p +
+  .job h8:not(:first-child), p +
+  .job .h8:not(:first-child) {
     margin-top: var(--spacing-xl); }
   .species--item h2 + br,
   .species--item .h2 + br,
@@ -1011,7 +1187,21 @@ ol {
   .forum--message h7 + br,
   .forum--message .h7 + br,
   .forum--message h8 + br,
-  .forum--message .h8 + br {
+  .forum--message .h8 + br,
+  .job h2 + br,
+  .job .h2 + br,
+  .job h3 + br,
+  .job .h3 + br,
+  .job h4 + br,
+  .job .h4 + br,
+  .job h5 + br,
+  .job .h5 + br,
+  .job h6 + br,
+  .job .h6 + br,
+  .job h7 + br,
+  .job .h7 + br,
+  .job h8 + br,
+  .job .h8 + br {
     display: none; }
   .species--item h2 a,
   .species--item .h2 a,
@@ -1096,7 +1286,21 @@ ol {
   .forum--message h7 a,
   .forum--message .h7 a,
   .forum--message h8 a,
-  .forum--message .h8 a {
+  .forum--message .h8 a,
+  .job h2 a,
+  .job .h2 a,
+  .job h3 a,
+  .job .h3 a,
+  .job h4 a,
+  .job .h4 a,
+  .job h5 a,
+  .job .h5 a,
+  .job h6 a,
+  .job .h6 a,
+  .job h7 a,
+  .job .h7 a,
+  .job h8 a,
+  .job .h8 a {
     font-size: 1em !important;
     border-bottom: none !important; }
     .species--item h2 a::after,
@@ -1182,7 +1386,21 @@ ol {
     .forum--message h7 a::after,
     .forum--message .h7 a::after,
     .forum--message h8 a::after,
-    .forum--message .h8 a::after {
+    .forum--message .h8 a::after,
+    .job h2 a::after,
+    .job .h2 a::after,
+    .job h3 a::after,
+    .job .h3 a::after,
+    .job h4 a::after,
+    .job .h4 a::after,
+    .job h5 a::after,
+    .job .h5 a::after,
+    .job h6 a::after,
+    .job .h6 a::after,
+    .job h7 a::after,
+    .job .h7 a::after,
+    .job h8 a::after,
+    .job .h8 a::after {
       font-family: 'Font Awesome 6 Pro';
       padding-left: var(--spacing-sm);
       font-weight: 300;
@@ -1274,7 +1492,21 @@ ol {
     .forum--message h7 a:hover::after,
     .forum--message .h7 a:hover::after,
     .forum--message h8 a:hover::after,
-    .forum--message .h8 a:hover::after {
+    .forum--message .h8 a:hover::after,
+    .job h2 a:hover::after,
+    .job .h2 a:hover::after,
+    .job h3 a:hover::after,
+    .job .h3 a:hover::after,
+    .job h4 a:hover::after,
+    .job .h4 a:hover::after,
+    .job h5 a:hover::after,
+    .job .h5 a:hover::after,
+    .job h6 a:hover::after,
+    .job .h6 a:hover::after,
+    .job h7 a:hover::after,
+    .job .h7 a:hover::after,
+    .job h8 a:hover::after,
+    .job .h8 a:hover::after {
       right: -5px; }
   .species--item h2[data-align="left"], .species--item h2[data-align="Left"], .species--item h2[data-align="LEFT"],
   .species--item .h2[data-align="left"],
@@ -1525,7 +1757,49 @@ ol {
   .forum--message h8[data-align="LEFT"],
   .forum--message .h8[data-align="left"],
   .forum--message .h8[data-align="Left"],
-  .forum--message .h8[data-align="LEFT"] {
+  .forum--message .h8[data-align="LEFT"],
+  .job h2[data-align="left"],
+  .job h2[data-align="Left"],
+  .job h2[data-align="LEFT"],
+  .job .h2[data-align="left"],
+  .job .h2[data-align="Left"],
+  .job .h2[data-align="LEFT"],
+  .job h3[data-align="left"],
+  .job h3[data-align="Left"],
+  .job h3[data-align="LEFT"],
+  .job .h3[data-align="left"],
+  .job .h3[data-align="Left"],
+  .job .h3[data-align="LEFT"],
+  .job h4[data-align="left"],
+  .job h4[data-align="Left"],
+  .job h4[data-align="LEFT"],
+  .job .h4[data-align="left"],
+  .job .h4[data-align="Left"],
+  .job .h4[data-align="LEFT"],
+  .job h5[data-align="left"],
+  .job h5[data-align="Left"],
+  .job h5[data-align="LEFT"],
+  .job .h5[data-align="left"],
+  .job .h5[data-align="Left"],
+  .job .h5[data-align="LEFT"],
+  .job h6[data-align="left"],
+  .job h6[data-align="Left"],
+  .job h6[data-align="LEFT"],
+  .job .h6[data-align="left"],
+  .job .h6[data-align="Left"],
+  .job .h6[data-align="LEFT"],
+  .job h7[data-align="left"],
+  .job h7[data-align="Left"],
+  .job h7[data-align="LEFT"],
+  .job .h7[data-align="left"],
+  .job .h7[data-align="Left"],
+  .job .h7[data-align="LEFT"],
+  .job h8[data-align="left"],
+  .job h8[data-align="Left"],
+  .job h8[data-align="LEFT"],
+  .job .h8[data-align="left"],
+  .job .h8[data-align="Left"],
+  .job .h8[data-align="LEFT"] {
     margin-left: 0;
     margin-right: auto;
     text-align: left; }
@@ -1778,7 +2052,49 @@ ol {
   .forum--message h8[data-align="CENTER"],
   .forum--message .h8[data-align="center"],
   .forum--message .h8[data-align="Center"],
-  .forum--message .h8[data-align="CENTER"] {
+  .forum--message .h8[data-align="CENTER"],
+  .job h2[data-align="center"],
+  .job h2[data-align="Center"],
+  .job h2[data-align="CENTER"],
+  .job .h2[data-align="center"],
+  .job .h2[data-align="Center"],
+  .job .h2[data-align="CENTER"],
+  .job h3[data-align="center"],
+  .job h3[data-align="Center"],
+  .job h3[data-align="CENTER"],
+  .job .h3[data-align="center"],
+  .job .h3[data-align="Center"],
+  .job .h3[data-align="CENTER"],
+  .job h4[data-align="center"],
+  .job h4[data-align="Center"],
+  .job h4[data-align="CENTER"],
+  .job .h4[data-align="center"],
+  .job .h4[data-align="Center"],
+  .job .h4[data-align="CENTER"],
+  .job h5[data-align="center"],
+  .job h5[data-align="Center"],
+  .job h5[data-align="CENTER"],
+  .job .h5[data-align="center"],
+  .job .h5[data-align="Center"],
+  .job .h5[data-align="CENTER"],
+  .job h6[data-align="center"],
+  .job h6[data-align="Center"],
+  .job h6[data-align="CENTER"],
+  .job .h6[data-align="center"],
+  .job .h6[data-align="Center"],
+  .job .h6[data-align="CENTER"],
+  .job h7[data-align="center"],
+  .job h7[data-align="Center"],
+  .job h7[data-align="CENTER"],
+  .job .h7[data-align="center"],
+  .job .h7[data-align="Center"],
+  .job .h7[data-align="CENTER"],
+  .job h8[data-align="center"],
+  .job h8[data-align="Center"],
+  .job h8[data-align="CENTER"],
+  .job .h8[data-align="center"],
+  .job .h8[data-align="Center"],
+  .job .h8[data-align="CENTER"] {
     margin-left: auto;
     margin-right: auto;
     text-align: center; }
@@ -2031,7 +2347,49 @@ ol {
   .forum--message h8[data-align="RIGHT"],
   .forum--message .h8[data-align="right"],
   .forum--message .h8[data-align="Right"],
-  .forum--message .h8[data-align="RIGHT"] {
+  .forum--message .h8[data-align="RIGHT"],
+  .job h2[data-align="right"],
+  .job h2[data-align="Right"],
+  .job h2[data-align="RIGHT"],
+  .job .h2[data-align="right"],
+  .job .h2[data-align="Right"],
+  .job .h2[data-align="RIGHT"],
+  .job h3[data-align="right"],
+  .job h3[data-align="Right"],
+  .job h3[data-align="RIGHT"],
+  .job .h3[data-align="right"],
+  .job .h3[data-align="Right"],
+  .job .h3[data-align="RIGHT"],
+  .job h4[data-align="right"],
+  .job h4[data-align="Right"],
+  .job h4[data-align="RIGHT"],
+  .job .h4[data-align="right"],
+  .job .h4[data-align="Right"],
+  .job .h4[data-align="RIGHT"],
+  .job h5[data-align="right"],
+  .job h5[data-align="Right"],
+  .job h5[data-align="RIGHT"],
+  .job .h5[data-align="right"],
+  .job .h5[data-align="Right"],
+  .job .h5[data-align="RIGHT"],
+  .job h6[data-align="right"],
+  .job h6[data-align="Right"],
+  .job h6[data-align="RIGHT"],
+  .job .h6[data-align="right"],
+  .job .h6[data-align="Right"],
+  .job .h6[data-align="RIGHT"],
+  .job h7[data-align="right"],
+  .job h7[data-align="Right"],
+  .job h7[data-align="RIGHT"],
+  .job .h7[data-align="right"],
+  .job .h7[data-align="Right"],
+  .job .h7[data-align="RIGHT"],
+  .job h8[data-align="right"],
+  .job h8[data-align="Right"],
+  .job h8[data-align="RIGHT"],
+  .job .h8[data-align="right"],
+  .job .h8[data-align="Right"],
+  .job .h8[data-align="RIGHT"] {
     margin-left: auto;
     margin-right: 0;
     text-align: right; }
@@ -2047,7 +2405,9 @@ ol {
 #Post .postcolor h2,
 #Post .postcolor .h2,
 .forum--message h2,
-.forum--message .h2 {
+.forum--message .h2,
+.job h2,
+.job .h2 {
   font-size: min(40px, 4vw);
   font-family: var(--font-serif);
   margin: 0 auto var(--spacing-lg);
@@ -2064,7 +2424,9 @@ ol {
   #Post .postcolor h2::after,
   #Post .postcolor .h2::after,
   .forum--message h2::after,
-  .forum--message .h2::after {
+  .forum--message .h2::after,
+  .job h2::after,
+  .job .h2::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -2085,7 +2447,9 @@ ol {
 #Post .postcolor h3,
 #Post .postcolor .h3,
 .forum--message h3,
-.forum--message .h3 {
+.forum--message .h3,
+.job h3,
+.job .h3 {
   font-size: min(26px, 2.6vw);
   font-family: var(--font-serif);
   margin: 0 auto var(--spacing-lg) 0;
@@ -2101,7 +2465,9 @@ ol {
   #Post .postcolor h3::after,
   #Post .postcolor .h3::after,
   .forum--message h3::after,
-  .forum--message .h3::after {
+  .forum--message .h3::after,
+  .job h3::after,
+  .job .h3::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -2122,7 +2488,9 @@ ol {
 #Post .postcolor h4,
 #Post .postcolor .h4,
 .forum--message h4,
-.forum--message .h4 {
+.forum--message .h4,
+.job h4,
+.job .h4 {
   font-size: min(22px, 2.2vw);
   font-family: var(--font-body-bold);
   font-weight: 600;
@@ -2140,7 +2508,9 @@ ol {
   #Post .postcolor h4::before,
   #Post .postcolor .h4::before,
   .forum--message h4::before,
-  .forum--message .h4::before {
+  .forum--message .h4::before,
+  .job h4::before,
+  .job .h4::before {
     content: '';
     position: absolute;
     left: 0;
@@ -2182,7 +2552,13 @@ ol {
   .forum--message h4[data-box-align="right"],
   .forum--message .h4[data-align="right"],
   .forum--message .h4[data-text-align="right"],
-  .forum--message .h4[data-box-align="right"] {
+  .forum--message .h4[data-box-align="right"],
+  .job h4[data-align="right"],
+  .job h4[data-text-align="right"],
+  .job h4[data-box-align="right"],
+  .job .h4[data-align="right"],
+  .job .h4[data-text-align="right"],
+  .job .h4[data-box-align="right"] {
     padding: var(--spacing-sm) var(--spacing-lg) var(--spacing-sm) 0; }
     .species--item h4[data-align="right"]::before, .species--item h4[data-text-align="right"]::before, .species--item h4[data-box-align="right"]::before,
     .species--item .h4[data-align="right"]::before,
@@ -2217,7 +2593,13 @@ ol {
     .forum--message h4[data-box-align="right"]::before,
     .forum--message .h4[data-align="right"]::before,
     .forum--message .h4[data-text-align="right"]::before,
-    .forum--message .h4[data-box-align="right"]::before {
+    .forum--message .h4[data-box-align="right"]::before,
+    .job h4[data-align="right"]::before,
+    .job h4[data-text-align="right"]::before,
+    .job h4[data-box-align="right"]::before,
+    .job .h4[data-align="right"]::before,
+    .job .h4[data-text-align="right"]::before,
+    .job .h4[data-box-align="right"]::before {
       display: none; }
     .species--item h4[data-align="right"]::after, .species--item h4[data-text-align="right"]::after, .species--item h4[data-box-align="right"]::after,
     .species--item .h4[data-align="right"]::after,
@@ -2252,7 +2634,13 @@ ol {
     .forum--message h4[data-box-align="right"]::after,
     .forum--message .h4[data-align="right"]::after,
     .forum--message .h4[data-text-align="right"]::after,
-    .forum--message .h4[data-box-align="right"]::after {
+    .forum--message .h4[data-box-align="right"]::after,
+    .job h4[data-align="right"]::after,
+    .job h4[data-text-align="right"]::after,
+    .job h4[data-box-align="right"]::after,
+    .job .h4[data-align="right"]::after,
+    .job .h4[data-text-align="right"]::after,
+    .job .h4[data-box-align="right"]::after {
       content: '';
       position: absolute;
       right: 0;
@@ -2273,7 +2661,9 @@ ol {
 #Post .postcolor h5,
 #Post .postcolor .h5,
 .forum--message h5,
-.forum--message .h5 {
+.forum--message .h5,
+.job h5,
+.job .h5 {
   font-size: 16px;
   font-family: var(--font-body-bold);
   font-weight: 600;
@@ -2291,7 +2681,9 @@ ol {
   #Post .postcolor h5::before,
   #Post .postcolor .h5::before,
   .forum--message h5::before,
-  .forum--message .h5::before {
+  .forum--message .h5::before,
+  .job h5::before,
+  .job .h5::before {
     content: '';
     position: absolute;
     left: 0;
@@ -2333,7 +2725,13 @@ ol {
   .forum--message h5[data-box-align="right"],
   .forum--message .h5[data-align="right"],
   .forum--message .h5[data-text-align="right"],
-  .forum--message .h5[data-box-align="right"] {
+  .forum--message .h5[data-box-align="right"],
+  .job h5[data-align="right"],
+  .job h5[data-text-align="right"],
+  .job h5[data-box-align="right"],
+  .job .h5[data-align="right"],
+  .job .h5[data-text-align="right"],
+  .job .h5[data-box-align="right"] {
     padding: var(--spacing-xs) var(--spacing-md) var(--spacing-xs) 0; }
     .species--item h5[data-align="right"]::before, .species--item h5[data-text-align="right"]::before, .species--item h5[data-box-align="right"]::before,
     .species--item .h5[data-align="right"]::before,
@@ -2368,7 +2766,13 @@ ol {
     .forum--message h5[data-box-align="right"]::before,
     .forum--message .h5[data-align="right"]::before,
     .forum--message .h5[data-text-align="right"]::before,
-    .forum--message .h5[data-box-align="right"]::before {
+    .forum--message .h5[data-box-align="right"]::before,
+    .job h5[data-align="right"]::before,
+    .job h5[data-text-align="right"]::before,
+    .job h5[data-box-align="right"]::before,
+    .job .h5[data-align="right"]::before,
+    .job .h5[data-text-align="right"]::before,
+    .job .h5[data-box-align="right"]::before {
       display: none; }
     .species--item h5[data-align="right"]::after, .species--item h5[data-text-align="right"]::after, .species--item h5[data-box-align="right"]::after,
     .species--item .h5[data-align="right"]::after,
@@ -2403,7 +2807,13 @@ ol {
     .forum--message h5[data-box-align="right"]::after,
     .forum--message .h5[data-align="right"]::after,
     .forum--message .h5[data-text-align="right"]::after,
-    .forum--message .h5[data-box-align="right"]::after {
+    .forum--message .h5[data-box-align="right"]::after,
+    .job h5[data-align="right"]::after,
+    .job h5[data-text-align="right"]::after,
+    .job h5[data-box-align="right"]::after,
+    .job .h5[data-align="right"]::after,
+    .job .h5[data-text-align="right"]::after,
+    .job .h5[data-box-align="right"]::after {
       content: '';
       position: absolute;
       right: 0;
@@ -2424,7 +2834,9 @@ ol {
 #Post .postcolor h6,
 #Post .postcolor .h6,
 .forum--message h6,
-.forum--message .h6 {
+.forum--message .h6,
+.job h6,
+.job .h6 {
   font-size: var(--sBody);
   font-family: var(--font-body-bold);
   font-weight: 600;
@@ -2443,7 +2855,9 @@ ol {
   #Post .postcolor h6::before,
   #Post .postcolor .h6::before,
   .forum--message h6::before,
-  .forum--message .h6::before {
+  .forum--message .h6::before,
+  .job h6::before,
+  .job .h6::before {
     content: '';
     position: absolute;
     left: 0;
@@ -2485,7 +2899,13 @@ ol {
   .forum--message h6[data-box-align="right"]::before,
   .forum--message .h6[data-align="right"]::before,
   .forum--message .h6[data-text-align="right"]::before,
-  .forum--message .h6[data-box-align="right"]::before {
+  .forum--message .h6[data-box-align="right"]::before,
+  .job h6[data-align="right"]::before,
+  .job h6[data-text-align="right"]::before,
+  .job h6[data-box-align="right"]::before,
+  .job .h6[data-align="right"]::before,
+  .job .h6[data-text-align="right"]::before,
+  .job .h6[data-box-align="right"]::before {
     display: none; }
   .species--item h6[data-align="right"]::after, .species--item h6[data-text-align="right"]::after, .species--item h6[data-box-align="right"]::after,
   .species--item .h6[data-align="right"]::after,
@@ -2520,7 +2940,13 @@ ol {
   .forum--message h6[data-box-align="right"]::after,
   .forum--message .h6[data-align="right"]::after,
   .forum--message .h6[data-text-align="right"]::after,
-  .forum--message .h6[data-box-align="right"]::after {
+  .forum--message .h6[data-box-align="right"]::after,
+  .job h6[data-align="right"]::after,
+  .job h6[data-text-align="right"]::after,
+  .job h6[data-box-align="right"]::after,
+  .job .h6[data-align="right"]::after,
+  .job .h6[data-text-align="right"]::after,
+  .job .h6[data-box-align="right"]::after {
     content: '';
     position: absolute;
     right: 0;
@@ -2541,7 +2967,9 @@ ol {
 #Post .postcolor h7,
 #Post .postcolor .h7,
 .forum--message h7,
-.forum--message .h7 {
+.forum--message .h7,
+.job h7,
+.job .h7 {
   display: block;
   max-width: -webkit-max-content;
   max-width: -moz-max-content;
@@ -2564,7 +2992,9 @@ ol {
   #Post .postcolor h7::before,
   #Post .postcolor .h7::before,
   .forum--message h7::before,
-  .forum--message .h7::before {
+  .forum--message .h7::before,
+  .job h7::before,
+  .job .h7::before {
     content: '';
     position: absolute;
     left: 0;
@@ -2606,7 +3036,13 @@ ol {
   .forum--message h7[data-box-align="right"]::before,
   .forum--message .h7[data-align="right"]::before,
   .forum--message .h7[data-text-align="right"]::before,
-  .forum--message .h7[data-box-align="right"]::before {
+  .forum--message .h7[data-box-align="right"]::before,
+  .job h7[data-align="right"]::before,
+  .job h7[data-text-align="right"]::before,
+  .job h7[data-box-align="right"]::before,
+  .job .h7[data-align="right"]::before,
+  .job .h7[data-text-align="right"]::before,
+  .job .h7[data-box-align="right"]::before {
     display: none; }
   .species--item h7[data-align="right"]::after, .species--item h7[data-text-align="right"]::after, .species--item h7[data-box-align="right"]::after,
   .species--item .h7[data-align="right"]::after,
@@ -2641,7 +3077,13 @@ ol {
   .forum--message h7[data-box-align="right"]::after,
   .forum--message .h7[data-align="right"]::after,
   .forum--message .h7[data-text-align="right"]::after,
-  .forum--message .h7[data-box-align="right"]::after {
+  .forum--message .h7[data-box-align="right"]::after,
+  .job h7[data-align="right"]::after,
+  .job h7[data-text-align="right"]::after,
+  .job h7[data-box-align="right"]::after,
+  .job .h7[data-align="right"]::after,
+  .job .h7[data-text-align="right"]::after,
+  .job .h7[data-box-align="right"]::after {
     content: '';
     position: absolute;
     right: 0;
@@ -2662,7 +3104,9 @@ ol {
 #Post .postcolor h8,
 #Post .postcolor .h8,
 .forum--message h8,
-.forum--message .h8 {
+.forum--message .h8,
+.job h8,
+.job .h8 {
   display: block;
   font-size: var(--xsBody);
   font-family: var(--font-body-bold);
@@ -2690,7 +3134,10 @@ ol {
 #Post .postcolor .h8::before,
 .forum--message .h2::before,
 .forum--message .h3::before,
-.forum--message .h8::before {
+.forum--message .h8::before,
+.job .h2::before,
+.job .h3::before,
+.job .h8::before {
   display: none; }
 
 .species--item .h4::after,
@@ -2722,7 +3169,12 @@ ol {
 .forum--message .h5::after,
 .forum--message .h6::after,
 .forum--message .h7::after,
-.forum--message .h8::after {
+.forum--message .h8::after,
+.job .h4::after,
+.job .h5::after,
+.job .h6::after,
+.job .h7::after,
+.job .h8::after {
   display: none; }
 
 .species--item blockquote,
@@ -2730,7 +3182,8 @@ ol {
 .profile--content blockquote,
 .post--content blockquote,
 #Post .postcolor blockquote,
-.forum--message blockquote {
+.forum--message blockquote,
+.job blockquote {
   max-width: 500px;
   margin: 0 auto;
   text-align: justify;
@@ -2742,6 +3195,10 @@ ol {
   border-radius: 3px;
   line-height: 200%;
   letter-spacing: 0.025em; }
+
+tag-translation {
+  border-bottom: 1px solid var(--border-main);
+  cursor: help; }
 
 input,
 select,
@@ -2932,6 +3389,7 @@ tag-code,
           flex-direction: column;
   gap: var(--spacing-xs);
   max-width: 300px;
+  width: 100%;
   margin: 0 auto; }
   tag-code button,
   tag-code .codeclick,
@@ -2974,8 +3432,8 @@ tag-code,
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
-  max-height: calc(100vh - (2 * var(--spacing-lg)));
-  margin: var(--spacing-lg);
+  max-height: calc(100vh - (3 * var(--spacing-lg)));
+  margin: calc(var(--spacing-lg) * 2) var(--spacing-lg) var(--spacing-lg);
   padding-right: var(--spacing-sm);
   overflow: auto; }
 
@@ -3291,6 +3749,13 @@ tag-code,
       #recent-alerts .alert--main .row2 img {
         display: none; }
 
+.nano a.new {
+  background: var(--bg-color-transparent);
+  padding: 0 10px !important; }
+
+.nano a:not(.new) {
+  opacity: 0.35; }
+
 body .onlyMobile {
   display: none !important; }
 
@@ -3324,7 +3789,7 @@ body.g-2 .memOnly {
   body.g-2 .guestOnly.onlyMobile {
     display: initial !important; } }
 
-body.g-4 .staffOnly {
+body.g-4 .staffOnly, body.g-26 .staffOnly {
   display: initial !important; }
 
 .hide {
@@ -4506,7 +4971,8 @@ header {
             margin-bottom: var(--spacing-md); }
           .stats--right table tbody tr td {
             width: 100%;
-            padding: 0; }
+            padding: 0;
+            word-break: break-word; }
             .stats--right table tbody tr td.recent-topics-info {
               font-size: 0; }
               .stats--right table tbody tr td.recent-topics-info a:first-of-type {
@@ -4769,7 +5235,8 @@ header {
     .topic--started > span:last-child, .topic--latest > span:last-child {
       font-size: var(--xsBody);
       font-style: italic; }
-  body.g-4 .topic .staffOnly.input-wrap {
+  body.g-4 .topic .staffOnly.input-wrap,
+  body.g-26 .topic .staffOnly.input-wrap {
     display: -webkit-box !important;
     display: -webkit-flex !important;
     display: -ms-flexbox !important;
@@ -4778,7 +5245,8 @@ header {
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center; }
-    body.g-4 .topic .staffOnly.input-wrap .fancy-input {
+    body.g-4 .topic .staffOnly.input-wrap .fancy-input,
+    body.g-26 .topic .staffOnly.input-wrap .fancy-input {
       height: 18px;
       width: 18px;
       background: var(--bg-color-transparent);
@@ -4801,7 +5269,8 @@ header {
       -webkit-transition-duration: var(--style-duration);
            -o-transition-duration: var(--style-duration);
               transition-duration: var(--style-duration); }
-      body.g-4 .topic .staffOnly.input-wrap .fancy-input::before {
+      body.g-4 .topic .staffOnly.input-wrap .fancy-input::before,
+      body.g-26 .topic .staffOnly.input-wrap .fancy-input::before {
         content: '';
         position: absolute;
         top: 0;
@@ -4813,15 +5282,20 @@ header {
         -webkit-transition-duration: var(--style-duration);
              -o-transition-duration: var(--style-duration);
                 transition-duration: var(--style-duration); }
-      body.g-4 .topic .staffOnly.input-wrap .fancy-input:hover {
+      body.g-4 .topic .staffOnly.input-wrap .fancy-input:hover,
+      body.g-26 .topic .staffOnly.input-wrap .fancy-input:hover {
         color: var(--text-on-color); }
-        body.g-4 .topic .staffOnly.input-wrap .fancy-input:hover::before {
+        body.g-4 .topic .staffOnly.input-wrap .fancy-input:hover::before,
+        body.g-26 .topic .staffOnly.input-wrap .fancy-input:hover::before {
           width: 100%; }
-    body.g-4 .topic .staffOnly.input-wrap input {
+    body.g-4 .topic .staffOnly.input-wrap input,
+    body.g-26 .topic .staffOnly.input-wrap input {
       display: none; }
-      body.g-4 .topic .staffOnly.input-wrap input:checked + .fancy-input {
+      body.g-4 .topic .staffOnly.input-wrap input:checked + .fancy-input,
+      body.g-26 .topic .staffOnly.input-wrap input:checked + .fancy-input {
         color: var(--text-on-color); }
-        body.g-4 .topic .staffOnly.input-wrap input:checked + .fancy-input::before {
+        body.g-4 .topic .staffOnly.input-wrap input:checked + .fancy-input::before,
+        body.g-26 .topic .staffOnly.input-wrap input:checked + .fancy-input::before {
           width: 100%; }
 
 /*******************************
@@ -6579,6 +7053,37 @@ header {
       padding: 0 var(--spacing-xs); }
       .member .mem--long .scroll {
         height: calc(97px + 28.9px); }
+  .mem--info-box {
+    position: absolute;
+    top: 10px;
+    right: 36px;
+    width: 250px;
+    background: var(--bg-body-alt);
+    border: 1px solid var(--border-secondary);
+    padding: 10px;
+    font-size: var(--xsBody);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    z-index: 2;
+    line-height: 200%; }
+    body.g-4 .mem--info-box.staffOnly,
+    body.g-26 .mem--info-box.staffOnly {
+      display: none !important; }
+      body.g-4 .mem--info-box.staffOnly.is-open,
+      body.g-26 .mem--info-box.staffOnly.is-open {
+        display: initial !important; }
+    .mem--info-box b {
+      color: var(--text-color); }
+  .mem--info-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 16px;
+    z-index: 2;
+    cursor: pointer; }
 
 .grid-sizer,
 .grid-item {
@@ -7201,9 +7706,151 @@ header {
       background: var(--bg-color);
       border-radius: 1px; }
 
+.jobs--menu {
+  position: -webkit-sticky;
+  position: sticky;
+  top: calc(var(--size-menu-height) + var(--size-submenu-height));
+  background: var(--bg-transparent);
+  padding: var(--spacing-md);
+  border: 1px solid var(--border-secondary);
+  z-index: 2; }
+  .jobs--menu.is-sticky {
+    background: var(--bg-alt); }
+  .jobs--menu tag-tabs {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: var(--spacing-sm); }
+    .jobs--menu tag-tabs > tag-labels {
+      padding: 0 var(--spacing-sm); }
+    .jobs--menu tag-tabs > tag-tabset {
+      padding: var(--spacing-sm) 0 0;
+      margin: 0 var(--spacing-sm);
+      border-top: 1px solid var(--border-main); }
+
+.jobs .job {
+  display: -ms-grid;
+  display: grid;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg); }
+  @media only screen and (min-width: 768px) {
+    .jobs .job {
+      -ms-grid-columns: auto 250px;
+      grid-template-columns: auto 250px; } }
+  .jobs .job--main, .jobs .job--hours {
+    background: var(--bg-transparent);
+    border: 1px solid var(--border-secondary);
+    padding: var(--spacing-lg);
+    display: -ms-grid;
+    display: grid;
+    gap: var(--spacing-sm);
+    grid-template-rows: repeat(auto-fit, minmax(0, -webkit-max-content));
+    grid-template-rows: repeat(auto-fit, minmax(0, max-content)); }
+    .jobs .job--main b.h6, .jobs .job--hours b.h6 {
+      color: var(--text-content); }
+  .jobs .job > h3,
+  .jobs .job .job--employees {
+    grid-column: 1 / -1; }
+
+.accordion--title {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  gap: 0 var(--spacing-lg);
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 900;
+  font-family: var(--font-body-bold);
+  line-height: 160%;
+  border-bottom: 3px solid var(--border-color);
+  padding: var(--spacing-sm) var(--spacing-md);
+  margin-bottom: var(--spacing-lg); }
+  .accordion--title .smaller {
+    font-family: var(--font-body);
+    font-size: 0.6em;
+    font-weight: 900;
+    border: 0;
+    letter-spacing: 0;
+    padding: 0; }
+
+.accordion--toggle {
+  cursor: pointer; }
+  .accordion--toggle .hide-content {
+    display: none; }
+  .accordion--toggle.is-open .hide-content {
+    display: initial; }
+  .accordion--toggle.is-open .view-content {
+    display: none; }
+
+.accordion--sorts {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: var(--spacing-sm); }
+  .accordion--sorts button {
+    border: 1px solid var(--border-color);
+    background: var(--bg-color-transparent);
+    color: var(--text-content);
+    text-transform: uppercase;
+    font: var(--style-small-text);
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    cursor: pointer; }
+
+.accordion--content {
+  margin-bottom: 0;
+  height: 0;
+  overflow: hidden; }
+  .accordion--content.is-open {
+    margin-bottom: 30px;
+    height: auto; }
+  .accordion--content > a {
+    border-bottom: 0;
+    border-left: 3px solid var(--border-color);
+    display: -ms-grid;
+    display: grid;
+    color: var(--text-content);
+    background: var(--bg-color-transparent);
+    padding: var(--spacing-md);
+    line-height: 160%;
+    font-size: var(--xlBody); }
+    .accordion--content > a b {
+      color: var(--text-content);
+      padding: 0; }
+    .accordion--content > a span {
+      font: var(--style-small-text);
+      letter-spacing: 0.1em; }
+
 /*******************************
     Templates
 ********************************/
+tag-spoiler {
+  border-radius: 2px;
+  padding: 0 5px; }
+  tag-spoiler.is-visible {
+    border: 1px solid var(--border-main); }
+  tag-spoiler:not(.is-visible) {
+    color: transparent;
+    background: var(--text-content);
+    border: 1px solid var(--text-content);
+    cursor: pointer; }
+
 tag-sidescroll {
   overflow-y: hidden !important;
   overflow-x: auto !important;
@@ -8267,11 +8914,6 @@ tag-msg {
   height: max-content; }
 
 tag-action {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 15px auto;
-  grid-template-columns: 15px auto;
-  gap: var(--spacing-sm);
   font-size: calc(var(--xsBody) + 1px);
   text-transform: uppercase;
   letter-spacing: 0.15em;
@@ -8285,7 +8927,9 @@ tag-action {
     width: 15px;
     height: 2px;
     border-radius: 1px;
-    background: var(--border-color); }
+    background: var(--border-color);
+    float: left;
+    margin-right: var(--spacing-sm); }
 
 tag-scroll {
   max-height: 300px;

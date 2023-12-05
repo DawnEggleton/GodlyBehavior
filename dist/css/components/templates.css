@@ -1,6 +1,17 @@
 /*******************************
     Templates
 ********************************/
+tag-spoiler {
+  border-radius: 2px;
+  padding: 0 5px; }
+  tag-spoiler.is-visible {
+    border: 1px solid var(--border-main); }
+  tag-spoiler:not(.is-visible) {
+    color: transparent;
+    background: var(--text-content);
+    border: 1px solid var(--text-content);
+    cursor: pointer; }
+
 tag-sidescroll {
   overflow-y: hidden !important;
   overflow-x: auto !important;
@@ -881,9 +892,6 @@ tag-msg {
   height: max-content; }
 
 tag-action {
-  display: grid;
-  grid-template-columns: 15px auto;
-  gap: var(--spacing-sm);
   font-size: calc(var(--xsBody) + 1px);
   text-transform: uppercase;
   letter-spacing: 0.15em;
@@ -897,7 +905,9 @@ tag-action {
     width: 15px;
     height: 2px;
     border-radius: 1px;
-    background: var(--border-color); }
+    background: var(--border-color);
+    float: left;
+    margin-right: var(--spacing-sm); }
 
 tag-scroll {
   max-height: 300px;

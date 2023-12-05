@@ -508,7 +508,7 @@
                                             </form>
                                         </div>
                                     </tag-tab>
-                                    <tag-tab class="claims" data-key="#members" data-type="grid" data-columns="4"></tag-tab>
+                                    <tag-tab class="claims" data-key="#members"></tag-tab>
                                     <tag-tab class="claims" data-key="#faces" data-type="grid" data-columns="4"></tag-tab>
                                     <tag-tab class="claims" data-key="#jobs" data-type="grid" data-columns="4"></tag-tab>
                                 </tag-tabset>
@@ -742,15 +742,9 @@
                     .then((response) => response.json())
                     .then((reservesData) => {
                         formatReserves(reservesData);
-                    
-                        fetch(species)
-                        .then((response) => response.json())
-                        .then((speciesData) => {
-                            formatSpecies(speciesData);
-                            
-                        }).then(() => {
-                            initWebpages();
-                        });
+                        
+                    }).then(() => {
+                        initWebpages();
                     });
                 });
             </script>

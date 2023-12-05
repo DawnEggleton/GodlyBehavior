@@ -823,6 +823,12 @@ function load_alerts() {
 }
 
 /********** Toggles **********/
+function toggleMLInfo(e) {
+    const button = e;
+    const box = e.nextElementSibling;
+    button.classList.toggle('is-open');
+    box.classList.toggle('is-open');
+}
 function toggleNav(e) {
     const button = e;
     const userButton = document.querySelector('.btn--user');

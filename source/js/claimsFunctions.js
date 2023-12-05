@@ -67,17 +67,22 @@ function formatMembers(data) {
     data.forEach((claim, i) => {
         //First
         if(i === 0) {
-            html += structureHeader(`<a href="?showuser=${claim.ParentID}">${claim.Member}</a>`);
-            html += structureClaim(`<a href="?showuser=${claim.AccountID}">${claim.Character}</a>`, [], claim.GroupID);
+            html += structureAccordionStart(claim.Member, claim.ParentID, claim.MemberPronouns, claim.MemberGroup, claim.MemberGroupID);
+            html += structureAccordionItem(claim.Character, claim.AccountID, claim.Group, claim.GroupID);
         }
         //New Member
         else if(claim.Member !== data[i - 1].Member) {
-            html += structureHeader(`<a href="?showuser=${claim.ParentID}">${claim.Member}</a>`);
-            html += structureClaim(`<a href="?showuser=${claim.AccountID}">${claim.Character}</a>`, [], claim.GroupID);
+            html += structureAccordionEnd();
+            html += structureAccordionStart(claim.Member, claim.ParentID, claim.MemberPronouns, claim.MemberGroup, claim.MemberGroupID);
+            html += structureAccordionItem(claim.Character, claim.AccountID, claim.Group, claim.GroupID);
         }
         //New Character
         else  {
-            html += structureClaim(`<a href="?showuser=${claim.AccountID}">${claim.Character}</a>`, [], claim.GroupID);
+            html += structureAccordionItem(claim.Character, claim.AccountID, claim.Group, claim.GroupID);
+        }
+
+        if(data.length - 1 === i) {
+            html += structureAccordionEnd();
         }
     });
 

@@ -174,7 +174,8 @@ ol {
 .profile--content,
 .post--content,
 #Post .postcolor,
-.forum--message {
+.forum--message,
+.job {
     b {
         color: var(--text-color);
         font-family: var(--font-body-bold);
@@ -531,6 +532,11 @@ ol {
     }
 }
 
+tag-translation {
+    border-bottom: 1px solid var(--border-main);
+    cursor: help;
+}
+
 input,
 select,
 textarea {
@@ -688,6 +694,7 @@ tag-code,
     flex-direction: column;
     gap: var(--spacing-xs);
     max-width: 300px;
+    width: 100%;
     margin: 0 auto;
 
     button,
@@ -727,8 +734,8 @@ tag-code,
 #account-switch {
     width: calc(100% - (2 * var(--spacing-lg)));
     height: max-content;
-    max-height: calc(100vh - (2 * var(--spacing-lg)));
-    margin: var(--spacing-lg);
+    max-height: calc(100vh - (3 * var(--spacing-lg)));
+    margin: calc(var(--spacing-lg) * 2) var(--spacing-lg) var(--spacing-lg);
     padding-right: var(--spacing-sm);
     overflow: auto;
 }
@@ -1032,6 +1039,18 @@ tag-code,
     }
 }
 
+.nano {
+    a {
+        &.new {
+            background: var(--bg-color-transparent);
+            padding: 0 10px !important;
+        }
+        &:not(.new) {
+            opacity: 0.35;
+        }
+    }
+}
+
 body {
     .onlyMobile {
         display: none !important;
@@ -1078,7 +1097,8 @@ body {
             }
         }
     }
-    &.g-4 {
+    &.g-4,
+    &.g-26 {
         .staffOnly {
             display: initial !important;
         }

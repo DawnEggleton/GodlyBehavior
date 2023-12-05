@@ -231,6 +231,37 @@
       padding: 0 var(--spacing-xs); }
       .member .mem--long .scroll {
         height: calc(97px + 28.9px); }
+  .mem--info-box {
+    position: absolute;
+    top: 10px;
+    right: 36px;
+    width: 250px;
+    background: var(--bg-body-alt);
+    border: 1px solid var(--border-secondary);
+    padding: 10px;
+    font-size: var(--xsBody);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    z-index: 2;
+    line-height: 200%; }
+    body.g-4 .mem--info-box.staffOnly,
+    body.g-26 .mem--info-box.staffOnly {
+      display: none !important; }
+      body.g-4 .mem--info-box.staffOnly.is-open,
+      body.g-26 .mem--info-box.staffOnly.is-open {
+        display: initial !important; }
+    .mem--info-box b {
+      color: var(--text-color); }
+  .mem--info-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 16px;
+    z-index: 2;
+    cursor: pointer; }
 
 .grid-sizer,
 .grid-item {

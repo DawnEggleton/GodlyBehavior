@@ -97,3 +97,78 @@ function structureClaim(title, lines, group = null) {
 function structureHeader(title) {
     return `<h2 class="fullWidth h4" data-align="center">${title}</h2>`;
 }
+function structureAccordionStart(name, id, pronouns, group, groupID) {
+    return `<div class="accordion--block g-${groupID}">
+    <div class="accordion--title">
+        <span>${name}</span>
+        <span class="smaller">${group}</span>
+        <span class="smaller">${pronouns}</span>
+        <a href="?showuser=${id}" class="smaller">View Account</a>
+        <span class="smaller accordion--toggle" onClick="toggleAccordion(this)">
+            <span class="view-content">View Characters</span>
+            <span class="hide-content">Hide Characters</span>
+        </span>
+    </div>
+    <div class="accordion--content sortable-wrap" data-type="grid" data-columns="4">
+        <div class="accordion--sorts fullWidth">
+            <button onClick="sortButton(this)" data-sort-type="name">Sort by Name</button>
+            <button onClick="sortButton(this)" data-sort-type="group">Sort by Group</button>
+        </div>`;
+}
+function structureAccordionItem(name, id, group, groupID) {
+    let html = `<a class="g-${groupID} sortable" href="?showuser=${id}">
+        <b data-sort-type="name">${name}</b>
+        <span data-sort-type="group">${group}</span>
+    </a>`;
+
+    return html;
+}
+function structureAccordionEnd() {
+    return `</div></div>`;
+}
+function toggleAccordion(e) {
+    e.classList.toggle('is-open');
+    e.closest('.accordion--block').querySelector('.accordion--content').classList.toggle('is-open');
+}
+function sortButton(button) {
+    let item = button.dataset.sortType;
+    let switching = true;
+    let rows;
+    let switchCount = 0;
+
+    while (switching) {
+        switching = false;
+        rows = button.closest('.sortable-wrap').querySelectorAll(`.sortable`);
+        console.log(rows);
+        for (i = 0; i < rows.length; i++) {
+          shouldSwitch = false;
+
+          //set sorting value in a way that works for date, numerical, or alphabetical sorting
+          switch(button.dataset.sortBy) {
+            case 'date':
+                a = Date.parse(rows[i].querySelector(`[data-sort-type="${item}"]`).innerText.toLowerCase().trim());
+                b = Date.parse(rows[i + 1].querySelector(`[data-sort-type="${item}"]`).innerText.toLowerCase().trim());
+                break;
+            case 'number':
+                a = parseInt(rows[i].querySelector(`[data-sort-type="${item}"]`).innerText.toLowerCase().trim());
+                b = parseInt(rows[i + 1].querySelector(`[data-sort-type="${item}"]`).innerText.toLowerCase().trim());
+                break;
+            default:
+                a = rows[i].querySelector(`[data-sort-type="${item}"]`).innerText.toLowerCase().trim();
+                b = rows[i + 1].querySelector(`[data-sort-type="${item}"]`).innerText.toLowerCase().trim();
+          }
+          
+          if (a > b) {
+            shouldSwitch = true;
+            break;
+          }
+        }
+        if (shouldSwitch) {
+          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+          switching = true;
+          switchCount ++;
+        }
+    }
+    switching = true;
+    switchCount = 0;
+}

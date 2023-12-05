@@ -140,7 +140,8 @@ ol {
 .profile--content b,
 .post--content b,
 #Post .postcolor b,
-.forum--message b {
+.forum--message b,
+.job b {
   color: var(--text-color);
   font-family: var(--font-body-bold);
   font-size: 1.1em;
@@ -153,7 +154,8 @@ ol {
 .profile--content i,
 .post--content i,
 #Post .postcolor i,
-.forum--message i {
+.forum--message i,
+.job i {
   font-weight: 300;
   letter-spacing: 0.05em;
   font-size: 1.1em;
@@ -165,7 +167,8 @@ ol {
 .profile--content u,
 .post--content u,
 #Post .postcolor u,
-.forum--message u {
+.forum--message u,
+.job u {
   text-decoration: none;
   border-bottom: 2px solid var(--border-color);
   background: var(--bg-color-transparent);
@@ -176,7 +179,8 @@ ol {
 .profile--content a,
 .post--content a,
 #Post .postcolor a,
-.forum--message a {
+.forum--message a,
+.job a {
   font-family: var(--font-body-bold);
   text-transform: uppercase;
   font-size: 0.9em;
@@ -189,7 +193,8 @@ ol {
 .profile--content s,
 .post--content s,
 #Post .postcolor s,
-.forum--message s {
+.forum--message s,
+.job s {
   font-style: italic;
   text-decoration-style: dotted;
   text-decoration-color: var(--text-body);
@@ -279,7 +284,21 @@ ol {
 .forum--message h7,
 .forum--message .h7,
 .forum--message h8,
-.forum--message .h8 {
+.forum--message .h8,
+.job h2,
+.job .h2,
+.job h3,
+.job .h3,
+.job h4,
+.job .h4,
+.job h5,
+.job .h5,
+.job h6,
+.job .h6,
+.job h7,
+.job .h7,
+.job h8,
+.job .h8 {
   line-height: 160%;
   max-width: max-content; }
   .species--item h2:first-child,
@@ -365,7 +384,21 @@ ol {
   .forum--message h7:first-child,
   .forum--message .h7:first-child,
   .forum--message h8:first-child,
-  .forum--message .h8:first-child {
+  .forum--message .h8:first-child,
+  .job h2:first-child,
+  .job .h2:first-child,
+  .job h3:first-child,
+  .job .h3:first-child,
+  .job h4:first-child,
+  .job .h4:first-child,
+  .job h5:first-child,
+  .job .h5:first-child,
+  .job h6:first-child,
+  .job .h6:first-child,
+  .job h7:first-child,
+  .job .h7:first-child,
+  .job h8:first-child,
+  .job .h8:first-child {
     margin-top: 0; }
   .species--item h2:not(:first-child),
   .species--item .h2:not(:first-child),
@@ -450,7 +483,21 @@ ol {
   .forum--message h7:not(:first-child),
   .forum--message .h7:not(:first-child),
   .forum--message h8:not(:first-child),
-  .forum--message .h8:not(:first-child) {
+  .forum--message .h8:not(:first-child),
+  .job h2:not(:first-child),
+  .job .h2:not(:first-child),
+  .job h3:not(:first-child),
+  .job .h3:not(:first-child),
+  .job h4:not(:first-child),
+  .job .h4:not(:first-child),
+  .job h5:not(:first-child),
+  .job .h5:not(:first-child),
+  .job h6:not(:first-child),
+  .job .h6:not(:first-child),
+  .job h7:not(:first-child),
+  .job .h7:not(:first-child),
+  .job h8:not(:first-child),
+  .job .h8:not(:first-child) {
     margin-top: var(--spacing-lg); }
   p + .species--item h2:not(:first-child), p +
   .species--item .h2:not(:first-child), p +
@@ -535,7 +582,21 @@ ol {
   .forum--message h7:not(:first-child), p +
   .forum--message .h7:not(:first-child), p +
   .forum--message h8:not(:first-child), p +
-  .forum--message .h8:not(:first-child) {
+  .forum--message .h8:not(:first-child), p +
+  .job h2:not(:first-child), p +
+  .job .h2:not(:first-child), p +
+  .job h3:not(:first-child), p +
+  .job .h3:not(:first-child), p +
+  .job h4:not(:first-child), p +
+  .job .h4:not(:first-child), p +
+  .job h5:not(:first-child), p +
+  .job .h5:not(:first-child), p +
+  .job h6:not(:first-child), p +
+  .job .h6:not(:first-child), p +
+  .job h7:not(:first-child), p +
+  .job .h7:not(:first-child), p +
+  .job h8:not(:first-child), p +
+  .job .h8:not(:first-child) {
     margin-top: var(--spacing-xl); }
   .species--item h2 + br,
   .species--item .h2 + br,
@@ -620,7 +681,21 @@ ol {
   .forum--message h7 + br,
   .forum--message .h7 + br,
   .forum--message h8 + br,
-  .forum--message .h8 + br {
+  .forum--message .h8 + br,
+  .job h2 + br,
+  .job .h2 + br,
+  .job h3 + br,
+  .job .h3 + br,
+  .job h4 + br,
+  .job .h4 + br,
+  .job h5 + br,
+  .job .h5 + br,
+  .job h6 + br,
+  .job .h6 + br,
+  .job h7 + br,
+  .job .h7 + br,
+  .job h8 + br,
+  .job .h8 + br {
     display: none; }
   .species--item h2 a,
   .species--item .h2 a,
@@ -705,7 +780,21 @@ ol {
   .forum--message h7 a,
   .forum--message .h7 a,
   .forum--message h8 a,
-  .forum--message .h8 a {
+  .forum--message .h8 a,
+  .job h2 a,
+  .job .h2 a,
+  .job h3 a,
+  .job .h3 a,
+  .job h4 a,
+  .job .h4 a,
+  .job h5 a,
+  .job .h5 a,
+  .job h6 a,
+  .job .h6 a,
+  .job h7 a,
+  .job .h7 a,
+  .job h8 a,
+  .job .h8 a {
     font-size: 1em !important;
     border-bottom: none !important; }
     .species--item h2 a::after,
@@ -791,7 +880,21 @@ ol {
     .forum--message h7 a::after,
     .forum--message .h7 a::after,
     .forum--message h8 a::after,
-    .forum--message .h8 a::after {
+    .forum--message .h8 a::after,
+    .job h2 a::after,
+    .job .h2 a::after,
+    .job h3 a::after,
+    .job .h3 a::after,
+    .job h4 a::after,
+    .job .h4 a::after,
+    .job h5 a::after,
+    .job .h5 a::after,
+    .job h6 a::after,
+    .job .h6 a::after,
+    .job h7 a::after,
+    .job .h7 a::after,
+    .job h8 a::after,
+    .job .h8 a::after {
       font-family: 'Font Awesome 6 Pro';
       padding-left: var(--spacing-sm);
       font-weight: 300;
@@ -881,7 +984,21 @@ ol {
     .forum--message h7 a:hover::after,
     .forum--message .h7 a:hover::after,
     .forum--message h8 a:hover::after,
-    .forum--message .h8 a:hover::after {
+    .forum--message .h8 a:hover::after,
+    .job h2 a:hover::after,
+    .job .h2 a:hover::after,
+    .job h3 a:hover::after,
+    .job .h3 a:hover::after,
+    .job h4 a:hover::after,
+    .job .h4 a:hover::after,
+    .job h5 a:hover::after,
+    .job .h5 a:hover::after,
+    .job h6 a:hover::after,
+    .job .h6 a:hover::after,
+    .job h7 a:hover::after,
+    .job .h7 a:hover::after,
+    .job h8 a:hover::after,
+    .job .h8 a:hover::after {
       right: -5px; }
   .species--item h2[data-align="left"], .species--item h2[data-align="Left"], .species--item h2[data-align="LEFT"],
   .species--item .h2[data-align="left"],
@@ -1132,7 +1249,49 @@ ol {
   .forum--message h8[data-align="LEFT"],
   .forum--message .h8[data-align="left"],
   .forum--message .h8[data-align="Left"],
-  .forum--message .h8[data-align="LEFT"] {
+  .forum--message .h8[data-align="LEFT"],
+  .job h2[data-align="left"],
+  .job h2[data-align="Left"],
+  .job h2[data-align="LEFT"],
+  .job .h2[data-align="left"],
+  .job .h2[data-align="Left"],
+  .job .h2[data-align="LEFT"],
+  .job h3[data-align="left"],
+  .job h3[data-align="Left"],
+  .job h3[data-align="LEFT"],
+  .job .h3[data-align="left"],
+  .job .h3[data-align="Left"],
+  .job .h3[data-align="LEFT"],
+  .job h4[data-align="left"],
+  .job h4[data-align="Left"],
+  .job h4[data-align="LEFT"],
+  .job .h4[data-align="left"],
+  .job .h4[data-align="Left"],
+  .job .h4[data-align="LEFT"],
+  .job h5[data-align="left"],
+  .job h5[data-align="Left"],
+  .job h5[data-align="LEFT"],
+  .job .h5[data-align="left"],
+  .job .h5[data-align="Left"],
+  .job .h5[data-align="LEFT"],
+  .job h6[data-align="left"],
+  .job h6[data-align="Left"],
+  .job h6[data-align="LEFT"],
+  .job .h6[data-align="left"],
+  .job .h6[data-align="Left"],
+  .job .h6[data-align="LEFT"],
+  .job h7[data-align="left"],
+  .job h7[data-align="Left"],
+  .job h7[data-align="LEFT"],
+  .job .h7[data-align="left"],
+  .job .h7[data-align="Left"],
+  .job .h7[data-align="LEFT"],
+  .job h8[data-align="left"],
+  .job h8[data-align="Left"],
+  .job h8[data-align="LEFT"],
+  .job .h8[data-align="left"],
+  .job .h8[data-align="Left"],
+  .job .h8[data-align="LEFT"] {
     margin-left: 0;
     margin-right: auto;
     text-align: left; }
@@ -1385,7 +1544,49 @@ ol {
   .forum--message h8[data-align="CENTER"],
   .forum--message .h8[data-align="center"],
   .forum--message .h8[data-align="Center"],
-  .forum--message .h8[data-align="CENTER"] {
+  .forum--message .h8[data-align="CENTER"],
+  .job h2[data-align="center"],
+  .job h2[data-align="Center"],
+  .job h2[data-align="CENTER"],
+  .job .h2[data-align="center"],
+  .job .h2[data-align="Center"],
+  .job .h2[data-align="CENTER"],
+  .job h3[data-align="center"],
+  .job h3[data-align="Center"],
+  .job h3[data-align="CENTER"],
+  .job .h3[data-align="center"],
+  .job .h3[data-align="Center"],
+  .job .h3[data-align="CENTER"],
+  .job h4[data-align="center"],
+  .job h4[data-align="Center"],
+  .job h4[data-align="CENTER"],
+  .job .h4[data-align="center"],
+  .job .h4[data-align="Center"],
+  .job .h4[data-align="CENTER"],
+  .job h5[data-align="center"],
+  .job h5[data-align="Center"],
+  .job h5[data-align="CENTER"],
+  .job .h5[data-align="center"],
+  .job .h5[data-align="Center"],
+  .job .h5[data-align="CENTER"],
+  .job h6[data-align="center"],
+  .job h6[data-align="Center"],
+  .job h6[data-align="CENTER"],
+  .job .h6[data-align="center"],
+  .job .h6[data-align="Center"],
+  .job .h6[data-align="CENTER"],
+  .job h7[data-align="center"],
+  .job h7[data-align="Center"],
+  .job h7[data-align="CENTER"],
+  .job .h7[data-align="center"],
+  .job .h7[data-align="Center"],
+  .job .h7[data-align="CENTER"],
+  .job h8[data-align="center"],
+  .job h8[data-align="Center"],
+  .job h8[data-align="CENTER"],
+  .job .h8[data-align="center"],
+  .job .h8[data-align="Center"],
+  .job .h8[data-align="CENTER"] {
     margin-left: auto;
     margin-right: auto;
     text-align: center; }
@@ -1638,7 +1839,49 @@ ol {
   .forum--message h8[data-align="RIGHT"],
   .forum--message .h8[data-align="right"],
   .forum--message .h8[data-align="Right"],
-  .forum--message .h8[data-align="RIGHT"] {
+  .forum--message .h8[data-align="RIGHT"],
+  .job h2[data-align="right"],
+  .job h2[data-align="Right"],
+  .job h2[data-align="RIGHT"],
+  .job .h2[data-align="right"],
+  .job .h2[data-align="Right"],
+  .job .h2[data-align="RIGHT"],
+  .job h3[data-align="right"],
+  .job h3[data-align="Right"],
+  .job h3[data-align="RIGHT"],
+  .job .h3[data-align="right"],
+  .job .h3[data-align="Right"],
+  .job .h3[data-align="RIGHT"],
+  .job h4[data-align="right"],
+  .job h4[data-align="Right"],
+  .job h4[data-align="RIGHT"],
+  .job .h4[data-align="right"],
+  .job .h4[data-align="Right"],
+  .job .h4[data-align="RIGHT"],
+  .job h5[data-align="right"],
+  .job h5[data-align="Right"],
+  .job h5[data-align="RIGHT"],
+  .job .h5[data-align="right"],
+  .job .h5[data-align="Right"],
+  .job .h5[data-align="RIGHT"],
+  .job h6[data-align="right"],
+  .job h6[data-align="Right"],
+  .job h6[data-align="RIGHT"],
+  .job .h6[data-align="right"],
+  .job .h6[data-align="Right"],
+  .job .h6[data-align="RIGHT"],
+  .job h7[data-align="right"],
+  .job h7[data-align="Right"],
+  .job h7[data-align="RIGHT"],
+  .job .h7[data-align="right"],
+  .job .h7[data-align="Right"],
+  .job .h7[data-align="RIGHT"],
+  .job h8[data-align="right"],
+  .job h8[data-align="Right"],
+  .job h8[data-align="RIGHT"],
+  .job .h8[data-align="right"],
+  .job .h8[data-align="Right"],
+  .job .h8[data-align="RIGHT"] {
     margin-left: auto;
     margin-right: 0;
     text-align: right; }
@@ -1654,7 +1897,9 @@ ol {
 #Post .postcolor h2,
 #Post .postcolor .h2,
 .forum--message h2,
-.forum--message .h2 {
+.forum--message .h2,
+.job h2,
+.job .h2 {
   font-size: min(40px, 4vw);
   font-family: var(--font-serif);
   margin: 0 auto var(--spacing-lg);
@@ -1671,7 +1916,9 @@ ol {
   #Post .postcolor h2::after,
   #Post .postcolor .h2::after,
   .forum--message h2::after,
-  .forum--message .h2::after {
+  .forum--message .h2::after,
+  .job h2::after,
+  .job .h2::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -1692,7 +1939,9 @@ ol {
 #Post .postcolor h3,
 #Post .postcolor .h3,
 .forum--message h3,
-.forum--message .h3 {
+.forum--message .h3,
+.job h3,
+.job .h3 {
   font-size: min(26px, 2.6vw);
   font-family: var(--font-serif);
   margin: 0 auto var(--spacing-lg) 0;
@@ -1708,7 +1957,9 @@ ol {
   #Post .postcolor h3::after,
   #Post .postcolor .h3::after,
   .forum--message h3::after,
-  .forum--message .h3::after {
+  .forum--message .h3::after,
+  .job h3::after,
+  .job .h3::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -1729,7 +1980,9 @@ ol {
 #Post .postcolor h4,
 #Post .postcolor .h4,
 .forum--message h4,
-.forum--message .h4 {
+.forum--message .h4,
+.job h4,
+.job .h4 {
   font-size: min(22px, 2.2vw);
   font-family: var(--font-body-bold);
   font-weight: 600;
@@ -1747,7 +2000,9 @@ ol {
   #Post .postcolor h4::before,
   #Post .postcolor .h4::before,
   .forum--message h4::before,
-  .forum--message .h4::before {
+  .forum--message .h4::before,
+  .job h4::before,
+  .job .h4::before {
     content: '';
     position: absolute;
     left: 0;
@@ -1789,7 +2044,13 @@ ol {
   .forum--message h4[data-box-align="right"],
   .forum--message .h4[data-align="right"],
   .forum--message .h4[data-text-align="right"],
-  .forum--message .h4[data-box-align="right"] {
+  .forum--message .h4[data-box-align="right"],
+  .job h4[data-align="right"],
+  .job h4[data-text-align="right"],
+  .job h4[data-box-align="right"],
+  .job .h4[data-align="right"],
+  .job .h4[data-text-align="right"],
+  .job .h4[data-box-align="right"] {
     padding: var(--spacing-sm) var(--spacing-lg) var(--spacing-sm) 0; }
     .species--item h4[data-align="right"]::before, .species--item h4[data-text-align="right"]::before, .species--item h4[data-box-align="right"]::before,
     .species--item .h4[data-align="right"]::before,
@@ -1824,7 +2085,13 @@ ol {
     .forum--message h4[data-box-align="right"]::before,
     .forum--message .h4[data-align="right"]::before,
     .forum--message .h4[data-text-align="right"]::before,
-    .forum--message .h4[data-box-align="right"]::before {
+    .forum--message .h4[data-box-align="right"]::before,
+    .job h4[data-align="right"]::before,
+    .job h4[data-text-align="right"]::before,
+    .job h4[data-box-align="right"]::before,
+    .job .h4[data-align="right"]::before,
+    .job .h4[data-text-align="right"]::before,
+    .job .h4[data-box-align="right"]::before {
       display: none; }
     .species--item h4[data-align="right"]::after, .species--item h4[data-text-align="right"]::after, .species--item h4[data-box-align="right"]::after,
     .species--item .h4[data-align="right"]::after,
@@ -1859,7 +2126,13 @@ ol {
     .forum--message h4[data-box-align="right"]::after,
     .forum--message .h4[data-align="right"]::after,
     .forum--message .h4[data-text-align="right"]::after,
-    .forum--message .h4[data-box-align="right"]::after {
+    .forum--message .h4[data-box-align="right"]::after,
+    .job h4[data-align="right"]::after,
+    .job h4[data-text-align="right"]::after,
+    .job h4[data-box-align="right"]::after,
+    .job .h4[data-align="right"]::after,
+    .job .h4[data-text-align="right"]::after,
+    .job .h4[data-box-align="right"]::after {
       content: '';
       position: absolute;
       right: 0;
@@ -1880,7 +2153,9 @@ ol {
 #Post .postcolor h5,
 #Post .postcolor .h5,
 .forum--message h5,
-.forum--message .h5 {
+.forum--message .h5,
+.job h5,
+.job .h5 {
   font-size: 16px;
   font-family: var(--font-body-bold);
   font-weight: 600;
@@ -1898,7 +2173,9 @@ ol {
   #Post .postcolor h5::before,
   #Post .postcolor .h5::before,
   .forum--message h5::before,
-  .forum--message .h5::before {
+  .forum--message .h5::before,
+  .job h5::before,
+  .job .h5::before {
     content: '';
     position: absolute;
     left: 0;
@@ -1940,7 +2217,13 @@ ol {
   .forum--message h5[data-box-align="right"],
   .forum--message .h5[data-align="right"],
   .forum--message .h5[data-text-align="right"],
-  .forum--message .h5[data-box-align="right"] {
+  .forum--message .h5[data-box-align="right"],
+  .job h5[data-align="right"],
+  .job h5[data-text-align="right"],
+  .job h5[data-box-align="right"],
+  .job .h5[data-align="right"],
+  .job .h5[data-text-align="right"],
+  .job .h5[data-box-align="right"] {
     padding: var(--spacing-xs) var(--spacing-md) var(--spacing-xs) 0; }
     .species--item h5[data-align="right"]::before, .species--item h5[data-text-align="right"]::before, .species--item h5[data-box-align="right"]::before,
     .species--item .h5[data-align="right"]::before,
@@ -1975,7 +2258,13 @@ ol {
     .forum--message h5[data-box-align="right"]::before,
     .forum--message .h5[data-align="right"]::before,
     .forum--message .h5[data-text-align="right"]::before,
-    .forum--message .h5[data-box-align="right"]::before {
+    .forum--message .h5[data-box-align="right"]::before,
+    .job h5[data-align="right"]::before,
+    .job h5[data-text-align="right"]::before,
+    .job h5[data-box-align="right"]::before,
+    .job .h5[data-align="right"]::before,
+    .job .h5[data-text-align="right"]::before,
+    .job .h5[data-box-align="right"]::before {
       display: none; }
     .species--item h5[data-align="right"]::after, .species--item h5[data-text-align="right"]::after, .species--item h5[data-box-align="right"]::after,
     .species--item .h5[data-align="right"]::after,
@@ -2010,7 +2299,13 @@ ol {
     .forum--message h5[data-box-align="right"]::after,
     .forum--message .h5[data-align="right"]::after,
     .forum--message .h5[data-text-align="right"]::after,
-    .forum--message .h5[data-box-align="right"]::after {
+    .forum--message .h5[data-box-align="right"]::after,
+    .job h5[data-align="right"]::after,
+    .job h5[data-text-align="right"]::after,
+    .job h5[data-box-align="right"]::after,
+    .job .h5[data-align="right"]::after,
+    .job .h5[data-text-align="right"]::after,
+    .job .h5[data-box-align="right"]::after {
       content: '';
       position: absolute;
       right: 0;
@@ -2031,7 +2326,9 @@ ol {
 #Post .postcolor h6,
 #Post .postcolor .h6,
 .forum--message h6,
-.forum--message .h6 {
+.forum--message .h6,
+.job h6,
+.job .h6 {
   font-size: var(--sBody);
   font-family: var(--font-body-bold);
   font-weight: 600;
@@ -2050,7 +2347,9 @@ ol {
   #Post .postcolor h6::before,
   #Post .postcolor .h6::before,
   .forum--message h6::before,
-  .forum--message .h6::before {
+  .forum--message .h6::before,
+  .job h6::before,
+  .job .h6::before {
     content: '';
     position: absolute;
     left: 0;
@@ -2092,7 +2391,13 @@ ol {
   .forum--message h6[data-box-align="right"]::before,
   .forum--message .h6[data-align="right"]::before,
   .forum--message .h6[data-text-align="right"]::before,
-  .forum--message .h6[data-box-align="right"]::before {
+  .forum--message .h6[data-box-align="right"]::before,
+  .job h6[data-align="right"]::before,
+  .job h6[data-text-align="right"]::before,
+  .job h6[data-box-align="right"]::before,
+  .job .h6[data-align="right"]::before,
+  .job .h6[data-text-align="right"]::before,
+  .job .h6[data-box-align="right"]::before {
     display: none; }
   .species--item h6[data-align="right"]::after, .species--item h6[data-text-align="right"]::after, .species--item h6[data-box-align="right"]::after,
   .species--item .h6[data-align="right"]::after,
@@ -2127,7 +2432,13 @@ ol {
   .forum--message h6[data-box-align="right"]::after,
   .forum--message .h6[data-align="right"]::after,
   .forum--message .h6[data-text-align="right"]::after,
-  .forum--message .h6[data-box-align="right"]::after {
+  .forum--message .h6[data-box-align="right"]::after,
+  .job h6[data-align="right"]::after,
+  .job h6[data-text-align="right"]::after,
+  .job h6[data-box-align="right"]::after,
+  .job .h6[data-align="right"]::after,
+  .job .h6[data-text-align="right"]::after,
+  .job .h6[data-box-align="right"]::after {
     content: '';
     position: absolute;
     right: 0;
@@ -2148,7 +2459,9 @@ ol {
 #Post .postcolor h7,
 #Post .postcolor .h7,
 .forum--message h7,
-.forum--message .h7 {
+.forum--message .h7,
+.job h7,
+.job .h7 {
   display: block;
   max-width: max-content;
   font-size: calc(var(--xsBody) + 1px);
@@ -2169,7 +2482,9 @@ ol {
   #Post .postcolor h7::before,
   #Post .postcolor .h7::before,
   .forum--message h7::before,
-  .forum--message .h7::before {
+  .forum--message .h7::before,
+  .job h7::before,
+  .job .h7::before {
     content: '';
     position: absolute;
     left: 0;
@@ -2211,7 +2526,13 @@ ol {
   .forum--message h7[data-box-align="right"]::before,
   .forum--message .h7[data-align="right"]::before,
   .forum--message .h7[data-text-align="right"]::before,
-  .forum--message .h7[data-box-align="right"]::before {
+  .forum--message .h7[data-box-align="right"]::before,
+  .job h7[data-align="right"]::before,
+  .job h7[data-text-align="right"]::before,
+  .job h7[data-box-align="right"]::before,
+  .job .h7[data-align="right"]::before,
+  .job .h7[data-text-align="right"]::before,
+  .job .h7[data-box-align="right"]::before {
     display: none; }
   .species--item h7[data-align="right"]::after, .species--item h7[data-text-align="right"]::after, .species--item h7[data-box-align="right"]::after,
   .species--item .h7[data-align="right"]::after,
@@ -2246,7 +2567,13 @@ ol {
   .forum--message h7[data-box-align="right"]::after,
   .forum--message .h7[data-align="right"]::after,
   .forum--message .h7[data-text-align="right"]::after,
-  .forum--message .h7[data-box-align="right"]::after {
+  .forum--message .h7[data-box-align="right"]::after,
+  .job h7[data-align="right"]::after,
+  .job h7[data-text-align="right"]::after,
+  .job h7[data-box-align="right"]::after,
+  .job .h7[data-align="right"]::after,
+  .job .h7[data-text-align="right"]::after,
+  .job .h7[data-box-align="right"]::after {
     content: '';
     position: absolute;
     right: 0;
@@ -2267,7 +2594,9 @@ ol {
 #Post .postcolor h8,
 #Post .postcolor .h8,
 .forum--message h8,
-.forum--message .h8 {
+.forum--message .h8,
+.job h8,
+.job .h8 {
   display: block;
   font-size: var(--xsBody);
   font-family: var(--font-body-bold);
@@ -2295,7 +2624,10 @@ ol {
 #Post .postcolor .h8::before,
 .forum--message .h2::before,
 .forum--message .h3::before,
-.forum--message .h8::before {
+.forum--message .h8::before,
+.job .h2::before,
+.job .h3::before,
+.job .h8::before {
   display: none; }
 
 .species--item .h4::after,
@@ -2327,7 +2659,12 @@ ol {
 .forum--message .h5::after,
 .forum--message .h6::after,
 .forum--message .h7::after,
-.forum--message .h8::after {
+.forum--message .h8::after,
+.job .h4::after,
+.job .h5::after,
+.job .h6::after,
+.job .h7::after,
+.job .h8::after {
   display: none; }
 
 .species--item blockquote,
@@ -2335,7 +2672,8 @@ ol {
 .profile--content blockquote,
 .post--content blockquote,
 #Post .postcolor blockquote,
-.forum--message blockquote {
+.forum--message blockquote,
+.job blockquote {
   max-width: 500px;
   margin: 0 auto;
   text-align: justify;
@@ -2347,6 +2685,10 @@ ol {
   border-radius: 3px;
   line-height: 200%;
   letter-spacing: 0.025em; }
+
+tag-translation {
+  border-bottom: 1px solid var(--border-main);
+  cursor: help; }
 
 input,
 select,
@@ -2507,6 +2849,7 @@ tag-code,
   flex-direction: column;
   gap: var(--spacing-xs);
   max-width: 300px;
+  width: 100%;
   margin: 0 auto; }
   tag-code button,
   tag-code .codeclick,
@@ -2545,8 +2888,8 @@ tag-code,
 #account-switch {
   width: calc(100% - (2 * var(--spacing-lg)));
   height: max-content;
-  max-height: calc(100vh - (2 * var(--spacing-lg)));
-  margin: var(--spacing-lg);
+  max-height: calc(100vh - (3 * var(--spacing-lg)));
+  margin: calc(var(--spacing-lg) * 2) var(--spacing-lg) var(--spacing-lg);
   padding-right: var(--spacing-sm);
   overflow: auto; }
 
@@ -2790,6 +3133,13 @@ tag-code,
       #recent-alerts .alert--main .row2 img {
         display: none; }
 
+.nano a.new {
+  background: var(--bg-color-transparent);
+  padding: 0 10px !important; }
+
+.nano a:not(.new) {
+  opacity: 0.35; }
+
 body .onlyMobile {
   display: none !important; }
 
@@ -2823,7 +3173,7 @@ body.g-2 .memOnly {
   body.g-2 .guestOnly.onlyMobile {
     display: initial !important; } }
 
-body.g-4 .staffOnly {
+body.g-4 .staffOnly, body.g-26 .staffOnly {
   display: initial !important; }
 
 .hide {

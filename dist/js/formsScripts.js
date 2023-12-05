@@ -186,31 +186,33 @@ document.querySelector('#form-edit').addEventListener('submit', e => {
 });
 
 //species request
-document.querySelector('#form-species').addEventListener('submit', e => {
-    e.preventDefault();
-    let member = e.currentTarget.querySelector('#member').value.toLowerCase().trim();
-    let species = e.currentTarget.querySelector('#species').value.toLowerCase().trim();
-    let physiology = e.currentTarget.querySelector('#physiology').value.trim();
-    let abilities = e.currentTarget.querySelector('#abilities').value.trim();
-    let weaknesses = e.currentTarget.querySelector('#weaknesses').value.trim();
-    let ideas = e.currentTarget.querySelector('#ideas').value.trim();
-    let resources = e.currentTarget.querySelector('#resources').value.trim();
-    let publicMessage = `Someone has suggested **${capitalize(species)}** as a new species! If you would like to see this species added, please react to this message! If you would like to discuss your own ideas for this species, please #create-a-ticket with staff!`;
-    let privateMessage = `**Species:** ${species}
-    \n\n**Phsyiology:**\n${physiology}
-    \n\n**Abilities:**\n${abilities}
-    \n\n**Weaknesses:**\n${weaknesses}
-    \n\n**Ideas:**\n${ideas}
-    \n\n**Resources:**\n${resources}
-    \n\nReview collectively as staff and then, when ready, start a ticket in the public server with all staff and the member in order to discuss approval / edits / refusal. All staff should react to this request when it has been seen and read.`;
-
-
-    //Send Public
-    sendModRequest('species', publicMessage, `New Species Suggested!`, `https://discord.com/api/webhooks/1124303807858344007/AW_ejzMEqfK0BbjLvNcA6n2RfCz8JLHo-f4sgeI0DayK4YYi_u1NLFXwCSIr8ETzryR_`, `Thanks for your submission! Staff will open a ticket with you to discuss shortly and your submission will be posted to the public server for the consideration of other members.`); 
-
-    //Send Private
-    sendDiscordMessage(`https://discord.com/api/webhooks/1124303973248151572/7CTHEhHhMwossK1bf8J7JDu3XW0gdPOp6gI5zM0s16FmahlM3sUJytNXE4rMksHbCr6h`, privateMessage, `New Species Request by ${capitalize(member)}`); 
-});
+if(document.querySelector('#form-species')) {
+    document.querySelector('#form-species').addEventListener('submit', e => {
+        e.preventDefault();
+        let member = e.currentTarget.querySelector('#member').value.toLowerCase().trim();
+        let species = e.currentTarget.querySelector('#species').value.toLowerCase().trim();
+        let physiology = e.currentTarget.querySelector('#physiology').value.trim();
+        let abilities = e.currentTarget.querySelector('#abilities').value.trim();
+        let weaknesses = e.currentTarget.querySelector('#weaknesses').value.trim();
+        let ideas = e.currentTarget.querySelector('#ideas').value.trim();
+        let resources = e.currentTarget.querySelector('#resources').value.trim();
+        let publicMessage = `Someone has suggested **${capitalize(species)}** as a new species! If you would like to see this species added, please react to this message! If you would like to discuss your own ideas for this species, please #create-a-ticket with staff!`;
+        let privateMessage = `**Species:** ${species}
+        \n\n**Phsyiology:**\n${physiology}
+        \n\n**Abilities:**\n${abilities}
+        \n\n**Weaknesses:**\n${weaknesses}
+        \n\n**Ideas:**\n${ideas}
+        \n\n**Resources:**\n${resources}
+        \n\nReview collectively as staff and then, when ready, start a ticket in the public server with all staff and the member in order to discuss approval / edits / refusal. All staff should react to this request when it has been seen and read.`;
+    
+    
+        //Send Public
+        sendModRequest('species', publicMessage, `New Species Suggested!`, `https://discord.com/api/webhooks/1124303807858344007/AW_ejzMEqfK0BbjLvNcA6n2RfCz8JLHo-f4sgeI0DayK4YYi_u1NLFXwCSIr8ETzryR_`, `Thanks for your submission! Staff will open a ticket with you to discuss shortly and your submission will be posted to the public server for the consideration of other members.`); 
+    
+        //Send Private
+        sendDiscordMessage(`https://discord.com/api/webhooks/1124303973248151572/7CTHEhHhMwossK1bf8J7JDu3XW0gdPOp6gI5zM0s16FmahlM3sUJytNXE4rMksHbCr6h`, privateMessage, `New Species Request by ${capitalize(member)}`); 
+    });
+}
 
 //reserve face
 document.querySelector('#form-reserve').addEventListener('submit', e => {

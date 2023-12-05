@@ -512,3 +512,110 @@
       height: 2px;
       background: var(--bg-color);
       border-radius: 1px; }
+
+.jobs--menu {
+  position: sticky;
+  top: calc(var(--size-menu-height) + var(--size-submenu-height));
+  background: var(--bg-transparent);
+  padding: var(--spacing-md);
+  border: 1px solid var(--border-secondary);
+  z-index: 2; }
+  .jobs--menu.is-sticky {
+    background: var(--bg-alt); }
+  .jobs--menu tag-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm); }
+    .jobs--menu tag-tabs > tag-labels {
+      padding: 0 var(--spacing-sm); }
+    .jobs--menu tag-tabs > tag-tabset {
+      padding: var(--spacing-sm) 0 0;
+      margin: 0 var(--spacing-sm);
+      border-top: 1px solid var(--border-main); }
+
+.jobs .job {
+  display: grid;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg); }
+  @media only screen and (min-width: 768px) {
+    .jobs .job {
+      grid-template-columns: auto 250px; } }
+  .jobs .job--main, .jobs .job--hours {
+    background: var(--bg-transparent);
+    border: 1px solid var(--border-secondary);
+    padding: var(--spacing-lg);
+    display: grid;
+    gap: var(--spacing-sm);
+    grid-template-rows: repeat(auto-fit, minmax(0, max-content)); }
+    .jobs .job--main b.h6, .jobs .job--hours b.h6 {
+      color: var(--text-content); }
+  .jobs .job > h3,
+  .jobs .job .job--employees {
+    grid-column: 1 / -1; }
+
+.accordion--title {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0 var(--spacing-lg);
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 900;
+  font-family: var(--font-body-bold);
+  line-height: 160%;
+  border-bottom: 3px solid var(--border-color);
+  padding: var(--spacing-sm) var(--spacing-md);
+  margin-bottom: var(--spacing-lg); }
+  .accordion--title .smaller {
+    font-family: var(--font-body);
+    font-size: 0.6em;
+    font-weight: 900;
+    border: 0;
+    letter-spacing: 0;
+    padding: 0; }
+
+.accordion--toggle {
+  cursor: pointer; }
+  .accordion--toggle .hide-content {
+    display: none; }
+  .accordion--toggle.is-open .hide-content {
+    display: initial; }
+  .accordion--toggle.is-open .view-content {
+    display: none; }
+
+.accordion--sorts {
+  display: flex;
+  gap: var(--spacing-sm); }
+  .accordion--sorts button {
+    border: 1px solid var(--border-color);
+    background: var(--bg-color-transparent);
+    color: var(--text-content);
+    text-transform: uppercase;
+    font: var(--style-small-text);
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    cursor: pointer; }
+
+.accordion--content {
+  margin-bottom: 0;
+  height: 0;
+  overflow: hidden; }
+  .accordion--content.is-open {
+    margin-bottom: 30px;
+    height: auto; }
+  .accordion--content > a {
+    border-bottom: 0;
+    border-left: 3px solid var(--border-color);
+    display: grid;
+    color: var(--text-content);
+    background: var(--bg-color-transparent);
+    padding: var(--spacing-md);
+    line-height: 160%;
+    font-size: var(--xlBody); }
+    .accordion--content > a b {
+      color: var(--text-content);
+      padding: 0; }
+    .accordion--content > a span {
+      font: var(--style-small-text);
+      letter-spacing: 0.1em; }

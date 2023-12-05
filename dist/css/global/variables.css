@@ -67,6 +67,38 @@ body {
     --bg-color-transparent: var(--accent-20);
     --text-color: var(--accent);
     --border-color: var(--accent); }
+  body.g-27,
+  body .g-27,
+  body [data-group="retired"],
+  body [data-group="Retired"],
+  body [data-group="RETIRED"] {
+    --accent: rgb(185, 185, 185);
+    --accent-20: rgba(185, 185, 185, 0.2);
+    --bg-color: var(--accent);
+    --bg-color-transparent: var(--accent-20);
+    --text-color: var(--accent);
+    --border-color: var(--accent); }
+    body.g-27.profile, body.g-27.mem,
+    body .g-27.profile,
+    body .g-27.mem,
+    body [data-group="retired"].profile,
+    body [data-group="retired"].mem,
+    body [data-group="Retired"].profile,
+    body [data-group="Retired"].mem,
+    body [data-group="RETIRED"].profile,
+    body [data-group="RETIRED"].mem {
+      opacity: 0.45;
+      transition-duration: var(--style-duration); }
+      body.g-27.profile:hover, body.g-27.mem:hover,
+      body .g-27.profile:hover,
+      body .g-27.mem:hover,
+      body [data-group="retired"].profile:hover,
+      body [data-group="retired"].mem:hover,
+      body [data-group="Retired"].profile:hover,
+      body [data-group="Retired"].mem:hover,
+      body [data-group="RETIRED"].profile:hover,
+      body [data-group="RETIRED"].mem:hover {
+        opacity: 1; }
   body.g-4,
   body .g-4,
   body [data-group="staff"],
@@ -74,6 +106,17 @@ body {
   body [data-group="STAFF"] {
     --accent: rgb(140, 168, 161);
     --accent-20: rgba(140, 168, 161, 0.2);
+    --bg-color: var(--accent);
+    --bg-color-transparent: var(--accent-20);
+    --text-color: var(--accent);
+    --border-color: var(--accent); }
+  body.g-26,
+  body .g-26,
+  body [data-group="ambassador"],
+  body [data-group="Ambassador"],
+  body [data-group="AMBASSADOR"] {
+    --accent: rgb(191, 115, 77);
+    --accent-20: rgba(191, 115, 77, 0.2);
     --bg-color: var(--accent);
     --bg-color-transparent: var(--accent-20);
     --text-color: var(--accent);
@@ -243,6 +286,50 @@ body {
     --bg-color-transparent: var(--accent-20);
     --text-color: var(--accent);
     --border-color: var(--accent); }
+  body.g-22,
+  body .g-22,
+  body [data-group="cedar"],
+  body [data-group="Cedar"],
+  body [data-group="CEDAR"] {
+    --accent: rgb(174, 143, 110);
+    --accent-20: rgba(174, 143, 110, 0.2);
+    --bg-color: var(--accent);
+    --bg-color-transparent: var(--accent-20);
+    --text-color: var(--accent);
+    --border-color: var(--accent); }
+  body.g-23,
+  body .g-23,
+  body [data-group="laurel"],
+  body [data-group="Laurel"],
+  body [data-group="LAUREL"] {
+    --accent: rgb(119, 97, 109);
+    --accent-20: rgba(119, 97, 109, 0.2);
+    --bg-color: var(--accent);
+    --bg-color-transparent: var(--accent-20);
+    --text-color: var(--accent);
+    --border-color: var(--accent); }
+  body.g-24,
+  body .g-24,
+  body [data-group="sage"],
+  body [data-group="Sage"],
+  body [data-group="SAGE"] {
+    --accent: rgb(149, 155, 127);
+    --accent-20: rgba(149, 155, 127, 0.2);
+    --bg-color: var(--accent);
+    --bg-color-transparent: var(--accent-20);
+    --text-color: var(--accent);
+    --border-color: var(--accent); }
+  body.g-25,
+  body .g-25,
+  body [data-group="goldenrod"],
+  body [data-group="Goldenrod"],
+  body [data-group="GOLDENROD"] {
+    --accent: rgb(168, 124, 38);
+    --accent-20: rgba(168, 124, 38, 0.2);
+    --bg-color: var(--accent);
+    --bg-color-transparent: var(--accent-20);
+    --text-color: var(--accent);
+    --border-color: var(--accent); }
 
 .light {
   --accent: rgb(126, 137, 138);
@@ -280,15 +367,21 @@ body {
   .light [data-group="STAFF"] {
     --accent: rgb(121, 147, 140);
     --accent-20: rgba(140, 168, 161, 0.2);
-    --bg-color: var(--accent); }
+    --bg-color: var(--accent);
+    --bg-color-transparent: var(--accent-20);
+    --text-color: var(--accent);
+    --border-color: var(--accent); }
   .light.g-6,
   .light .g-6,
   .light [data-group="writer"],
   .light [data-group="Writer"],
   .light [data-group="WRITER"] {
-    --accent: rgb(130, 147, 109);
-    --accent-20: rgba(130, 147, 109, 0.2);
-    --bg-color: var(--accent); }
+    --accent: rgb(134, 155, 108);
+    --accent-20: rgba(134, 155, 108, 0.2);
+    --bg-color: var(--accent);
+    --bg-color-transparent: var(--accent-20);
+    --text-color: var(--accent);
+    --border-color: var(--accent); }
   .light.g-7,
   .light .g-7,
   .light [data-group="birch"],
@@ -296,7 +389,21 @@ body {
   .light [data-group="BIRCH"] {
     --accent: rgb(159, 143, 131);
     --accent-20: rgba(159, 143, 131, 0.2);
-    --bg-color: var(--accent); }
+    --bg-color: var(--accent);
+    --bg-color-transparent: var(--accent-20);
+    --text-color: var(--accent);
+    --border-color: var(--accent); }
+  .light.g-10,
+  .light .g-10,
+  .light [data-group="dandelion"],
+  .light [data-group="Dandelion"],
+  .light [data-group="DANDELION"] {
+    --accent: rgb(185, 155, 98);
+    --accent-20: rgba(185, 155, 98, 0.2);
+    --bg-color: var(--accent);
+    --bg-color-transparent: var(--accent-20);
+    --text-color: var(--accent);
+    --border-color: var(--accent); }
   .light.g-13,
   .light .g-13,
   .light [data-group="hemlock"],
@@ -304,7 +411,10 @@ body {
   .light [data-group="HEMLOCK"] {
     --accent: rgb(105, 153, 162);
     --accent-20: rgba(105, 153, 162, 0.2);
-    --bg-color: var(--accent); }
+    --bg-color: var(--accent);
+    --bg-color-transparent: var(--accent-20);
+    --text-color: var(--accent);
+    --border-color: var(--accent); }
   .light.g-14,
   .light .g-14,
   .light [data-group="nettle"],
@@ -312,14 +422,17 @@ body {
   .light [data-group="NETTLE"] {
     --accent: rgb(120, 145, 116);
     --accent-20: rgba(120, 145, 116, 0.2);
-    --bg-color: var(--accent); }
+    --bg-color: var(--accent);
+    --bg-color-transparent: var(--accent-20);
+    --text-color: var(--accent);
+    --border-color: var(--accent); }
   .light.g-16,
   .light .g-16,
   .light [data-group="sundew"],
   .light [data-group="Sundew"],
   .light [data-group="SUNDEW"] {
-    --accent: rgb(181, 139, 114);
-    --accent-20: rgba(181, 139, 114, 0.2);
+    --accent: rgb(189, 140, 112);
+    --accent-20: rgba(189, 140, 112, 0.2);
     --bg-color: var(--accent);
     --bg-color-transparent: var(--accent-20);
     --text-color: var(--accent);
