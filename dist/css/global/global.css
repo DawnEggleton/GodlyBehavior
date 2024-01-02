@@ -136,12 +136,19 @@ ol {
       color: var(--accent); }
 
 .species--item b,
+.species--item tag-spoken,
 .webpage--content b,
+.webpage--content tag-spoken,
 .profile--content b,
+.profile--content tag-spoken,
 .post--content b,
+.post--content tag-spoken,
 #Post .postcolor b,
+#Post .postcolor tag-spoken,
 .forum--message b,
-.job b {
+.forum--message tag-spoken,
+.job b,
+.job tag-spoken {
   color: var(--text-color);
   font-family: var(--font-body-bold);
   font-size: 1.1em;
@@ -150,12 +157,20 @@ ol {
   padding: 0 2px; }
 
 .species--item i,
+.species--item tag-thought,
 .webpage--content i,
+.webpage--content tag-thought,
 .profile--content i,
+.profile--content tag-thought,
 .post--content i,
+.post--content tag-thought,
 #Post .postcolor i,
+#Post .postcolor tag-thought,
 .forum--message i,
-.job i {
+.forum--message tag-thought,
+.job i,
+.job tag-thought {
+  font-style: italic;
   font-weight: 300;
   letter-spacing: 0.05em;
   font-size: 1.1em;

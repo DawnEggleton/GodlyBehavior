@@ -176,7 +176,8 @@ ol {
 #Post .postcolor,
 .forum--message,
 .job {
-    b {
+    b,
+    tag-spoken {
         color: var(--text-color);
         font-family: var(--font-body-bold);
         font-size: 1.1em;
@@ -184,7 +185,9 @@ ol {
         letter-spacing: 0.05em;
         padding: 0 2px;
     }
-    i {
+    i,
+    tag-thought {
+        font-style: italic;
         font-weight: 300;
         letter-spacing: 0.05em;
         font-size: 1.1em;
